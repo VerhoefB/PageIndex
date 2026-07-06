@@ -70,7 +70,8 @@ if __name__ == "__main__":
         
         # Save results
         pdf_name = os.path.splitext(os.path.basename(args.pdf_path))[0]    
-        output_dir = './results'
+        # output_dir = './results/FinanceBench structure'
+        output_dir = './results/ESRS structure'
         output_file = f'{output_dir}/{pdf_name}_structure.json'
         os.makedirs(output_dir, exist_ok=True)
         
@@ -124,7 +125,8 @@ if __name__ == "__main__":
         
         # Save results
         md_name = os.path.splitext(os.path.basename(args.md_path))[0]    
-        output_dir = './results'
+        # output_dir = './results/FinanceBench structure'
+        output_dir = './results/ESRS structure'
         output_file = f'{output_dir}/{md_name}_structure.json'
         os.makedirs(output_dir, exist_ok=True)
         

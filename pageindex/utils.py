@@ -269,14 +269,17 @@ def sanitize_filename(filename, replacement='-'):
     return filename.replace('/', replacement)
 
 def get_pdf_name(pdf_path):
-    # Extract PDF name
     if isinstance(pdf_path, str):
-        pdf_name = os.path.basename(pdf_path)
+        pdf_name = os.path.splitext(
+            os.path.basename(pdf_path)
+        )[0]
+
     elif isinstance(pdf_path, BytesIO):
         pdf_reader = PyPDF2.PdfReader(pdf_path)
         meta = pdf_reader.metadata
-        pdf_name = meta.title if meta and meta.title else 'Untitled'
+        pdf_name = meta.title if meta and meta.title else "Untitled"
         pdf_name = sanitize_filename(pdf_name)
+
     return pdf_name
 
 
@@ -336,7 +339,10 @@ def list_to_tree(data):
     for item in data:
         structure = item.get('structure')
         node = {
-            'title': item.get('title'),
+            "structure": item.get("structure"),
+            "title": item.get("title"),
+            "heading": item.get("heading"),
+            'start_phrase': item.get('start_phrase'),
             'start_index': item.get('start_index'),
             'end_index': item.get('end_index'),
             'nodes': []
