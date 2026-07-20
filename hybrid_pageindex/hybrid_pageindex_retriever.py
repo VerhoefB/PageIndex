@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 
+from pathlib import Path
 from sentence_transformers import SentenceTransformer
 
 
@@ -23,6 +24,8 @@ class HybridPageIndexRetriever:
         model_name="sentence-transformers/all-MiniLM-L6-v2",
         batch_size=8,
         device=None,
+        node_cache_path=None,
+        top_node_cache_path=None,
     ):
         self.tree = tree
         self.chunks = chunks or []
@@ -41,9 +44,13 @@ class HybridPageIndexRetriever:
 
         self.nodes_by_id = {}
         self.node_embeddings = {}
+        self.top_node_embeddings = {}
         self.chunk_lookup = self._build_chunk_lookup(self.chunks)
 
-        self._prepare_tree()
+        self._prepare_tree(
+            node_cache_path=node_cache_path,
+            top_node_cache_path=top_node_cache_path,
+        )
 
     def _build_chunk_lookup(self, chunks):
         lookup = {}
@@ -77,6 +84,31 @@ class HybridPageIndexRetriever:
         summary = str(node.get("summary", "") or "").strip()
 
         return f"{title}\n{summary}".strip()
+    
+    def _top_node_text(self, node):
+        """
+        Use top-level document text for first-layer document selection.
+
+        FinanceBench root nodes can include:
+        - cleaned document title
+        - summary
+        - doc_description
+
+        ESRS root nodes usually only include:
+        - cleaned document title
+        - summary
+        """
+        title = str(node.get("title", "") or "").strip()
+        summary = str(node.get("summary", "") or "").strip()
+        doc_description = str(node.get("doc_description", "") or "").strip()
+
+        parts = [
+            title,
+            summary,
+            doc_description,
+        ]
+
+        return "\n".join(part for part in parts if part)
 
     def _iter_nodes(self, nodes, prefix="root"):
         if isinstance(nodes, dict):
@@ -97,10 +129,16 @@ class HybridPageIndexRetriever:
             ):
                 yield child_id, child
 
-    def _prepare_tree(self):
+    def _prepare_tree(self, node_cache_path=None, top_node_cache_path=None):
         node_ids = []
         node_texts = []
 
+        top_node_ids = []
+        top_node_texts = []
+
+        roots = self.tree if isinstance(self.tree, list) else [self.tree]
+
+        # Regular embeddings for all nodes: title + summary.
         for node_id, node in self._iter_nodes(self.tree):
             node["_hybrid_node_id"] = node_id
             self.nodes_by_id[node_id] = node
@@ -108,20 +146,101 @@ class HybridPageIndexRetriever:
             node_ids.append(node_id)
             node_texts.append(self._node_text(node))
 
-        print(f"Encoding {len(node_texts)} PageIndex nodes...")
+        document_roots = []
 
-        embeddings = self.model.encode(
-            node_texts,
-            batch_size=self.batch_size,
-            show_progress_bar=True,
-            convert_to_numpy=True,
-            normalize_embeddings=True,
-        ).astype("float32")
+        for root in roots:
+            if not isinstance(root, dict):
+                continue
+
+            if root.get("node_type") == "collection_root":
+                document_roots.extend(self._get_children(root))
+            else:
+                document_roots.append(root)
+
+        # Special embeddings for first-layer document selection:
+        # title + summary + doc_description.
+        for root_index, document_root in enumerate(document_roots):
+            if not isinstance(document_root, dict):
+                continue
+
+            root_id = (
+                document_root.get("_hybrid_node_id")
+                or self._node_id(document_root, f"document_root_{root_index}")
+            )
+            document_root["_hybrid_node_id"] = str(root_id)
+
+            top_node_ids.append(str(root_id))
+            top_node_texts.append(self._top_node_text(document_root))
+
+        if node_cache_path is not None:
+            node_cache_path = Path(node_cache_path)
+
+        if top_node_cache_path is not None:
+            top_node_cache_path = Path(top_node_cache_path)
+
+        # Load or compute normal node embeddings.
+        if node_cache_path is not None and node_cache_path.exists():
+            print(f"Loading hybrid node embeddings from cache: {node_cache_path}")
+            embeddings = np.load(node_cache_path)
+        else:
+            print(f"Encoding {len(node_texts)} PageIndex nodes...")
+
+            embeddings = self.model.encode(
+                node_texts,
+                batch_size=self.batch_size,
+                show_progress_bar=True,
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            ).astype("float32")
+
+            if node_cache_path is not None:
+                node_cache_path.parent.mkdir(parents=True, exist_ok=True)
+                np.save(node_cache_path, embeddings)
+                print(f"Saved hybrid node embeddings to cache: {node_cache_path}")
+
+        if embeddings.shape[0] != len(node_ids):
+            raise ValueError(
+                f"Hybrid node embedding cache has {embeddings.shape[0]} rows, "
+                f"but current tree has {len(node_ids)} nodes. "
+                "Delete the cache file and rerun."
+            )
 
         for node_id, embedding in zip(node_ids, embeddings):
             self.node_embeddings[node_id] = embedding
 
+        # Load or compute top-level document embeddings.
+        if top_node_texts:
+            if top_node_cache_path is not None and top_node_cache_path.exists():
+                print(f"Loading hybrid top-node embeddings from cache: {top_node_cache_path}")
+                top_embeddings = np.load(top_node_cache_path)
+            else:
+                print(f"Encoding {len(top_node_texts)} top-level document nodes...")
+
+                top_embeddings = self.model.encode(
+                    top_node_texts,
+                    batch_size=self.batch_size,
+                    show_progress_bar=True,
+                    convert_to_numpy=True,
+                    normalize_embeddings=True,
+                ).astype("float32")
+
+                if top_node_cache_path is not None:
+                    top_node_cache_path.parent.mkdir(parents=True, exist_ok=True)
+                    np.save(top_node_cache_path, top_embeddings)
+                    print(f"Saved hybrid top-node embeddings to cache: {top_node_cache_path}")
+
+            if top_embeddings.shape[0] != len(top_node_ids):
+                raise ValueError(
+                    f"Hybrid top-node embedding cache has {top_embeddings.shape[0]} rows, "
+                    f"but current tree has {len(top_node_ids)} top nodes. "
+                    "Delete the cache file and rerun."
+                )
+
+            for node_id, embedding in zip(top_node_ids, top_embeddings):
+                self.top_node_embeddings[node_id] = embedding
+
         print("Hybrid PageIndex node embeddings ready.")
+
 
     def _similarity(self, query_embedding, node):
         node_id = node.get("_hybrid_node_id")
@@ -132,6 +251,18 @@ class HybridPageIndexRetriever:
         node_embedding = self.node_embeddings[node_id]
 
         return float(np.dot(query_embedding, node_embedding))
+
+
+    def _top_similarity(self, query_embedding, node):
+        node_id = node.get("_hybrid_node_id")
+
+        if node_id not in self.top_node_embeddings:
+            return -1.0
+
+        node_embedding = self.top_node_embeddings[node_id]
+
+        return float(np.dot(query_embedding, node_embedding))
+
 
     def _get_node_chunk_id(self, node):
         return (
@@ -162,7 +293,27 @@ class HybridPageIndexRetriever:
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
-        frontier = list(roots)
+        # If the combined tree has a collection root, first-layer document
+        # selection should happen over its document children, not over the
+        # collection root itself.
+        document_roots = []
+
+        for root in roots:
+            if root.get("node_type") == "collection_root":
+                document_roots.extend(self._get_children(root))
+            else:
+                document_roots.append(root)
+
+        # First layer: select exactly one document node.
+        scored_document_roots = []
+
+        for document_root in document_roots:
+            score = self._top_similarity(query_embedding, document_root)
+            scored_document_roots.append((score, document_root))
+
+        scored_document_roots.sort(key=lambda x: x[0], reverse=True)
+
+        frontier = [scored_document_roots[0][1]] if scored_document_roots else []
         final_candidates = []
 
         while frontier:
@@ -233,11 +384,14 @@ class HybridPageIndexRetriever:
             chunk_id = item["chunk_id"]
             chunk = self.chunk_lookup.get(str(chunk_id), {})
 
+            doc_name = chunk.get("doc_name") or chunk.get("bank_name") or ""
+
             results.append({
                 "rank": rank,
                 "chunk_id": chunk_id,
                 "source_chunk_id": str(chunk.get("chunk_id", chunk_id)),
-                "bank_name": chunk.get("bank_name") or chunk.get("doc_name", ""),
+                "doc_name": doc_name,
+                "bank_name": chunk.get("bank_name", ""),
                 "node_id": item.get("node_id"),
                 "title": item.get("title") or chunk.get("title", ""),
                 "summary": item.get("summary", ""),

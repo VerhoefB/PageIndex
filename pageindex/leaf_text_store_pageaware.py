@@ -5,6 +5,11 @@ import re
 
 from .utils import llm_completion, extract_json, count_tokens, get_text_of_pdf_pages
 
+DEBUG_PROGRESS = True
+
+def progress(message):
+    if DEBUG_PROGRESS:
+        print(message, flush=True)
 
 def split_large_section_with_llm(title, text, max_tokens, model=None):
     current_tokens = count_tokens(text, model=model)
@@ -73,89 +78,103 @@ Section text:
 
     return []
 
-# def generate_node_summary(title, text, model=None, summary_token_threshold=200):
-#     """
-#     Generate a concise retrieval summary for a node/chunk.
-#
-#     Used for:
-#     - normal leaf nodes
-#     - generated intro nodes
-#     - LLM-split child nodes
-#     """
-#     text = (text or "").strip()
-#     title = title or "Untitled section"
-#
-#     if not text:
-#         return ""
-#
+def generate_node_summary(title, text, model=None, summary_token_threshold=200):
+    """
+    Generate a concise retrieval summary for a node/chunk.
+
+    Used for:
+    - normal leaf nodes
+    - generated intro nodes
+    - LLM-split child nodes
+    """
+    text = (text or "").strip()
+    title = title or "Untitled section"
+
+    if not text:
+        return ""
+
+    token_count = count_tokens(text, model=model)
+
+    progress(
+        f"[summary check] tokens={token_count} "
+        f"threshold={summary_token_threshold} "
+        f"title={title!r}"
+    )
+
+    if token_count <= summary_token_threshold:
+        return text
+
     # PageIndex-like behavior: if text is already short, use it directly.
-#     if count_tokens(text, model=model) <= summary_token_threshold:
-#         return text
-#
-#     prompt = f"""
-# You are given a section from a PDF document.
-#
-# Write a concise retrieval summary for this section.
-#
-# The summary will be used in a hierarchical document index. Another LLM will read the node title and this summary to decide whether this node is relevant to a user question.
-#
-# Rules:
-# - Write 1 concise paragraph.
-# - Be specific and factual.
-# - Mention the main topics, entities, metrics, risks, policies, tables, or concepts covered.
-# - Do not add information that is not in the section text.
-# - Do not use bullet points.
-# - Return only the summary.
-#
-# Node title:
-# {title}
-#
-# Section text:
-# {text}
-# """
-#
-#     return llm_completion(model=model, prompt=prompt).strip()
-#
-#
-# def generate_parent_summary_from_children(title, child_nodes, model=None):
-#     """
-#     Generate a summary for a parent node that was split into children.
-#
-#     The parent no longer has its own chunk text, so summarize from child summaries.
-#     """
-#     title = title or "Untitled section"
-#
-#     child_context = "\n".join(
-#         f"- {child.get('title', '')}: {child.get('summary', '')}"
-#         for child in child_nodes
-#         if child.get("summary")
-#     )
-#
-#     if not child_context.strip():
-#         return ""
-#
-#     prompt = f"""
-# You are given a parent section from a PDF document and summaries of its child sections.
-#
-# Write a concise retrieval summary for the parent section.
-#
-# Rules:
-# - Write 1 concise paragraph.
-# - Base the summary only on the child titles and summaries.
-# - Mention the main themes covered by the children.
-# - Do not add information that is not present.
-# - Do not use bullet points.
-# - Return only the summary.
-#
-# Parent title:
-# {title}
-#
-# Child sections:
-# {child_context}
-# """
-#
-#     return llm_completion(model=model, prompt=prompt).strip()
-#
+    if count_tokens(text, model=model) <= summary_token_threshold:
+        return text
+
+    prompt = f"""
+You are given a section from a PDF document.
+
+Write a concise retrieval summary for this section.
+
+The summary will be used in a hierarchical document index. Another LLM will read the node title and this summary to decide whether this node is relevant to a user question.
+
+Rules:
+- Write 1 concise paragraph.
+- Be specific and factual.
+- Mention the main topics, entities, metrics, risks, policies, tables, or concepts covered.
+- Do not add information that is not in the section text.
+- Do not use bullet points.
+- Return only the summary.
+
+Node title:
+{title}
+
+Section text:
+{text}
+"""
+
+    progress(f"[LLM summary start] tokens={token_count} title={title!r}")
+    summary = llm_completion(model=model, prompt=prompt).strip()
+    progress(f"[LLM summary done] title={title!r} chars={len(summary)}")
+    return summary
+
+
+def generate_parent_summary_from_children(title, child_nodes, model=None):
+    """
+    Generate a summary for a parent node that was split into children.
+
+    The parent no longer has its own chunk text, so summarize from child summaries.
+    """
+    title = title or "Untitled section"
+
+    child_context = "\n".join(
+        f"- {child.get('title', '')}: {child.get('summary', '')}"
+        for child in child_nodes
+        if child.get("summary")
+    )
+
+    if not child_context.strip():
+        return ""
+
+    prompt = f"""
+You are given a parent section from a PDF document and summaries of its child sections.
+
+Write a concise retrieval summary for the parent section.
+
+Rules:
+- Write 1 concise paragraph.
+- Base the summary only on the child titles and summaries.
+- Mention the main themes covered by the children.
+- Do not add information that is not present.
+- Do not use bullet points.
+- Return only the summary.
+
+Parent title:
+{title}
+
+Child sections:
+{child_context}
+"""
+
+    return llm_completion(model=model, prompt=prompt).strip()
+
 def normalize_for_match(text):
     text = text or ""
     text = text.lower()
@@ -566,21 +585,29 @@ def title_matches_as_words(line, title):
     """
     Whole-word-ish title match.
 
-    Prevents:
-        title='Environment'
-    matching:
-        'environmental impacts'
-
-    But allows:
-        Environment
-        3. Environment
-        Environment:
+    For short titles, use regex.
+    For very long titles, avoid huge regex patterns because they can become very slow.
     """
     words = title_words(title)
     if not words:
         return False
 
     cleaned = strip_heading_numbering(line)
+
+    # Fast path for very long titles.
+    # Long risk-factor titles make huge regex patterns and can hang.
+    if len(words) > 18 or len(title) > 180:
+        line_key = normalize_for_match(cleaned)
+        title_key = normalize_for_match(title)
+
+        if not line_key or not title_key:
+            return False
+
+        return (
+            line_key == title_key
+            or line_key.startswith(title_key)
+            or title_key.startswith(line_key)
+        )
 
     pattern = r"\b" + r"\s*[-–—:./]?\s*".join(
         re.escape(w) for w in words
@@ -705,7 +732,8 @@ def find_title_candidates(text, title):
 def collect_title_candidates(text, title):
     """
     Collect both strict heading candidates and broader normalized candidates.
-    Each candidate keeps its source so scoring can prefer heading-like matches.
+
+    For very long titles, avoid broad normalized occurrence scanning because it is slow.
     """
     candidates = {}
 
@@ -714,6 +742,14 @@ def collect_title_candidates(text, title):
             "pos": pos,
             "source": "strict_heading",
         }
+
+    title_word_count = len(title_words(title))
+    title_key = normalize_for_match(title)
+
+    # Long titles are expensive and usually should be found as headings,
+    # not by broad normalized occurrence search.
+    if title_word_count > 18 or len(title_key) > 180:
+        return list(candidates.values())
 
     for pos in find_normalized_occurrences(text, title):
         if pos not in candidates:
@@ -1373,17 +1409,12 @@ def phrases_match(a, b):
 def find_node_start(text, node, window=1500, min_pos=0):
     heading = get_node_heading_for_match(node)
 
-    # Important:
-    # Heading match uses full numbered heading, e.g. "5.1 Own workforce".
-    # Fallback title match uses plain title, e.g. "Own workforce".
     fallback_title = (
         node.get("source_title")
         or node.get("title")
         or ""
     )
 
-    # For generated intro nodes, title is "Social - Introduction",
-    # but the real match should be the source title.
     if node.get("is_intro_node"):
         fallback_title = (
             node.get("source_title")
@@ -1402,7 +1433,15 @@ def find_node_start(text, node, window=1500, min_pos=0):
         window=2500,
     )
 
-    if heading_pos != -1:
+    heading_key = normalize_for_match(heading)
+    title_key = normalize_for_match(fallback_title)
+
+    if (
+        heading_pos != -1
+        and heading_key
+        and title_key
+        and heading_key != title_key
+    ):
         return heading_pos
 
     phrase_pos = find_phrase_position(search_text, start_phrase)
@@ -2258,6 +2297,173 @@ def slice_physical_pages_text(pdf_pages, start_index, start_pos, end_index, end_
 
     return "\n".join(parts).strip()
 
+def collect_node_start_candidates_on_pages(
+    page_indexes,
+    pdf_pages,
+    node,
+    found_start_page_index=None,
+    found_start_pos=0,
+):
+    """
+    Collect possible starts for node on the given physical page indexes.
+
+    Returns candidates like:
+    {
+        "page_index": int,
+        "pos": int,
+        "score": float,
+        "phrase_pos": int,
+        "heading_pos": int,
+        "context": str,
+    }
+    """
+    candidates = []
+
+    if not node:
+        return candidates
+
+    heading = get_node_heading_for_match(node)
+
+    fallback_title = (
+        node.get("source_title")
+        or node.get("title")
+        or ""
+    )
+
+    if node.get("is_intro_node"):
+        fallback_title = (
+            node.get("source_title")
+            or re.sub(
+                r"\s*-\s*Introduction\s*$",
+                "",
+                node.get("title", ""),
+                flags=re.I,
+            )
+        )
+
+    start_phrase = node.get("start_phrase", "")
+
+    for page_index in page_indexes:
+        page_text = get_pdf_page_text_by_index(pdf_pages, page_index)
+
+        if not page_text:
+            continue
+
+        min_pos = (
+            found_start_pos + 1
+            if found_start_page_index is not None and page_index == found_start_page_index
+            else 0
+        )
+
+        search_text = page_text[min_pos:]
+
+        phrase_pos = find_phrase_position(search_text, start_phrase)
+        phrase_pos = phrase_pos + min_pos if phrase_pos != -1 else -1
+
+        heading_pos = find_heading_position(
+            text=page_text,
+            heading=heading,
+            start_phrase=start_phrase,
+            min_pos=min_pos,
+            window=2500,
+        )
+
+        if heading_pos != -1:
+            score = 50
+
+            if phrase_pos != -1 and heading_pos <= phrase_pos:
+                distance = phrase_pos - heading_pos
+                if distance <= 1500:
+                    score += 100 - min(80, distance / 20)
+
+            candidates.append({
+                "page_index": page_index,
+                "pos": heading_pos,
+                "score": score,
+                "phrase_pos": phrase_pos,
+                "heading_pos": heading_pos,
+                "source": "heading",
+                "context": page_text[max(0, heading_pos - 120): heading_pos + 250],
+            })
+
+        raw_candidates = collect_title_candidates(search_text, fallback_title)
+
+        for cand in raw_candidates:
+            absolute_pos = cand["pos"] + min_pos
+
+            score = score_title_candidate(
+                text=page_text,
+                candidate_pos=absolute_pos,
+                title=fallback_title,
+                phrase_pos=phrase_pos,
+                window=1500,
+            )
+
+            if cand["source"] == "strict_heading":
+                score += 20
+
+            if score <= 0:
+                continue
+
+            candidates.append({
+                "page_index": page_index,
+                "pos": absolute_pos,
+                "score": score,
+                "phrase_pos": phrase_pos,
+                "heading_pos": heading_pos,
+                "source": cand["source"],
+                "context": page_text[max(0, absolute_pos - 120): absolute_pos + 250],
+            })
+
+        # Also add phrase itself as fallback candidate.
+        if phrase_pos != -1:
+            candidates.append({
+                "page_index": page_index,
+                "pos": phrase_pos,
+                "score": 60,
+                "phrase_pos": phrase_pos,
+                "heading_pos": heading_pos,
+                "source": "start_phrase",
+                "context": page_text[max(0, phrase_pos - 120): phrase_pos + 250],
+            })
+
+    # Deduplicate same page/position.
+    deduped = {}
+    for cand in candidates:
+        key = (cand["page_index"], cand["pos"])
+        if key not in deduped or cand["score"] > deduped[key]["score"]:
+            deduped[key] = cand
+
+    return list(deduped.values())
+
+def choose_best_node_start_candidate(candidates, preferred_page_indexes=None):
+    """
+    Choose best candidate.
+
+    Preference:
+    1. candidates on preferred/correct page indexes
+    2. candidates where phrase_pos is found
+    3. higher score
+    4. earlier position on page
+    """
+    if not candidates:
+        return None
+
+    preferred_page_indexes = preferred_page_indexes or []
+
+    def candidate_sort_key(c):
+        on_preferred_page = c["page_index"] in preferred_page_indexes
+        has_phrase = c.get("phrase_pos", -1) != -1
+
+        return (
+            1 if on_preferred_page else 0,
+            1 if has_phrase else 0,
+            c.get("score", 0),
+            -c.get("pos", 0),
+        )
+
+    return max(candidates, key=candidate_sort_key)
+
 def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
     """
     Page-aware extraction for generated intro nodes.
@@ -2344,8 +2550,10 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
         if page_index not in candidate_end_page_indexes:
             candidate_end_page_indexes.append(page_index)
 
-    # Always include the intro start page in case child starts on same page.
-    add_candidate_page_index(found_start_page_index)
+    # Only include the intro start page if the next node is expected to start
+    # on the same logical page as the intro.
+    if next_node and next_node.get("start_index") == current_node.get("start_index"):
+        add_candidate_page_index(found_start_page_index)
 
     # Use the same logical-page variant mapping used elsewhere.
     if expected_child_page is not None:
@@ -2362,31 +2570,94 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
 
     candidate_end_page_indexes = sorted(candidate_end_page_indexes)
 
+    progress(
+        f"[intro pages] node={current_node.get('node_id')} "
+        f"next={next_node.get('node_id') if next_node else None} "
+        f"expected_child_page={expected_child_page} "
+        f"found_start_page_index={found_start_page_index} "
+        f"candidate_pages={candidate_end_page_indexes}"
+    )
+
     # ------------------------------------------------------------
     # 3. Find child start on candidate physical pages.
+    #    Search expected/correct child page first.
+    #    If not found there, collect candidates from nearby pages.
     # ------------------------------------------------------------
     found_end_page_index = None
     found_end_pos = -1
 
-    for page_index in candidate_end_page_indexes:
-        page_text = get_pdf_page_text_by_index(pdf_pages, page_index)
+    expected_page_indexes = []
 
-        if not page_text:
-            continue
+    if expected_child_page is not None:
+        for variant in get_pdf_page_text_variants(pdf_pages, expected_child_page):
+            page_index = variant.get("page_index")
 
-        min_pos = found_start_pos + 1 if page_index == found_start_page_index else 0
+            if page_index is None:
+                continue
 
-        # Intro end = actual first child start.
-        end_pos = find_node_start(
-            text=page_text,
+            if page_index < found_start_page_index:
+                continue
+
+            if page_index < 0 or page_index > max_page_index:
+                continue
+
+            if page_index not in expected_page_indexes:
+                expected_page_indexes.append(page_index)
+
+    # Prefer the physical page that corresponds directly to the logical next-node page.
+    # For list-backed pdf_pages, this is usually expected_child_page - 1.
+    if isinstance(pdf_pages, list) and expected_child_page is not None:
+        direct_index = expected_child_page - 1
+
+        if (
+            0 <= direct_index <= max_page_index
+            and direct_index >= found_start_page_index
+            and direct_index in expected_page_indexes
+        ):
+            expected_page_indexes.remove(direct_index)
+            expected_page_indexes.insert(0, direct_index)
+
+    # 3a. First search only the expected/correct page candidates.
+    expected_candidates = collect_node_start_candidates_on_pages(
+        page_indexes=expected_page_indexes,
+        pdf_pages=pdf_pages,
+        node=next_node,
+        found_start_page_index=found_start_page_index,
+        found_start_pos=found_start_pos,
+    )
+
+    best_expected = choose_best_node_start_candidate(
+        candidates=expected_candidates,
+        preferred_page_indexes=expected_page_indexes,
+    )
+
+    if best_expected is not None:
+        found_end_page_index = best_expected["page_index"]
+        found_end_pos = best_expected["pos"]
+    else:
+        # 3b. Fallback: collect candidates from all nearby candidate pages.
+        fallback_page_indexes = [
+            page_index
+            for page_index in candidate_end_page_indexes
+            if page_index not in expected_page_indexes
+        ]
+
+        fallback_candidates = collect_node_start_candidates_on_pages(
+            page_indexes=fallback_page_indexes,
+            pdf_pages=pdf_pages,
             node=next_node,
-            min_pos=min_pos,
+            found_start_page_index=found_start_page_index,
+            found_start_pos=found_start_pos,
         )
 
-        if end_pos != -1:
-            found_end_page_index = page_index
-            found_end_pos = end_pos
-            break
+        best_fallback = choose_best_node_start_candidate(
+            candidates=fallback_candidates,
+            preferred_page_indexes=[],
+        )
+
+        if best_fallback is not None:
+            found_end_page_index = best_fallback["page_index"]
+            found_end_pos = best_fallback["pos"]
 
     if found_end_page_index is None:
         return "", -1
@@ -2394,6 +2665,12 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
     if found_end_page_index == found_start_page_index and found_end_pos <= found_start_pos:
         return "", -1
 
+    progress(
+        f"[intro end] node={current_node.get('node_id')} "
+        f"end_page_index={found_end_page_index} "
+        f"end_pos={found_end_pos}"
+    )
+        
     # ------------------------------------------------------------
     # 4. Slice from intro start to child start.
     # ------------------------------------------------------------
@@ -2408,6 +2685,14 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
     return text, found_start_pos
 
 def extract_section_text(current_node, next_node, pdf_pages, min_start_pos=0):
+    progress(
+        f"[extract] node={current_node.get('node_id')} "
+        f"title={current_node.get('title')!r} "
+        f"intro={current_node.get('is_intro_node', False)} "
+        f"pages={current_node.get('start_index')}–{current_node.get('end_index')} "
+        f"next={next_node.get('node_id') if next_node else None}"
+    )
+    
     if current_node.get("is_intro_node"):
         return extract_intro_text_page_aware(
             current_node=current_node,
@@ -2966,7 +3251,6 @@ def add_intro_leaf_nodes(nodes):
                         "start_index": parent_start,
                         "end_index": first_child_start,
                         "is_intro_node": True,
-                        "is_intro_candidate": True,
                         "_parent_node": node,
                         "_first_child_node": first_real_child,
                     }
@@ -3169,6 +3453,8 @@ def is_appendix_like(node):
         "independent auditor",
         "table of contents",
         "contents",
+        "summary",
+        "summaries",
     ]
 
     combined = f"{title} {heading}"
@@ -3264,24 +3550,36 @@ def query_count_for_chunk(row):
     if len(text) < 300:
         return 0
 
-    if token_count < 80:
+    if token_count < 100:
         return 0
 
-    if token_count < 250:
+    if token_count < 200:
         return 1
 
-    if token_count < 700:
+    if token_count < 300:
         return 2
 
-    if token_count < 1500:
+    if token_count < 400:
         return 3
 
-    if token_count < 3000:
+    if token_count < 500:
+        return 4
+    
+    if token_count < 600:
         return 5
-
-    if token_count < 6000:
+    
+    if token_count < 700:
+        return 6
+    
+    if token_count < 800:
         return 7
-
+    
+    if token_count < 900:
+        return 8
+    
+    if token_count < 1000:
+        return 9
+    
     return 10
 
 def should_generate_queries(row):
@@ -3485,18 +3783,18 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
             chunk = chunks[0]
             token_count = count_tokens(chunk["text"], model=model)
 
-            # if node.get("is_intro_node"):
-                # summary = generate_node_summary(
-                #    title=chunk["title"],
-                #    text=chunk["text"],
-                #    model=model,
-                #)
-            # else:
-                # summary = node.get("summary") or generate_node_summary(
-                #    title=chunk["title"],
-                #    text=chunk["text"],
-                #    model=model,
-                #)
+            if node.get("is_intro_node"):
+                summary = generate_node_summary(
+                   title=chunk["title"],
+                   text=chunk["text"],
+                   model=model,
+                )
+            else:
+                summary = node.get("summary") or generate_node_summary(
+                   title=chunk["title"],
+                   text=chunk["text"],
+                   model=model,
+                )
 
             rows.append({
                 "chunk_id": node_id,
@@ -3506,7 +3804,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                 "title": chunk["title"],
                 "heading": node.get("heading", ""),
                 "start_phrase": node.get("start_phrase", ""),
-                # "summary": summary,
+                "summary": summary,
                 "start_index": node.get("start_index"),
                 "end_index": node.get("end_index"),
                 "token_count": token_count,
@@ -3517,7 +3815,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
 
             node["chunk_id"] = node_id
             node["text_token_count"] = token_count
-            # node["summary"] = summary
+            node["summary"] = summary
             node.pop("text", None)
 
         # ------------------------------------------------------------
@@ -3535,11 +3833,11 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
 
                 child_title = chunk["title"]
 
-                # child_summary = generate_node_summary(
-                #     title=child_title,
-                #     text=chunk["text"],
-                #     model=model,
-                # )
+                child_summary = generate_node_summary(
+                    title=child_title,
+                    text=chunk["text"],
+                    model=model,
+                )
 
                 child_node = {
                     "chunk_id": child_id,
@@ -3549,7 +3847,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                     "title": child_title,
                     "heading": node.get("heading", ""),
                     "start_phrase": node.get("start_phrase", ""),
-                    # "summary": summary,
+                    "summary": summary,
                     "start_index": node.get("start_index"),
                     "end_index": node.get("end_index"),
                     "token_count": child_token_count,
@@ -3569,7 +3867,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                     "title": child_title,
                     "heading": node.get("heading", ""),
                     "start_phrase": node.get("start_phrase", ""),
-                    # "summary": summary,
+                    "summary": summary,
                     "start_index": node.get("start_index"),
                     "end_index": node.get("end_index"),
                     "token_count": child_token_count,
@@ -3579,11 +3877,11 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                     "skip_intro_node": False,
                 })
 
-            # node["summary"] = generate_parent_summary_from_children(
-#                 title=node.get("title"),
-#                 child_nodes=node["nodes"],
-#                 model=model,
-            # )
+            node["summary"] = generate_parent_summary_from_children(
+                title=node.get("title"),
+                child_nodes=node["nodes"],
+                model=model,
+            )
 
     remove_skipped_intro_nodes(structure)
 

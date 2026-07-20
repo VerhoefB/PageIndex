@@ -73,15 +73,19 @@ class BM25Retriever:
         for rank, idx in enumerate(ranked_indices, start=1):
             chunk = self.chunks[idx]
 
+            doc_name = chunk.get("doc_name") or chunk.get("bank_name") or ""
+
             results.append({
                 "rank": rank,
                 "chunk_id": str(self._get_chunk_id(chunk)),
                 "source_chunk_id": str(chunk.get("chunk_id")),
-                "bank_name": chunk.get("bank_name") or chunk.get("doc_name"),
+                "doc_name": doc_name,
+                "bank_name": chunk.get("bank_name", ""),
                 "title": chunk.get("title", ""),
                 "heading": chunk.get("heading", ""),
                 "score": float(scores[idx]),
                 "text": self._get_text(chunk),
+                "retriever": "bm25",
             })
 
         return results
