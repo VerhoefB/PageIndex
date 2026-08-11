@@ -15,4 +15,4 @@ sentence-transformers
 faiss-cpu
 pypdf
 matplotlib
-pycroptodome
+pycryptodome

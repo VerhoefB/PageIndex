@@ -1,0 +1,3 @@
+run_timestamp,dataset,method,model,chunks_path,cache_path,num_chunks,embedding_dimension,batch_size,cache_loaded,model_load_seconds,embedding_seconds,cache_load_seconds,index_build_seconds,total_setup_seconds,status,error
+2026-08-11 08:52:50,ESRS,dense,microsoft/harrier-oss-v1-0.6b,./final results/ESRS chunks/ESRS_combined_chunks_with_query_plan.jsonl,./final results/embeddings/ESRS_harrier_oss_v1_0_6b.npy,2968,1024,8,False,5.232,697.776,0,697.776,703.008,success,
+2026-08-11 09:43:57,ESRS,dense,Linq-AI-Research/Linq-Embed-Mistral,./final results/ESRS chunks/ESRS_combined_chunks_with_query_plan.jsonl,./final results/embeddings/ESRS_linq_embed_mistral.npy,2968,4096,8,False,79.01,2310.516,0,2310.516,2389.525,success,
