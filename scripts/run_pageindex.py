@@ -124,7 +124,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', type=str, choices=['ESRS', 'FinanceBench'], required=True,
                         help='Dataset name: ESRS or FinanceBench')
 
-    parser.add_argument('--results-root', type=str, default='results',
+    parser.add_argument('--results-root', type=str, default='final results',
                         help='Root folder for output structures and tracking CSV')
 
     parser.add_argument('--data-root', type=str, default='data',
@@ -275,8 +275,8 @@ if __name__ == "__main__":
         
         # Save results
         md_name = os.path.splitext(os.path.basename(args.md_path))[0]    
-        # output_dir = './results/FinanceBench structure'
-        output_dir = './results/ESRS structure'
+        # output_dir = './final results/FinanceBench structure'
+        output_dir = './final results/ESRS structure'
         output_file = f'{output_dir}/{md_name}_structure.json'
         os.makedirs(output_dir, exist_ok=True)
         

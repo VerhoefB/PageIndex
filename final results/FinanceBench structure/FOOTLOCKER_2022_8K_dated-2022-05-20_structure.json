@@ -1,0 +1,68 @@
+{
+  "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+  "doc_description": "Foot Locker, Inc.’s May 20, 2022 Form 8-K reporting the May 18 annual meeting results—election of 10 directors, approval of executive compensation with an annual say-on-pay frequency, ratification of KPMG as auditor—and the Board’s designation of Darlene Nicosia as audit committee financial expert following Matthew McKenna’s retirement, with the Inline XBRL cover page exhibit.",
+  "structure": [
+    {
+      "structure": "0",
+      "title": "Preface",
+      "heading": null,
+      "start_phrase": null,
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 1,
+      "summary": "- Current Report on Form 8-K filed by Foot Locker, Inc. pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934.\n- Report date: May 20, 2022; earliest event reported: May 18, 2022.\n- Registrant details: Foot Locker, Inc., incorporated in New York; Commission File No. 1-10299; IRS EIN 13-3513936.\n- Principal executive offices: 330 West 34th Street, New York, NY 10001; telephone (212) 720-3700.\n- No boxes checked for written communications under Rule 425, soliciting material under Rule 14a-12, or pre-commencement communications under Rules 14d-2(b) or 13e-4(c).\n- Securities registered: Common Stock, par value $0.01 per share; trading symbol FL; listed on the New York Stock Exchange.\n- Emerging growth company status: No (box not checked)."
+    },
+    {
+      "structure": "1",
+      "title": "Submission of Matters to a Vote of Security Holders.",
+      "heading": "Item 5.07. Submission of Matters to a Vote of Security Holders.",
+      "start_phrase": "At Foot Locker, Inc.’s (the “Company”) annual meeting of shareholders held on May 18, 2022 (the “Annual Meeting”), shareholders voted on the four proposals set forth below.",
+      "node_id": "0001",
+      "start_index": 2,
+      "end_index": 3,
+      "summary": "- Reports results of Foot Locker, Inc.’s May 18, 2022 annual meeting of shareholders, with a quorum present (77,551,206 of 96,089,997 shares).\n- Proposal 1: Election of ten directors for one-year terms; all nominees elected: Virginia C. Drosos, Alan D. Feldman, Richard A. Johnson, Guillermo G. Marmol, Darlene Nicosia, Steven Oakland, Ulice Payne, Jr., Kimberly Underhill, Tristan Walker, and Dona D. Young.\n- Proposal 2: Advisory approval of named executive officers’ compensation (say-on-pay) passed (57,172,731 for; 13,324,080 against; 170,172 abstentions; 6,884,223 broker non-votes).\n- Proposal 3: Advisory vote on frequency of say-on-pay received majority support for an annual vote (66,076,265 for 1 year; 43,060 for 2 years; 4,352,683 for 3 years; 194,975 abstentions; 6,884,223 broker non-votes). Company will hold annual say-on-pay votes until the next required frequency vote in 2028.\n- Proposal 4: Ratification of KPMG LLP as independent registered public accounting firm for fiscal 2022 approved (75,612,318 for; 1,854,695 against; 84,193 abstentions).\n- Other event: Following Matthew McKenna’s retirement, the Board designated Darlene Nicosia as the audit committee financial expert, citing her leadership, financial oversight, and audit committee experience; Board notes other directors may also qualify.\n- Exhibits: Exhibit 104—Cover Page Interactive Data File (Inline XBRL)."
+    },
+    {
+      "structure": "2",
+      "title": "Other Events.",
+      "heading": "Item 8.01. Other Events.",
+      "start_phrase": "On May 18, 2022, in light of Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the “audit committee financial expert.”",
+      "node_id": "0002",
+      "start_index": 3,
+      "end_index": 3,
+      "summary": "The filing reports that, following Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the company’s “audit committee financial expert” effective May 18, 2022. The Board determined she meets the Exchange Act criteria based on her experience leading an operating unit of a large multinational corporation, supervising finance and accounting functions, evaluating financial statements and internal controls, and serving on the company’s Audit Committee. The Board also notes other directors may qualify for this designation. Additionally, the filing includes Exhibit 104, the Cover Page Interactive Data File embedded within the Inline XBRL document."
+    },
+    {
+      "structure": "3",
+      "title": "Financial Statements and Exhibits.",
+      "heading": "Item 9.01. Financial Statements and Exhibits.",
+      "start_phrase": "Cover Page Interactive Data File (embedded within the Inline XBRL document).",
+      "node_id": "0003",
+      "start_index": 3,
+      "end_index": 3,
+      "summary": "- The Board designated Ms. Nicosia as the company’s “audit committee financial expert” on May 18, 2022, following Matthew McKenna’s retirement.\n- The designation was made under Exchange Act rules based on her experience leading an operating unit of a large multinational, supervising finance and accounting, analyzing financial statements, and overseeing internal controls; she is also familiar with audit committee functions through her service on the Company’s Audit Committee.\n- The Board notes that other directors may also qualify for this designation.\n- Exhibit 104: Cover Page Interactive Data File embedded within the Inline XBRL document.",
+      "nodes": [
+        {
+          "structure": "3.d",
+          "title": "Exhibits.",
+          "heading": "(d) E x h i b i t s .",
+          "start_phrase": "Cover Page Interactive Data File (embedded within the Inline XBRL document).",
+          "node_id": "0004",
+          "start_index": 3,
+          "end_index": 3,
+          "summary": "- Reports under Item 8.01 that, effective May 18, 2022 and following Matthew McKenna’s retirement, the Board designated Ms. Nicosia as the company’s “audit committee financial expert” under Exchange Act rules, citing her leadership at a large multinational, oversight of finance and accounting, experience with financial statements and internal controls, and prior Audit Committee service; the Board also notes other directors could qualify.\n- Under Item 9.01, lists Exhibit 104: the Cover Page Interactive Data File embedded within the Inline XBRL document."
+        }
+      ]
+    },
+    {
+      "structure": "4",
+      "title": "SIGNATURE",
+      "heading": "SIGNATURE",
+      "start_phrase": "Pursuant to the requirements of the Exchange Act, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.",
+      "node_id": "0005",
+      "start_index": 4,
+      "end_index": 4,
+      "summary": "Signature section of an SEC Exchange Act filing for Foot Locker, Inc., stating the registrant has caused the report to be signed. Dated May 20, 2022, it is executed by Sheilagh M. Clarke, Executive Vice President, General Counsel and Secretary."
+    }
+  ]
+}

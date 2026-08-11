@@ -397,6 +397,90 @@ def extract_matching_page_pairs(toc_page, toc_physical_index, start_page_index):
                     })
     return pairs
 
+def normalize_for_dynamic_offset_match(text: str) -> str:
+    text = text or ""
+    text = text.lower()
+    text = text.replace("ﬁ", "fi").replace("ﬂ", "fl")
+    text = re.sub(r"\s+", " ", text)
+    return re.sub(r"[^a-z0-9]+", "", text)
+
+
+def get_page_text_by_physical_index(page_list, physical_index: int, start_index: int = 1) -> str:
+    """
+    physical_index is 1-based, consistent with the rest of this file.
+    """
+    if physical_index is None:
+        return ""
+
+    page_list_index = physical_index - start_index
+
+    if page_list_index < 0 or page_list_index >= len(page_list):
+        return ""
+
+    page = page_list[page_list_index]
+
+    if isinstance(page, (list, tuple)):
+        return str(page[0] or "") if page else ""
+
+    if isinstance(page, dict):
+        return str(page.get("text") or page.get("page_text") or "")
+
+    return str(page or "")
+
+
+def is_nearly_blank_page(page_text: str, min_non_digit_chars: int = 30) -> bool:
+    text = page_text or ""
+    non_digit_text = re.sub(r"[\d\s\.\-–—]", "", text)
+    return len(non_digit_text.strip()) < min_non_digit_chars
+
+
+def page_matches_toc_item_for_dynamic_offset(
+    page_text: str,
+    item: dict,
+    max_chars: int = 4000,
+) -> bool:
+    if is_nearly_blank_page(page_text):
+        return False
+
+    page_key = normalize_for_dynamic_offset_match(page_text[:max_chars])
+
+    candidates = [
+        item.get("heading"),
+        item.get("title"),
+        item.get("start_phrase"),
+    ]
+
+    for candidate in candidates:
+        candidate_key = normalize_for_dynamic_offset_match(candidate)
+
+        if not candidate_key:
+            continue
+
+        # Avoid weak accidental matches like "PART II" or "Other Information".
+        if len(candidate_key) < 8:
+            continue
+
+        if candidate_key in page_key:
+            return True
+
+    return False
+
+
+def is_strong_dynamic_offset_anchor(item: dict) -> bool:
+    candidates = [
+        item.get("heading"),
+        item.get("title"),
+        item.get("start_phrase"),
+    ]
+
+    for candidate in candidates:
+        key = normalize_for_dynamic_offset_match(candidate)
+
+        if len(key) >= 20:
+            return True
+
+    return False
+
 
 def calculate_page_offset(pairs):
     differences = []
@@ -432,7 +516,108 @@ def add_page_offset_to_toc_json(data, offset):
     
     return data
 
+def add_dynamic_page_offset_to_toc_json(
+    data,
+    page_list,
+    offset,
+    start_index=1,
+    search_radius=6,
+    max_chars=4000,
+    logger=None,
+):
+    """
+    Dynamic replacement for add_page_offset_to_toc_json.
 
+    Same contract:
+    - For items with integer page numbers, assign physical_index.
+    - Delete page after assigning physical_index.
+    - Leave items with page=None unchanged, just like the original function.
+
+    Difference:
+    - First tries page + current_offset.
+    - Only searches nearby pages if expected page does not match.
+    - Updates current_offset only when a nearby strong match is found.
+    """
+    if offset is None:
+        print("WARNING: offset is None, using offset = 0")
+        offset = 0
+
+    current_offset = int(offset)
+
+    for i in range(len(data)):
+        item = data[i]
+
+        if item.get("page") is None or not isinstance(item.get("page"), int):
+            continue
+
+        page_number = item["page"]
+        expected_physical_index = page_number + current_offset
+
+        chosen_physical_index = expected_physical_index
+        found_by = "expected_page"
+
+        expected_page_text = get_page_text_by_physical_index(
+            page_list=page_list,
+            physical_index=expected_physical_index,
+            start_index=start_index,
+        )
+
+        expected_page_matches = page_matches_toc_item_for_dynamic_offset(
+            page_text=expected_page_text,
+            item=item,
+            max_chars=max_chars,
+        )
+
+        if not expected_page_matches:
+            found_by = "not_found_keep_expected"
+
+            nearby_physical_indexes = []
+
+            # Prefer later pages first because inserted blank pages increase offset.
+            for delta in range(1, search_radius + 1):
+                nearby_physical_indexes.append(expected_physical_index + delta)
+
+            for delta in range(1, search_radius + 1):
+                nearby_physical_indexes.append(expected_physical_index - delta)
+
+            for candidate_physical_index in nearby_physical_indexes:
+                page_text = get_page_text_by_physical_index(
+                    page_list=page_list,
+                    physical_index=candidate_physical_index,
+                    start_index=start_index,
+                )
+
+                if page_matches_toc_item_for_dynamic_offset(
+                    page_text=page_text,
+                    item=item,
+                    max_chars=max_chars,
+                ):
+                    chosen_physical_index = candidate_physical_index
+                    found_by = "nearby_search"
+                    break
+
+        item["physical_index"] = chosen_physical_index
+
+        # Keep the original contract of add_page_offset_to_toc_json.
+        del item["page"]
+
+        # Only update offset when we actually found a nearby correction
+        # and the item is strong enough to be trusted as an anchor.
+        if found_by == "nearby_search" and is_strong_dynamic_offset_anchor(item):
+            current_offset = chosen_physical_index - page_number
+
+        if logger:
+            logger.info({
+                "message": "dynamic_offset",
+                "title": item.get("title"),
+                "page": page_number,
+                "expected_physical_index": expected_physical_index,
+                "chosen_physical_index": chosen_physical_index,
+                "found_by": found_by,
+                "offset_now": current_offset,
+            })
+
+    return data
 
 def page_list_to_group_text(page_contents, token_lengths, max_tokens=20000, overlap_page=1):    
     num_tokens = sum(token_lengths)
@@ -600,6 +785,35 @@ def generate_toc_init(part, model=None):
     else:
         raise Exception(f'finish reason: {finish_reason}')
 
+    
+def normalize_toc_output(value):
+    """
+    PageIndex expects TOC outputs to be lists.
+    Sometimes the LLM/parser returns a dict instead, such as:
+      {"toc": [...]}
+      {"items": [...]}
+      {"nodes": [...]}
+      {"structure": [...]}
+    This converts those cases back to a list.
+    """
+    if value is None:
+        return []
+
+    if isinstance(value, list):
+        return value
+
+    if isinstance(value, dict):
+        for key in ["toc", "items", "nodes", "structure", "sections", "result"]:
+            if key in value and isinstance(value[key], list):
+                return value[key]
+
+        # If the dict itself looks like a single TOC node, wrap it in a list.
+        if any(k in value for k in ["title", "heading", "start_index", "end_index", "structure"]):
+            return [value]
+
+    return []
+
+
 def process_no_toc(page_list, start_index=1, model=None, logger=None):
     page_contents=[]
     token_lengths=[]
@@ -611,8 +825,11 @@ def process_no_toc(page_list, start_index=1, model=None, logger=None):
     logger.info(f'len(group_texts): {len(group_texts)}')
 
     toc_with_page_number= generate_toc_init(group_texts[0], model)
+    toc_with_page_number = normalize_toc_output(toc_with_page_number)
     for group_text in group_texts[1:]:
         toc_with_page_number_additional = generate_toc_continue(toc_with_page_number, group_text, model)    
+        toc_with_page_number_additional = normalize_toc_output(toc_with_page_number_additional)
+
         toc_with_page_number.extend(toc_with_page_number_additional)
     logger.info(f'generate_toc: {toc_with_page_number}')
 
@@ -669,7 +886,15 @@ def process_toc_with_page_numbers(toc_content, toc_page_list, page_list, toc_che
     offset = calculate_page_offset(matching_pairs)
     logger.info(f'offset: {offset}')
 
-    toc_with_page_number = add_page_offset_to_toc_json(toc_with_page_number, offset)
+    toc_with_page_number = add_dynamic_page_offset_to_toc_json(
+        toc_with_page_number,
+        page_list=page_list,
+        offset=offset,
+        start_index=1,
+        search_radius=6,
+        max_chars=4000,
+        logger=logger,
+    )
     logger.info(f'toc_with_page_number: {toc_with_page_number}')
 
     toc_with_page_number = process_none_page_numbers(toc_with_page_number, page_list, model=model)
@@ -1196,8 +1421,8 @@ async def tree_parser(page_list, opt, doc=None, logger=None):
     return toc_tree
 
 
-def page_index_main(doc, opt=None):
-    logger = JsonLogger(doc)
+def page_index_main(doc, opt=None, log_dir=None):
+    logger = JsonLogger(doc, log_dir=log_dir)
     
     is_valid_pdf = (
         (isinstance(doc, str) and os.path.isfile(doc) and doc.lower().endswith(".pdf")) or 

@@ -1,0 +1,40 @@
+{
+  "doc_name": "UniCredit",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0111",
+      "start_index": 170,
+      "end_index": 181,
+      "reason": "Correct node 0111 index from 170-186 to 170-181."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0112",
+      "start_index": 181,
+      "end_index": 182,
+      "reason": "Correct node 0112 index from 186-183 to 181-182."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0113",
+      "start_index": 182,
+      "end_index": 182,
+      "reason": "Correct node 0113 index from 183-183 to 182-182."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0114",
+      "start_index": 182,
+      "end_index": 182,
+      "reason": "Correct node 0114 index from 183-183 to 182-182."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0115",
+      "start_index": 182,
+      "end_index": 186,
+      "reason": "Correct node 0115 index from 183-186 to 182-186."
+    }
+  ]
+}

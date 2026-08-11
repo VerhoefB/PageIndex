@@ -1,0 +1,11 @@
+{
+  "total_chunks": 2968,
+  "eligible_chunks": 1924,
+  "target_queries": 1000,
+  "planned_queries": 1000,
+  "base_queries_per_eligible_chunk": 0,
+  "extra_query_chunks": 1000,
+  "seed": 42,
+  "min_tokens": 100,
+  "min_chars": 300
+}

@@ -1,7 +1,9 @@
 import argparse
+import csv
 import json
 import os
 import time
+from datetime import datetime
 
 from hybrid_pageindex.hybrid_pageindex_retriever import HybridPageIndexRetriever
 
@@ -30,6 +32,32 @@ def write_jsonl(rows, path):
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def append_csv_row(row, path):
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+
+    file_exists = os.path.exists(path)
+
+    with open(path, "a", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(row.keys()))
+
+        if not file_exists:
+            writer.writeheader()
+
+        writer.writerow(row)
+
+
+def infer_dataset_from_path(path):
+    normalized = path.replace("\\", "/").lower()
+
+    if "esrs" in normalized:
+        return "ESRS"
+
+    if "financebench" in normalized:
+        return "FinanceBench"
+
+    return ""
+
+
 def get_tree_from_file(tree_json):
     if isinstance(tree_json, dict) and "structure" in tree_json:
         return tree_json["structure"]
@@ -53,6 +81,7 @@ def evaluate_hybrid_pageindex(
     queries_path,
     model_name,
     output_path,
+    setup_csv_path=None,
     top_k=5,
     top_m=2,
     batch_size=8,
@@ -69,15 +98,131 @@ def evaluate_hybrid_pageindex(
     if max_queries is not None:
         queries = queries[:max_queries]
 
-    retriever = HybridPageIndexRetriever(
-        tree=tree,
-        chunks=chunks,
-        model_name=model_name,
-        batch_size=batch_size,
-        node_cache_path=node_cache_path,
-        top_node_cache_path=top_node_cache_path,
-    )
+    # ------------------------------------------------------------
+    # 1. Setup phase: load model, create/load node embeddings
+    # ------------------------------------------------------------
+    setup_start = time.time()
+    status = "success"
+    error = ""
 
+    node_cache_loaded = bool(node_cache_path and os.path.exists(node_cache_path))
+    top_node_cache_loaded = bool(top_node_cache_path and os.path.exists(top_node_cache_path))
+
+    try:
+        retriever_start = time.time()
+
+        retriever = HybridPageIndexRetriever(
+            tree=tree,
+            chunks=chunks,
+            model_name=model_name,
+            batch_size=batch_size,
+            node_cache_path=node_cache_path,
+            top_node_cache_path=top_node_cache_path,
+        )
+
+        total_setup_seconds = time.time() - setup_start
+        model_and_index_seconds = time.time() - retriever_start
+
+    except Exception as e:
+        status = "failed"
+        error = str(e)
+        total_setup_seconds = time.time() - setup_start
+
+        if setup_csv_path is not None:
+            append_csv_row({
+                "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "dataset": infer_dataset_from_path(chunks_path),
+                "method": "hybrid_pageindex",
+                "model": model_name,
+                "tree_path": tree_path,
+                "chunks_path": chunks_path,
+                "node_cache_path": node_cache_path or "",
+                "top_node_cache_path": top_node_cache_path or "",
+                "num_chunks": len(chunks),
+                "num_nodes": "",
+                "num_top_nodes": "",
+                "embedding_dimension": "",
+                "batch_size": batch_size,
+                "top_k": top_k,
+                "top_m": top_m,
+                "node_cache_loaded": node_cache_loaded,
+                "top_node_cache_loaded": top_node_cache_loaded,
+                "node_embedding_seconds": "",
+                "top_node_embedding_seconds": "",
+                "cache_load_seconds": "",
+                "model_and_index_seconds": "",
+                "total_setup_seconds": round(total_setup_seconds, 3),
+                "status": status,
+                "error": error,
+            }, setup_csv_path)
+
+        raise
+
+    # ------------------------------------------------------------
+    # 2. Save one setup row: hybrid embedding/index tracking
+    # ------------------------------------------------------------
+    num_nodes = ""
+    num_top_nodes = ""
+    embedding_dimension = ""
+
+    if hasattr(retriever, "node_embeddings"):
+        try:
+            num_nodes = len(retriever.node_embeddings)
+        except Exception:
+            num_nodes = ""
+
+        try:
+            first_embedding = next(iter(retriever.node_embeddings.values()))
+            embedding_dimension = len(first_embedding)
+        except Exception:
+            embedding_dimension = ""
+
+    if hasattr(retriever, "top_node_embeddings"):
+        try:
+            num_top_nodes = len(retriever.top_node_embeddings)
+        except Exception:
+            num_top_nodes = ""
+
+    if node_cache_loaded and top_node_cache_loaded:
+        node_embedding_seconds = 0
+        top_node_embedding_seconds = 0
+        cache_load_seconds = model_and_index_seconds
+    else:
+        node_embedding_seconds = model_and_index_seconds
+        top_node_embedding_seconds = ""
+        cache_load_seconds = 0
+
+    if setup_csv_path is not None:
+        append_csv_row({
+            "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "dataset": infer_dataset_from_path(chunks_path),
+            "method": "hybrid_pageindex",
+            "model": model_name,
+            "tree_path": tree_path,
+            "chunks_path": chunks_path,
+            "node_cache_path": node_cache_path or "",
+            "top_node_cache_path": top_node_cache_path or "",
+            "num_chunks": len(chunks),
+            "num_nodes": num_nodes,
+            "num_top_nodes": num_top_nodes,
+            "embedding_dimension": embedding_dimension,
+            "batch_size": batch_size,
+            "top_k": top_k,
+            "top_m": top_m,
+            "node_cache_loaded": node_cache_loaded,
+            "top_node_cache_loaded": top_node_cache_loaded,
+            "node_embedding_seconds": round(node_embedding_seconds, 3) if node_embedding_seconds != "" else "",
+            "top_node_embedding_seconds": round(top_node_embedding_seconds, 3) if top_node_embedding_seconds != "" else "",
+            "cache_load_seconds": round(cache_load_seconds, 3),
+            "model_and_index_seconds": round(model_and_index_seconds, 3),
+            "total_setup_seconds": round(total_setup_seconds, 3),
+            "status": status,
+            "error": error,
+        }, setup_csv_path)
+
+    # ------------------------------------------------------------
+    # 3. Query-level retrieval evaluation
+    # ------------------------------------------------------------
     result_rows = []
 
     for query_row in queries:
@@ -168,6 +313,9 @@ def evaluate_hybrid_pageindex(
     print(f"top_m: {top_m}")
     print(f"Output: {output_path}")
 
+    if setup_csv_path is not None:
+        print(f"Setup CSV: {setup_csv_path}")
+
     if result_rows:
         accuracy_at_1 = sum(row["correct_at_1"] for row in result_rows) / len(result_rows)
         mrr_at_5 = sum(row["reciprocal_rank_at_5"] for row in result_rows) / len(result_rows)
@@ -192,6 +340,7 @@ if __name__ == "__main__":
     parser.add_argument("--max-queries", type=int, default=None)
     parser.add_argument("--node-cache-path", default=None)
     parser.add_argument("--top-node-cache-path", default=None)
+    parser.add_argument("--setup-csv", default=None)
 
     args = parser.parse_args()
 
@@ -201,6 +350,7 @@ if __name__ == "__main__":
         queries_path=args.queries,
         model_name=args.model_name,
         output_path=args.output,
+        setup_csv_path=args.setup_csv,
         top_k=args.top_k,
         top_m=args.top_m,
         batch_size=args.batch_size,

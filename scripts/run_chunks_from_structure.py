@@ -61,14 +61,15 @@ def add_dataset_metadata_to_chunks(leaf_text_rows, dataset, doc_name):
         if dataset == "ESRS":
             row["bank_name"] = doc_name
 
-            # Do not overwrite these.
-            # The chunking code already decides per chunk.
-            row.setdefault("generate_queries", False)
-            row.setdefault("skip_query_reason", "")
-            row.setdefault("num_queries", 0)
+            # Query planning is done later, after combining all documents.
+            row.pop("generate_queries", None)
+            row.pop("skip_query_reason", None)
+            row.pop("num_queries", None)
 
         elif dataset == "FinanceBench":
             row.pop("bank_name", None)
+
+            # FinanceBench uses existing benchmark questions, not generated questions.
             row["generate_queries"] = False
             row["skip_query_reason"] = "FinanceBench uses existing benchmark questions."
             row["num_queries"] = 0
@@ -91,8 +92,6 @@ if __name__ == "__main__":
 
     parser.add_argument("--results-root", type=str, default="results")
     parser.add_argument("--tracking-csv", type=str, default=None)
-
-    parser.add_argument("--num-queries", type=int, default=10)
 
     args = parser.parse_args()
 

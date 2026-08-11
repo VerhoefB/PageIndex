@@ -287,7 +287,7 @@ def postprocess_results(raw_results_file, final_output, metadata_by_custom_id):
             for i, qa in enumerate(questions, start=1):
                 record = {
                     "financebench_id": None,
-                    "query_id": f"{meta['bank_name']}_{meta['chunk_id']}_q{i}",
+                    "query_id": f"{meta['chunk_id']}_q{i}",
                     "company": meta.get("company"),
                     "doc_name": meta.get("doc_name"),
                     "bank_name": meta["bank_name"],

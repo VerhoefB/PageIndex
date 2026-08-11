@@ -3900,11 +3900,6 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
         verbose=True,
     )
 
-    rows = add_query_flags_to_rows(
-        rows,
-        structure,
-    )
-
     return rows, structure
 
 def get_canonical_retrieval_rows(rows):

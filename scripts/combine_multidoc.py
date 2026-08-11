@@ -35,6 +35,7 @@ def save_jsonl(path, rows):
 
 def clean_doc_id(name):
     name = os.path.splitext(os.path.basename(name))[0]
+    name = re.sub(r"_structure_new$", "", name)
     name = re.sub(r"_structure$", "", name)
     name = re.sub(r"_chunks$", "", name)
     name = re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_")

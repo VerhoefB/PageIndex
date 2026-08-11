@@ -1,0 +1,428 @@
+{
+  "doc_name": "DNB",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0012",
+      "start_index": 5,
+      "end_index": 5,
+      "reason": "Correct node 0012 index from 5-4 to 5-5."
+    },
+    {
+      "action": "move",
+      "node_id": "0031",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0178",
+      "reason": "Move node 0031 to root level after node 0178 and its subtree."
+    },
+    {
+      "action": "move",
+      "node_id": "0032",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0031",
+      "reason": "Move node 0032 to root level after node 0031."
+    },
+    {
+      "action": "move",
+      "node_id": "0033",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0032",
+      "reason": "Move node 0033 to root level after node 0032."
+    },
+    {
+      "action": "move",
+      "node_id": "0034",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0033",
+      "reason": "Move node 0034 to root level after node 0033."
+    },
+    {
+      "action": "move",
+      "node_id": "0035",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0034",
+      "reason": "Move node 0035 to root level after node 0034."
+    },
+    {
+      "action": "move",
+      "node_id": "0036",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0035",
+      "reason": "Move node 0036 to root level after node 0035."
+    },
+    {
+      "action": "move",
+      "node_id": "0037",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0036",
+      "reason": "Move node 0037 to root level after node 0036."
+    },
+    {
+      "action": "move",
+      "node_id": "0038",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0037",
+      "reason": "Move node 0038 to root level after node 0037."
+    },
+    {
+      "action": "move",
+      "node_id": "0039",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0038",
+      "reason": "Move node 0039 to root level after node 0038."
+    },
+    {
+      "action": "move",
+      "node_id": "0040",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0039",
+      "reason": "Move node 0040 to root level after node 0039."
+    },
+    {
+      "action": "move",
+      "node_id": "0041",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0040",
+      "reason": "Move node 0041 to root level after node 0040."
+    },
+    {
+      "action": "move",
+      "node_id": "0042",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0041",
+      "reason": "Move node 0042 to root level after node 0041."
+    },
+    {
+      "action": "move",
+      "node_id": "0043",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0042",
+      "reason": "Move node 0043 to root level after node 0042."
+    },
+    {
+      "action": "move",
+      "node_id": "0044",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0043",
+      "reason": "Move node 0044 to root level after node 0043."
+    },
+    {
+      "action": "move",
+      "node_id": "0045",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0044",
+      "reason": "Move node 0045 to root level after node 0044."
+    },
+    {
+      "action": "move",
+      "node_id": "0046",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0045",
+      "reason": "Move node 0046 to root level after node 0045."
+    },
+    {
+      "action": "move",
+      "node_id": "0047",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0046",
+      "reason": "Move node 0047 to root level after node 0046."
+    },
+    {
+      "action": "move",
+      "node_id": "0048",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0047",
+      "reason": "Move node 0048 to root level after node 0047."
+    },
+    {
+      "action": "move",
+      "node_id": "0049",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0048",
+      "reason": "Move node 0049 to root level after node 0048."
+    },
+    {
+      "action": "move",
+      "node_id": "0050",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0049",
+      "reason": "Move node 0050 to root level after node 0049."
+    },
+    {
+      "action": "move",
+      "node_id": "0051",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0050",
+      "reason": "Move node 0051 to root level after node 0050."
+    },
+    {
+      "action": "move",
+      "node_id": "0052",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0051",
+      "reason": "Move node 0052 to root level after node 0051."
+    },
+    {
+      "action": "move",
+      "node_id": "0053",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0052",
+      "reason": "Move node 0053 to root level after node 0052."
+    },
+    {
+      "action": "move",
+      "node_id": "0054",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0053",
+      "reason": "Move node 0054 to root level after node 0053."
+    },
+    {
+      "action": "move",
+      "node_id": "0055",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0054",
+      "reason": "Move node 0055 to root level after node 0054."
+    },
+    {
+      "action": "move",
+      "node_id": "0056",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0055",
+      "reason": "Move node 0056 to root level after node 0055."
+    },
+    {
+      "action": "move",
+      "node_id": "0057",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0056",
+      "reason": "Move node 0057 to root level after node 0056."
+    },
+    {
+      "action": "move",
+      "node_id": "0058",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0057",
+      "reason": "Move node 0058 to root level after node 0057."
+    },
+    {
+      "action": "move",
+      "node_id": "0059",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0058",
+      "reason": "Move node 0059 to root level after node 0058."
+    },
+    {
+      "action": "move",
+      "node_id": "0060",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0059",
+      "reason": "Move node 0060 to root level after node 0059."
+    },
+    {
+      "action": "move",
+      "node_id": "0061",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0060",
+      "reason": "Move node 0061 to root level after node 0060."
+    },
+    {
+      "action": "move",
+      "node_id": "0062",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0061",
+      "reason": "Move node 0062 to root level after node 0061."
+    },
+    {
+      "action": "move",
+      "node_id": "0063",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0062",
+      "reason": "Move node 0063 to root level after node 0062."
+    },
+    {
+      "action": "move",
+      "node_id": "0064",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0063",
+      "reason": "Move node 0064 to root level after node 0063."
+    },
+    {
+      "action": "move",
+      "node_id": "0065",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0064",
+      "reason": "Move node 0065 to root level after node 0064."
+    },
+    {
+      "action": "move",
+      "node_id": "0066",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0065",
+      "reason": "Move node 0066 to root level after node 0065."
+    },
+    {
+      "action": "move",
+      "node_id": "0067",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0066",
+      "reason": "Move node 0067 to root level after node 0066."
+    },
+    {
+      "action": "move",
+      "node_id": "0068",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0067",
+      "reason": "Move node 0068 to root level after node 0067."
+    },
+    {
+      "action": "move",
+      "node_id": "0069",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0068",
+      "reason": "Move node 0069 to root level after node 0068."
+    },
+    {
+      "action": "move",
+      "node_id": "0070",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0069",
+      "reason": "Move node 0070 to root level after node 0069."
+    },
+    {
+      "action": "move",
+      "node_id": "0071",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0070",
+      "reason": "Move node 0071 to root level after node 0070."
+    },
+    {
+      "action": "move",
+      "node_id": "0072",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0071",
+      "reason": "Move node 0072 to root level after node 0071."
+    },
+    {
+      "action": "move",
+      "node_id": "0073",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0072",
+      "reason": "Move node 0073 to root level after node 0072."
+    },
+    {
+      "action": "move",
+      "node_id": "0074",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0073",
+      "reason": "Move node 0074 to root level after node 0073."
+    },
+    {
+      "action": "move",
+      "node_id": "0075",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0074",
+      "reason": "Move node 0075 to root level after node 0074."
+    },
+    {
+      "action": "move",
+      "node_id": "0076",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0075",
+      "reason": "Move node 0076 to root level after node 0075."
+    },
+    {
+      "action": "move",
+      "node_id": "0077",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0076",
+      "reason": "Move node 0077 to root level after node 0076."
+    },
+    {
+      "action": "move",
+      "node_id": "0078",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0077",
+      "reason": "Move node 0078 to root level after node 0077."
+    },
+    {
+      "action": "move",
+      "node_id": "0079",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0078",
+      "reason": "Move node 0079 to root level after node 0078."
+    },
+    {
+      "action": "move",
+      "node_id": "0080",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0079",
+      "reason": "Move node 0080 to root level after node 0079."
+    },
+    {
+      "action": "move",
+      "node_id": "0081",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0080",
+      "reason": "Move node 0081 to root level after node 0080."
+    },
+    {
+      "action": "move",
+      "node_id": "0082",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0081",
+      "reason": "Move node 0082 to root level after node 0081."
+    }
+  ]
+}

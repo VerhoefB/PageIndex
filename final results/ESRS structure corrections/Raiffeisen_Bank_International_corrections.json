@@ -1,0 +1,119 @@
+{
+  "doc_name": "Raiffeisen Bank International",
+  "_note": "This file intentionally does not remove node 0292, because with the current correction script removing a parent removes its full subtree. If node 0462 is still inside 0292, removing 0292 would also remove node 0462.",
+  "operations": [
+    {
+      "action": "remove",
+      "node_id": "0291",
+      "reason": "Remove node 0291 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0293",
+      "reason": "Remove node 0293 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0294",
+      "reason": "Remove node 0294 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0295",
+      "reason": "Remove node 0295 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0296",
+      "reason": "Remove node 0296 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0297",
+      "reason": "Remove node 0297 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0298",
+      "reason": "Remove node 0298 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0299",
+      "reason": "Remove node 0299 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0300",
+      "reason": "Remove node 0300 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0301",
+      "reason": "Remove node 0301 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0302",
+      "reason": "Remove node 0302 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0303",
+      "reason": "Remove node 0303 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0318",
+      "reason": "Remove node 0318 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0333",
+      "reason": "Remove node 0333 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0348",
+      "reason": "Remove node 0348 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0363",
+      "reason": "Remove node 0363 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0378",
+      "reason": "Remove node 0378 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0393",
+      "reason": "Remove node 0393 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0408",
+      "reason": "Remove node 0408 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "remove",
+      "node_id": "0423",
+      "reason": "Remove node 0423 as requested in the 0291-0461 cleanup range."
+    },
+    {
+      "action": "move",
+      "node_id": "0462",
+      "target_parent_node_id": "__root__",
+      "position": "before",
+      "reference_node_id": "0292",
+      "reason": "Move the real Climate change subtree 0462-0516 out of the incorrect wrapper node 0292 and place it at the current root-level position of node 0292."
+    },
+    {
+      "action": "remove",
+      "node_id": "0292",
+      "reason": "Remove the incorrect wrapper node 0292 after moving its important child subtree 0462-0516 out of it."
+    }
+  ]
+}
