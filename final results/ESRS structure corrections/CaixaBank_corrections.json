@@ -1,0 +1,19 @@
+{
+  "doc_name": "CaixaBank",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0006",
+      "start_index": 60,
+      "end_index": 60,
+      "reason": "Correct node 0006 index from 60-73 to 60-60."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0007",
+      "start_index": 70,
+      "end_index": 70,
+      "reason": "Correct node 0007 index from 73-70 to 70-70."
+    }
+  ]
+}

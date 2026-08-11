@@ -1,0 +1,26 @@
+{
+  "doc_name": "Swedbank",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0100",
+      "start_index": 43,
+      "end_index": 43,
+      "reason": "Correct node 0100 index from 43-42 to 43-43."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0106",
+      "start_index": 45,
+      "end_index": 45,
+      "reason": "Correct node 0106 index from 45-44 to 45-45."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0107",
+      "start_index": 45,
+      "end_index": 45,
+      "reason": "Correct node 0107 index from 45-44 to 45-45."
+    }
+  ]
+}

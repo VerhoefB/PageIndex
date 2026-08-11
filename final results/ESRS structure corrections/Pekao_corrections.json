@@ -1,0 +1,13 @@
+{
+  "doc_name": "Pekao",
+  "operations": [
+    {
+      "action": "move",
+      "node_id": "0080",
+      "target_parent_node_id": null,
+      "position": "after",
+      "reason": "Move node 0080 after node 0096.",
+      "reference_node_id": "0096"
+    }
+  ]
+}

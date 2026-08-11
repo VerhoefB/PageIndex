@@ -2,8 +2,13 @@ import os
 import json
 import copy
 import math
+from pydoc import doc
 import random
 import re
+
+from pageindex import leaf_text_store_pageaware
+from pageindex import leaf_text_store_pageaware
+from .leaf_text_store_pageaware import build_leaf_text_rows, save_leaf_text_jsonl
 from .utils import *
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -272,9 +277,11 @@ def toc_transformer(toc_content, model=None):
     {
     table_of_contents: [
         {
-            "structure": <structure index, "x.x.x" or None> (string),
-            "title": <title of the section>,
+            "structure": <section numbering exactly as shown in the table of contents, e.g. "1", "1.a", "2.b.1", or null>,
+            "title": <title without the section numbering>,
+            "heading": <full heading as it should appear in the document, e.g. "2.b Impact, risk and opportunity management">,
             "page": <page number or None>,
+            "start_phrase": null
         },
         ...
         ],
@@ -379,6 +386,90 @@ def extract_matching_page_pairs(toc_page, toc_physical_index, start_page_index):
                     })
     return pairs
 
+def normalize_for_dynamic_offset_match(text: str) -> str:
+    text = text or ""
+    text = text.lower()
+    text = text.replace("ﬁ", "fi").replace("ﬂ", "fl")
+    text = re.sub(r"\s+", " ", text)
+    return re.sub(r"[^a-z0-9]+", "", text)
+
+
+def get_page_text_by_physical_index(page_list, physical_index: int, start_index: int = 1) -> str:
+    """
+    physical_index is 1-based, consistent with the rest of this file.
+    """
+    if physical_index is None:
+        return ""
+
+    page_list_index = physical_index - start_index
+
+    if page_list_index < 0 or page_list_index >= len(page_list):
+        return ""
+
+    page = page_list[page_list_index]
+
+    if isinstance(page, (list, tuple)):
+        return str(page[0] or "") if page else ""
+
+    if isinstance(page, dict):
+        return str(page.get("text") or page.get("page_text") or "")
+
+    return str(page or "")
+
+
+def is_nearly_blank_page(page_text: str, min_non_digit_chars: int = 30) -> bool:
+    text = page_text or ""
+    non_digit_text = re.sub(r"[\d\s\.\-–—]", "", text)
+    return len(non_digit_text.strip()) < min_non_digit_chars
+
+
+def page_matches_toc_item_for_dynamic_offset(
+    page_text: str,
+    item: dict,
+    max_chars: int = 4000,
+) -> bool:
+    if is_nearly_blank_page(page_text):
+        return False
+
+    page_key = normalize_for_dynamic_offset_match(page_text[:max_chars])
+
+    candidates = [
+        item.get("heading"),
+        item.get("title"),
+        item.get("start_phrase"),
+    ]
+
+    for candidate in candidates:
+        candidate_key = normalize_for_dynamic_offset_match(candidate)
+
+        if not candidate_key:
+            continue
+
+        # Avoid weak accidental matches like "PART II" or "Other Information".
+        if len(candidate_key) < 8:
+            continue
+
+        if candidate_key in page_key:
+            return True
+
+    return False
+
+
+def is_strong_dynamic_offset_anchor(item: dict) -> bool:
+    candidates = [
+        item.get("heading"),
+        item.get("title"),
+        item.get("start_phrase"),
+    ]
+
+    for candidate in candidates:
+        key = normalize_for_dynamic_offset_match(candidate)
+
+        if len(key) >= 20:
+            return True
+
+    return False
+
 
 def calculate_page_offset(pairs):
     differences = []
@@ -403,6 +494,10 @@ def calculate_page_offset(pairs):
     return most_common
 
 def add_page_offset_to_toc_json(data, offset):
+    if offset is None:
+        print("WARNING: offset is None, using offset = 0")
+        offset = 0
+
     for i in range(len(data)):
         if data[i].get('page') is not None and isinstance(data[i]['page'], int):
             data[i]['physical_index'] = data[i]['page'] + offset
@@ -410,7 +505,108 @@ def add_page_offset_to_toc_json(data, offset):
     
     return data
 
+def add_dynamic_page_offset_to_toc_json(
+    data,
+    page_list,
+    offset,
+    start_index=1,
+    search_radius=6,
+    max_chars=4000,
+    logger=None,
+):
+    """
+    Dynamic replacement for add_page_offset_to_toc_json.
 
+    Same contract:
+    - For items with integer page numbers, assign physical_index.
+    - Delete page after assigning physical_index.
+    - Leave items with page=None unchanged, just like the original function.
+
+    Difference:
+    - First tries page + current_offset.
+    - Only searches nearby pages if expected page does not match.
+    - Updates current_offset only when a nearby strong match is found.
+    """
+    if offset is None:
+        print("WARNING: offset is None, using offset = 0")
+        offset = 0
+
+    current_offset = int(offset)
+
+    for i in range(len(data)):
+        item = data[i]
+
+        if item.get("page") is None or not isinstance(item.get("page"), int):
+            continue
+
+        page_number = item["page"]
+        expected_physical_index = page_number + current_offset
+
+        chosen_physical_index = expected_physical_index
+        found_by = "expected_page"
+
+        expected_page_text = get_page_text_by_physical_index(
+            page_list=page_list,
+            physical_index=expected_physical_index,
+            start_index=start_index,
+        )
+
+        expected_page_matches = page_matches_toc_item_for_dynamic_offset(
+            page_text=expected_page_text,
+            item=item,
+            max_chars=max_chars,
+        )
+
+        if not expected_page_matches:
+            found_by = "not_found_keep_expected"
+
+            nearby_physical_indexes = []
+
+            # Prefer later pages first because inserted blank pages increase offset.
+            for delta in range(1, search_radius + 1):
+                nearby_physical_indexes.append(expected_physical_index + delta)
+
+            for delta in range(1, search_radius + 1):
+                nearby_physical_indexes.append(expected_physical_index - delta)
+
+            for candidate_physical_index in nearby_physical_indexes:
+                page_text = get_page_text_by_physical_index(
+                    page_list=page_list,
+                    physical_index=candidate_physical_index,
+                    start_index=start_index,
+                )
+
+                if page_matches_toc_item_for_dynamic_offset(
+                    page_text=page_text,
+                    item=item,
+                    max_chars=max_chars,
+                ):
+                    chosen_physical_index = candidate_physical_index
+                    found_by = "nearby_search"
+                    break
+
+        item["physical_index"] = chosen_physical_index
+
+        # Keep the original contract of add_page_offset_to_toc_json.
+        del item["page"]
+
+        # Only update offset when we actually found a nearby correction
+        # and the item is strong enough to be trusted as an anchor.
+        if found_by == "nearby_search" and is_strong_dynamic_offset_anchor(item):
+            current_offset = chosen_physical_index - page_number
+
+        if logger:
+            logger.info({
+                "message": "dynamic_offset",
+                "title": item.get("title"),
+                "page": page_number,
+                "expected_physical_index": expected_physical_index,
+                "chosen_physical_index": chosen_physical_index,
+                "found_by": found_by,
+                "offset_now": current_offset,
+            })
+
+    return data
 
 def page_list_to_group_text(page_contents, token_lengths, max_tokens=20000, overlap_page=1):    
     num_tokens = sum(token_lengths)
@@ -504,17 +700,25 @@ def generate_toc_continue(toc_content, part, model=None):
 
     For the title, you need to extract the original title from the text, only fix the space inconsistency.
 
-    The provided text contains tags like <physical_index_X> and <physical_index_X> to indicate the start and end of page X. \
+    The provided text contains tags like <physical_index_X> and <physical_index_X> to indicate the start and end of page X.
+
+    For start_phrase, copy the exact first full sentence of body text immediately after the section heading.
+    Do not use the title itself as start_phrase.
+    Do not summarize or rewrite.
+    The start_phrase must appear literally in the document text.
+    If the first sentence is extremely long, use the first 25–40 words ending at a natural comma or clause boundary.
     
     For the physical_index, you need to extract the physical index of the start of the section from the text. Keep the <physical_index_X> format.
 
     The response should be in the following format. 
         [
             {
-                "structure": <structure index, "x.x.x"> (string),
-                "title": <title of the section, keep the original title>,
-                "physical_index": "<physical_index_X> (keep the format)"
-            },
+                "structure": <section numbering exactly as shown, e.g. "1.a", "2.b.1", or null>,
+                "title": <title without section numbering>,
+                "heading": <full heading including numbering, e.g. "2.b Impact, risk and opportunity management">,
+                "start_phrase": <exact first full sentence after heading>,
+                "physical_index": "<physical_index_X>"
+                },
             ...
         ]    
 
@@ -539,15 +743,23 @@ def generate_toc_init(part, model=None):
 
     The provided text contains tags like <physical_index_X> and <physical_index_X> to indicate the start and end of page X. 
 
+    For start_phrase, copy the exact first full sentence of body text immediately after the section heading.
+    Do not use the title itself as start_phrase.
+    Do not summarize or rewrite.
+    The start_phrase must appear literally in the document text.
+    If the first sentence is extremely long, use the first 25–40 words ending at a natural comma or clause boundary.
+
     For the physical_index, you need to extract the physical index of the start of the section from the text. Keep the <physical_index_X> format.
 
     The response should be in the following format. 
         [
-            {{
-                "structure": <structure index, "x.x.x"> (string),
-                "title": <title of the section, keep the original title>,
-                "physical_index": "<physical_index_X> (keep the format)"
-            }},
+            {
+                "structure": <section numbering exactly as shown, e.g. "1.a", "2.b.1", or null>,
+                "title": <title without section numbering>,
+                "heading": <full heading including numbering, e.g. "2.b Impact, risk and opportunity management">,
+                "start_phrase": <exact first full sentence after heading>,
+                "physical_index": "<physical_index_X>"
+            },
             
         ],
 
@@ -562,6 +774,35 @@ def generate_toc_init(part, model=None):
     else:
         raise Exception(f'finish reason: {finish_reason}')
 
+    
+def normalize_toc_output(value):
+    """
+    PageIndex expects TOC outputs to be lists.
+    Sometimes the LLM/parser returns a dict instead, such as:
+      {"toc": [...]}
+      {"items": [...]}
+      {"nodes": [...]}
+      {"structure": [...]}
+    This converts those cases back to a list.
+    """
+    if value is None:
+        return []
+
+    if isinstance(value, list):
+        return value
+
+    if isinstance(value, dict):
+        for key in ["toc", "items", "nodes", "structure", "sections", "result"]:
+            if key in value and isinstance(value[key], list):
+                return value[key]
+
+        # If the dict itself looks like a single TOC node, wrap it in a list.
+        if any(k in value for k in ["title", "heading", "start_index", "end_index", "structure"]):
+            return [value]
+
+    return []
+
+
 def process_no_toc(page_list, start_index=1, model=None, logger=None):
     page_contents=[]
     token_lengths=[]
@@ -573,8 +814,11 @@ def process_no_toc(page_list, start_index=1, model=None, logger=None):
     logger.info(f'len(group_texts): {len(group_texts)}')
 
     toc_with_page_number= generate_toc_init(group_texts[0], model)
+    toc_with_page_number = normalize_toc_output(toc_with_page_number)
     for group_text in group_texts[1:]:
         toc_with_page_number_additional = generate_toc_continue(toc_with_page_number, group_text, model)    
+        toc_with_page_number_additional = normalize_toc_output(toc_with_page_number_additional)
+
         toc_with_page_number.extend(toc_with_page_number_additional)
     logger.info(f'generate_toc: {toc_with_page_number}')
 
@@ -631,11 +875,26 @@ def process_toc_with_page_numbers(toc_content, toc_page_list, page_list, toc_che
     offset = calculate_page_offset(matching_pairs)
     logger.info(f'offset: {offset}')
 
-    toc_with_page_number = add_page_offset_to_toc_json(toc_with_page_number, offset)
+    toc_with_page_number = add_dynamic_page_offset_to_toc_json(
+        toc_with_page_number,
+        page_list=page_list,
+        offset=offset,
+        start_index=1,
+        search_radius=6,
+        max_chars=4000,
+        logger=logger,
+    )
     logger.info(f'toc_with_page_number: {toc_with_page_number}')
 
     toc_with_page_number = process_none_page_numbers(toc_with_page_number, page_list, model=model)
     logger.info(f'toc_with_page_number: {toc_with_page_number}')
+
+    toc_with_page_number = add_start_phrases_to_toc_items(
+        toc_with_page_number,
+        page_list,
+        model=model
+    )
+    logger.info(f'toc_with_page_number_with_start_phrases: {toc_with_page_number}')
 
     return toc_with_page_number
 
@@ -679,7 +938,107 @@ def process_none_page_numbers(toc_items, page_list, start_index=1, model=None):
     
     return toc_items
 
+def get_section_heading_variants(item):
+    title = (item.get("title") or "").strip()
+    structure = (item.get("structure") or "").strip()
+    heading = (item.get("heading") or "").strip()
 
+    variants = []
+
+    if heading:
+        variants.append(heading)
+
+    if structure and title:
+        variants.append(f"{structure} {title}")
+        variants.append(f"{structure}. {title}")
+
+    if title:
+        variants.append(title)
+
+    return list(dict.fromkeys(variants))
+
+def add_start_phrases_to_toc_items(toc_items, page_list, model=None, start_index=1, max_extra_pages=1):
+    for i, item in enumerate(toc_items):
+        physical_index = item.get("physical_index")
+
+        if physical_index is None:
+            item["start_phrase"] = None
+            continue
+
+        page_idx = physical_index - start_index
+
+        if page_idx < 0 or page_idx >= len(page_list):
+            item["start_phrase"] = None
+            continue
+
+        # Use current page plus maybe the next page.
+        # This helps when heading is at the bottom of page N and body starts on page N+1.
+        parts = []
+
+        for extra in range(max_extra_pages + 1):
+            current_page_number = physical_index + extra
+            current_page_idx = current_page_number - start_index
+
+            if current_page_idx < 0 or current_page_idx >= len(page_list):
+                continue
+
+            parts.append(
+                f"<physical_index_{current_page_number}>\n"
+                f"{page_list[current_page_idx][0]}\n"
+                f"<physical_index_{current_page_number}>"
+            )
+
+        page_text = "\n\n".join(parts)
+
+        heading_variants = get_section_heading_variants(item)
+
+        prompt = f"""
+You are given a table-of-contents section item and the document text around the page where that section starts.
+
+Your task is to add start_phrase for this section.
+
+The section may appear under one of these heading variants:
+{json.dumps(heading_variants, ensure_ascii=False)}
+
+Rules:
+- Find the actual section heading in the document text.
+- Prefer the most specific numbered heading variant if present.
+- The heading may be split across lines.
+- The heading may contain extra spaces or line breaks.
+- For start_phrase, copy the exact first full sentence of body text immediately after the section heading.
+- Do not use the title itself as start_phrase.
+- Do not use a subheading as start_phrase.
+- Do not summarize or rewrite.
+- The start_phrase must appear literally in the provided document text.
+- Use the exact wording, spacing, and punctuation from the document text where possible.
+- If the first sentence is extremely long, use the first 25–40 words ending at a natural comma or clause boundary.
+- If the heading appears but no body text appears after it in the provided text, return null.
+- If the heading cannot be found using the exact title, try the numbered variants and fuzzy spacing before returning null.
+
+The response should be in the following JSON format:
+{{
+    "title": {json.dumps(item.get("title"), ensure_ascii=False)},
+    "start_phrase": <exact first full sentence of body text immediately after this section title, or null>
+}}
+
+Directly return the final JSON structure. Do not output anything else.
+
+Section item:
+{json.dumps(item, ensure_ascii=False, indent=2)}
+
+Document text:
+{page_text}
+"""
+
+        response = llm_completion(model=model, prompt=prompt)
+        result = extract_json(response)
+
+        if isinstance(result, dict):
+            item["start_phrase"] = result.get("start_phrase")
+        else:
+            item["start_phrase"] = None
+
+    return toc_items
 
 
 def check_toc(page_list, opt=None):
@@ -887,7 +1246,6 @@ async def fix_incorrect_toc_with_retries(toc_with_page_number, page_list, incorr
 
 
 
-
 ################### verify toc #########################################################
 async def verify_toc(page_list, list_result, start_index=1, N=None, model=None):
     print('start verify_toc')
@@ -1051,12 +1409,12 @@ async def tree_parser(page_list, opt, doc=None, logger=None):
         for node in toc_tree
     ]
     await asyncio.gather(*tasks)
-    
+
     return toc_tree
 
 
-def page_index_main(doc, opt=None):
-    logger = JsonLogger(doc)
+def page_index_main(doc, opt=None, log_dir=None):
+    logger = JsonLogger(doc, log_dir=log_dir)
     
     is_valid_pdf = (
         (isinstance(doc, str) and os.path.isfile(doc) and doc.lower().endswith(".pdf")) or 
@@ -1074,9 +1432,7 @@ def page_index_main(doc, opt=None):
     async def page_index_builder():
         structure = await tree_parser(page_list, opt, doc=doc, logger=logger)
         if opt.if_add_node_id == 'yes':
-            write_node_id(structure)    
-        if opt.if_add_node_text == 'yes':
-            add_node_text(structure, page_list)
+            write_node_id(structure)
         if opt.if_add_node_summary == 'yes':
             if opt.if_add_node_text == 'no':
                 add_node_text(structure, page_list)
@@ -1087,13 +1443,31 @@ def page_index_main(doc, opt=None):
                 # Create a clean structure without unnecessary fields for description generation
                 clean_structure = create_clean_structure_for_description(structure)
                 doc_description = generate_doc_description(clean_structure, model=opt.model)
-                structure = format_structure(structure, order=['title', 'node_id', 'start_index', 'end_index', 'summary', 'text', 'nodes'])
+                structure = format_structure(
+                    structure,
+                    order=['structure', 'title', 'heading', 'start_phrase', 'node_id', 'start_index', 'end_index', 'summary', 'chunk_id', 'text_token_count', 'nodes']
+                )
                 return {
                     'doc_name': get_pdf_name(doc),
                     'doc_description': doc_description,
                     'structure': structure,
                 }
-        structure = format_structure(structure, order=['title', 'node_id', 'start_index', 'end_index', 'summary', 'text', 'nodes'])
+        structure = format_structure(
+            structure,
+            order=[
+            'structure', 
+            'title', 
+            'heading',
+            'start_phrase',
+            'node_id',
+            'start_index',
+            'end_index',
+            'summary',
+            'chunk_id',
+            'text_token_count',
+            'nodes'
+            ]
+        )
         return {
             'doc_name': get_pdf_name(doc),
             'structure': structure,
@@ -1101,6 +1475,55 @@ def page_index_main(doc, opt=None):
 
     return asyncio.run(page_index_builder())
 
+def remove_internal_keys(obj):
+    if isinstance(obj, dict):
+        for key in list(obj.keys()):
+            if key.startswith("_"):
+                del obj[key]
+            else:
+                remove_internal_keys(obj[key])
+
+    elif isinstance(obj, list):
+        for item in obj:
+            remove_internal_keys(item)
+
+    return obj
+
+def build_chunks_from_existing_structure(pdf_path, structure_path, output_path, opt=None, updated_structure_path=None):
+    if opt is None:
+        opt = ConfigLoader().load({})
+
+    with open(structure_path, "r", encoding="utf-8") as f:
+        structure_data = json.load(f)
+
+    doc_name = structure_data.get("doc_name", "")
+    structure = structure_data["structure"]
+
+    page_list = get_page_tokens(pdf_path, model=opt.model)
+
+    leaf_text_rows, structure = build_leaf_text_rows(
+        structure,
+        page_list,
+        model=opt.model,
+        max_tokens=opt.max_token_num_each_node
+    )
+
+    # Add document/bank name to every chunk row
+    for row in leaf_text_rows:
+        row["bank_name"] = doc_name  # optional, useful for ESRS dataset
+
+    save_leaf_text_jsonl(leaf_text_rows, output_path)
+
+    # important: save cleaned/mutated structure after intro nodes / split chunks
+    if updated_structure_path:
+        structure_data["structure"] = remove_internal_keys(structure)
+
+        os.makedirs(os.path.dirname(updated_structure_path) or ".", exist_ok=True)
+
+        with open(updated_structure_path, "w", encoding="utf-8") as f:
+            json.dump(structure_data, f, indent=2, ensure_ascii=False)
+
+    return leaf_text_rows
 
 def page_index(doc, model=None, toc_check_page_num=None, max_page_num_each_node=None, max_token_num_each_node=None,
                if_add_node_id=None, if_add_node_summary=None, if_add_doc_description=None, if_add_node_text=None):

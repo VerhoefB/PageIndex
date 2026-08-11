@@ -1,0 +1,12 @@
+{
+  "doc_name": "Societe Generale",
+  "operations": [
+    {
+      "action": "move",
+      "node_id": "0033",
+      "target_parent_node_id": "0000",
+      "position": "first",
+      "reason": "Move introductory sustainability statement node 0033 as a child under node 0000 so it appears at the start of the document structure."
+    }
+  ]
+}

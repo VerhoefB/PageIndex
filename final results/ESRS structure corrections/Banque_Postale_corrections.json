@@ -1,0 +1,30 @@
+{
+  "doc_name": "Banque Postale",
+  "operations": [
+    {
+      "action": "move",
+      "node_id": "0032",
+      "target_parent_node_id": null,
+      "position": "after",
+      "reason": "Move node 0032 after node 0048.",
+      "reference_node_id": "0048"
+    },
+    {
+      "action": "move",
+      "node_id": "0033",
+      "target_parent_node_id": "0023",
+      "position": "first",
+      "reason": "Move node 0033 as the first child of node 0023."
+    },
+    {
+      "action": "remove",
+      "node_id": "0126",
+      "reason": "Remove node 0126."
+    },
+    {
+      "action": "remove",
+      "node_id": "0127",
+      "reason": "Remove node 0127."
+    }
+  ]
+}

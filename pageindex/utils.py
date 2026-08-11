@@ -24,6 +24,61 @@ if not os.getenv("OPENAI_API_KEY") and os.getenv("CHATGPT_API_KEY"):
 
 litellm.drop_params = True
 
+LLM_USAGE_TRACKER = {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "successful_calls": 0,
+    "failed_calls": 0,
+}
+
+
+def reset_llm_usage_tracker():
+    LLM_USAGE_TRACKER["prompt_tokens"] = 0
+    LLM_USAGE_TRACKER["completion_tokens"] = 0
+    LLM_USAGE_TRACKER["total_tokens"] = 0
+    LLM_USAGE_TRACKER["successful_calls"] = 0
+    LLM_USAGE_TRACKER["failed_calls"] = 0
+
+
+def get_llm_usage_tracker():
+    return dict(LLM_USAGE_TRACKER)
+
+
+def _get_usage_value(usage, key, default=0):
+    """
+    LiteLLM usage can behave like an object or a dict depending on provider/version.
+    This helper supports both.
+    """
+    if usage is None:
+        return default
+
+    if isinstance(usage, dict):
+        return usage.get(key, default) or default
+
+    return getattr(usage, key, default) or default
+
+
+def add_llm_usage_from_response(response):
+    usage = getattr(response, "usage", None)
+
+    prompt_tokens = _get_usage_value(usage, "prompt_tokens", 0)
+    completion_tokens = _get_usage_value(usage, "completion_tokens", 0)
+    total_tokens = _get_usage_value(usage, "total_tokens", 0)
+
+    # Some providers may not return total_tokens.
+    if total_tokens == 0:
+        total_tokens = prompt_tokens + completion_tokens
+
+    LLM_USAGE_TRACKER["prompt_tokens"] += int(prompt_tokens or 0)
+    LLM_USAGE_TRACKER["completion_tokens"] += int(completion_tokens or 0)
+    LLM_USAGE_TRACKER["total_tokens"] += int(total_tokens or 0)
+    LLM_USAGE_TRACKER["successful_calls"] += 1
+
+
+def add_llm_failed_call():
+    LLM_USAGE_TRACKER["failed_calls"] += 1
+
 def count_tokens(text, model=None):
     if not text:
         return 0
@@ -42,6 +97,9 @@ def llm_completion(model, prompt, chat_history=None, return_finish_reason=False)
                 messages=messages,
                 temperature=0,
             )
+
+            add_llm_usage_from_response(response)
+
             content = response.choices[0].message.content
             if return_finish_reason:
                 finish_reason = "max_output_reached" if response.choices[0].finish_reason == "length" else "finished"
@@ -53,6 +111,7 @@ def llm_completion(model, prompt, chat_history=None, return_finish_reason=False)
             if i < max_retries - 1:
                 time.sleep(1)
             else:
+                add_llm_failed_call()
                 logging.error('Max retries reached for prompt: ' + prompt)
                 if return_finish_reason:
                     return "", "error"
@@ -72,6 +131,9 @@ async def llm_acompletion(model, prompt):
                 messages=messages,
                 temperature=0,
             )
+
+            add_llm_usage_from_response(response)
+
             return response.choices[0].message.content
         except Exception as e:
             print('************* Retrying *************')
@@ -79,6 +141,7 @@ async def llm_acompletion(model, prompt):
             if i < max_retries - 1:
                 await asyncio.sleep(1)
             else:
+                add_llm_failed_call()
                 logging.error('Max retries reached for prompt: ' + prompt)
                 return ""
             
@@ -270,25 +333,29 @@ def sanitize_filename(filename, replacement='-'):
     return filename.replace('/', replacement)
 
 def get_pdf_name(pdf_path):
-    # Extract PDF name
     if isinstance(pdf_path, str):
-        pdf_name = os.path.basename(pdf_path)
+        pdf_name = os.path.splitext(
+            os.path.basename(pdf_path)
+        )[0]
+
     elif isinstance(pdf_path, BytesIO):
         pdf_reader = PyPDF2.PdfReader(pdf_path)
         meta = pdf_reader.metadata
-        pdf_name = meta.title if meta and meta.title else 'Untitled'
+        pdf_name = meta.title if meta and meta.title else "Untitled"
         pdf_name = sanitize_filename(pdf_name)
+
     return pdf_name
 
 
 class JsonLogger:
-    def __init__(self, file_path):
+    def __init__(self, file_path, log_dir="logs"):
         # Extract PDF name for logger name
         pdf_name = get_pdf_name(file_path)
             
         current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.filename = f"{pdf_name}_{current_time}.json"
-        os.makedirs("./logs", exist_ok=True)
+        self.log_dir = log_dir
+        os.makedirs(self.log_dir, exist_ok=True)
         # Initialize empty list to store all messages
         self.log_data = []
 
@@ -317,7 +384,7 @@ class JsonLogger:
         self.log("ERROR", message, **kwargs)
 
     def _filepath(self):
-        return os.path.join("logs", self.filename)
+        return os.path.join(self.log_dir, self.filename)
     
 
 
@@ -337,7 +404,10 @@ def list_to_tree(data):
     for item in data:
         structure = item.get('structure')
         node = {
-            'title': item.get('title'),
+            "structure": item.get("structure"),
+            "title": item.get("title"),
+            "heading": item.get("heading"),
+            'start_phrase': item.get('start_phrase'),
             'start_index': item.get('start_index'),
             'end_index': item.get('end_index'),
             'nodes': []
