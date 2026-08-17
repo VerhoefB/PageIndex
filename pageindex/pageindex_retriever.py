@@ -16,7 +16,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("OPENAI_API_KEY not found. Check your .env file.")
 
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=api_key, timeout=120.0, max_retries=3)
 
 
 class PageIndexLLMRetriever:
@@ -532,7 +532,7 @@ Your entire response must be a single JSON object with exactly these fields:
                 "chunk_id": chunk_id,
                 "title": candidate.get("title", "") or chunk.get("title", ""),
                 "summary": candidate.get("summary", ""),
-                "chunk_excerpt": chunk.get("text", "")[:3500],
+                "chunk_excerpt": chunk.get("text", ""),
             },
             "instruction": (
                 "Decide whether this chunk is sufficient to answer the query. "
@@ -567,7 +567,7 @@ Your entire response must be a single JSON object with exactly these fields:
                 "node_id": candidate.get("node_id", ""),
                 "title": candidate.get("title", "") or chunk.get("title", ""),
                 "summary": candidate.get("summary", ""),
-                "chunk_excerpt": chunk.get("text", "")[:2500],
+                "chunk_excerpt": chunk.get("text", ""),
             })
 
         system_prompt = """
@@ -931,22 +931,19 @@ Your entire response must be a single JSON object with exactly this field:
         # This should only happen if safety_max_chunk_reads is reached
         # or traversal runs out of candidates.
         # ------------------------------------------------------------
-        if first_sufficient_candidate is None and inspected_candidates:
+        if first_sufficient_candidate is None and top5_ranked:
             print(
                 "No sufficient candidate found before stopping. "
-                "Using best ranked inspected candidate as fallback top1."
+                "Using best top5-ranked candidate as fallback top1."
             )
-            fallback_ranked = self._rank_candidate_chunks_with_llm(
-                query=query,
-                candidates=inspected_candidates,
-            )
-            first_sufficient_candidate = fallback_ranked[0] if fallback_ranked else None
 
-            if first_sufficient_candidate is not None and usage_at_top1_found is None:
-                usage_at_top1_found = self._usage_snapshot()
+            first_sufficient_candidate = top5_ranked[0]
 
-            if first_sufficient_candidate is not None and time_at_top1_found is None:
-                time_at_top1_found = time.time()
+            if usage_at_top1_found is None:
+                usage_at_top1_found = usage_at_top5_ready
+
+            if time_at_top1_found is None:
+                time_at_top1_found = time_at_top5_ready
 
         top5_results = self._format_results(top5_ranked[:max_top5_reads])
         top1_results = self._format_results(

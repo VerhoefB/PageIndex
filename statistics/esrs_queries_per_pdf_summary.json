@@ -1,0 +1,230 @@
+{
+  "input_file": "final results\\ESRS chunks\\ESRS_combined_chunks_with_query_plan.jsonl",
+  "total_chunks": 2968,
+  "selected_query_chunks": 1000,
+  "chunks_per_pdf": {
+    "ABN Amro": 139,
+    "BBVA": 13,
+    "BNP Paribas": 52,
+    "Banca Monte dei Paschi di Siena": 216,
+    "Banque Postale": 226,
+    "Belfius": 137,
+    "Caixa Geral de Depósitos": 31,
+    "CaixaBank": 125,
+    "DNB": 165,
+    "Deutsche Bank": 28,
+    "ING": 118,
+    "Intesa Sanpaolo": 307,
+    "KBC Group": 60,
+    "KfW": 72,
+    "Nordea Bank": 61,
+    "OTP Bank": 197,
+    "PKO Bank Polski": 136,
+    "Pekao": 111,
+    "Raiffeisen Bank International": 338,
+    "Santander": 128,
+    "Societe Generale": 28,
+    "Swedbank": 186,
+    "UniCredit": 94
+  },
+  "selected_queries_per_pdf": {
+    "ABN Amro": 53,
+    "BBVA": 3,
+    "BNP Paribas": 13,
+    "Banca Monte dei Paschi di Siena": 78,
+    "Banque Postale": 95,
+    "Belfius": 33,
+    "Caixa Geral de Depósitos": 3,
+    "CaixaBank": 32,
+    "DNB": 50,
+    "Deutsche Bank": 13,
+    "ING": 46,
+    "Intesa Sanpaolo": 106,
+    "KBC Group": 32,
+    "KfW": 24,
+    "Nordea Bank": 21,
+    "OTP Bank": 79,
+    "PKO Bank Polski": 36,
+    "Pekao": 32,
+    "Raiffeisen Bank International": 83,
+    "Santander": 31,
+    "Societe Generale": 15,
+    "Swedbank": 85,
+    "UniCredit": 37
+  },
+  "skipped_reason_counts": {
+    "appendix_like": 267,
+    "duplicate": 6,
+    "intro": 244,
+    "not_selected": 924,
+    "table_like": 246,
+    "too_short_chars": 139,
+    "too_short_tokens": 142
+  },
+  "skipped_reason_per_pdf": {
+    "ABN Amro": {
+      "too_short_chars": 11,
+      "not_selected": 49,
+      "table_like": 3,
+      "too_short_tokens": 14,
+      "intro": 9
+    },
+    "BBVA": {
+      "not_selected": 7,
+      "too_short_chars": 3
+    },
+    "BNP Paribas": {
+      "intro": 6,
+      "not_selected": 16,
+      "appendix_like": 9,
+      "table_like": 7,
+      "duplicate": 1
+    },
+    "Banca Monte dei Paschi di Siena": {
+      "not_selected": 74,
+      "too_short_tokens": 17,
+      "too_short_chars": 20,
+      "table_like": 7,
+      "intro": 13,
+      "appendix_like": 7
+    },
+    "Banque Postale": {
+      "appendix_like": 10,
+      "too_short_chars": 15,
+      "intro": 9,
+      "not_selected": 86,
+      "duplicate": 3,
+      "too_short_tokens": 6,
+      "table_like": 2
+    },
+    "Belfius": {
+      "appendix_like": 7,
+      "intro": 24,
+      "too_short_chars": 3,
+      "not_selected": 48,
+      "too_short_tokens": 7,
+      "duplicate": 1,
+      "table_like": 14
+    },
+    "Caixa Geral de Depósitos": {
+      "too_short_chars": 4,
+      "appendix_like": 4,
+      "intro": 3,
+      "not_selected": 6,
+      "table_like": 11
+    },
+    "CaixaBank": {
+      "too_short_chars": 15,
+      "intro": 28,
+      "appendix_like": 2,
+      "not_selected": 41,
+      "too_short_tokens": 7
+    },
+    "DNB": {
+      "not_selected": 46,
+      "too_short_chars": 5,
+      "intro": 10,
+      "appendix_like": 39,
+      "too_short_tokens": 6,
+      "table_like": 9
+    },
+    "Deutsche Bank": {
+      "too_short_chars": 5,
+      "not_selected": 8,
+      "appendix_like": 2
+    },
+    "ING": {
+      "intro": 23,
+      "not_selected": 39,
+      "too_short_tokens": 9,
+      "too_short_chars": 1
+    },
+    "Intesa Sanpaolo": {
+      "too_short_chars": 5,
+      "intro": 13,
+      "not_selected": 98,
+      "too_short_tokens": 12,
+      "appendix_like": 53,
+      "table_like": 20
+    },
+    "KBC Group": {
+      "not_selected": 21,
+      "intro": 2,
+      "table_like": 3,
+      "too_short_chars": 2
+    },
+    "KfW": {
+      "not_selected": 31,
+      "intro": 11,
+      "too_short_chars": 1,
+      "appendix_like": 2,
+      "table_like": 3
+    },
+    "Nordea Bank": {
+      "too_short_tokens": 6,
+      "intro": 1,
+      "not_selected": 26,
+      "too_short_chars": 7
+    },
+    "OTP Bank": {
+      "not_selected": 57,
+      "appendix_like": 16,
+      "table_like": 14,
+      "intro": 16,
+      "too_short_chars": 10,
+      "too_short_tokens": 5
+    },
+    "PKO Bank Polski": {
+      "not_selected": 35,
+      "too_short_tokens": 4,
+      "intro": 8,
+      "appendix_like": 21,
+      "table_like": 25,
+      "too_short_chars": 7
+    },
+    "Pekao": {
+      "not_selected": 17,
+      "intro": 3,
+      "appendix_like": 19,
+      "table_like": 38,
+      "too_short_tokens": 2
+    },
+    "Raiffeisen Bank International": {
+      "not_selected": 82,
+      "intro": 25,
+      "too_short_tokens": 30,
+      "too_short_chars": 6,
+      "table_like": 74,
+      "appendix_like": 38
+    },
+    "Santander": {
+      "too_short_tokens": 5,
+      "not_selected": 37,
+      "too_short_chars": 14,
+      "intro": 4,
+      "table_like": 8,
+      "appendix_like": 29
+    },
+    "Societe Generale": {
+      "intro": 1,
+      "not_selected": 10,
+      "appendix_like": 1,
+      "table_like": 1
+    },
+    "Swedbank": {
+      "not_selected": 54,
+      "intro": 30,
+      "too_short_tokens": 8,
+      "too_short_chars": 2,
+      "table_like": 7
+    },
+    "UniCredit": {
+      "too_short_chars": 3,
+      "too_short_tokens": 4,
+      "not_selected": 36,
+      "intro": 5,
+      "duplicate": 1,
+      "appendix_like": 8
+    }
+  }
+}

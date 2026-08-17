@@ -1,0 +1,13 @@
+{
+  "latest_query_id": "DNB_0031_q1",
+  "completed_queries": 1000,
+  "total_queries": 1000,
+  "remaining_queries": 0,
+  "input_tokens_so_far": 104417544,
+  "output_tokens_so_far": 9408040,
+  "cost_so_far_usd": 224.60233,
+  "avg_input_tokens_per_query": 104417.54,
+  "avg_output_tokens_per_query": 9408.04,
+  "projected_total_cost_usd": 224.60233,
+  "updated_at": "2026-08-16 14:44:45"
+}

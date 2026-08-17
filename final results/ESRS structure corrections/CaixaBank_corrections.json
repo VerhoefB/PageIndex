@@ -5,8 +5,8 @@
       "action": "update_indexes",
       "node_id": "0006",
       "start_index": 60,
-      "end_index": 60,
-      "reason": "Correct node 0006 index from 60-73 to 60-60."
+      "end_index": 69,
+      "reason": "Correct node 0006 index from 60-73 to 60-69."
     },
     {
       "action": "update_indexes",

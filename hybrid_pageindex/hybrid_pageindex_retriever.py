@@ -277,13 +277,13 @@ class HybridPageIndexRetriever:
         Retrieve top-k chunks using hybrid PageIndex traversal.
 
         Algorithm:
-        1. Start from the root nodes.
-        2. For each explored node, score all children.
-        3. Select top_m children.
-        4. If a selected child is a leaf, store it.
-        5. If a selected child has children, explore it next.
-        6. Continue until no selected non-leaf nodes remain.
-        7. Rank stored leaf chunks by their own title+summary similarity.
+        1. Embed the query.
+        2. Select exactly one document node from the collection root.
+        3. At each hierarchy level, pool all children of the currently retained nodes.
+        4. Select the global top_m nodes from this pooled set.
+        5. Store selected leaf nodes as candidate chunks.
+        6. Continue with selected non-leaf nodes until no branches remain.
+        7. Deduplicate candidate chunks and rank them by node similarity.
         """
         query_embedding = self.model.encode(
             [query],
@@ -294,8 +294,7 @@ class HybridPageIndexRetriever:
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
         # If the combined tree has a collection root, first-layer document
-        # selection should happen over its document children, not over the
-        # collection root itself.
+        # selection happens over its document children, not over the collection root.
         document_roots = []
 
         for root in roots:
@@ -316,35 +315,43 @@ class HybridPageIndexRetriever:
         frontier = [scored_document_roots[0][1]] if scored_document_roots else []
         final_candidates = []
 
+        # Global beam-style traversal:
+        # at each level, all children of all retained nodes are pooled,
+        # then only the global top_m nodes are retained.
         while frontier:
-            node = frontier.pop(0)
-            children = self._get_children(node)
+            pooled_children = []
 
-            # If current node is already a leaf, store it.
-            if not children:
-                chunk_id = self._get_node_chunk_id(node)
+            for node in frontier:
+                children = self._get_children(node)
 
-                if chunk_id is not None:
-                    final_candidates.append({
-                        "chunk_id": str(chunk_id),
-                        "node_id": node.get("_hybrid_node_id"),
-                        "title": node.get("title", ""),
-                        "summary": node.get("summary", ""),
-                        "score": self._similarity(query_embedding, node),
-                    })
+                # If a retained node is already a leaf, store it.
+                if not children:
+                    chunk_id = self._get_node_chunk_id(node)
 
-                continue
+                    if chunk_id is not None:
+                        final_candidates.append({
+                            "chunk_id": str(chunk_id),
+                            "node_id": node.get("_hybrid_node_id"),
+                            "title": node.get("title", ""),
+                            "summary": node.get("summary", ""),
+                            "score": self._similarity(query_embedding, node),
+                        })
 
-            scored_children = []
+                    continue
 
-            for child in children:
-                score = self._similarity(query_embedding, child)
-                scored_children.append((score, child))
+                for child in children:
+                    score = self._similarity(query_embedding, child)
+                    pooled_children.append((score, child))
 
-            scored_children.sort(key=lambda x: x[0], reverse=True)
-            selected_children = scored_children[:top_m]
+            if not pooled_children:
+                break
 
-            for score, child in selected_children:
+            pooled_children.sort(key=lambda x: x[0], reverse=True)
+            selected_nodes = pooled_children[:top_m]
+
+            next_frontier = []
+
+            for score, child in selected_nodes:
                 child_children = self._get_children(child)
 
                 if not child_children:
@@ -359,7 +366,9 @@ class HybridPageIndexRetriever:
                             "score": float(score),
                         })
                 else:
-                    frontier.append(child)
+                    next_frontier.append(child)
+
+            frontier = next_frontier
 
         best_by_chunk_id = {}
 

@@ -1,0 +1,321 @@
+{
+  "pdf_folder": "data\\FinanceBench",
+  "jsonl_file": "data\\financebench_open_source.jsonl",
+  "pdf_files_found": 65,
+  "total_questions_in_jsonl": 150,
+  "questions_kept": 115,
+  "questions_skipped_total": 35,
+  "questions_skipped_missing_pdf": 20,
+  "questions_skipped_no_evidence": 0,
+  "questions_skipped_multiple_evidence": 15,
+  "question_type_counts_kept": {
+    "metrics-generated": 27,
+    "domain-relevant": 41,
+    "novel-generated": 47
+  },
+  "questions_per_pdf": {
+    "3M_2018_10K": 2,
+    "3M_2022_10K": 2,
+    "3M_2023Q2_10Q": 3,
+    "ADOBE_2016_10K": 1,
+    "ADOBE_2022_10K": 2,
+    "AES_2022_10K": 1,
+    "AMAZON_2017_10K": 1,
+    "AMAZON_2019_10K": 1,
+    "AMCOR_2020_10K": 1,
+    "AMCOR_2022_8K_dated-2022-07-01": 1,
+    "AMCOR_2023Q2_10Q": 1,
+    "AMCOR_2023Q4_EARNINGS": 2,
+    "AMCOR_2023_10K": 4,
+    "AMD_2022_10K": 7,
+    "AMERICANEXPRESS_2022_10K": 7,
+    "AMERICANWATERWORKS_2020_10K": 1,
+    "BESTBUY_2017_10K": 1,
+    "BESTBUY_2019_10K": 1,
+    "BESTBUY_2023_10K": 3,
+    "BESTBUY_2024Q2_10Q": 3,
+    "BLOCK_2016_10K": 1,
+    "BLOCK_2020_10K": 2,
+    "BOEING_2018_10K": 1,
+    "BOEING_2022_10K": 6,
+    "COCACOLA_2021_10K": 1,
+    "CORNING_2021_10K": 1,
+    "CORNING_2022_10K": 2,
+    "COSTCO_2021_10K": 1,
+    "CVSHEALTH_2022_10K": 1,
+    "FOOTLOCKER_2022_8K_dated-2022-05-20": 1,
+    "FOOTLOCKER_2022_8K_dated_2022-08-19": 1,
+    "GENERALMILLS_2020_10K": 2,
+    "JOHNSON_JOHNSON_2022Q4_EARNINGS": 2,
+    "JOHNSON_JOHNSON_2022_10K": 2,
+    "JOHNSON_JOHNSON_2023Q2_EARNINGS": 1,
+    "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30": 3,
+    "JPMORGAN_2021Q1_10Q": 2,
+    "JPMORGAN_2022Q2_10Q": 1,
+    "JPMORGAN_2022_10K": 1,
+    "JPMORGAN_2023Q2_10Q": 1,
+    "LOCKHEEDMARTIN_2021_10K": 1,
+    "LOCKHEEDMARTIN_2022_10K": 1,
+    "MGMRESORTS_2018_10K": 1,
+    "MGMRESORTS_2022Q4_EARNINGS": 2,
+    "MGMRESORTS_2022_10K": 1,
+    "MGMRESORTS_2023Q2_10Q": 1,
+    "MICROSOFT_2016_10K": 1,
+    "MICROSOFT_2023_10K": 1,
+    "NETFLIX_2017_10K": 1,
+    "NIKE_2018_10K": 1,
+    "NIKE_2019_10K": 1,
+    "NIKE_2023_10K": 1,
+    "PAYPAL_2022_10K": 1,
+    "PEPSICO_2021_10K": 1,
+    "PEPSICO_2022_10K": 2,
+    "PEPSICO_2023Q1_EARNINGS": 2,
+    "PEPSICO_2023_8K_dated-2023-05-05": 1,
+    "PEPSICO_2023_8K_dated-2023-05-30": 2,
+    "PFIZER_2021_10K": 2,
+    "Pfizer_2023Q2_10Q": 3,
+    "ULTABEAUTY_2023Q4_EARNINGS": 4,
+    "ULTABEAUTY_2023_10K": 2,
+    "VERIZON_2021_10K": 1,
+    "VERIZON_2022_10K": 2,
+    "WALMART_2019_10K": 1
+  },
+  "question_type_per_pdf": {
+    "3M_2018_10K": {
+      "metrics-generated": 2
+    },
+    "3M_2022_10K": {
+      "domain-relevant": 1,
+      "novel-generated": 1
+    },
+    "3M_2023Q2_10Q": {
+      "domain-relevant": 2,
+      "novel-generated": 1
+    },
+    "ADOBE_2016_10K": {
+      "metrics-generated": 1
+    },
+    "ADOBE_2022_10K": {
+      "domain-relevant": 1,
+      "novel-generated": 1
+    },
+    "AES_2022_10K": {
+      "domain-relevant": 1
+    },
+    "AMAZON_2017_10K": {
+      "metrics-generated": 1
+    },
+    "AMAZON_2019_10K": {
+      "metrics-generated": 1
+    },
+    "AMCOR_2020_10K": {
+      "metrics-generated": 1
+    },
+    "AMCOR_2022_8K_dated-2022-07-01": {
+      "novel-generated": 1
+    },
+    "AMCOR_2023Q2_10Q": {
+      "novel-generated": 1
+    },
+    "AMCOR_2023Q4_EARNINGS": {
+      "novel-generated": 2
+    },
+    "AMCOR_2023_10K": {
+      "domain-relevant": 4
+    },
+    "AMD_2022_10K": {
+      "domain-relevant": 5,
+      "novel-generated": 2
+    },
+    "AMERICANEXPRESS_2022_10K": {
+      "domain-relevant": 5,
+      "novel-generated": 2
+    },
+    "AMERICANWATERWORKS_2020_10K": {
+      "metrics-generated": 1
+    },
+    "BESTBUY_2017_10K": {
+      "metrics-generated": 1
+    },
+    "BESTBUY_2019_10K": {
+      "metrics-generated": 1
+    },
+    "BESTBUY_2023_10K": {
+      "domain-relevant": 3
+    },
+    "BESTBUY_2024Q2_10Q": {
+      "novel-generated": 3
+    },
+    "BLOCK_2016_10K": {
+      "metrics-generated": 1
+    },
+    "BLOCK_2020_10K": {
+      "metrics-generated": 2
+    },
+    "BOEING_2018_10K": {
+      "metrics-generated": 1
+    },
+    "BOEING_2022_10K": {
+      "domain-relevant": 3,
+      "novel-generated": 3
+    },
+    "COCACOLA_2021_10K": {
+      "metrics-generated": 1
+    },
+    "CORNING_2021_10K": {
+      "metrics-generated": 1
+    },
+    "CORNING_2022_10K": {
+      "domain-relevant": 2
+    },
+    "COSTCO_2021_10K": {
+      "metrics-generated": 1
+    },
+    "CVSHEALTH_2022_10K": {
+      "domain-relevant": 1
+    },
+    "FOOTLOCKER_2022_8K_dated-2022-05-20": {
+      "novel-generated": 1
+    },
+    "FOOTLOCKER_2022_8K_dated_2022-08-19": {
+      "novel-generated": 1
+    },
+    "GENERALMILLS_2020_10K": {
+      "metrics-generated": 2
+    },
+    "JOHNSON_JOHNSON_2022Q4_EARNINGS": {
+      "novel-generated": 2
+    },
+    "JOHNSON_JOHNSON_2022_10K": {
+      "domain-relevant": 2
+    },
+    "JOHNSON_JOHNSON_2023Q2_EARNINGS": {
+      "novel-generated": 1
+    },
+    "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30": {
+      "novel-generated": 3
+    },
+    "JPMORGAN_2021Q1_10Q": {
+      "novel-generated": 2
+    },
+    "JPMORGAN_2022Q2_10Q": {
+      "novel-generated": 1
+    },
+    "JPMORGAN_2022_10K": {
+      "domain-relevant": 1
+    },
+    "JPMORGAN_2023Q2_10Q": {
+      "novel-generated": 1
+    },
+    "LOCKHEEDMARTIN_2021_10K": {
+      "metrics-generated": 1
+    },
+    "LOCKHEEDMARTIN_2022_10K": {
+      "metrics-generated": 1
+    },
+    "MGMRESORTS_2018_10K": {
+      "metrics-generated": 1
+    },
+    "MGMRESORTS_2022Q4_EARNINGS": {
+      "novel-generated": 2
+    },
+    "MGMRESORTS_2022_10K": {
+      "domain-relevant": 1
+    },
+    "MGMRESORTS_2023Q2_10Q": {
+      "novel-generated": 1
+    },
+    "MICROSOFT_2016_10K": {
+      "metrics-generated": 1
+    },
+    "MICROSOFT_2023_10K": {
+      "domain-relevant": 1
+    },
+    "NETFLIX_2017_10K": {
+      "metrics-generated": 1
+    },
+    "NIKE_2018_10K": {
+      "metrics-generated": 1
+    },
+    "NIKE_2019_10K": {
+      "metrics-generated": 1
+    },
+    "NIKE_2023_10K": {
+      "domain-relevant": 1
+    },
+    "PAYPAL_2022_10K": {
+      "domain-relevant": 1
+    },
+    "PEPSICO_2021_10K": {
+      "metrics-generated": 1
+    },
+    "PEPSICO_2022_10K": {
+      "domain-relevant": 2
+    },
+    "PEPSICO_2023Q1_EARNINGS": {
+      "novel-generated": 2
+    },
+    "PEPSICO_2023_8K_dated-2023-05-05": {
+      "novel-generated": 1
+    },
+    "PEPSICO_2023_8K_dated-2023-05-30": {
+      "novel-generated": 2
+    },
+    "PFIZER_2021_10K": {
+      "novel-generated": 2
+    },
+    "Pfizer_2023Q2_10Q": {
+      "novel-generated": 3
+    },
+    "ULTABEAUTY_2023Q4_EARNINGS": {
+      "novel-generated": 4
+    },
+    "ULTABEAUTY_2023_10K": {
+      "domain-relevant": 2
+    },
+    "VERIZON_2021_10K": {
+      "novel-generated": 1
+    },
+    "VERIZON_2022_10K": {
+      "domain-relevant": 2
+    },
+    "WALMART_2019_10K": {
+      "metrics-generated": 1
+    }
+  },
+  "missing_doc_names": {
+    "ACTIVISIONBLIZZARD_2019_10K": 2,
+    "ADOBE_2015_10K": 1,
+    "ADOBE_2017_10K": 1,
+    "AMD_2015_10K": 1,
+    "AMERICANWATERWORKS_2021_10K": 1,
+    "AMERICANWATERWORKS_2022_10K": 1,
+    "COCACOLA_2017_10K": 1,
+    "COCACOLA_2022_10K": 1,
+    "CORNING_2020_10K": 1,
+    "CVSHEALTH_2018_10K": 1,
+    "GENERALMILLS_2019_10K": 1,
+    "GENERALMILLS_2022_10K": 1,
+    "KRAFTHEINZ_2019_10K": 1,
+    "LOCKHEEDMARTIN_2020_10K": 1,
+    "MGMRESORTS_2020_10K": 1,
+    "NETFLIX_2015_10K": 1,
+    "NIKE_2021_10K": 1,
+    "WALMART_2018_10K": 1,
+    "WALMART_2020_10K": 1
+  },
+  "no_evidence_doc_names": {},
+  "multiple_evidence_doc_names": {
+    "3M_2022_10K": 1,
+    "AES_2022_10K": 2,
+    "AMAZON_2017_10K": 1,
+    "BOEING_2022_10K": 1,
+    "CVSHEALTH_2022_10K": 2,
+    "JOHNSON_JOHNSON_2022_10K": 1,
+    "MGMRESORTS_2022Q4_EARNINGS": 1,
+    "PEPSICO_2022_10K": 3,
+    "PFIZER_2021_10K": 1,
+    "VERIZON_2021_10K": 1,
+    "VERIZON_2022_10K": 1
+  }
+}
