@@ -56,14 +56,13 @@ def evaluate_bm25(
         query = query_row["query"]
         gold_chunk_id = str(query_row["ground_truth_chunk_id"])
 
-        start = time.time()
-
-        results = retriever.retrieve(
+        results, metadata = retriever.retrieve(
             query=query,
             top_k=top_k,
+            return_metadata=True,
         )
 
-        latency = time.time() - start
+        latency = metadata["query_time_seconds"]
 
         top1_results = results[:1]
         top5_results = results[:5]
@@ -105,9 +104,20 @@ def evaluate_bm25(
             "ground_truth_rank_top5": ground_truth_rank_top5,
             "reciprocal_rank_at_5": reciprocal_rank_at_5,
 
-            "top1_latency_seconds": round(latency, 3),
-            "top5_latency_seconds": round(latency, 3),
-            "latency_seconds": round(latency, 3),
+            "top1_latency_seconds": round(latency, 6),
+            "top5_latency_seconds": round(latency, 6),
+            "latency_seconds": round(latency, 6),
+
+            # BM25 timing
+            "preprocessing_time_seconds": round(metadata["preprocessing_time_seconds"], 6),
+            "tokenization_time_seconds": round(metadata["tokenization_time_seconds"], 6),
+            "index_construction_time_seconds": round(metadata["index_construction_time_seconds"], 6),
+            "query_time_seconds": round(metadata["query_time_seconds"], 6),
+
+            # BM25 has no embeddings
+            "embedding_time_seconds": 0.0,
+
+            "num_chunks_indexed": metadata["num_chunks_indexed"],
 
             "top1_input_tokens": 0,
             "top1_output_tokens": 0,
@@ -135,7 +145,13 @@ def evaluate_bm25(
 
         print(f"Accuracy@1: {accuracy_at_1:.4f}")
         print(f"MRR@5: {mrr_at_5:.4f}")
-        print(f"Average latency: {avg_latency:.4f}s")
+        print(f"Average query latency: {avg_latency:.6f}s")
+
+        print("\n=== BM25 PREPROCESSING / INDEXING ===")
+        print(f"Preprocessing time: {result_rows[0]['preprocessing_time_seconds']:.6f}s")
+        print(f"Corpus tokenization time: {result_rows[0]['tokenization_time_seconds']:.6f}s")
+        print(f"Index construction time: {result_rows[0]['index_construction_time_seconds']:.6f}s")
+        print(f"Embedding time: 0.000000s")
 
 
 if __name__ == "__main__":

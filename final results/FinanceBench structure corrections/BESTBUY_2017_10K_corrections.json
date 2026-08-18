@@ -1,0 +1,19 @@
+{
+  "doc_name": "BESTBUY_2017_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 4,
+      "reason": "Correct node 0000 index from 1-6 to 1-4."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0001",
+      "start_index": 4,
+      "end_index": 4,
+      "reason": "Correct node 0001 index from 6-4 to 4-4."
+    }
+  ]
+}

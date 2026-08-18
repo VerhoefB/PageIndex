@@ -1,0 +1,89 @@
+{
+  "doc_name": "AES_2022_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0187",
+      "start_index": 168,
+      "end_index": 169,
+      "reason": "Correct node 0187 index from 168-163 to 168-169."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0188",
+      "start_index": 169,
+      "end_index": 171,
+      "reason": "Correct node 0188 index from 163-171 to 169-171."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0199",
+      "start_index": 195,
+      "end_index": 198,
+      "reason": "Correct node 0199 index from 195-199 to 195-198."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0200",
+      "start_index": 198,
+      "end_index": 199,
+      "reason": "Correct node 0200 index from 199-200 to 198-199."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0201",
+      "start_index": 199,
+      "end_index": 201,
+      "reason": "Correct node 0201 index from 200-208 to 199-201."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0202",
+      "start_index": 201,
+      "end_index": 202,
+      "reason": "Correct node 0202 index from 208-209 to 201-202."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0203",
+      "start_index": 202,
+      "end_index": 202,
+      "reason": "Correct node 0203 index from 209-210 to 202-202."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0204",
+      "start_index": 203,
+      "end_index": 203,
+      "reason": "Correct node 0204 index from 210-211 to 203-203."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0205",
+      "start_index": 204,
+      "end_index": 204,
+      "reason": "Correct node 0205 index from 211-211 to 204-204."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0206",
+      "start_index": 204,
+      "end_index": 205,
+      "reason": "Correct node 0206 index from 211-207 to 204-205."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0207",
+      "start_index": 206,
+      "end_index": 206,
+      "reason": "Correct node 0207 index from 207-206 to 206-206."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0208",
+      "start_index": 206,
+      "end_index": 206,
+      "reason": "Correct node 0208 index from 206-207 to 206-206."
+    }
+  ]
+}

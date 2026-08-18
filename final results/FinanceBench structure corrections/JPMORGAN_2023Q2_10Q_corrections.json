@@ -1,0 +1,134 @@
+{
+  "doc_name": "JPMORGAN_2023Q2_10Q",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0285",
+      "start_index": 200,
+      "end_index": 205,
+      "reason": "Correct malformed glossary node. The generated range was 200-3, but the glossary corresponds to pages 200-205."
+    },
+    {
+      "action": "move",
+      "node_id": "0453",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0285",
+      "reason": "Move the Line of Business Metrics block after the corrected glossary node. Its children move with it, preserving the block structure."
+    },
+    {
+      "action": "move",
+      "node_id": "0468",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0453",
+      "reason": "Move Item 3 after the Line of Business Metrics block to preserve root-level page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0469",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0468",
+      "reason": "Move Item 4 after Item 3 to preserve root-level page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0470",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0469",
+      "reason": "Move the Part II block after Item 4. Its children 0471-0477 move with it, preserving the block structure."
+    },
+    {
+      "action": "remove",
+      "node_id": "0286",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0287",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0288",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0289",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0290",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0291",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0292",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0293",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0294",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0295",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0296",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0297",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0298",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0299",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0300",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0301",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0302",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0303",
+      "reason": "Remove duplicated restarted block after preserving the later unique nodes."
+    }
+  ]
+}

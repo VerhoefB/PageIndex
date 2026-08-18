@@ -1,0 +1,22 @@
+{
+  "doc_name": "PEPSICO_2022_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0213",
+      "start_index": 121,
+      "end_index": 121,
+      "reason": "Correct node 0213 index from 121-122 to 121-121."
+    },
+    {
+      "action": "remove",
+      "node_id": "0214",
+      "reason": "Remove node 0214."
+    },
+    {
+      "action": "remove",
+      "node_id": "0488",
+      "reason": "Remove node 0488."
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "doc_name": "JPMORGAN_2022_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0121",
+      "start_index": 99,
+      "end_index": 99,
+      "reason": "Correct node 0121 index from 99-98 to 99-99."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0179",
+      "start_index": 133,
+      "end_index": 133,
+      "reason": "Correct node 0179 index from 133-132 to 133-133."
+    },
+    {
+      "action": "move",
+      "node_id": "0238",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0236",
+      "reason": "Move node 0238 out of node 0237 and place it after node 0236 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0239",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0238",
+      "reason": "Move node 0239 out of node 0237 and place it after node 0238 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0241",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0239",
+      "reason": "Move node 0241 out of node 0237 and place it after node 0239 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0242",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0241",
+      "reason": "Move node 0242 out of node 0237 and place it after node 0241 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0243",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0242",
+      "reason": "Move node 0243 out of node 0237 and place it after node 0242 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0244",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0243",
+      "reason": "Move node 0244 out of node 0237 and place it after node 0243 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0245",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0244",
+      "reason": "Move node 0245 out of node 0237 and place it after node 0244 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0246",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0245",
+      "reason": "Move node 0246 out of node 0237 and place it after node 0245 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0247",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0246",
+      "reason": "Move node 0247 out of node 0237 and place it after node 0246 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0265",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0247",
+      "reason": "Move node 0265 out of node 0237 and place it after node 0247 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0270",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0265",
+      "reason": "Move node 0270 out of node 0237 and place it after node 0265 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0271",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0270",
+      "reason": "Move node 0271 out of node 0237 and place it after node 0270 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0292",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0271",
+      "reason": "Move node 0292 out of node 0237 and place it after node 0271 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0304",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0292",
+      "reason": "Move node 0304 out of node 0237 and place it after node 0292 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0305",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0304",
+      "reason": "Move node 0305 out of node 0237 and place it after node 0304 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0312",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0305",
+      "reason": "Move node 0312 out of node 0237 and place it after node 0305 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0317",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0312",
+      "reason": "Move node 0317 out of node 0237 and place it after node 0312 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0323",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0317",
+      "reason": "Move node 0323 out of node 0237 and place it after node 0317 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0326",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0323",
+      "reason": "Move node 0326 out of node 0237 and place it after node 0323 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0359",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0326",
+      "reason": "Move node 0359 out of node 0237 and place it after node 0326 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0366",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0359",
+      "reason": "Move node 0366 out of node 0237 and place it after node 0359 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0384",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0366",
+      "reason": "Move node 0384 out of node 0237 and place it after node 0366 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0388",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0384",
+      "reason": "Move node 0388 out of node 0237 and place it after node 0384 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0389",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0388",
+      "reason": "Move node 0389 out of node 0237 and place it after node 0388 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0390",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0389",
+      "reason": "Move node 0390 out of node 0237 and place it after node 0389 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0393",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0390",
+      "reason": "Move node 0393 out of node 0237 and place it after node 0390 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0394",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0393",
+      "reason": "Move node 0394 out of node 0237 and place it after node 0393 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0395",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0394",
+      "reason": "Move node 0395 out of node 0237 and place it after node 0394 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0398",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0395",
+      "reason": "Move node 0398 out of node 0237 and place it after node 0395 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0399",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0398",
+      "reason": "Move node 0399 out of node 0237 and place it after node 0398 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0400",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0399",
+      "reason": "Move node 0400 out of node 0237 and place it after node 0399 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0401",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0400",
+      "reason": "Move node 0401 out of node 0237 and place it after node 0400 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0406",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0401",
+      "reason": "Move node 0406 out of node 0237 and place it after node 0401 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0409",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0406",
+      "reason": "Move node 0409 out of node 0237 and place it after node 0406 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0411",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0409",
+      "reason": "Move node 0411 out of node 0237 and place it after node 0409 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0428",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0411",
+      "reason": "Move node 0428 out of node 0237 and place it after node 0411 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0431",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0428",
+      "reason": "Move node 0431 out of node 0237 and place it after node 0428 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0442",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0431",
+      "reason": "Move node 0442 out of node 0237 and place it after node 0431 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0443",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0442",
+      "reason": "Move node 0443 out of node 0237 and place it after node 0442 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0450",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0443",
+      "reason": "Move node 0450 out of node 0237 and place it after node 0443 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0451",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0450",
+      "reason": "Move node 0451 out of node 0237 and place it after node 0450 under node 0061 to preserve the financial-statement block order."
+    },
+    {
+      "action": "move",
+      "node_id": "0237",
+      "target_parent_node_id": "0061",
+      "position": "before",
+      "reference_node_id": "0063",
+      "reason": "Move the page-37 Item 8 cross-reference before the actual MD&A content to avoid the backward page-order jump."
+    },
+    {
+      "action": "move",
+      "node_id": "0452",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0237",
+      "reason": "Move Item 9 after the Item 8 cross-reference while preserving its children 0453-0455."
+    },
+    {
+      "action": "move",
+      "node_id": "0456",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0452",
+      "reason": "Move node 0456 after node 0452 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0457",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0456",
+      "reason": "Move node 0457 after node 0456 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0458",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0457",
+      "reason": "Move node 0458 after node 0457 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0459",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0458",
+      "reason": "Move node 0459 after node 0458 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0460",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0459",
+      "reason": "Move node 0460 after node 0459 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0461",
+      "target_parent_node_id": "0061",
+      "position": "after",
+      "reference_node_id": "0460",
+      "reason": "Move node 0461 after node 0460 under node 0061 to keep the cross-reference block in page order."
+    },
+    {
+      "action": "move",
+      "node_id": "0739",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0061",
+      "reason": "Move node 0739 out of duplicate wrapper 0688 and place it after node 0061 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0742",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0739",
+      "reason": "Move node 0742 out of duplicate wrapper 0688 and place it after node 0739 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0743",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0742",
+      "reason": "Move node 0743 out of duplicate wrapper 0688 and place it after node 0742 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0744",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0743",
+      "reason": "Move node 0744 out of duplicate wrapper 0688 and place it after node 0743 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0798",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0744",
+      "reason": "Move node 0798 out of duplicate wrapper 0688 and place it after node 0744 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0891",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0798",
+      "reason": "Move node 0891 out of duplicate wrapper 0688 and place it after node 0798 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0939",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0891",
+      "reason": "Move node 0939 out of duplicate wrapper 0688 and place it after node 0891 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0982",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0939",
+      "reason": "Move node 0982 out of duplicate wrapper 0688 and place it after node 0939 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0983",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0982",
+      "reason": "Move node 0983 out of duplicate wrapper 0688 and place it after node 0982 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0984",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0983",
+      "reason": "Move node 0984 out of duplicate wrapper 0688 and place it after node 0983 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0985",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0984",
+      "reason": "Move node 0985 out of duplicate wrapper 0688 and place it after node 0984 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0986",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0985",
+      "reason": "Move node 0986 out of duplicate wrapper 0688 and place it after node 0985 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "move",
+      "node_id": "0987",
+      "target_parent_node_id": "0000",
+      "position": "after",
+      "reference_node_id": "0986",
+      "reason": "Move node 0987 out of duplicate wrapper 0688 and place it after node 0986 under node 0000 to preserve the later unique block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0462",
+      "reason": "Remove duplicated/restarted content after preserving the useful later nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0463",
+      "reason": "Remove duplicated/restarted content after preserving the useful later nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0464",
+      "reason": "Remove duplicated/restarted content after preserving the useful later nodes."
+    },
+    {
+      "action": "remove",
+      "node_id": "0688",
+      "reason": "Remove duplicated/restarted content after preserving the useful later nodes."
+    }
+  ]
+}

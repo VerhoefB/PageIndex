@@ -1,0 +1,19 @@
+{
+  "doc_name": "BLOCK_2016_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0056",
+      "start_index": 66,
+      "end_index": 66,
+      "reason": "Correct node 0056 index from 66-65 to 66-66."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0153",
+      "start_index": 107,
+      "end_index": 107,
+      "reason": "Correct node 0153 index from 107-106 to 107-107."
+    }
+  ]
+}

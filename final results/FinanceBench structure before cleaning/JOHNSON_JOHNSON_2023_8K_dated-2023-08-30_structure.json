@@ -1,0 +1,220 @@
+{
+  "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+  "doc_description": "SEC Form 8‑K filed August 30, 2023 by Johnson & Johnson announcing completion of the Kenvue separation via exchange offer, recasting Consumer Health as discontinued operations and issuing updated 2023 sales/EPS guidance with non‑GAAP schedules, highlighting a ~191M share count reduction, $13.2B in cash proceeds, a retained 9.5% Kenvue stake, and including exhibits with the press release and supplementary sales data.",
+  "structure": [
+    {
+      "structure": "0",
+      "title": "Preface",
+      "heading": null,
+      "start_phrase": null,
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 1,
+      "summary": "- Header of a U.S. SEC Form 8-K (Current Report) for Johnson & Johnson.\n- Date of report/earliest event: August 30, 2023.\n- Registrant details: Johnson & Johnson; incorporated in New Jersey; Commission File No. 1-3215; EIN 22-1024240; principal office at One Johnson & Johnson Plaza, New Brunswick, NJ 08933; phone 732-524-0400.\n- Regulatory checkboxes indicate no concurrent written communications, solicitation materials, or pre-commencement communications; not an emerging growth company and no election of extended transition for new accounting standards.\n- Securities registered under Section 12(b), all listed on the NYSE:\n  - Common Stock, Par Value $1.00 (Ticker: JNJ)\n  - 0.650% Notes Due May 2024 (Ticker: JNJ24C)\n  - 5.50% Notes Due November 2024 (Ticker: JNJ24BP)\n  - 1.150% Notes Due November 2028 (Ticker: JNJ28)\n  - 1.650% Notes Due May 2035 (Ticker: JNJ35)"
+    },
+    {
+      "structure": "1",
+      "title": "Results of Operations and Financial Condition",
+      "heading": "Item 2.02 Results of Operations and Financial Condition",
+      "start_phrase": "Johnson & Johnson completed an exchange offer to finalize the separation of Kenvue Inc. (the \"Kenvue Separation\").",
+      "node_id": "0001",
+      "start_index": 2,
+      "end_index": 2,
+      "summary": "An SEC Form 8-K reporting that Johnson & Johnson completed an exchange offer finalizing the separation of Kenvue Inc., and issued an August 30, 2023 press release with updated financials and 2023 guidance reflecting the separation. It also lists exhibits: the press release (Exhibit 99.1), updated financial data (Exhibit 99.2), and the Inline XBRL-formatted cover page (Exhibit 104)."
+    },
+    {
+      "structure": "2",
+      "title": "Financial Statements and Exhibits",
+      "heading": "Item 9.01 Financial Statements and Exhibits",
+      "start_phrase": "(d) Exhibits.",
+      "node_id": "0002",
+      "start_index": 2,
+      "end_index": 2,
+      "summary": "- Johnson & Johnson reports under Item 2.02 that it completed an exchange offer finalizing the separation of Kenvue Inc.\n- On August 30, 2023, the company issued a press release providing updated financials and 2023 guidance reflecting the Kenvue Separation.\n- Under Item 9.01, the company lists exhibits: Exhibit 99.1 (press release dated August 30, 2023), Exhibit 99.2 (updated financial data), and Exhibit 104 (Form 8-K cover page formatted in Inline XBRL)."
+    },
+    {
+      "structure": "3",
+      "title": "SIGNATURES",
+      "heading": "SIGNATURES",
+      "start_phrase": "Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.",
+      "node_id": "0003",
+      "start_index": 3,
+      "end_index": 4,
+      "summary": "- SEC filing signatures page indicating Johnson & Johnson’s report was signed on August 30, 2023, by Robert J. Decker, Jr., Controller and Principal Accounting Officer.\n- Exhibit 99.1 press release announcing updated 2023 financial guidance following completion of the Kenvue separation, positioning J&J as a focused Pharmaceutical and MedTech company.\n- Updated guidance:\n  - Reported Sales Growth: 7.0%–8.0%; Operational Sales Growth: 7.5%–8.5%; Adjusted Operational Sales Growth: 6.2%–7.2% (excluding COVID-19 vaccine).\n  - Adjusted Reported EPS: $10.00–$10.10 (about 12.5% growth at midpoint); Adjusted Operational EPS: $9.90–$10.00 (about 11.5% growth at midpoint).\n- Capital and share updates:\n  - Reduction of outstanding shares by ~191 million; 2023 guidance includes a partial-year benefit of ~73.5 million shares (~$0.28 EPS benefit).\n  - $13.2 billion in cash proceeds from Kenvue’s debt offering and IPO; J&J retains a 9.5% equity stake in Kenvue.\n  - Quarterly dividend maintained at $1.19 per share.\n- Financial reporting impact:\n  - Consumer Health (Kenvue) results to be reported as discontinued operations.\n  - Anticipated gain of approximately $20 billion in Q3 2023 from the separation.\n- Additional items:\n  - Investor webinar available on J&J’s website.\n  - CEO statement highlighting strategic focus on transformative healthcare and value creation post-separation."
+    },
+    {
+      "structure": "4",
+      "title": "Johnson & Johnson Announces Updated Financials and 2023 Guidance Following Completion of the Kenvue Separation",
+      "heading": "Exhibit 99.1",
+      "start_phrase": "New Brunswick, N.J. (August 30, 2023) – Johnson & Johnson (NYSE: JNJ) (“the Company”) today announced updates to its financials and 2023 guidance which reflect its operations as a company focused on transformational innovation in Pharmaceutical and MedTech.",
+      "node_id": "0004",
+      "start_index": 4,
+      "end_index": 5,
+      "summary": "- Johnson & Johnson updates financials and 2023 guidance following completion of the Kenvue separation, positioning the company as focused on Pharmaceutical and MedTech; an investor webinar is available.\n- Sales guidance: Reported sales growth 7.0%–8.0%; Operational 7.5%–8.5%; Adjusted Operational 6.2%–7.2%; all excluding the COVID-19 vaccine.\n- EPS guidance: Adjusted Reported EPS $10.00–$10.10 (~12.5% growth at midpoint); Adjusted Operational EPS $9.90–$10.00 (~11.5% growth at midpoint).\n- Capital actions: Reduced outstanding shares by ~191 million; 2023 guidance includes only a partial-year benefit of ~73.5 million shares (~$0.28 EPS benefit).\n- Transaction outcomes: Secured $13.2 billion in cash from Kenvue debt offering and IPO; retains a 9.5% equity stake in Kenvue.\n- Dividend: Maintains quarterly dividend of $1.19 per share.\n- Accounting/financial presentation: Consumer Health results now shown as discontinued operations with an expected ~$20 billion gain in Q3 2023; continuing operations have been recast accordingly.\n- Methodology notes: Numerous figures are non-GAAP and exclude FX, acquisitions/divestitures, intangible amortization, and special items; references made to financial, regional, and segment sales result schedules; values may be rounded.\n- CEO commentary emphasizes focus on transformative healthcare solutions and value creation post-separation.",
+      "nodes": [
+        {
+          "structure": "4.1",
+          "title": "FINANCIAL RESULTS:",
+          "heading": "FINANCIAL RESULTS:",
+          "start_phrase": "Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules",
+          "node_id": "0005",
+          "start_index": 5,
+          "end_index": 5,
+          "summary": "- Earnings results and guidance are recast to reflect Johnson & Johnson’s continuing operations.\n- All reported figures for financial, regional sales, and segment sales results are presented on a non-GAAP basis with reconciliations available in accompanying schedules.\n- Adjustments exclude translational currency effects and the net impact of acquisitions and divestitures; financial results also exclude intangible amortization expense and special items.\n- Notes indicate values may be rounded.\n- Footnote references (e.g., 1–4) suggest additional detail provided elsewhere in the full document."
+        },
+        {
+          "structure": "4.2",
+          "title": "REGIONAL SALES RESULTS:",
+          "heading": "REGIONAL SALES RESULTS:",
+          "start_phrase": "Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules",
+          "node_id": "0006",
+          "start_index": 5,
+          "end_index": 5,
+          "summary": "- Focuses on Johnson & Johnson’s financial results and earnings guidance recast to reflect continuing operations.\n- Emphasizes use of non-GAAP measures with references to accompanying reconciliations.\n- States that figures exclude translational currency effects, the net impact of acquisitions and divestitures, and (for certain metrics) intangible amortization and special items.\n- Organizes results into three areas: overall financial results, regional sales results, and segment sales results.\n- Notes that values may be rounded and includes footnote references."
+        },
+        {
+          "structure": "4.3",
+          "title": "SEGMENT SALES RESULTS:",
+          "heading": "SEGMENT SALES RESULTS:",
+          "start_phrase": "Non-GAAP financial measure; refer to reconciliations of non-GAAP financial measures included in accompanying schedules",
+          "node_id": "0007",
+          "start_index": 5,
+          "end_index": 5,
+          "summary": "The partial document outlines Johnson & Johnson’s recast financial reporting for continuing operations, presenting three main areas: overall financial results, regional sales results, and segment sales results. It emphasizes the use of non-GAAP measures with reconciliations available in accompanying schedules and notes several standard adjustments: exclusion of translational currency effects, the net impact of acquisitions and divestitures, and (for financial results) intangible amortization expense and special items. It also indicates that values may be rounded and references footnotes (1–4) for additional detail."
+        },
+        {
+          "structure": "4.4",
+          "title": "UPDATED FULL-YEAR 2023 GUIDANCE:",
+          "heading": "UPDATED FULL-YEAR 2023 GUIDANCE:",
+          "start_phrase": "Johnson & Johnson does not provide GAAP financial measures on a forward-looking basis because the Company is unable to predict with reasonable certainty the ultimate outcome of legal proceedings, unusual gains and losses, acquisition-related expenses and purchase accounting fair value adjustments without unreasonable effort.",
+          "node_id": "0008",
+          "start_index": 6,
+          "end_index": 7,
+          "summary": "- Johnson & Johnson issues updated full-year 2023 guidance (August 2023) excluding Consumer Health, contrasted with prior July 2023 guidance that included Consumer Health (pre-Kenvue separation).\n- Key August 2023 outlook (ex-Consumer Health):\n  - Adjusted operational sales growth: 6.2%–7.2% (midpoint 6.7%).\n  - Operational sales: $83.6B–$84.4B (midpoint $84.0B), up 7.5%–8.5%.\n  - Reported sales: $83.2B–$84.0B (midpoint $83.6B), up 7.0%–8.0%.\n  - Adjusted operational EPS (diluted): $9.90–$10.00 (midpoint $9.95), up 11.0%–12.0%.\n  - Adjusted EPS (diluted): $10.00–$10.10 (midpoint $10.05), up 12.0%–13.0%.\n  - Average diluted shares: ~2,557 million.\n- July 2023 guidance (including Consumer Health) for comparison:\n  - Operational sales: $99.3B–$100.3B (midpoint $99.8B), up 7.0%–8.0%.\n  - Reported sales: $98.8B–$99.8B (midpoint $99.3B), up 6.5%–7.5%.\n  - Adjusted operational sales growth: 6.0%–7.0% (midpoint 6.5%).\n  - Adjusted operational EPS (diluted): $10.60–$10.70 (midpoint $10.65), up 4.5%–5.5%.\n  - Adjusted EPS (diluted): $10.70–$10.80 (midpoint $10.75), up 5.5%–6.5%.\n  - Average diluted shares: ~2,631 million.\n- Kenvue separation and capital actions:\n  - Share count reduced by ~191 million via exchange offer; weighted average reduction of ~73.5 million shares recognized from Aug 23, 2023, adding ~$0.28 to full-year 2023 adjusted diluted EPS.\n  - Generated $13.2B in cash from Kenvue debt offering and IPO.\n  - Retains a 9.5% stake in Kenvue subject to a 90-day lockup; potential tax-efficient monetization in the next year, with no obligation if market conditions aren’t supportive.\n- Dividend: Company will maintain its quarterly dividend of $1.19 per share.\n- Non-GAAP framework and limitations:\n  - Company does not provide GAAP forward-looking measures due to unpredictability of legal outcomes, unusual items, and acquisition-related effects.\n  - Definitions provided for operational/adjusted operational sales growth and adjusted EPS metrics; figures exclude currency translation, net impact of acquisitions/divestitures, intangible amortization, special items, and COVID-19 vaccine.\n  - Reconciliations and supplementary financial schedules available in the Investors section (webcasts & presentations).\n- Additional information:\n  - A recorded investor webinar provides context on the updated financials and guidance.\n  - Notes include illustrative Euro rate usage and share count methodology post-Kenvue exchange.\n  - Company overview emphasizes J&J’s mission and role as a diversified healthcare leader."
+        },
+        {
+          "structure": "4.5",
+          "title": "WEBINAR INFORMATION:",
+          "heading": "WEBINAR INFORMATION:",
+          "start_phrase": "Johnson & Johnson has published a recorded webinar for investors to provide additional context behind the updated financials and 2023 guidance found in this release.",
+          "node_id": "0009",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- Notes a current 90‑day lockup agreement and states Johnson & Johnson has no obligation to alter it if market conditions are unfavorable.\n- Confirms the quarterly dividend will be maintained at $1.19 per share.\n- Provides webinar information: a recorded investor webinar with context on updated financials and 2023 guidance, plus supplemental materials, available in the Investors section under webcasts & presentations.\n- Includes an “About Johnson & Johnson” overview highlighting its 135+ year history, role as a leading diversified healthcare company, and commitment to access, affordability, and healthier communities.\n- Explains the company’s use of non-GAAP financial measures (operational and adjusted operational sales growth, adjusted net earnings, adjusted diluted EPS), clarifying exclusions and advising they be read with GAAP results; reconciliations are available.\n- States that financial schedules (supplementary sales data, condensed consolidated statement of earnings, and non-GAAP reconciliations) accompany the release and are posted online."
+        },
+        {
+          "structure": "4.6",
+          "title": "ABOUT JOHNSON & JOHNSON:",
+          "heading": "ABOUT JOHNSON & JOHNSON:",
+          "start_phrase": "At Johnson & Johnson, we believe good health is the foundation of vibrant lives, thriving communities and forward progress.",
+          "node_id": "0010",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- Notes regarding a current 90-day lockup agreement, stating Johnson & Johnson has no obligation to alter it if market conditions are unfavorable.\n- Confirmation that the quarterly dividend will be maintained at $1.19 per share.\n- Information about a recorded investor webinar offering context on updated financials and 2023 guidance, available in the Investors section under webcasts & presentations.\n- “About Johnson & Johnson” overview highlighting its 135+ year history, role as a leading diversified healthcare company, and commitments to access, affordability, and healthier communities.\n- Explanation of non-GAAP financial measures used (operational sales growth, adjusted operational sales growth, adjusted net earnings, adjusted diluted EPS, adjusted operational diluted EPS), noting they should be read with GAAP figures, with reconciliations available.\n- Availability of accompanying financial schedules on the company website, including supplementary sales data, a condensed consolidated statement of earnings, and reconciliations of non-GAAP measures."
+        },
+        {
+          "structure": "4.7",
+          "title": "NON-GAAP FINANCIAL MEASURES:",
+          "heading": "NON-GAAP FINANCIAL MEASURES:",
+          "start_phrase": "* “Operational sales growth” excluding the impact of translational currency, “adjusted operational sales growth” excluding the net impact of acquisitions and divestitures and translational currency, as well as “adjusted net earnings”,",
+          "node_id": "0011",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- Notes a current 90-day lockup agreement and clarifies Johnson & Johnson has no obligation to proceed with related actions if market conditions are unfavorable.\n- Confirms the Company will maintain its quarterly dividend at $1.19 per share.\n- Provides investor resources: a recorded webinar offering context on updated financials and 2023 guidance, plus supplemental materials available in the Investors section of the Company’s website.\n- Includes an overview of Johnson & Johnson’s mission, history (135+ years), scale as a leading diversified healthcare company, and commitments to access, affordability, and healthier communities.\n- Explains use of non-GAAP financial measures (operational and adjusted operational sales growth, adjusted net earnings, adjusted diluted EPS) and emphasizes they should be read alongside GAAP results; reconciliations are available.\n- States that accompanying financial schedules are posted online, including supplementary sales data, a condensed consolidated statement of earnings, and non-GAAP to GAAP reconciliations."
+        },
+        {
+          "structure": "4.8",
+          "title": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
+          "heading": "NOTE TO INVESTORS CONCERNING FORWARD-LOOKING STATEMENTS:",
+          "start_phrase": "This press release contains “forward-looking statements” as defined in the Private Securities Litigation Reform Act of 1995 regarding, among other things: future operating and financial performance, product development, and market position and business strategy.",
+          "node_id": "0012",
+          "start_index": 8,
+          "end_index": 9,
+          "summary": "- Forward-looking statements caution from Johnson & Johnson outlining that expectations about future performance, product development, market position, and strategy are subject to risks and uncertainties. Key risk factors cited include macroeconomic conditions (interest and FX rates), competition and IP dynamics, R&D and regulatory approval risks, commercial uptake, patent expirations and challenges, execution of strategic and restructuring plans, M&A and divestiture impacts, manufacturing/supply chain issues, product safety/recall or regulatory actions, significant litigation/government actions, legal and regulatory changes (including tax and global health care reforms), health care cost containment trends, customer behavior shifts, international economic/legal instability and sovereign risk, increased government scrutiny, and execution/standalone success risks related to the Consumer Health separation. References are made to the 2023 Form 10-K and subsequent 10-Qs on sec.gov and jnj.com. The company disclaims any obligation to update forward-looking statements.\n- Contacts provided: Press (Jake Sargent, media-relations@its.jnj.com) and Investor Relations (Jessica Moore, investor-relations@its.jnj.com).\n- Exhibit 99.2: Unaudited supplementary sales data (dollars in millions) by geography (U.S., Europe, Western Hemisphere excluding U.S., Asia-Pacific/Africa, International, Worldwide) for Q1, Q2, and first six months of 2023 versus 2022, with percent changes split into Total Operations and Currency; note that percentages are based on actual (non-rounded) figures.\n- Key results:\n  - Worldwide sales: Q1 2023 $20,894 vs $19,840 (+5.3%; +8.5 ops, -3.2 currency); Q2 $21,519 vs $20,215 (+6.5%; +7.5 ops, -1.0 currency); Six months $42,413 vs $40,055 (+5.9%; +8.0 ops, -2.1 currency).\n  - U.S.: Strong growth—Q1 +9.4%, Q2 +10.9%, six months +10.2%.\n  - International: Modest growth dampened by FX—Q1 +1.3% (ops +7.7, FX -6.4), Q2 +1.6% (ops +3.8, FX -2.2), six months +1.5% (ops +5.8, FX -4.3).\n  - Europe: Mixed—Q1 +4.7% with FX headwind; Q2 -4.2% with slight FX tailwind.\n  - Western Hemisphere ex-U.S.: Double-digit operational growth with FX headwinds across periods.\n  - Asia-Pacific/Africa: Q1 decline driven by FX (reported -5.4%; ops +3.1, FX -8.5); Q2 return to growth (+8.2%; ops +14.3, FX -6.1); six months slight increase (+1.1%)."
+        }
+      ]
+    },
+    {
+      "structure": "5",
+      "title": "Johnson & Johnson and Subsidiaries Supplementary Sales Data",
+      "heading": "Exhibit 99.2",
+      "start_phrase": "Note: Percentages have been calculated using actual, non-rounded figures and, therefore, may not recalculate precisely.",
+      "node_id": "0013",
+      "start_index": 9,
+      "end_index": 10,
+      "summary": "- Exhibit 99.2 provides unaudited supplementary sales data for Johnson & Johnson, in dollars (millions), focused on sales to customers by geographic area.\n- Geography reported: U.S., Europe, Western Hemisphere excluding U.S., Asia-Pacific/Africa, International (non-U.S. total), and Worldwide.\n- Periods covered:\n  - 2023 vs 2022: First quarter, second quarter, and six months year-to-date.\n  - 2022 vs 2021: First, second, and third quarters.\n- Each period shows sales totals and year-over-year percent changes, split into:\n  - Total operations (reported growth) and\n  - Currency impact (FX), isolating operational performance from foreign exchange effects.\n- 1H 2023 highlights:\n  - Worldwide sales $42,413 million, +5.9% reported; operational growth +8.0% with a -2.1% FX drag.\n  - U.S. +10.2% to $22,439 million; International +1.5% reported (operational +5.8%, FX -4.3%).\n  - Regional trends: Europe roughly flat reported (+0.2% YTD) with FX headwinds; Western Hemisphere ex-U.S. strong growth (+9.3% reported, +16.2% operational); Asia-Pacific/Africa modest growth (+1.1% reported, +8.5% operational) with negative FX.\n- Quarterly 2023 results:\n  - Q1: Worldwide $20,894 million, +5.3% reported; U.S. +9.4%; International +1.3% (operational +7.7%, FX -6.4%).\n  - Q2: Worldwide $21,519 million, +6.5% reported; U.S. +10.9%; International +1.6% (operational +3.8%, FX -2.2%).\n- 2022 vs 2021 trends (Q1–Q3):\n  - Consistent reported growth worldwide (Q1 +6.2%, Q2 +3.9%, Q3 +2.4%), with notably higher operational growth offset by significant negative currency impacts, especially in Europe and International regions.\n- Note states percentages are calculated from actual (non-rounded) figures, so recalculations using rounded numbers may not match exactly.",
+      "nodes": [
+        {
+          "structure": "5.1",
+          "title": "Supplementary Sales Data",
+          "heading": "Supplementary Sales Data",
+          "start_phrase": "Note: Percentages have been calculated using actual, non-rounded figures and, therefore, may not recalculate precisely.",
+          "node_id": "0014",
+          "start_index": 10,
+          "end_index": 11,
+          "summary": "- Scope: Unaudited supplementary sales data for Johnson & Johnson and subsidiaries, in dollars (millions), comparing 2022 vs. 2021 by quarter (Q1–Q4) and full year, with percent change decomposed into Total Operations and Currency effects.\n- Coverage: Sales to customers by geographic area—U.S., Europe, Western Hemisphere excluding U.S., Asia-Pacific/Africa—plus International aggregate and Worldwide totals.\n- Key quarterly trends:\n  - Q1: Worldwide sales up 6.2% (operational +9.1%, currency −2.9%). U.S. +3.8%. Strong operational growth internationally (notably Europe +21.2% op) offset by FX headwinds.\n  - Q2: Worldwide up 3.9% (+9.1% op, −5.2% FX). U.S. +3.4%. Europe total +8.5% with large FX drag (−13.6%). Asia-Pacific/Africa down 2.9% despite +6.2% operational growth due to FX.\n  - Q3: Worldwide up 2.4% (+8.7% op, −6.3% FX). U.S. +4.4%. International essentially flat (+0.1%) as strong operational gains were fully offset by currency.\n  - Q4: Worldwide down 5.4% (−0.1% op, −5.3% FX). U.S. +1.7%. International −12.7%, driven by Europe −16.0% and Asia-Pacific/Africa −10.9%, with significant FX pressure.\n- Full-year summary (2022 vs. 2021):\n  - Worldwide sales $79,990M vs. $78,740M, up 1.6% (operational +6.5%, currency −4.9%).\n  - U.S. +3.3% for the year; grew modestly every quarter.\n  - International −0.2% overall, despite +10.0% operational growth, as −10.2% currency impact offset gains.\n  - Europe +0.3% total for the year (+12.1% op, −11.8% FX); Western Hemisphere ex-U.S. +4.6% (+8.7% op, −4.1% FX); Asia-Pacific/Africa −2.5% (+7.2% op, −9.7% FX).\n- Overall themes: Consistent operational growth across most regions, with substantial adverse foreign currency impacts—especially in Europe and Asia-Pacific/Africa—muting reported growth; Q4 saw a notable international and European decline driving a worldwide contraction.\n- Note: Percentages are based on actual (non-rounded) figures."
+        },
+        {
+          "structure": "5.2",
+          "title": "Supplementary Sales Data",
+          "heading": "Supplementary Sales Data",
+          "start_phrase": "Note: Percentages have been calculated using actual, non-rounded figures and, therefore, may not recalculate precisely.",
+          "node_id": "0015",
+          "start_index": 11,
+          "end_index": 12,
+          "summary": "- Johnson & Johnson supplementary sales data (unaudited, dollars in millions) show fourth-quarter 2022 sales by geography versus 2021: U.S. grew 1.7% to $10,820; Europe declined 16.0% (with a 6.3% operational decline and 9.7% currency headwind); Western Hemisphere excluding U.S. rose 1.7% (8.3% operational growth offset by a 6.6% currency headwind); Asia-Pacific, Africa declined 10.9% (3.0% operational growth offset by a 13.9% currency headwind). International was down 12.7%; worldwide sales fell 5.4% (with essentially flat operational performance and a 5.3% currency drag).\n- Full-year 2022 vs. 2021 sales by geography (unaudited): U.S. up 3.3% to $41,981; Europe up 0.3% (12.1% operational growth offset by an 11.8% currency headwind); Western Hemisphere excluding U.S. up 4.6%; Asia-Pacific, Africa down 2.5% (7.2% operational growth offset by a 9.7% currency headwind); International down 0.2% (10.0% operational growth offset by a 10.2% currency headwind). Worldwide sales increased 1.6% (6.5% operational growth offset by a 4.9% currency headwind). Note: percentages based on actual, non-rounded figures.\n- Condensed Consolidated Statement of Earnings (unaudited) for 2023: Q1 sales $20,894; Q2 $21,519; six months $42,413. Gross margin was 68% in Q1, 70% in Q2, 69% year-to-date.\n- Operating expenses as a percent of sales: SG&A 23.5% (Q1), 25.1% (Q2), 24.3% (YTD); R&D 16.6% (Q1), 17.2% (Q2), 16.9% (YTD). In-process R&D impairments were minimal (Q1 only).\n- Other income/expense swung sharply: a large Q1 expense ($6,940; 33.2% of sales) versus income in Q2 (reported as net other income of $384), contributing to a Q1 loss before tax and strong Q2 profitability.\n- Earnings from continuing operations: Q1 loss $(491) with diluted EPS of $(0.19); Q2 profit $5,376 with diluted EPS of $2.05; six months $4,885 with diluted EPS of $1.86. Discontinued operations contributed $423 (Q1), $(232) (Q2), $191 (YTD). Total net earnings: $(68) (Q1), $5,144 (Q2), $5,076 (YTD).\n- Effective tax rate from continuing operations: 61.8% (Q1), 14.7% (Q2), 2.7% (YTD), reflecting the impact of unusual items.\n- Non-GAAP adjusted results for continuing operations: adjusted pre-tax earnings $7,536 (Q1) and $8,005 (Q2); adjusted net earnings $6,340 (Q1) and $6,730 (Q2); adjusted diluted EPS $2.41 (Q1), $2.56 (Q2), $4.97 (YTD); adjusted effective tax rate 15.9% for Q1, Q2, and YTD.\n- The document explains the company’s use of non-GAAP measures (adjusted earnings, adjusted EPS, adjusted tax rate), which exclude items such as intangible amortization, significant divestiture gains, acquisition/restructuring costs, litigation, and regulatory/tax changes; they are intended to aid period-over-period comparisons and internal management use but have limitations, may not be comparable to other companies, and should supplement, not replace, GAAP results."
+        },
+        {
+          "structure": "5.3",
+          "title": "Condensed Consolidated Statement of Earnings",
+          "heading": "Condensed Consolidated Statement of Earnings",
+          "start_phrase": "NON-GAAP FINANCIAL MEASURES \"Adjusted earnings from continuing operations before provision for taxes on income,\" \"adjusted net earnings from continuing operations,\" \"adjusted net earnings per share (diluted) from continuing operations,\" and \"adjusted effective tax rate from continuing operations\" are non-GAAP financial measures and should not be considered replacements for GAAP results.",
+          "node_id": "0016",
+          "start_index": 12,
+          "end_index": 13,
+          "summary": "- Document type and scope: Unaudited Condensed Consolidated Statements of Earnings for Johnson & Johnson and Subsidiaries, presented in millions (except per share) for Q1, Q2, and the first six months of 2023 and 2022, with each line item shown as an amount and as a percent of sales.\n- Core income statement lines: Sales to customers, Cost of products sold, Gross profit, Selling/marketing/administrative expenses, Research and development, In-process R&D impairments, Interest income, Interest expense, Other (income) expense, Restructuring, Earnings before taxes, Provision for taxes, Net earnings from continuing operations, Net earnings from discontinued operations, Total net earnings.\n- Per-share and share data: Diluted net earnings (loss) per share from continuing and discontinued operations, and average diluted shares outstanding (with a note that basic shares were used in Q1 2023 due to an overall loss position).\n- Effective tax rate: Reported effective tax rates from continuing operations for each period.\n- 2023 highlights: Higher sales versus 2022 ($42.4B six months), Q2 strength, and a significant “Other (income) expense, net” charge in Q1 2023 leading to a loss from continuing operations in that quarter; full six-month net earnings from continuing operations lower than 2022; volatile effective tax rates (notably high in Q1, low for six months).\n- 2022 comparatives: Steady profitability from continuing operations with lower volatility in “Other (income) expense, net” and more consistent effective tax rates.\n- Discontinued operations: Contributions (positive and negative by quarter) shown separately, with totals affecting overall net earnings in both years.\n- Non-GAAP measures: Presentation of adjusted earnings from continuing operations before taxes, adjusted net earnings, adjusted diluted EPS, and adjusted effective tax rate for each period; references to a reconciliation.\n- Policy disclosure: Explanation of why management uses these non-GAAP measures (to aid investor evaluation, internal planning, and performance assessment), typical exclusions (e.g., intangible amortization, divestiture gains, acquisition/restructuring costs, litigation, regulatory/tax changes), variability and unpredictability of special items, and cautions about comparability and limitations versus GAAP."
+        },
+        {
+          "structure": "5.4",
+          "title": "Condensed Consolidated Statement of Earnings",
+          "heading": "Condensed Consolidated Statement of Earnings",
+          "start_phrase": "NON-GAAP FINANCIAL MEASURES \"Adjusted earnings from continuing operations before provision for taxes on income,\" \"adjusted net earnings from continuing operations,\" \"adjusted net earnings per share (diluted) from continuing operations,\" and \"adjusted effective tax rate from continuing operations\" are non-GAAP financial measures and should not be considered replacements for GAAP results.",
+          "node_id": "0017",
+          "start_index": 13,
+          "end_index": 14,
+          "summary": "- Presents Johnson & Johnson’s unaudited 2022 Condensed Consolidated Statement of Earnings (in millions, except per-share), with quarterly (Q1–Q4), six-month, and full-year views, showing both amounts and percent of sales.\n- Covers key GAAP line items: Sales to customers, Cost of products sold, Gross profit, Selling/marketing/administrative expenses, Research and development, In‑process R&D impairments, Interest income/expense, Other (income)/expense, Restructuring.\n- Reports earnings metrics: Earnings before taxes, Provision for taxes, Effective tax rate, Net earnings from Continuing Operations, Net earnings from Discontinued Operations, Total net earnings, Diluted EPS from continuing and discontinued operations, and Average diluted shares outstanding.\n- Highlights 2022 full-year figures such as Sales of $79.99B, Gross margin around 69%, Net earnings from Continuing Operations of $16.37B, Discontinued Operations of $1.57B, and diluted EPS from Continuing Operations of $6.14 (GAAP).\n- Notes special items including In‑process R&D impairments ($783M full year) and restructuring charges.\n- Provides non-GAAP (adjusted) measures for continuing operations by period: adjusted earnings before taxes, adjusted net earnings, adjusted diluted EPS, and adjusted effective tax rate (e.g., FY adjusted net earnings $23.80B; adjusted diluted EPS $8.93).\n- Includes a detailed explanation of why non-GAAP measures are used, typical exclusions (e.g., intangible amortization, divestiture gains, acquisition/restructuring costs, litigation, regulatory/tax changes), management’s use for planning and performance evaluation, and cautions on variability, limitations, and non-comparability; emphasizes they should supplement, not replace, GAAP results."
+        },
+        {
+          "structure": "5.5",
+          "title": "Condensed Consolidated Statement of Earnings",
+          "heading": "Condensed Consolidated Statement of Earnings",
+          "start_phrase": "NON-GAAP FINANCIAL MEASURES \"Adjusted earnings from continuing operations before provision for taxes on income,\" \"adjusted net earnings from continuing operations,\" \"adjusted net earnings per share (diluted) from continuing operations,\" and \"adjusted effective tax rate from continuing operations\" are non-GAAP financial measures and should not be considered replacements for GAAP results.",
+          "node_id": "0018",
+          "start_index": 14,
+          "end_index": 17,
+          "summary": "- 2022 financial results: Condensed Consolidated Statement of Earnings for Q3, Q4, and full year, showing sales of $79.99B, cost of products sold, gross profit (≈69% margin), SG&A, R&D, IPR&D impairments, interest income/expense, other income/expense, restructuring, earnings before taxes, tax provision, and net earnings.\n- Profitability metrics: Net earnings from continuing operations of $16.37B (≈20.5% of sales), additional net earnings from discontinued operations of $1.57B, total net earnings of $17.94B; diluted EPS of $6.14 (continuing) and $0.59 (discontinued); average diluted shares and effective tax rates reported for periods.\n- Non-GAAP metrics: Presentation of adjusted earnings from continuing operations (pre-tax, net, EPS, and effective tax rate) for 2022 Q3, Q4, and full year, with higher adjusted margins (e.g., full-year adjusted EPS $8.93 and adjusted ETR 14.9%).\n- Rationale for non-GAAP use: Explanation that adjusted measures exclude items like intangible amortization, gains/losses from divestitures or securities, acquisition/integration/divestiture costs, restructuring, litigation, regulatory impacts (e.g., Medical Device Regulation), IPR&D impairments, COVID-19 vaccine-related costs, and tax law changes; intended to aid period-over-period comparability but with limitations and potential lack of comparability to peers.\n- Reconciliation schedules:\n  - 2023 Q1, Q2, and first half: Bridge from reported continuing net earnings (including a Q1 loss) to adjusted results, detailing pre-tax adjustments (e.g., intangible amortization $2.25B H1, litigation $7.04B H1, COVID-19 costs $609M H1, MDR $149M H1, restructuring $275M) and tax adjustments; resulting in adjusted net earnings of $13.07B and adjusted diluted EPS of $4.97 for H1.\n  - 2022 by quarter and full year: Similar reconciliation with key adjustments (intangible amortization $3.94B, COVID-19 costs $1.47B, litigation $866M, IPR&D $783M, securities gains/losses $690M, MDR $296M, restructuring $372M) and related tax impacts; resulting in full-year adjusted net earnings of $23.80B and adjusted diluted EPS of $8.93.\n- Sales growth analytics: Adjusted Operational Sales Growth for 2023 vs. 2022 (Q1, Q2, H1) presented worldwide, U.S., and International, showing:\n  - As-reported WW growth ≈6% H1 with currency headwinds of ≈-2.1%.\n  - Operational growth ≈8.0% WW H1.\n  - Adjusted operational growth ≈6.4% WW H1 after excluding M&A impacts, including the Abiomed acquisition (-1.6% impact).\n  - Breakouts for U.S. and International adjusted operational growth.\n- Notes: Percentages based on actual, non-rounded figures; definitions and limitations of non-GAAP measures reiterated, including that investors should consider GAAP and non-GAAP together."
+        },
+        {
+          "structure": "5.6",
+          "title": "Adjusted Operational Sales Growth",
+          "heading": "Adjusted Operational Sales Growth",
+          "start_phrase": "NON-GAAP FINANCIAL MEASURE “Adjusted operational sales growth\" excludes acquisitions, divestitures and translational currency and is a non-GAAP financial measure.",
+          "node_id": "0019",
+          "start_index": 17,
+          "end_index": 18,
+          "summary": "- Presents Johnson & Johnson’s reconciliation of the non-GAAP metric “Adjusted Operational Sales Growth” for:\n  - 2023 vs. 2022 (Q1, Q2, and year-to-date six months)\n  - 2022 vs. 2021 (Q1, Q2, six months, Q3, nine months, Q4, and full year)\n- Breaks results out by geography: Worldwide (WW), U.S., and International.\n- Shows progression from “As Reported” sales growth to “Operational” by isolating translational currency impacts, then to “Adjusted Operational” by further excluding acquisitions and divestitures.\n- Identifies specific adjustments:\n  - Currency headwinds, especially in International markets.\n  - Abiomed acquisition impact (notably a ~1.6 percentage-point drag WW in 2023 YTD; smaller adjustments in 2022).\n  - Minor effects from other acquisitions/divestitures.\n- Key takeaways from the figures shown:\n  - 2023 YTD: WW as reported growth mid–single digits; after removing currency, operational growth higher; adjusted operational WW growth around mid–single digits, with U.S. stronger than International.\n  - 2022: Strong operational growth ex-currency (~9%) through most of the year; significant currency drag, particularly International; full-year adjusted operational WW growth mid–single digits.\n- Includes notes that percentages are based on actual, non-rounded figures and may not sum.\n- Provides the non-GAAP disclosure: Adjusted operational sales growth excludes acquisitions, divestitures, and translational currency; intended to help evaluate underlying performance and trends, used by management for assessment and planning, and has limitations versus GAAP and comparability to peers."
+        },
+        {
+          "structure": "5.7",
+          "title": "Adjusted Operational Sales Growth",
+          "heading": "Adjusted Operational Sales Growth",
+          "start_phrase": "NON-GAAP FINANCIAL MEASURE “Adjusted operational sales growth\" excludes acquisitions, divestitures and translational currency and is a non-GAAP financial measure.",
+          "node_id": "0020",
+          "start_index": 18,
+          "end_index": 27,
+          "summary": "- Purpose and scope: Johnson & Johnson presents reconciliations between GAAP and non-GAAP metrics, explaining and quantifying adjustments to derive “Adjusted operational sales growth” and “Adjusted income before tax/net earnings from continuing operations,” along with rationale and limitations of these non-GAAP measures.\n\n- Adjusted Operational Sales Growth (2022 vs. 2021):\n  - Breakout by World Wide (WW), U.S., and International across Q1, Q2, first six months, Q3, first nine months, Q4, and full year.\n  - Separates the effects of translational currency and acquisitions/divestitures (including a small Abiomed impact) from reported sales to show operational growth.\n  - Key takeaways:\n    - WW operational growth remained strong through most of 2022: ~9.1% in H1, ~8.9% through nine months, 6.5% for the full year; Q4 operational growth was roughly flat.\n    - U.S. operational growth steady at ~3–4% throughout.\n    - International operational growth robust (≈14–15%) for most of the year, with a Q4 dip; heavy currency headwinds meaningfully reduced reported growth vs. operational, especially outside the U.S.\n\n- Segment-level Non-GAAP reconciliations (Income Before Tax from Continuing Operations):\n  - For Q1 2023, Q2 2023 (quarter and year-to-date), and each 2022 quarter (Q1–Q4) plus year-to-date and full-year 2022.\n  - Reported income before tax and margins for Pharmaceutical, MedTech, and Unallocated, then itemized adjustments to arrive at adjusted income before tax and adjusted margins.\n  - Common adjustments include:\n    - Intangible asset amortization\n    - In-process R&D impairments\n    - Litigation-related charges/credits\n    - (Loss)/gain on securities\n    - Restructuring\n    - Acquisition, integration, and divestiture-related items\n    - Medical Device Regulation (MDR) costs\n    - COVID-19 vaccine-related costs\n  - Illustrative results:\n    - Q1 2023 adjusted IBT: $7.5B (36.1% margin) vs. reported loss due to large litigation charge in Unallocated.\n    - Q2 2023 adjusted IBT: $8.0B (37.2%); 2023 YTD adjusted IBT: $15.5B (36.6%).\n    - Full-year 2022 adjusted IBT: $28.0B (35.0%) vs. reported $19.4B (24.2%).\n\n- GAAP to Non-GAAP reconciliations of consolidated P&L line items:\n  - Periods covered: 2023 Q1, Q2, and first half; 2022 Q1, Q2, Q3, Q4, and full year.\n  - Reconciles cost of products sold, selling/marketing/admin, R&D, other (income)/expense, interest, restructuring, IPR&D impairments, and taxes to arrive at adjusted net earnings from continuing operations.\n  - Tax reconciliations include impacts of:\n    - Consumer Health separation tax-related costs\n    - Tax legislation and other tax-related items\n  - Highlights the impact of large, discrete items (e.g., litigation charges, COVID-19 vaccine-related costs, MDR costs, and securities gains/losses) on GAAP results and how they are removed to reflect underlying operational performance.\n\n- Explanatory note on non-GAAP measures:\n  - Defines “Adjusted operational sales growth” as excluding currency and M&A effects.\n  - States the intended use (enhance understanding of underlying performance, internal evaluation, planning/forecasting) and limitations (not a GAAP substitute; may reduce comparability to peers)."
+        }
+      ]
+    }
+  ]
+}

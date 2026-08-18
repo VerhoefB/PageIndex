@@ -1,0 +1,36 @@
+{
+  "doc_name": "PEPSICO_2023_8K_dated-2023-05-05",
+  "doc_description": "PepsiCo, Inc.’s May 2023 Form 8‑K reporting Item 5.07 results of the May 3, 2023 annual meeting—election of 15 directors, ratification of KPMG, approval of say‑on‑pay with an annual frequency vote, and defeat of four shareholder proposals—accompanied by standard cover details and a May 5, 2023 signature by Senior Vice President Cynthia A. Nastanski.",
+  "structure": [
+    {
+      "structure": "0",
+      "title": "Preface",
+      "heading": null,
+      "start_phrase": null,
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 2,
+      "summary": "This partial document is the cover page of PepsiCo, Inc.’s Form 8-K (Current Report) filed under Sections 13 or 15(d) of the Securities Exchange Act of 1934, with the earliest event dated May 3, 2023. It identifies PepsiCo as the registrant, provides key company information (North Carolina incorporation; Commission File No. 1-1183; IRS EIN 13-1584302; principal offices at 700 Anderson Hill Road, Purchase, NY 10577; phone (914) 253-2000), and notes no former name or address changes. It includes standard checkboxes indicating no written communications, solicitation material, or pre-commencement communications. The filing lists securities registered under Section 12(b), including common stock (PEP) and multiple series of senior notes (e.g., PEP24, PEP26, PEP27, PEP28, PEP28a, PEP29, PEP31, PEP32, PEP33, PEP34, PEP39, PEP50), all listed on The Nasdaq Stock Market LLC. It also indicates PepsiCo is not an emerging growth company and thus the extended transition period for new accounting standards does not apply."
+    },
+    {
+      "structure": "1",
+      "title": "Submission of Matters to a Vote of Security Holders.",
+      "heading": "Item 5.07. Submission of Matters to a Vote of Security Holders.",
+      "start_phrase": "PepsiCo, Inc. (“PepsiCo”) held its 2023 Annual Meeting of Shareholders on May 3, 2023.",
+      "node_id": "0001",
+      "start_index": 3,
+      "end_index": 4,
+      "summary": "Summary of PepsiCo, Inc.’s 2023 Annual Meeting voting results (Item 5.07):\n- Meeting held May 3, 2023; results correspond to proposals described in the March 21, 2023 proxy statement.\n- Fifteen director nominees were elected.\n- KPMG LLP was ratified as independent registered public accounting firm for fiscal year 2023.\n- Advisory vote on executive compensation (“say-on-pay”) was approved.\n- Advisory vote on frequency of say-on-pay: shareholders favored an annual vote; the Board decided to hold say-on-pay annually.\n- Four shareholder proposals were defeated: (1) independent Board Chair, (2) global transparency report, (3) report on impacts of reproductive healthcare legislation, and (4) congruency report on net-zero emissions policies.\n- Detailed vote counts, including broker non-votes, are provided for each item."
+    },
+    {
+      "structure": "2",
+      "title": "SIGNATURES",
+      "heading": "SIGNATURES",
+      "start_phrase": "Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.",
+      "node_id": "0002",
+      "start_index": 5,
+      "end_index": 5,
+      "summary": "- Signature section of an SEC filing made under the Securities Exchange Act of 1934\n- Confirms the report is authorized and signed on behalf of the registrant\n- Registrant: PepsiCo, Inc.\n- Date of signature: May 5, 2023\n- Signatory: Cynthia A. Nastanski\n- Title: Senior Vice President, Corporate Law and Deputy Corporate Secretary"
+    }
+  ]
+}

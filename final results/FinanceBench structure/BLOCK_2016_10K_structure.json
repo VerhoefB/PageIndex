@@ -573,7 +573,7 @@
           "start_phrase": "We\n have audited the accompanying consolidated balance sheets of Square, Inc. and subsidiaries (the Company) as of December 31, 2016 and 2015 , and therelated\n consolidated statements of operations, comprehensive loss, stockholders’ equity, and cash flows for each of the years in the three-year period endedDecember\n 31, 2016 .",
           "node_id": "0056",
           "start_index": 66,
-          "end_index": 65,
+          "end_index": 66,
           "summary": "A meta-instruction specifying response format: return only the description with no additional text; it contains no substantive content or topical information beyond this directive.",
           "nodes": [
             {
@@ -1569,7 +1569,7 @@
       "start_phrase": "(a) The following documents a\nre filed as a part of this Annual Report on Form 10-K:",
       "node_id": "0153",
       "start_index": 107,
-      "end_index": 106,
+      "end_index": 107,
       "summary": "The partial document contains only a procedural instruction directing the reader to return a description without additional text, with no substantive content or topics presented."
     },
     {

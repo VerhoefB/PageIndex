@@ -1423,7 +1423,7 @@
           "start_phrase": "See separate index to financial statements",
           "node_id": "0138",
           "start_index": 56,
-          "end_index": 56,
+          "end_index": 62,
           "summary": "This excerpt is Part IV, Item 15 (Exhibits) of a corporate report. It lists: (a) the financial statements (page 65 with a separate index) and (b) the exhibits filed or incorporated by reference. The exhibits include major agreements with Samsung entities (2013 framework, shareholder, and standstill agreements with later amendments), 2015 transaction and assignment agreements involving Corning, Dow, and Samsung affiliates, the company’s restated certificate of incorporation (2012) and a 2014 amendment, amended and restated bylaws effective February 2, 2022, a 2000 debt indenture with a note to furnish other long-term debt instruments upon request, the form of common stock certificate, a description of the registrant’s Exchange Act Section 12 securities, and compensation/equity documents (2000 Employee Equity Participation Program, 2003 Variable Compensation Plan, 2003 Equity Plan for Non‑Employee Directors) plus forms of officer severance agreements (2004). It also notes certain schedules and attachments are omitted under Regulation S‑K Item 601(b)(2).",
           "nodes": [
             {
@@ -2349,88 +2349,56 @@
           ]
         },
         {
-          "structure": "15.2",
-          "title": "Exhibits filed as part of this report",
-          "heading": "Exhibits filed as part of this report:",
-          "start_phrase": "2.1Framework Agreement, dated as o\nf October 22, 2013, by and among Samsung Display Co., Ltd.; Corning Incorporated and the other parties thereto.(Incorporated by refe\nrence to Exhibit 10.65 to Corning’s Form 10-K filed on February 10, 2014, as amended by its Form 10-K/A filed on March 21,2014).",
-          "node_id": "0227",
-          "start_index": 56,
-          "end_index": 59,
-          "summary": "The excerpt is Part IV, Item 15 of Corning Incorporated’s Form 10-K, detailing documents and exhibits filed with the report and indicating no Item 16 summary.\n\n- Documents filed: Financial statements are included with a separate index (referenced to begin on page 65).\n- Exhibits: An extensive, largely incorporated-by-reference list spanning 2000–2022. Key categories include:\n  - Strategic and transactional agreements: Framework Agreement with Samsung Display (2013, with certain schedules omitted under Regulation S-K Item 601(b)(2)); Transaction and Tax Matters Agreements related to Dow/Dow Corning (2015); Assignment Agreement among Samsung Display and Corning entities (2015); Shareholder, Standstill, and Share Repurchase Agreements with Samsung Display/Samsung Electronics (2013–2021).\n  - Corporate governance and securities: Restated Certificate of Incorporation and a 2014 amendment; Amended and Restated By-Laws (effective Feb. 2, 2022); Indenture (2000) with BNY Mellon as trustee (with a note that other long-term debt instruments will be furnished to the Commission upon request); form of common stock certificate; description of registered securities.\n  - Compensation and benefits: Director and employee equity plans (2003, 2005, 2010, 2012, 2019, 2021), variable compensation/goalsharing/performance incentive plans, forms of non-qualified stock option, incentive stock rights, restricted stock unit, performance share unit, and cash performance unit agreements (2014–2020), officer severance and change-in-control agreements (including amendments), executive supplemental and supplemental pension/investment plans (and multiple amendments), and deferred compensation plans for directors (and amendments).\n  - Financing: Credit Agreement dated Aug. 15, 2018 with a syndicate of major banks.\n  - Compliance and other: Code of Ethics and Code of Conduct; list of subsidiaries as of Dec. 31, 2021; auditor consent (PwC); powers of attorney; CEO/CFO certifications under Sarbanes-Oxley Sections 302 and 906; Inline XBRL instance and related taxonomy files; cover page interactive data file.\n- Item 16 (Form 10-K Summary): None.",
-          "nodes": [
-            {
-              "structure": "15.2.1",
-              "title": "Corning Incorporated and Subsidiary Companies",
-              "heading": "Exhibit 21 Corning Incorporated and Subsidiary Companies",
-              "start_phrase": "Subsidiaries of the Registrant as of December 31, 2021 are listed below:",
-              "node_id": "0228",
-              "start_index": 120,
-              "end_index": 122,
-              "summary": "The excerpt contains two Form 10-K exhibits for Corning Incorporated (2021). Exhibit 21 lists Corning’s subsidiaries as of December 31, 2021, spanning the U.S., Europe, and Asia, including major operating, finance, and holding entities (e.g., Corning Optical Communications, Corning Display Technologies, Life Sciences, Hemlock Semiconductor–related entities). It also identifies companies accounted for under the equity method (such as Eurokera affiliates, Samsung Corning Advanced Glass LLC, Phoenix Venture Partners II LP, and certain China-based ventures), notes that summary financial information for these investees is in Note 3 (Investments), and states that non-significant subsidiaries are omitted per Regulation S‑X. Exhibit 23 is the consent of PricewaterhouseCoopers LLP (dated February 14, 2022), allowing incorporation by reference of its audit reports on the financial statements and internal control over financial reporting into specified Form S‑3 and Form S‑8 registration statements."
-            },
-            {
-              "structure": "15.2.2",
-              "title": "CONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
-              "heading": "Exhibit 23 CONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
-              "start_phrase": "We hereby consent to the in\ncorporation by reference in the Registration Statements on Form S-3 (No. 333-251135) and Form S-8 (Nos. 333-255652, 333-231238, 333-181075, 333-26049, 333-91879, 333-82926, 333-106265, and 333-166642) of Corning Incorpo\nrated of our report dated February 14, 2022 relating to the financialstatements and the ef\nfectiveness of internal control over financial reporting, which appears in this Form 10-K.",
-              "node_id": "0229",
-              "start_index": 122,
-              "end_index": 123,
-              "summary": "- Exhibit 23: Consent of Independent Registered Public Accounting Firm (PricewaterhouseCoopers LLP) allowing Corning Incorporated to incorporate by reference PwC’s February 14, 2022 report on the financial statements and effectiveness of internal control over financial reporting into Corning’s Form S-3 (No. 333-251135) and multiple Form S-8 registration statements. Signed in New York on February 14, 2022.\n- Exhibit 31.1: CEO Certification under Section 302(a) of the Sarbanes-Oxley Act by Wendell P. Weeks (Chairman and Chief Executive Officer, Principal Executive Officer), dated February 14, 2022, attesting that:\n  - He reviewed the Form 10-K.\n  - The report contains no material misstatements or omissions.\n  - Financial statements and other financial information fairly present the company’s financial condition, results of operations, and cash flows.\n  - Management is responsible for, and has designed/evaluated, disclosure controls and procedures and internal control over financial reporting, providing reasonable assurance and reporting on their effectiveness.\n  - Any material changes in internal control over financial reporting during the most recent fiscal quarter have been disclosed.\n  - Significant deficiencies, material weaknesses, and any fraud involving management or key ICFR personnel have been disclosed to auditors and the audit committee."
-            },
-            {
-              "structure": "15.2.3",
-              "title": "CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
-              "heading": "Exhibit 31.1 CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
-              "start_phrase": "I have reviewed this Annual Report on Form 10-K of Corning Incorporated;",
-              "node_id": "0230",
-              "start_index": 123,
-              "end_index": 124,
-              "summary": "- Exhibits 31.1 and 31.2: CEO and CFO certifications under Section 302(a) of the Sarbanes-Oxley Act accompanying Corning Incorporated’s Form 10-K.\n- Both officers certify they have reviewed the annual report; it contains no untrue statements or omissions of material facts; and the financial statements fairly present, in all material respects, the company’s financial condition, results of operations, and cash flows.\n- They state responsibility for establishing and maintaining disclosure controls and procedures and internal control over financial reporting; that such controls were designed (or caused to be designed) to ensure reliable reporting and GAAP compliance; that they evaluated the effectiveness of disclosure controls; and that any material changes in internal control during the most recent fiscal quarter were disclosed.\n- They confirm disclosure to the auditors and the board’s audit committee of all significant deficiencies and material weaknesses in internal control over financial reporting, and any fraud (material or not) involving management or employees with a significant role in internal controls.\n- Dated February 14, 2022, and signed by Wendell P. Weeks (Chairman and Chief Executive Officer, Principal Executive Officer) and R. Tony Tripeny (Executive Vice President and Chief Financial Officer, Principal Financial Officer)."
-            },
-            {
-              "structure": "15.2.4",
-              "title": "CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
-              "heading": "Exhibit 31.2 CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
-              "start_phrase": "I have reviewed this annual report on Form 10-K of Corning Incorporated;",
-              "node_id": "0231",
-              "start_index": 124,
-              "end_index": 125,
-              "summary": "- Exhibit 31.2: CFO certification under Section 302(a) of the Sarbanes-Oxley Act for Corning Incorporated’s Form 10-K.\n  - CFO R. Tony Tripeny certifies he reviewed the annual report.\n  - Affirms the report contains no untrue statements or material omissions for the covered period.\n  - States the financial statements and other financial information fairly present, in all material respects, the company’s financial condition, results of operations, and cash flows.\n  - Confirms responsibility, with the other certifying officer, for establishing and maintaining disclosure controls and procedures and internal control over financial reporting.\n  - Details actions taken: designing controls, evaluating effectiveness of disclosure controls, reporting conclusions, and disclosing any material changes in internal control during the most recent fiscal quarter.\n  - Confirms disclosure to auditors and the audit committee of significant deficiencies, material weaknesses, and any fraud involving management or key employees.\n  - Signed by R. Tony Tripeny, Executive Vice President and Chief Financial Officer, dated February 14, 2022.\n\n- Exhibit 32: CEO and CFO certification under 18 U.S.C. §1350 (Section 906 of Sarbanes-Oxley).\n  - Wendell P. Weeks (Chairman and CEO) and R. Tony Tripeny (EVP and CFO) certify that the Company’s Form 10-K for the year ended December 31, 2021:\n    - Fully complies with Section 13(a) or 15(d) of the Securities Exchange Act of 1934.\n    - Fairly presents, in all material respects, the financial condition and results of operations.\n  - Signed by both officers on February 14, 2022."
-            },
-            {
-              "structure": "15.2.5",
-              "title": "CERTIFICATION OF CHIEF EXECUTIVE OFFICER AND CHIEF FINANCIAL OFFICER PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
-              "heading": "Exhibit 32 CERTIFICATION OF CHIEF EXECUTIVE OFFICER AND CHIEF FINANCIAL OFFICER PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
-              "start_phrase": "the Annual Report of the Company on Form 10-K for the annual period ended December 31, 2021 fully complies with the requirements of Section 13(a) or 15(d) of theSecurities Exchange Act of 1934;",
-              "node_id": "0232",
-              "start_index": 125,
-              "end_index": 125,
-              "summary": "Exhibit 32 is the Sarbanes-Oxley Section 906 (18 U.S.C. §1350) certification by Corning Incorporated’s Chairman and CEO, Wendell P. Weeks, and Executive Vice President and CFO, R. Tony Tripeny, dated February 14, 2022. It certifies that the Company’s Form 10-K for the year ended December 31, 2021: (1) fully complies with Section 13(a) or 15(d) of the Securities Exchange Act of 1934; and (2) fairly presents, in all material respects, the Company’s financial condition and results of operations. The exhibit includes their signatures and a copyright notice."
-            }
-          ]
+          "structure": "15.2.1",
+          "title": "Corning Incorporated and Subsidiary Companies",
+          "heading": "Exhibit 21 Corning Incorporated and Subsidiary Companies",
+          "start_phrase": "Subsidiaries of the Registrant as of December 31, 2021 are listed below:",
+          "node_id": "0228",
+          "start_index": 120,
+          "end_index": 122,
+          "summary": "The excerpt contains two Form 10-K exhibits for Corning Incorporated (2021). Exhibit 21 lists Corning’s subsidiaries as of December 31, 2021, spanning the U.S., Europe, and Asia, including major operating, finance, and holding entities (e.g., Corning Optical Communications, Corning Display Technologies, Life Sciences, Hemlock Semiconductor–related entities). It also identifies companies accounted for under the equity method (such as Eurokera affiliates, Samsung Corning Advanced Glass LLC, Phoenix Venture Partners II LP, and certain China-based ventures), notes that summary financial information for these investees is in Note 3 (Investments), and states that non-significant subsidiaries are omitted per Regulation S‑X. Exhibit 23 is the consent of PricewaterhouseCoopers LLP (dated February 14, 2022), allowing incorporation by reference of its audit reports on the financial statements and internal control over financial reporting into specified Form S‑3 and Form S‑8 registration statements."
+        },
+        {
+          "structure": "15.2.2",
+          "title": "CONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+          "heading": "Exhibit 23 CONSENT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM",
+          "start_phrase": "We hereby consent to the in\ncorporation by reference in the Registration Statements on Form S-3 (No. 333-251135) and Form S-8 (Nos. 333-255652, 333-231238, 333-181075, 333-26049, 333-91879, 333-82926, 333-106265, and 333-166642) of Corning Incorpo\nrated of our report dated February 14, 2022 relating to the financialstatements and the ef\nfectiveness of internal control over financial reporting, which appears in this Form 10-K.",
+          "node_id": "0229",
+          "start_index": 122,
+          "end_index": 123,
+          "summary": "- Exhibit 23: Consent of Independent Registered Public Accounting Firm (PricewaterhouseCoopers LLP) allowing Corning Incorporated to incorporate by reference PwC’s February 14, 2022 report on the financial statements and effectiveness of internal control over financial reporting into Corning’s Form S-3 (No. 333-251135) and multiple Form S-8 registration statements. Signed in New York on February 14, 2022.\n- Exhibit 31.1: CEO Certification under Section 302(a) of the Sarbanes-Oxley Act by Wendell P. Weeks (Chairman and Chief Executive Officer, Principal Executive Officer), dated February 14, 2022, attesting that:\n  - He reviewed the Form 10-K.\n  - The report contains no material misstatements or omissions.\n  - Financial statements and other financial information fairly present the company’s financial condition, results of operations, and cash flows.\n  - Management is responsible for, and has designed/evaluated, disclosure controls and procedures and internal control over financial reporting, providing reasonable assurance and reporting on their effectiveness.\n  - Any material changes in internal control over financial reporting during the most recent fiscal quarter have been disclosed.\n  - Significant deficiencies, material weaknesses, and any fraud involving management or key ICFR personnel have been disclosed to auditors and the audit committee."
+        },
+        {
+          "structure": "15.2.3",
+          "title": "CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+          "heading": "Exhibit 31.1 CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+          "start_phrase": "I have reviewed this Annual Report on Form 10-K of Corning Incorporated;",
+          "node_id": "0230",
+          "start_index": 123,
+          "end_index": 124,
+          "summary": "- Exhibits 31.1 and 31.2: CEO and CFO certifications under Section 302(a) of the Sarbanes-Oxley Act accompanying Corning Incorporated’s Form 10-K.\n- Both officers certify they have reviewed the annual report; it contains no untrue statements or omissions of material facts; and the financial statements fairly present, in all material respects, the company’s financial condition, results of operations, and cash flows.\n- They state responsibility for establishing and maintaining disclosure controls and procedures and internal control over financial reporting; that such controls were designed (or caused to be designed) to ensure reliable reporting and GAAP compliance; that they evaluated the effectiveness of disclosure controls; and that any material changes in internal control during the most recent fiscal quarter were disclosed.\n- They confirm disclosure to the auditors and the board’s audit committee of all significant deficiencies and material weaknesses in internal control over financial reporting, and any fraud (material or not) involving management or employees with a significant role in internal controls.\n- Dated February 14, 2022, and signed by Wendell P. Weeks (Chairman and Chief Executive Officer, Principal Executive Officer) and R. Tony Tripeny (Executive Vice President and Chief Financial Officer, Principal Financial Officer)."
+        },
+        {
+          "structure": "15.2.4",
+          "title": "CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+          "heading": "Exhibit 31.2 CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 302(a) OF THE SARBANES-OXLEY ACT OF 2002",
+          "start_phrase": "I have reviewed this annual report on Form 10-K of Corning Incorporated;",
+          "node_id": "0231",
+          "start_index": 124,
+          "end_index": 125,
+          "summary": "- Exhibit 31.2: CFO certification under Section 302(a) of the Sarbanes-Oxley Act for Corning Incorporated’s Form 10-K.\n  - CFO R. Tony Tripeny certifies he reviewed the annual report.\n  - Affirms the report contains no untrue statements or material omissions for the covered period.\n  - States the financial statements and other financial information fairly present, in all material respects, the company’s financial condition, results of operations, and cash flows.\n  - Confirms responsibility, with the other certifying officer, for establishing and maintaining disclosure controls and procedures and internal control over financial reporting.\n  - Details actions taken: designing controls, evaluating effectiveness of disclosure controls, reporting conclusions, and disclosing any material changes in internal control during the most recent fiscal quarter.\n  - Confirms disclosure to auditors and the audit committee of significant deficiencies, material weaknesses, and any fraud involving management or key employees.\n  - Signed by R. Tony Tripeny, Executive Vice President and Chief Financial Officer, dated February 14, 2022.\n\n- Exhibit 32: CEO and CFO certification under 18 U.S.C. §1350 (Section 906 of Sarbanes-Oxley).\n  - Wendell P. Weeks (Chairman and CEO) and R. Tony Tripeny (EVP and CFO) certify that the Company’s Form 10-K for the year ended December 31, 2021:\n    - Fully complies with Section 13(a) or 15(d) of the Securities Exchange Act of 1934.\n    - Fairly presents, in all material respects, the financial condition and results of operations.\n  - Signed by both officers on February 14, 2022."
+        },
+        {
+          "structure": "15.2.5",
+          "title": "CERTIFICATION OF CHIEF EXECUTIVE OFFICER AND CHIEF FINANCIAL OFFICER PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
+          "heading": "Exhibit 32 CERTIFICATION OF CHIEF EXECUTIVE OFFICER AND CHIEF FINANCIAL OFFICER PURSUANT TO 18 U.S.C. SECTION 1350, AS ADOPTED PURSUANT TO SECTION 906 OF THE SARBANES-OXLEY ACT OF 2002",
+          "start_phrase": "the Annual Report of the Company on Form 10-K for the annual period ended December 31, 2021 fully complies with the requirements of Section 13(a) or 15(d) of theSecurities Exchange Act of 1934;",
+          "node_id": "0232",
+          "start_index": 125,
+          "end_index": 125,
+          "summary": "Exhibit 32 is the Sarbanes-Oxley Section 906 (18 U.S.C. §1350) certification by Corning Incorporated’s Chairman and CEO, Wendell P. Weeks, and Executive Vice President and CFO, R. Tony Tripeny, dated February 14, 2022. It certifies that the Company’s Form 10-K for the year ended December 31, 2021: (1) fully complies with Section 13(a) or 15(d) of the Securities Exchange Act of 1934; and (2) fairly presents, in all material respects, the Company’s financial condition and results of operations. The exhibit includes their signatures and a copyright notice."
         }
       ]
-    },
-    {
-      "structure": "16",
-      "title": "Form 10-K Summary.",
-      "heading": "Item 16. Form 10-K Summary.",
-      "start_phrase": "null.",
-      "node_id": "0233",
-      "start_index": 59,
-      "end_index": 60,
-      "summary": "- Lists exhibits to the Form 10-K, largely incorporated by reference, covering:\n  - Employee and director equity/compensation agreements and forms (Incentive Stock Rights, Cash Performance Units, Restricted Stock Units, Performance Share Units) effective 2016–2020\n  - 2019 Equity Plan for Non-Employee Directors and related RSU grant agreements\n  - Deferred Compensation Plan for Non-Employee Directors (amended and restated as of Jan. 1, 2018)\n  - A multi-bank Credit Agreement dated Aug. 15, 2018\n  - A Share Repurchase Agreement with Samsung Display Co., Ltd. dated Apr. 5, 2021\n  - Code of Ethics for CEO and financial executives and Code of Conduct for directors and executive officers\n- Administrative and compliance exhibits:\n  - List of subsidiaries as of Dec. 31, 2021\n  - Auditor consent (PricewaterhouseCoopers LLP)\n  - Powers of Attorney\n  - Sarbanes-Oxley Act certifications (Sections 302 and 906)\n  - Inline XBRL instance and taxonomy files, and cover page data file\n- Item 16 notes there is no Form 10-K Summary.\n- Signatures section:\n  - Report executed for Corning Incorporated on Feb. 14, 2022 by Wendell P. Weeks (Chairman and CEO)\n  - Power of Attorney appointing R. Tony Tripeny, Lewis A. Steverson, and Edward A. Schlesinger as attorneys-in-fact for amendments\n  - Signatures and capacities of principal officers and directors, including the CEO (principal executive officer), CFO (principal financial officer), Corporate Controller (principal accounting officer), and directors (e.g., Donald W. Blair, Leslie A. Brun, Stephanie A. Burns, Richard T. Clark, Pamela J. Craig)"
-    },
-    {
-      "structure": null,
-      "title": "Signatures",
-      "heading": "Signatures",
-      "start_phrase": "Pursuant to the requiremen\nts of Section 13 or 15(d) of the Securities and Exchange Act of 1934, the Registrant has duly caused his report to be signed on its behalf by theundersigned, thereunto duly autho\nrized.",
-      "node_id": "0234",
-      "start_index": 60,
-      "end_index": 63,
-      "summary": "- Signatures and authorizations for Corning Incorporated’s 2021 Annual Report/Form 10-K, dated February 14, 2022, executed under Sections 13 and 15(d) of the Securities Exchange Act of 1934. The report is signed on behalf of the registrant by Wendell P. Weeks (Chairman and CEO).\n- Power of Attorney authorizing R. Tony Tripeny, Lewis A. Steverson, and Edward A. Schlesinger to sign and file amendments to the Form 10-K with the SEC.\n- Signature listings identifying roles and capacities, including:\n  - Principal Executive Officer: Wendell P. Weeks (Chairman and CEO)\n  - Principal Financial Officer: R. Tony Tripeny (EVP and CFO)\n  - Principal Accounting Officer: Edward A. Schlesinger (SVP and Corporate Controller)\n  - Board of Directors: multiple directors (e.g., Donald W. Blair, Leslie A. Brun, Stephanie A. Burns, Richard T. Clark, Pamela J. Craig, Robert F. Cummings Jr., Roger W. Ferguson Jr., Deborah A. Henretta, Daniel P. Huttenlocher, Kurt M. Landgraf, Kevin J. Martin, Deborah D. Rieman, Hansel E. Tookes II, Mark S. Wrighton).\n- Index to Financial Statements outlining:\n  - Independent auditor’s report (PCAOB ID 238)\n  - Consolidated statements: Income, Comprehensive Income, Balance Sheets, Cash Flows, Changes in Shareholders’ Equity\n  - Notes to Consolidated Financial Statements covering: significant accounting policies; restructuring/impairment and other charges; investments; HSG transactions and acquisitions; revenue; inventories; leases; income taxes; property, plant and equipment; goodwill and intangibles; other assets and liabilities; debt; employee retirement plans; commitments/contingencies/guarantees; hedging; fair value measurements; shareholders’ equity; earnings per share; share-based compensation; and reportable segments.\n- Independent Registered Public Accounting Firm’s report addressed to the Board and shareholders:\n  - Unqualified opinion that the consolidated financial statements present fairly in conformity with U.S. GAAP for the three years ended December 31, 2021, and as of December 31, 2021 and 2020.\n  - Unqualified opinion that internal control over financial reporting was effective as of December 31, 2021, based on COSO 2013.\n  - Basis for opinions detailing management and auditor responsibilities, auditor independence, audits conducted per PCAOB standards, scope and procedures, and a definition and limitations of internal control over financial reporting."
     }
   ]
 }

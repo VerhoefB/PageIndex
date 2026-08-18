@@ -1,0 +1,12 @@
+{
+  "doc_name": "VERIZON_2021_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0105",
+      "start_index": 87,
+      "end_index": 87,
+      "reason": "Correct node 0105 index from 87-86 to 87-87."
+    }
+  ]
+}

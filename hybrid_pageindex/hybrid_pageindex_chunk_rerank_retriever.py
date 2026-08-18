@@ -13,7 +13,7 @@ class HybridPageIndexChunkRerankRetriever:
     - Use the PageIndex tree as a hierarchical candidate generator.
     - Embed the query.
     - Compare the query with child node title+summary embeddings.
-    - Select top_m children at each explored internal node.
+    - At each hierarchy level, pool all children of the retained nodes and select the global top_m nodes.
     - Store reached leaf nodes as candidate chunks.
 
     Stage 2:
@@ -354,7 +354,7 @@ class HybridPageIndexChunkRerankRetriever:
         1. Embed the query.
         2. Select the most relevant document node.
         3. Traverse the selected document tree using node title+summary embeddings.
-        4. At each internal node, select top_m child nodes.
+        4. At each hierarchy level, pool all children of the retained nodes and select the global top_m nodes.
         5. Store reached leaf nodes as candidate chunks.
         6. Continue until no selected non-leaf nodes remain.
         7. Deduplicate candidates by chunk ID.
@@ -396,34 +396,40 @@ class HybridPageIndexChunkRerankRetriever:
         final_candidates = []
 
         while frontier:
-            node = frontier.pop(0)
-            children = self._get_children(node)
+            pooled_children = []
 
-            # If current node is already a leaf, store it.
-            if not children:
-                chunk_id = self._get_node_chunk_id(node)
+            for node in frontier:
+                children = self._get_children(node)
 
-                if chunk_id is not None:
-                    final_candidates.append({
-                        "chunk_id": str(chunk_id),
-                        "node_id": node.get("_hybrid_node_id"),
-                        "title": node.get("title", ""),
-                        "summary": node.get("summary", ""),
-                        "node_score": self._similarity(query_embedding, node),
-                    })
+                # If a retained node is already a leaf, store it.
+                if not children:
+                    chunk_id = self._get_node_chunk_id(node)
 
-                continue
+                    if chunk_id is not None:
+                        final_candidates.append({
+                            "chunk_id": str(chunk_id),
+                            "node_id": node.get("_hybrid_node_id"),
+                            "title": node.get("title", ""),
+                            "summary": node.get("summary", ""),
+                            "node_score": self._similarity(query_embedding, node),
+                        })
 
-            scored_children = []
+                    continue
 
-            for child in children:
-                score = self._similarity(query_embedding, child)
-                scored_children.append((score, child))
+                for child in children:
+                    score = self._similarity(query_embedding, child)
+                    pooled_children.append((score, child))
 
-            scored_children.sort(key=lambda x: x[0], reverse=True)
-            selected_children = scored_children[:top_m]
+            if not pooled_children:
+                break
 
-            for score, child in selected_children:
+            # Global top-m selection across all children of all retained nodes.
+            pooled_children.sort(key=lambda x: x[0], reverse=True)
+            selected_nodes = pooled_children[:top_m]
+
+            next_frontier = []
+
+            for score, child in selected_nodes:
                 child_children = self._get_children(child)
 
                 if not child_children:
@@ -438,7 +444,9 @@ class HybridPageIndexChunkRerankRetriever:
                             "node_score": float(score),
                         })
                 else:
-                    frontier.append(child)
+                    next_frontier.append(child)
+
+            frontier = next_frontier
 
         # Deduplicate candidate leaves by chunk ID.
         best_by_chunk_id = {}

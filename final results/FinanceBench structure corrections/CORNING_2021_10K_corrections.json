@@ -1,0 +1,62 @@
+{
+  "doc_name": "CORNING_2021_10K",
+  "operations": [
+    {
+      "action": "move",
+      "node_id": "0228",
+      "target_parent_node_id": "0137",
+      "position": "last",
+      "reason": "Move node 0228 under node 0137 as one of the final Item 15 exhibit children."
+    },
+    {
+      "action": "move",
+      "node_id": "0229",
+      "target_parent_node_id": "0137",
+      "position": "last",
+      "reason": "Move node 0229 under node 0137 as one of the final Item 15 exhibit children."
+    },
+    {
+      "action": "move",
+      "node_id": "0230",
+      "target_parent_node_id": "0137",
+      "position": "last",
+      "reason": "Move node 0230 under node 0137 as one of the final Item 15 exhibit children."
+    },
+    {
+      "action": "move",
+      "node_id": "0231",
+      "target_parent_node_id": "0137",
+      "position": "last",
+      "reason": "Move node 0231 under node 0137 as one of the final Item 15 exhibit children."
+    },
+    {
+      "action": "move",
+      "node_id": "0232",
+      "target_parent_node_id": "0137",
+      "position": "last",
+      "reason": "Move node 0232 under node 0137 as one of the final Item 15 exhibit children."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0138",
+      "start_index": 56,
+      "end_index": 62,
+      "reason": "Correct node 0138 index from 56-56 to 56-62."
+    },
+    {
+      "action": "remove",
+      "node_id": "0227",
+      "reason": "Remove duplicate Item 15 exhibit-list node after moving its exhibit children under node 0137."
+    },
+    {
+      "action": "remove",
+      "node_id": "0233",
+      "reason": "Remove node 0233 because Item 16 states there is no Form 10-K Summary and it creates a backward page-order jump."
+    },
+    {
+      "action": "remove",
+      "node_id": "0234",
+      "reason": "Remove node 0234 because it creates a backward page-order jump after the later exhibit attachment pages."
+    }
+  ]
+}
