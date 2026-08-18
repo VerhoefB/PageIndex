@@ -1,0 +1,33 @@
+{
+  "doc_name": "NIKE_2018_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0006",
+      "start_index": 4,
+      "end_index": 4,
+      "reason": "Correct node 0006 index from 4-2 to 4-4."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0007",
+      "start_index": 4,
+      "end_index": 5,
+      "reason": "Correct node 0007 index from 2-5 to 4-5."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0010",
+      "start_index": 5,
+      "end_index": 5,
+      "reason": "Correct node 0010 index from 5-2 to 5-5."
+    },
+    {
+      "action": "update_indexes",
+      "node_id": "0011",
+      "start_index": 5,
+      "end_index": 6,
+      "reason": "Correct node 0011 index from 2-6 to 5-6."
+    }
+  ]
+}

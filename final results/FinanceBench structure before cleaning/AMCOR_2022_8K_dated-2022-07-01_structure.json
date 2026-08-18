@@ -1,0 +1,302 @@
+{
+  "doc_name": "AMCOR_2022_8K_dated-2022-07-01",
+  "doc_description": "Amcor plc’s July 1, 2022 Form 8-K reporting that, via June 30, 2022 supplemental indentures, Amcor Flexibles North America, Inc. was substituted for Amcor Finance (USA), Inc. as issuer of the 3.625% notes due 2026 and 4.500% notes due 2028 under the 2016 and 2019 indentures, with Deutsche Bank Trust Company Americas as trustee (filed as Exhibits 4.6 and 4.7).",
+  "structure": [
+    {
+      "structure": "0",
+      "title": "Preface",
+      "heading": null,
+      "start_phrase": null,
+      "node_id": "0000",
+      "start_index": 1,
+      "end_index": 1,
+      "summary": "- SEC Form 8-K Current Report for Amcor plc, filed pursuant to Sections 13 or 15(d) of the Exchange Act.\n- Date of Report: July 1, 2022; earliest event reported: June 30, 2022.\n- Registrant details: Amcor plc; incorporated in Jersey; Commission File No. 001-38932; IRS EIN 98-1455367.\n- Principal executive offices: 83 Tower Road North, Warmley, Bristol, United Kingdom BS30 8XP; phone +44 117 9753200.\n- Checkboxes indicate no written communications under Rule 425, no soliciting material under Rule 14a-12, and no pre-commencement communications under Rules 14d-2(b) or 13e-4(c).\n- Securities registered under Section 12(b): Ordinary Shares ($0.01 par) trading as AMCR on NYSE; 1.125% Guaranteed Senior Notes due 2027 trading as AUKF/27 on NYSE.\n- Emerging Growth Company status: No; no election for extended transition for new or revised accounting standards.\n- The excerpt reflects the cover page/header information; specific 8-K item disclosures are not included in the provided text."
+    },
+    {
+      "structure": "1",
+      "title": "Other Events.",
+      "heading": "Item 8.01 Other Events.",
+      "start_phrase": "On June 30, 2022, Amcor Finance (USA), Inc. (the “Former Issuer”) and Amcor Flexibles North America, Inc. (the “Substitute Issuer”), each a wholly-owned subsidiary of Amcor plc (the “Company”),",
+      "node_id": "0001",
+      "start_index": 2,
+      "end_index": 2,
+      "summary": "The filing reports that on June 30, 2022, Amcor Flexibles North America, Inc. (a wholly owned subsidiary of Amcor plc) was substituted as issuer in place of Amcor Finance (USA), Inc. for certain Amcor guaranteed senior notes via two supplemental indentures: a Second Supplemental Indenture to the April 28, 2016 Indenture covering the 3.625% Notes due 2026 and 4.500% Notes due 2028 (the “Existing Notes”), and a First Supplemental Indenture to the June 13, 2019 Indenture covering the corresponding “New” 2026 and 2028 Notes issued in 2019 after an exchange offer. Under these actions, the substitute issuer assumed the former issuer’s covenants under both indentures. Deutsche Bank Trust Company Americas remains trustee. The document also lists and incorporates by reference the underlying indentures, forms of the notes, and the June 30, 2022 supplemental indentures as exhibits, along with the cover page XBRL data."
+    },
+    {
+      "structure": "2",
+      "title": "Financial Statements and Exhibits.",
+      "heading": "Item 9.01 Financial Statements and Exhibits.",
+      "start_phrase": "4.1 Indenture, dated as of April 28, 2016, among Amcor Finance (USA), Inc., Amcor Limited, Amcor UK Finance PLC and Deutsche Bank Trust Company Americas (incorporated by reference to Exhibit 4.7 to Amcor plc’s Registration Statement on Form S-4 (File No. 333-230217), filed on March 12, 2019).",
+      "node_id": "0002",
+      "start_index": 2,
+      "end_index": 2,
+      "summary": "- The company reports that on June 30, 2022, Amcor Flexibles North America, Inc. (Substitute Issuer) was substituted for Amcor Finance (USA), Inc. (Former Issuer) as issuer under both the 2016 and 2019 Indentures, with the Substitute Issuer assuming the Former Issuer’s covenants.\n- This was effected through a Second Supplemental Indenture to the 2016 Indenture and a First Supplemental Indenture to the 2019 Indenture, each with Deutsche Bank Trust Company Americas as trustee.\n- The affected securities include the 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028 under the 2016 Indenture (Existing Notes), and the corresponding New 2026 and New 2028 Notes issued in June 2019 under the 2019 Indenture following an exchange offer.\n- The filing references prior SEC filings containing the base indentures and forms of notes and includes the June 30, 2022 supplemental indentures as Exhibits 4.6 and 4.7.\n- Item 9.01 lists exhibits covering: the 2016 Indenture, the June 13, 2019 supplemental indenture, forms of the 2026 and 2028 notes, the June 13, 2019 Indenture, the June 30, 2022 Second and First Supplemental Indentures, and the cover page XBRL data."
+    },
+    {
+      "structure": "3",
+      "title": "SIGNATURES",
+      "heading": "SIGNATURES",
+      "start_phrase": "Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.",
+      "node_id": "0003",
+      "start_index": 3,
+      "end_index": 3,
+      "summary": "Signatures section of an SEC filing for Amcor plc, stating compliance with the Securities Exchange Act of 1934 and authorizing the report. It identifies the signer as Damien Clayton, Company Secretary, and records the execution date as July 1, 2022."
+    },
+    {
+      "structure": "4",
+      "title": "Exhibit",
+      "heading": "Exhibit 4.6",
+      "start_phrase": "This SECOND SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein called the “Former Issuer”), Amcor Flexibles North America, Inc., a Missouri Corporation (herein called the “Substitute Issuer”), and Deutsche Bank Trust Company Americas, a New York banking corporation, as Trustee under the Indenture (as defined below) (herein called the “Trustee”).",
+      "node_id": "0004",
+      "start_index": 4,
+      "end_index": 4,
+      "summary": "- Exhibit 4.6 is a Second Supplemental Indenture dated June 30, 2022 among Amcor Finance (USA), Inc. (Former Issuer), Amcor Flexibles North America, Inc. (Substitute Issuer), and Deutsche Bank Trust Company Americas (Trustee).\n- It relates to an existing Indenture dated April 28, 2016, with Amcor Pty Ltd as Parent Guarantor and Amcor UK Finance plc as Initial Subsidiary Guarantor, covering the Former Issuer’s 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Citing Section 901 of the Indenture, the document confirms that, without holder consent, a supplemental indenture may evidence substitution of a new issuer and the assumption of the former issuer’s covenants.\n- The Supplemental Indenture effects the substitution: Amcor Flexibles North America, Inc. becomes the Issuer under the Indenture and assumes all covenants and obligations, including responsibility for all amounts due on outstanding securities.\n- The parties state that all necessary authorizations and actions have been taken, making this a valid amendment and supplement to the Indenture.\n- Capitalized terms not defined in the supplement carry the meanings from the original Indenture.",
+      "nodes": [
+        {
+          "structure": "4.1",
+          "title": "SECOND SUPPLEMENTAL INDENTURE",
+          "heading": "SECOND SUPPLEMENTAL INDENTURE",
+          "start_phrase": "This SECOND SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein called the “Former Issuer”), Amcor Flexibles North America, Inc., a Missouri Corporation (herein called the “Substitute Issuer”), and Deutsche Bank Trust Company Americas, a New York banking corporation, as Trustee under the Indenture (as defined below) (herein called the “Trustee”).",
+          "node_id": "0005",
+          "start_index": 4,
+          "end_index": 4,
+          "summary": "- Document type and date: Second Supplemental Indenture dated June 30, 2022.\n- Parties: Amcor Finance (USA), Inc. (Former Issuer); Amcor Flexibles North America, Inc. (Substitute Issuer); Deutsche Bank Trust Company Americas (Trustee).\n- Background: Supplements the Indenture dated April 28, 2016 among the Former Issuer, Amcor Pty Ltd (Parent Guarantor), Amcor UK Finance plc (Initial Subsidiary Guarantor), and the Trustee, covering issuance of 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Authority: Section 901 of the Indenture permits issuer substitution via supplemental indenture without holder consent; all necessary authorizations and actions have been completed.\n- Core provision (Article One, Section 101): Effective upon execution, Amcor Flexibles North America, Inc. is substituted as the Issuer under the Indenture and assumes all covenants and obligations of the Former Issuer, including responsibility for all amounts due on outstanding securities."
+        },
+        {
+          "structure": "4.2",
+          "title": "RECITALS",
+          "heading": "RECITALS",
+          "start_phrase": "The Former Issuer, Amcor Pty Ltd (formerly known as Amcor Limited, the “Parent Guarantor”) and Amcor UK Finance plc (the “Initial Subsidiary Guarantor” and, together with the Parent Guarantor, the “Guarantors”) and the Trustee have entered into an Indenture dated as of April 28, 2016, as amended and/or supplemented from time to time (herein called the “Indenture”), providing for the issuance of Securities, including the Former Issuer’s (a) 3.625% Guaranteed Senior Notes due 2026 and (b) 4.500% Guaranteed Senior Notes due 2028.",
+          "node_id": "0006",
+          "start_index": 4,
+          "end_index": 4,
+          "summary": "- Second Supplemental Indenture dated June 30, 2022.\n- Parties: Amcor Finance (USA), Inc. (Former Issuer), Amcor Flexibles North America, Inc. (Substitute Issuer), and Deutsche Bank Trust Company Americas (Trustee).\n- Background: Supplements the Indenture dated April 28, 2016 among the Former Issuer, Amcor Pty Ltd (Parent Guarantor), Amcor UK Finance plc (Initial Subsidiary Guarantor), and the Trustee; covers issuance of 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Legal basis: Section 901 of the Indenture permits supplemental indentures without Holder consent to evidence issuer succession/substitution and assumption of covenants.\n- Core action: Substitution of issuer—Amcor Flexibles North America, Inc. becomes the Issuer under the Indenture, assuming all covenants and obligations of the Former Issuer, including responsibility for all amounts due on outstanding Securities.\n- Formalities: Execution is authorized and valid; capitalized terms not defined here have the meanings in the Indenture."
+        },
+        {
+          "structure": "4.3",
+          "title": "ARTICLE ONE",
+          "heading": "ARTICLE ONE",
+          "start_phrase": "For good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the Substitute Issuer hereby agrees with the Former Issuer, the Guarantors,",
+          "node_id": "0007",
+          "start_index": 4,
+          "end_index": 4,
+          "summary": "- Second Supplemental Indenture dated June 30, 2022.\n- Parties: Amcor Finance (USA), Inc. as Former Issuer; Amcor Flexibles North America, Inc. as Substitute Issuer; Deutsche Bank Trust Company Americas as Trustee. References to Guarantors: Amcor Pty Ltd (Parent Guarantor) and Amcor UK Finance plc (Initial Subsidiary Guarantor).\n- Recital of the underlying Indenture dated April 28, 2016 (as amended/supplemented), which covers issuance of 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028; capitalized terms follow the Indenture.\n- Cites Section 901 of the Indenture authorizing, without holder consent, a supplemental indenture to evidence issuer succession/substitution and the assumption of covenants.\n- Confirms proper authorization and validity of this supplemental indenture.\n- Article One, Section 101: Effectuates the substitution—Amcor Flexibles North America, Inc. becomes the Issuer upon execution and delivery, assumes all covenants and obligations of the Former Issuer under the Indenture and the outstanding Securities, and is responsible for all amounts due and owing.\n- Acknowledges receipt and sufficiency of consideration for the substitution.",
+          "nodes": [
+            {
+              "structure": "4.3.1",
+              "title": "Substitution of the Issuer under the Indenture.",
+              "heading": "Section 101. Substitution of the Issuer under the Indenture.",
+              "start_phrase": "For good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the Substitute Issuer hereby agrees with the Former Issuer, the Guarantors,",
+              "node_id": "0008",
+              "start_index": 4,
+              "end_index": 4,
+              "summary": "- Second Supplemental Indenture dated June 30, 2022, amending an Indenture originally dated April 28, 2016.\n- Parties: Former Issuer Amcor Finance (USA), Inc.; Substitute Issuer Amcor Flexibles North America, Inc.; Trustee Deutsche Bank Trust Company Americas. Guarantors under the base Indenture: Amcor Pty Ltd (Parent Guarantor) and Amcor UK Finance plc (Initial Subsidiary Guarantor).\n- Applies to existing Securities under the Indenture, including 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Pursuant to Section 901 of the Indenture, without Holder consent and with appropriate authorization, this supplement evidences the substitution of Amcor Flexibles North America, Inc. as the Issuer in place of Amcor Finance (USA), Inc.\n- The Substitute Issuer assumes all covenants and obligations of the Former Issuer under the Indenture and with respect to all amounts due on outstanding Securities.\n- Recitals confirm proper authorization and validity of the supplemental indenture, with all necessary actions taken."
+            },
+            {
+              "structure": "4.3.2",
+              "title": "Submission to Jurisdiction; Appointment of Agent for Service of Process.",
+              "heading": "Section 102. Submission to Jurisdiction; Appointment of Agent for Service of Process.",
+              "start_phrase": "The Substitute Issuer hereby appoints C T Corporation acting through its office at 28 Liberty Street, New York, New York, 10005, as its authorized agent (the “Authorized Agent”)",
+              "node_id": "0009",
+              "start_index": 5,
+              "end_index": 5,
+              "summary": "- Appointment of Authorized Agent: The Substitute Issuer appoints C T Corporation, 28 Liberty Street, New York, NY 10005, as its agent for service of process for actions relating to obligations under the Indenture in federal or state courts in the Borough of Manhattan.\n- Jurisdiction and venue: The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of those New York courts and waives objections to venue.\n- Effectiveness of service: Service on the Authorized Agent, with written notice to the Substitute Issuer (and, where specified, to the Former Issuer and Guarantors), constitutes effective service on the Substitute Issuer; the Agent’s address may be updated within Manhattan by notice.\n- Duration and succession of agency: The appointment is irrevocable until all principal, premium, and interest under the Securities are paid and the Indenture is satisfied/discharged. The Substitute Issuer may appoint a successor Authorized Agent in Manhattan and must notify the Trustee and Holders; it must maintain an Authorized Agent in Manhattan, appointing a successor if C T Corporation cannot serve or lacks a Manhattan address.\n- Trustee disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or for the recitals, which are made solely by the Former Issuer and the Substitute Issuer.\n- Effective Date: The Supplemental Indenture becomes effective when each party executes a counterpart; upon effectiveness, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law: The Supplemental Indenture is governed by New York law (including GOL §5-1401), excluding New York choice-of-law principles that would apply another jurisdiction’s law; the Substitute Issuer’s authorization and execution are governed by Missouri law.\n- Counterparts: The instrument may be executed in multiple counterparts, all constituting one agreement.\n- Headings: Article and Section headings are for convenience only and do not affect interpretation."
+            },
+            {
+              "structure": "4.3.3",
+              "title": "The Trustee.",
+              "heading": "Section 103. The Trustee.",
+              "start_phrase": "The Trustee shall not be responsible in any manner whatsoever for or in respect of the validity or sufficiency of this Supplemental Indenture or for or in respect of the recitals contained herein, all of which recitals are made solely by the Former Issuer and the Substitute Issuer.",
+              "node_id": "0010",
+              "start_index": 5,
+              "end_index": 5,
+              "summary": "- Appointment of C T Corporation in New York (28 Liberty Street) as the Substitute Issuer’s authorized agent for service of process related to Indenture obligations; service on the agent with written notice constitutes effective service on the Substitute Issuer.\n- Irrevocable submission by the Substitute Issuer to the non-exclusive jurisdiction of federal and state courts in Manhattan and waiver of venue objections.\n- Agent appointment is irrevocable until all amounts under the Securities and Guarantees are paid; the Substitute Issuer may appoint a successor authorized agent in Manhattan and must notify the Trustee and all Holders; obligation to maintain the agent designation until the Indenture is satisfied/discharged; service on the Authorized Agent with notice to the Former Issuer, Substitute Issuer, and Guarantors is effective.\n- The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or its recitals; recitals are solely those of the Former Issuer and Substitute Issuer.\n- Effective Date occurs upon execution of counterparts by each party; from that date the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law is New York law (including GOL §5-1401), excluding conflicting choice-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law; the instrument may be executed in counterparts.\n- Headings are for convenience only and do not affect interpretation."
+            }
+          ]
+        },
+        {
+          "structure": "4.4",
+          "title": "ARTICLE TWO",
+          "heading": "ARTICLE TWO",
+          "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+          "node_id": "0011",
+          "start_index": 5,
+          "end_index": 5,
+          "summary": "- Section 102: Establishes submission to jurisdiction and service-of-process mechanics. The Substitute Issuer appoints C T Corporation (28 Liberty Street, New York, NY 10005) as Authorized Agent for service of process in any federal or state court in Manhattan regarding obligations under the Indenture. Service on the Authorized Agent, with written notice to the Substitute Issuer, constitutes effective service. The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections. The appointment is irrevocable until all Securities (principal, premium, interest) and Guarantees are fully satisfied and discharged under the Indenture (Articles Four/Twelve). The Substitute Issuer may appoint a successor Authorized Agent in Manhattan, must notify the Trustee and all Holders of any such appointment, and must maintain an effective agent until the Indenture is satisfied. If C T Corporation cannot act or lacks a Manhattan address, a successor must be appointed. Service at the Authorized Agent’s address, with written notice to the Former Issuer, Substitute Issuer, and Guarantors, is deemed effective.\n\n- Section 103: The Trustee disclaims responsibility for the validity or sufficiency of the Supplemental Indenture and its recitals, which are solely those of the Former Issuer and Substitute Issuer.\n\n- Article Two – Provisions of General Application:\n  - Section 201 (Effective Date): The Supplemental Indenture is effective when each party executes a counterpart; as of that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n  - Section 202 (Governing Law): Governed by New York law (including GOL §5-1401), excluding its conflict-of-law principles; authorization and execution by/on behalf of the Substitute Issuer are governed by Missouri law. The instrument may be executed in counterparts, all constituting one document.\n  - Section 203 (Effect of Headings): Headings are for convenience only and do not affect construction.",
+          "nodes": [
+            {
+              "structure": "4.4.1",
+              "title": "Provisions of General Application",
+              "heading": "Provisions of General Application",
+              "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+              "node_id": "0012",
+              "start_index": 5,
+              "end_index": 5,
+              "summary": "- Section 102 (Submission to Jurisdiction; Agent for Service): The Substitute Issuer appoints C T Corporation at 28 Liberty Street, New York, NY 10005, as Authorized Agent for service of process in Manhattan federal or state courts for actions relating to obligations under the Indenture. Service on the Authorized Agent, with written notice to the Substitute Issuer, constitutes effective service. The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections. The appointment is irrevocable until all amounts due on the Securities are paid and the Indenture is discharged, but the Substitute Issuer may appoint a successor Authorized Agent in Manhattan and must notify the Trustee and Holders. If C T Corporation cannot act or lacks a Manhattan address, a successor must be appointed. The Substitute Issuer will take all steps necessary to keep the designation effective until the Indenture is satisfied. Service on the Authorized Agent at its stated (or updated Manhattan) address, with notice to the Former Issuer, Substitute Issuer, and Guarantors, is deemed effective service on the Substitute Issuer.\n\n- Section 103 (Trustee): The Trustee has no responsibility for the validity or sufficiency of the Supplemental Indenture or the accuracy of its recitals, which are solely those of the Former Issuer and the Substitute Issuer.\n\n- Article Two – General Provisions:\n  - Section 201 (Effective Date): The Supplemental Indenture becomes effective when each party executes a counterpart; upon that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n  - Section 202 (Governing Law; Counterparts): Governed by New York law (including NY GOL §5-1401), excluding its conflict-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in counterparts, each deemed an original, together constituting one instrument.\n  - Section 203 (Headings): Article and Section headings are for convenience only and do not affect interpretation.",
+              "nodes": [
+                {
+                  "structure": "4.4.1.1",
+                  "title": "Effective Date.",
+                  "heading": "Section 201. Effective Date.",
+                  "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+                  "node_id": "0013",
+                  "start_index": 5,
+                  "end_index": 5,
+                  "summary": "- Establishes submission to non-exclusive jurisdiction of federal and state courts in the Borough of Manhattan, New York, for disputes relating to the Indenture.\n- Appoints C T Corporation (28 Liberty Street, New York, NY 10005) as the Substitute Issuer’s Authorized Agent for service of process; service on this agent, with required written notices to the Substitute Issuer (and, in certain instances, to the Former Issuer and Guarantors), is deemed effective service on the Substitute Issuer.\n- Makes the agent appointment irrevocable until all principal, premium, and interest on the Securities are paid or the Indenture is satisfied and discharged; obligates the Substitute Issuer to maintain and, if necessary, replace the Authorized Agent in Manhattan and provide notice of any successor to the Trustee and all Holders.\n- Clarifies that the Trustee bears no responsibility for the validity or sufficiency of the Supplemental Indenture or its recitals, which are solely those of the Former Issuer and Substitute Issuer.\n- States the Supplemental Indenture is effective when each party executes a counterpart; from that Effective Date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Provides governing law: New York law (including GOL §5-1401) governs, excluding New York conflict-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law.\n- Permits execution in counterparts, each deemed an original, together constituting one instrument.\n- Specifies that article and section headings are for convenience only and do not affect interpretation."
+                },
+                {
+                  "structure": "4.4.1.2",
+                  "title": "Governing Law.",
+                  "heading": "Section 202. Governing Law.",
+                  "start_phrase": "This Supplemental Indenture shall be governed by and construed in accordance with the laws of the State of New York (including, without limitation, Section 5-1401 of the New York General Obligations Law or any successor to such a statute),",
+                  "node_id": "0014",
+                  "start_index": 5,
+                  "end_index": 5,
+                  "summary": "- Appoints C T Corporation (28 Liberty Street, NYC) as the Substitute Issuer’s authorized agent for service of process in Manhattan courts for actions related to the Indenture; service on the agent with written notice is deemed effective on the Substitute Issuer.\n- Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of Manhattan federal and state courts and waives venue objections.\n- The agent appointment is irrevocable until all Securities obligations are paid, but the Substitute Issuer may designate a successor Manhattan-based agent; must notify the Trustee and Holders; must maintain the designation until the Indenture is satisfied and discharged. If C T Corporation cannot act or lacks a Manhattan address, a successor will be appointed.\n- Service on the Authorized Agent at its stated (or updated Manhattan) address, with notice to the Former Issuer, Substitute Issuer, and Guarantors, is effective service on the Substitute Issuer.\n- The Trustee disclaims responsibility for the validity or sufficiency of the Supplemental Indenture and its recitals, which are solely those of the Former and Substitute Issuers.\n- Effective Date occurs when each party executes a counterpart; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law is New York (including GOL §5-1401), excluding conflicting choice-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in counterparts.\n- Article/Section headings are for convenience only and do not affect interpretation."
+                },
+                {
+                  "structure": "4.4.1.3",
+                  "title": "Effect of Headings.",
+                  "heading": "Section 203. Effect of Headings.",
+                  "start_phrase": "The Article and Section headings herein are for convenience only and shall not affect the construction hereof.",
+                  "node_id": "0015",
+                  "start_index": 5,
+                  "end_index": 6,
+                  "summary": "- Appoints C T Corporation (28 Liberty St., New York, NY 10005) as the Substitute Issuer’s authorized agent for service of process in Manhattan courts for actions related to the Indenture, with service on the agent plus written notice deemed effective on the Substitute Issuer.\n- Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of New York state and federal courts in Manhattan and waives venue objections.\n- The agent appointment is irrevocable until all amounts due under the Securities are paid and the Indenture obligations are satisfied; the Substitute Issuer may appoint a Manhattan-based successor agent, must notify the Trustee and all Holders, and must maintain an effective agent designation until the Indenture is discharged.\n- Trustee disclaims responsibility for the validity or sufficiency of the Supplemental Indenture and its recitals, which are solely those of the Former Issuer and the Substitute Issuer.\n- Effective Date occurs when each party executes a counterpart; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law is New York law (including GOL §5-1401), excluding conflicting choice-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in counterparts.\n- Headings are for convenience only and do not affect interpretation.\n- Executed by Amcor Finance (USA), Inc., Amcor Flexibles North America, Inc., and Deutsche Bank Trust Company Americas as Trustee, Registrar, and Paying Agent."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "structure": "5",
+      "title": "Exhibit",
+      "heading": "Exhibit 4.7",
+      "start_phrase": "This FIRST SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein called the “Former Issuer”), Amcor Flexibles North America, Inc., a Missouri Corporation (formerly known as Bemis Company, Inc. and herein called the “Substitute Issuer”), and Deutsche Bank Trust Company Americas, a New York banking corporation, as Trustee under the Indenture (as defined below) (herein called the “Trustee”).",
+      "node_id": "0016",
+      "start_index": 7,
+      "end_index": 7,
+      "summary": "- Document type and date: First Supplemental Indenture dated June 30, 2022, labeled Exhibit 4.7.\n- Parties: Amcor Finance (USA), Inc. (Former Issuer); Amcor Flexibles North America, Inc. (Substitute Issuer, formerly Bemis Company, Inc.); Deutsche Bank Trust Company Americas as Trustee. References to Guarantors under the base Indenture: Amcor plc (Parent Guarantor), Amcor Pty Ltd (formerly Amcor Limited), the Substitute Issuer, and Amcor UK Finance plc.\n- Background Indenture: Original Indenture dated June 13, 2019 (as amended/supplemented), covering the Former Issuer’s 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028. Capitalized terms follow the base Indenture.\n- Legal authority: Section 901 of the Indenture permits issuer succession/substitution by supplemental indenture without holder consent when authorized by board resolution; the parties state all necessary actions have been taken and the supplement is valid.\n- Core amendment (Article One, Section 101): Effective upon execution and delivery, Amcor Flexibles North America, Inc. is substituted as the Issuer under the Indenture and for all outstanding Securities; it assumes all covenants and obligations of the Former Issuer, including payment obligations.\n- Scope: The excerpt evidences issuer substitution and assumption of obligations; no other amendments are described in the provided text.",
+      "nodes": [
+        {
+          "structure": "5.1",
+          "title": "FIRST SUPPLEMENTAL INDENTURE",
+          "heading": "FIRST SUPPLEMENTAL INDENTURE",
+          "start_phrase": "This FIRST SUPPLEMENTAL INDENTURE, dated as of June 30, 2022 (the “Supplemental Indenture”), among Amcor Finance (USA), Inc., a Delaware corporation (herein called the “Former Issuer”), Amcor Flexibles North America, Inc., a Missouri Corporation (formerly known as Bemis Company, Inc. and herein called the “Substitute Issuer”), and Deutsche Bank Trust Company Americas, a New York banking corporation, as Trustee under the Indenture (as defined below) (herein called the “Trustee”).",
+          "node_id": "0017",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- First Supplemental Indenture dated June 30, 2022 among Amcor Finance (USA), Inc. (Former Issuer), Amcor Flexibles North America, Inc. (Substitute Issuer; formerly Bemis Company, Inc.), and Deutsche Bank Trust Company Americas as Trustee.\n- Relates to the existing Indenture dated June 13, 2019, with guarantors Amcor plc (Parent Guarantor), Amcor Pty Ltd (formerly Amcor Limited), and Amcor UK Finance plc, covering the Former Issuer’s 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Cites Section 901 of the Indenture permitting, without holder consent, a supplemental indenture to evidence substitution of the issuer and assumption of covenants.\n- Primary action: substitutes Amcor Flexibles North America, Inc. as the Issuer in place of Amcor Finance (USA), Inc., effective upon execution and delivery.\n- The Substitute Issuer assumes all covenants and obligations of the Former Issuer under the Indenture and all outstanding Securities, including all amounts due and owing.\n- Recitals confirm authorization and validity of this supplemental indenture as an amendment and supplement to the Indenture."
+        },
+        {
+          "structure": "5.2",
+          "title": "RECITALS",
+          "heading": "RECITALS",
+          "start_phrase": "The Former Issuer, Amcor plc (the “Parent Guarantor”), Amcor Pty Ltd (formerly known as Amcor Limited), the Substitute Issuer and Amcor UK Finance plc (“Amcor UK” and, together with the Parent Guarantor, Amcor Pty Ltd and the Substitute Issuer, the “Guarantors”) and the Trustee have entered into an Indenture dated as of June 13, 2019, as amended and/or supplemented from time to time (herein called the “Indenture”), providing for the issuance of Securities, including the Former Issuer’s (a) 3.625% Guaranteed Senior Notes due 2026 and (b) 4.500% Guaranteed Senior Notes due 2028.",
+          "node_id": "0018",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- Document type: First Supplemental Indenture (Exhibit 4.7) dated June 30, 2022.\n- Parties: Amcor Finance (USA), Inc. (Former Issuer); Amcor Flexibles North America, Inc. (Substitute Issuer, formerly Bemis Company, Inc.); Deutsche Bank Trust Company Americas (Trustee). Recitals also reference Guarantors: Amcor plc (Parent Guarantor), Amcor Pty Ltd (formerly Amcor Limited), and Amcor UK Finance plc.\n- Background Indenture: Original Indenture dated June 13, 2019, as amended/supplemented, covering the Former Issuer’s 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Legal basis: Section 901 of the Indenture permits, without Holder consent, a supplemental indenture to evidence succession or substitution of the issuer and assumption of covenants.\n- Core action: Substitution of issuer—Amcor Flexibles North America, Inc. becomes the Issuer under the Indenture and for all amounts due on outstanding Securities.\n- Assumption of obligations: The Substitute Issuer assumes all covenants and obligations of the Former Issuer under the Indenture and the Securities.\n- Effectiveness and authorization: The supplemental indenture is duly authorized; all necessary actions to make it a valid amendment have been completed; effectiveness is concurrent with execution and delivery.\n- Definitions: Capitalized terms not defined herein have the meanings given in the Indenture."
+        },
+        {
+          "structure": "5.3",
+          "title": "ARTICLE ONE",
+          "heading": "ARTICLE ONE",
+          "start_phrase": "For good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the Substitute Issuer hereby agrees with the Former Issuer, the Guarantors,",
+          "node_id": "0019",
+          "start_index": 7,
+          "end_index": 7,
+          "summary": "- First Supplemental Indenture dated June 30, 2022.\n- Parties: Amcor Finance (USA), Inc. (Former Issuer); Amcor Flexibles North America, Inc. (Substitute Issuer, formerly Bemis Company, Inc.); Deutsche Bank Trust Company Americas (Trustee). References Guarantors under the base Indenture: Amcor plc (Parent Guarantor), Amcor Pty Ltd (formerly Amcor Limited), and Amcor UK Finance plc.\n- References the base Indenture dated June 13, 2019, covering issuance of 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Cites Section 901 of the base Indenture permitting, without holder consent, a supplemental indenture to evidence substitution of the issuer and assumption of covenants.\n- Confirms authorization and validity of entering into the Supplemental Indenture.\n- Primary purpose and effect (Article One, Section 101): substitutes Amcor Flexibles North America, Inc. as the Issuer under the Indenture, effective upon execution, with the Substitute Issuer assuming all covenants and obligations of the Former Issuer, including responsibility for all amounts due on outstanding securities.",
+          "nodes": [
+            {
+              "structure": "5.3.1",
+              "title": "Substitution of the Issuer under the Indenture.",
+              "heading": "Section 101. Substitution of the Issuer under the Indenture.",
+              "start_phrase": "For good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the Substitute Issuer hereby agrees with the Former Issuer, the Guarantors,",
+              "node_id": "0020",
+              "start_index": 7,
+              "end_index": 7,
+              "summary": "- Document: First Supplemental Indenture dated June 30, 2022 (Exhibit 4.7).\n- Parties: Amcor Finance (USA), Inc. (Former Issuer), Amcor Flexibles North America, Inc. (formerly Bemis Company, Inc.; Substitute Issuer), and Deutsche Bank Trust Company Americas (Trustee).\n- Background: Supplements the Indenture dated June 13, 2019 among the Former Issuer, Amcor plc (Parent Guarantor), Amcor Pty Ltd, Amcor Flexibles North America, Inc., Amcor UK Finance plc, and the Trustee.\n- Securities referenced: 3.625% Guaranteed Senior Notes due 2026 and 4.500% Guaranteed Senior Notes due 2028.\n- Legal basis: Section 901 of the Indenture permits issuer succession/substitution without holder consent.\n- Main action: Substitution of Amcor Flexibles North America, Inc. as the Issuer under the Indenture for all outstanding Securities.\n- Assumption: The Substitute Issuer assumes all covenants and obligations of the Former Issuer under the Indenture and the Securities, including all amounts due and owing.\n- Authorization/validity: The supplemental indenture is authorized and constitutes a valid amendment and supplement to the Indenture."
+            },
+            {
+              "structure": "5.3.2",
+              "title": "Submission to Jurisdiction; Appointment of Agent for Service of Process.",
+              "heading": "Section 102. Submission to Jurisdiction; Appointment of Agent for Service of Process.",
+              "start_phrase": "The Substitute Issuer hereby appoints C T Corporation acting through its office at 28 Liberty Street, New York, New York, 10005, as its authorized agent (the “Authorized Agent”)",
+              "node_id": "0021",
+              "start_index": 8,
+              "end_index": 8,
+              "summary": "- Submission to jurisdiction and agent for service of process: The Substitute Issuer appoints C T Corporation (28 Liberty Street, New York, NY 10005) as Authorized Agent for service of process in legal actions regarding obligations under the Indenture in federal or state courts in Manhattan, New York. Service on the Authorized Agent, with written notice to the Substitute Issuer, is deemed effective service on the Substitute Issuer. The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections.\n- Duration and replacement of agent: The appointment is irrevocable until all principal, premium, and interest on Securities under the Indenture are fully paid. The Substitute Issuer may appoint a successor Authorized Agent in Manhattan; upon acceptance, the prior appointment terminates. The Substitute Issuer must notify the Trustee and all Holders of any successor appointment and take all steps necessary to keep the designation effective until the Indenture is satisfied and discharged. If C T Corporation cannot act or lacks a Manhattan address, a successor must be appointed. Service on the Authorized Agent, with notice to the Former Issuer, Substitute Issuer, and Guarantors, remains effective.\n- Trustee disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or the accuracy of its recitals, which are solely those of the Former Issuer and Substitute Issuer.\n- Effective date: The Supplemental Indenture becomes effective when each party executes a counterpart, and at that time the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law and execution: Governed by New York law (including GOL §5-1401), excluding conflicting choice-of-law principles; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in counterparts, each deemed an original, collectively forming one instrument.\n- Headings: Article and Section headings are for convenience only and do not affect interpretation."
+            },
+            {
+              "structure": "5.3.3",
+              "title": "The Trustee.",
+              "heading": "Section 103. The Trustee.",
+              "start_phrase": "The Trustee shall not be responsible in any manner whatsoever for or in respect of the validity or sufficiency of this Supplemental Indenture or for or in respect of the recitals contained herein, all of which recitals are made solely by the Former Issuer and the Substitute Issuer.",
+              "node_id": "0022",
+              "start_index": 8,
+              "end_index": 8,
+              "summary": "- Submission to jurisdiction and service of process: The Substitute Issuer appoints C T Corporation (28 Liberty Street, New York, NY 10005) as Authorized Agent for service of process in federal or state courts in Manhattan. Service on the Authorized Agent with written notice to the Substitute Issuer constitutes effective service. The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections. The appointment is irrevocable until all obligations under the Securities/Indenture are satisfied, with the right to appoint a Manhattan-based successor agent, notify the Trustee and Holders, and take all actions to maintain the designation. Service on the Authorized Agent (with notice to the Former Issuer, Substitute Issuer, and Guarantors) is deemed effective.\n\n- Trustee disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or its recitals, which are made solely by the Former Issuer and the Substitute Issuer.\n\n- Effective date: The Supplemental Indenture becomes effective when each party executes a counterpart, at which time the Substitute Issuer is deemed the Issuer under the Indenture.\n\n- Governing law and counterparts: Governed by New York law (including GOL §5-1401) excluding conflicting choice-of-law rules; authorization and execution by the Substitute Issuer are governed by Missouri law. The instrument may be executed in counterparts, each deemed an original, together constituting one instrument.\n\n- Headings: Article and Section headings are for convenience only and do not affect interpretation."
+            }
+          ]
+        },
+        {
+          "structure": "5.4",
+          "title": "ARTICLE TWO",
+          "heading": "ARTICLE TWO",
+          "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+          "node_id": "0023",
+          "start_index": 8,
+          "end_index": 8,
+          "summary": "- Submission to jurisdiction and agent for service: The Substitute Issuer appoints C T Corporation (28 Liberty Street, New York, NY 10005) as Authorized Agent for service of process for actions related to the Indenture in federal or state courts in Manhattan; service on the agent with required written notice is deemed effective on the Substitute Issuer. The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections. The appointment is irrevocable until all amounts due on all Securities are paid or the Indenture is satisfied/discharged, with the right to appoint a Manhattan-based successor agent, provide notice to the Trustee and Holders, and maintain the designation in force. If C T Corporation cannot act or lacks a Manhattan address, a successor will be appointed. Service on the Authorized Agent, with notice to the Former Issuer, Substitute Issuer, and Guarantors, is effective service.\n- Trustee disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or its recitals, which are solely those of the Former Issuer and Substitute Issuer.\n- Effective date: The Supplemental Indenture is effective when each party executes a counterpart; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law and counterparts: Governed by New York law (including GOL §5-1401) excluding conflicting choice-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in multiple counterparts, each an original, collectively one instrument.\n- Headings: Article and Section headings are for convenience only and do not affect interpretation.",
+          "nodes": [
+            {
+              "structure": "5.4.1",
+              "title": "Provisions of General Application",
+              "heading": "Provisions of General Application",
+              "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+              "node_id": "0024",
+              "start_index": 8,
+              "end_index": 8,
+              "summary": "- Appoints C T Corporation (28 Liberty Street, New York, NY 10005) as the Substitute Issuer’s authorized agent for service of process in any federal or state court in the Borough of Manhattan for actions relating to obligations under the Indenture.\n- Service on the Authorized Agent, with written notice to the Substitute Issuer, is deemed effective service on the Substitute Issuer; the Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such courts and waives venue objections.\n- The appointment of the Authorized Agent is irrevocable until all amounts due on the Securities have been paid and the Indenture satisfied/discharged; the Substitute Issuer may appoint a successor agent in Manhattan and must notify the Trustee and all Holders of any such appointment.\n- If C T Corporation cannot act or lacks a Manhattan address, the Substitute Issuer must appoint a successor; the Substitute Issuer must maintain the designation in full force until the Indenture is satisfied/discharged. Service on the Authorized Agent, with notice to the Former Issuer, Substitute Issuer, and Guarantors, is effective.\n- The Trustee bears no responsibility for the validity or sufficiency of the Supplemental Indenture or for the recitals, which are solely those of the Former Issuer and Substitute Issuer.\n- Effective Date: The Supplemental Indenture becomes effective when each party executes a counterpart; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing Law: Governed by New York law (including GOL § 5-1401), excluding conflicting choice-of-law principles; authorization and execution by/on behalf of the Substitute Issuer are governed by Missouri law.\n- Execution in counterparts is permitted, each deemed an original, collectively one instrument.\n- Headings are for convenience only and do not affect construction.",
+              "nodes": [
+                {
+                  "structure": "5.4.1.1",
+                  "title": "Effective Date.",
+                  "heading": "Section 201. Effective Date.",
+                  "start_phrase": "This Supplemental Indenture takes effect when each party has executed one counterpart of this deed, whether the same or different counterparts (the “Effective Date”).",
+                  "node_id": "0025",
+                  "start_index": 8,
+                  "end_index": 8,
+                  "summary": "- Appoints C T Corporation (28 Liberty St., New York, NY 10005) as Authorized Agent to accept service of process for the Substitute Issuer in any federal or state court in Manhattan regarding obligations under the Indenture.\n- Service on the Authorized Agent, with written notice to the Substitute Issuer (and to the Former Issuer and Guarantors as noted), is deemed effective service on the Substitute Issuer.\n- The Substitute Issuer irrevocably submits to the non-exclusive jurisdiction of such New York courts and waives objections to venue.\n- The Authorized Agent appointment is irrevocable until all amounts due on all Securities under the Indenture are paid and the Indenture is satisfied/discharged; the Substitute Issuer may appoint a Manhattan-based successor agent, must notify the Trustee and Holders, and must ensure continuity of the designation. If C T Corporation cannot act or lacks a Manhattan address, a successor must be appointed.\n- The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or its recitals; such recitals are solely those of the Former and Substitute Issuers.\n- The Supplemental Indenture becomes effective when each party executes a counterpart; from that Effective Date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law is New York law (including GOL §5-1401), excluding conflicting choice-of-law rules; authorization and execution by/on behalf of the Substitute Issuer are governed by Missouri law.\n- The instrument may be executed in counterparts, each deemed an original, together constituting one instrument.\n- Headings are for convenience only and do not affect interpretation."
+                },
+                {
+                  "structure": "5.4.1.2",
+                  "title": "Governing Law.",
+                  "heading": "Section 202. Governing Law.",
+                  "start_phrase": "This Supplemental Indenture shall be governed by and construed in accordance with the laws of the State of New York (including, without limitation, Section 5-1401 of the New York General Obligations Law or any successor to such a statute),",
+                  "node_id": "0026",
+                  "start_index": 8,
+                  "end_index": 8,
+                  "summary": "- Submission to jurisdiction and service of process: The Substitute Issuer appoints C T Corporation (28 Liberty Street, NYC) as Authorized Agent for service of process in Manhattan federal or state courts for actions related to the Indenture. Service on the Authorized Agent with written notice to the Substitute Issuer constitutes effective service. The Substitute Issuer submits to non-exclusive jurisdiction in those courts and waives venue objections.\n- Duration and changes to agency: The appointment is irrevocable until all amounts on the Securities are paid, but the Substitute Issuer may appoint a successor Authorized Agent in Manhattan; notice must be given to the Trustee and all Holders. If C T Corporation cannot serve or lacks a Manhattan address, a successor must be appointed. The Substitute Issuer must take all steps to keep the designation effective until the Indenture is satisfied and discharged. Service on the Authorized Agent with notice to the Former Issuer, Substitute Issuer, and Guarantors is effective service on the Substitute Issuer.\n- Trustee disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or its recitals, which are solely those of the Former and Substitute Issuers.\n- Effective date: The Supplemental Indenture is effective when all parties execute counterparts; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n- Governing law: Governed by New York law (including GOL §5-1401) excluding conflicting choice-of-law rules; authorization and execution by/on behalf of the Substitute Issuer are governed by Missouri law. The instrument may be executed in counterparts.\n- Headings: Article and Section headings are for convenience only and do not affect interpretation."
+                },
+                {
+                  "structure": "5.4.1.3",
+                  "title": "Effect of Headings.",
+                  "heading": "Section 203. Effect of Headings.",
+                  "start_phrase": "The Article and Section headings herein are for convenience only and shall not affect the construction hereof.",
+                  "node_id": "0027",
+                  "start_index": 8,
+                  "end_index": 9,
+                  "summary": "- Submission to Jurisdiction and Service of Process: The Substitute Issuer appoints C T Corporation (28 Liberty Street, NYC) as Authorized Agent for service of process in Manhattan federal or state courts regarding obligations under the Indenture. Service on the agent with written notice to the Substitute Issuer constitutes effective service. The Substitute Issuer submits to the non-exclusive jurisdiction of such courts and waives venue objections. The appointment is irrevocable until all Securities obligations are fully paid, with the right to appoint a successor agent in Manhattan and a duty to keep the designation effective, notify the Trustee and Holders of any successor, and ensure continuous coverage if C T Corporation ceases to qualify.\n\n- Trustee Disclaimer: The Trustee is not responsible for the validity or sufficiency of the Supplemental Indenture or the accuracy of its recitals, which are solely those of the Former and Substitute Issuers.\n\n- Effective Date: The Supplemental Indenture is effective upon execution of counterparts by all parties; from that date, the Substitute Issuer is deemed the Issuer under the Indenture.\n\n- Governing Law: Governed by New York law (including GOL §5-1401), excluding conflicting choice-of-law rules; the Substitute Issuer’s authorization and execution are governed by Missouri law. The instrument may be executed in counterparts constituting one agreement.\n\n- Headings: Article and Section headings are for convenience only and do not affect interpretation.\n\n- Execution: Signed by Amcor Finance (USA), Inc.; Amcor Flexibles North America, Inc.; and Deutsche Bank Trust Company Americas (as Trustee, Registrar, and Paying Agent), with named officers executing."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

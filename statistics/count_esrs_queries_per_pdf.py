@@ -22,6 +22,41 @@ def is_selected_for_query(row: dict) -> bool:
     return False
 
 
+def is_eligible_for_query_generation(row: dict) -> bool:
+    """
+    Matches the logic from assign_query_plan().
+    Eligible chunks either received queries, or were skipped only because
+    they were not selected after random sampling/allocation.
+    """
+
+    if row.get("generate_query") is True:
+        return True
+
+    if row.get("generate_queries") is True:
+        return True
+
+    if row.get("num_queries", 0):
+        try:
+            if int(row.get("num_queries", 0)) > 0:
+                return True
+        except Exception:
+            pass
+
+    reason = (
+        row.get("skip_query_reason")
+        or row.get("query_skip_reason")
+        or ""
+    )
+
+    # In your query-plan script:
+    # eligible + selected     -> skip_query_reason = ""
+    # eligible + not selected -> skip_query_reason = "not_selected"
+    if reason in ["", "not_selected"]:
+        return True
+
+    return False
+
+
 def get_doc_name(row: dict) -> str:
     """
     Prefer bank_name for ESRS, otherwise fall back to doc_name/doc_id.
@@ -67,6 +102,9 @@ def main():
     skipped_reason_counts = Counter()
     skipped_reason_per_pdf = {}
 
+    eligible_query_chunks = 0
+    eligible_queries_per_pdf = Counter()
+
     with open(input_path, "r", encoding="utf-8") as f:
         for line in f:
             if not line.strip():
@@ -77,6 +115,10 @@ def main():
 
             doc_name = get_doc_name(row)
             chunks_per_pdf[doc_name] += 1
+
+            if is_eligible_for_query_generation(row):
+                eligible_query_chunks += 1
+                eligible_queries_per_pdf[doc_name] += 1
 
             if is_selected_for_query(row):
                 selected_query_chunks += 1
@@ -108,13 +150,20 @@ def main():
         "selected_queries_per_pdf": dict(sorted(selected_queries_per_pdf.items())),
         "skipped_reason_counts": dict(sorted(skipped_reason_counts.items())),
         "skipped_reason_per_pdf": skipped_reason_per_pdf_clean,
+        "eligible_query_chunks": eligible_query_chunks,
+        "eligible_queries_per_pdf": dict(sorted(eligible_queries_per_pdf.items())),
     }
 
     print("\n=== ESRS QUERY PLAN SUMMARY ===")
     print(f"Input file: {input_path}")
     print(f"Total chunks: {total_chunks}")
+    print(f"Eligible query chunks: {eligible_query_chunks}")
     print(f"Selected query chunks: {selected_query_chunks}")
 
+    print("\nEligible query chunks per PDF/bank:")
+    for doc_name, count in sorted(eligible_queries_per_pdf.items()):
+        print(f"  {doc_name}: {count}")
+        
     print("\nSelected queries per PDF/bank:")
     for doc_name, count in sorted(selected_queries_per_pdf.items()):
         print(f"  {doc_name}: {count}")

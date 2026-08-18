@@ -1,0 +1,12 @@
+{
+  "doc_name": "MGMRESORTS_2022_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0185",
+      "start_index": 131,
+      "end_index": 131,
+      "reason": "Correct node 0185 index from 131-130 to 131-131."
+    }
+  ]
+}

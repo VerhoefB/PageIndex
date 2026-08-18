@@ -1,13 +1,13 @@
 {
-  "latest_query_id": "DNB_0031_q1",
-  "completed_queries": 1000,
-  "total_queries": 1000,
-  "remaining_queries": 0,
-  "input_tokens_so_far": 104417544,
-  "output_tokens_so_far": 9408040,
-  "cost_so_far_usd": 224.60233,
-  "avg_input_tokens_per_query": 104417.54,
-  "avg_output_tokens_per_query": 9408.04,
-  "projected_total_cost_usd": 224.60233,
-  "updated_at": "2026-08-16 14:44:45"
+  "latest_query_id": "PFIZER_2021_10K_0036_Were there any potential event",
+  "completed_queries": 92,
+  "total_queries": 111,
+  "remaining_queries": 19,
+  "input_tokens_so_far": 14187386,
+  "output_tokens_so_far": 828839,
+  "cost_so_far_usd": 26.022623,
+  "avg_input_tokens_per_query": 154210.72,
+  "avg_output_tokens_per_query": 9009.12,
+  "projected_total_cost_usd": 31.39686,
+  "updated_at": "2026-08-17 22:10:27"
 }

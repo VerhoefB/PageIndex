@@ -1,0 +1,205 @@
+{
+  "doc_name": "JPMORGAN_2021Q1_10Q",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0267",
+      "start_index": 163,
+      "end_index": 168,
+      "reason": "Correct node 0267 index from 163-3 to 163-168."
+    },
+    {
+      "action": "move",
+      "node_id": "0418",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0267",
+      "reason": "Move the Line of Business Metrics block after the corrected glossary node at root level. Its children 0419-0422 move with it."
+    },
+    {
+      "action": "move",
+      "node_id": "0423",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0418",
+      "reason": "Move node 0423 after node 0418 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0424",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0423",
+      "reason": "Move node 0424 after node 0423 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0425",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0424",
+      "reason": "Move node 0425 after node 0424 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0426",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0425",
+      "reason": "Move node 0426 after node 0425 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0427",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0426",
+      "reason": "Move node 0427 after node 0426 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0428",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0427",
+      "reason": "Move node 0428 after node 0427 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0429",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0428",
+      "reason": "Move node 0429 after node 0428 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0430",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0429",
+      "reason": "Move node 0430 after node 0429 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0431",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0430",
+      "reason": "Move node 0431 after node 0430 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "move",
+      "node_id": "0432",
+      "target_parent_node_id": "__root__",
+      "position": "after",
+      "reference_node_id": "0431",
+      "reason": "Move node 0432 after node 0431 at root level to keep the final 0418-0432 block order intact."
+    },
+    {
+      "action": "remove",
+      "node_id": "0268",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0269",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0270",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0271",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0272",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0273",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0274",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0275",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0276",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0277",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0278",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0279",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0280",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0281",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0282",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0283",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0284",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0285",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0286",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0287",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    },
+    {
+      "action": "remove",
+      "node_id": "0288",
+      "reason": "Remove duplicated restarted block after preserving the later unique 0418-0432 block."
+    }
+  ]
+}

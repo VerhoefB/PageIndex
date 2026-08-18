@@ -1,0 +1,12 @@
+{
+  "doc_name": "AMCOR_2023Q2_10Q",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0029",
+      "start_index": 51,
+      "end_index": 51,
+      "reason": "Correct node 0029 index from 51-50 to 51-51."
+    }
+  ]
+}

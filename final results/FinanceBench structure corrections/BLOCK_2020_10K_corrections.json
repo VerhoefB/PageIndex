@@ -1,0 +1,12 @@
+{
+  "doc_name": "BLOCK_2020_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0061",
+      "start_index": 49,
+      "end_index": 49,
+      "reason": "Correct node 0061 index from 49-48 to 49-49."
+    }
+  ]
+}

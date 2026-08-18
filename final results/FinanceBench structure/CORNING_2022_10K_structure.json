@@ -1341,7 +1341,7 @@
           "start_phrase": "(a)Documents filed as part of this report:",
           "node_id": "0129",
           "start_index": 50,
-          "end_index": 52,
+          "end_index": 55,
           "summary": "- Section is Part IV, Item 15 of a Form 10-K for Corning Incorporated, listing documents and exhibits filed with the annual report; Item 16 notes no 10-K summary.\n- Documents filed include financial statements (with a separate index).\n- Extensive exhibit index, largely incorporated by reference to prior SEC filings, covering:\n  - Major strategic and transactional agreements: Samsung Display framework, shareholder and standstill agreements; Dow/Dow Corning transaction and tax matters; assignment agreements; share repurchase with Samsung Display.\n  - Corporate governance documents: Restated Certificate of Incorporation and amendments; Amended and Restated By-Laws; description of registered securities.\n  - Financing instruments: Indenture for long-term debt; form of common stock certificate; a syndicated Credit Agreement (June 6, 2022).\n  - Executive and director compensation/benefit plans: multiple equity plans for non-employee directors (2003, 2010, 2019, 2021 LTIP), RSU and PSU agreements; officer severance and change-in-control agreements; executive letters of understanding; supplemental pension and investment plans and amendments (including restatements effective January 1, 2023); deferred compensation plan for non-employee directors; executive supplemental pension plan amendments.\n  - Compliance and corporate materials: Code of Ethics and Code of Conduct; list of subsidiaries (as of December 31, 2021); auditor consent (PwC); powers of attorney; CEO/CFO certifications under Sarbanes-Oxley Sections 302 and 906.\n  - Inline XBRL files: instance, schema, calculation, labels, presentation, definitions, and cover page data file.\n- Note: Certain schedules and attachments to some agreements are omitted pursuant to Regulation S-K Item 601(b)(2).",
           "nodes": [
             {
@@ -2113,38 +2113,6 @@
               "start_index": 159,
               "end_index": 159,
               "summary": "Exhibit 32 is a Sarbanes-Oxley Section 906 (18 U.S.C. §1350) certification by Corning Incorporated’s CEO and CFO stating that the company’s Form 10-K for the year ended December 31, 2022: (1) complies with Section 13(a) or 15(d) of the Securities Exchange Act of 1934, and (2) fairly presents, in all material respects, the company’s financial condition and results of operations. The certification is dated February 13, 2023 and signed by Wendell P. Weeks (Chairman and CEO) and Edward A. Schlesinger (Executive Vice President and CFO)."
-            }
-          ]
-        },
-        {
-          "structure": "4.2",
-          "title": "Form 10-K Summary.",
-          "heading": "Item 16. Form 10-K Summary.",
-          "start_phrase": "null.",
-          "node_id": "0206",
-          "start_index": 52,
-          "end_index": 53,
-          "summary": "- Portion of Corning Incorporated’s Form 10-K focused on the Exhibits list and the Signatures section.\n- Exhibits (primarily incorporated by reference) cover:\n  - Executive and director compensation/benefit arrangements: officer severance and change-in-control agreements; deferred compensation plan for non-employee directors; 2019 Equity Plan for Non-Employee Directors; RSU grant notices for non-employee directors (2012 and 2019 plans); performance share unit agreement (effective Jan. 1, 2020); supplemental investment and pension plans (effective Jan. 1, 2023).\n  - Corporate agreements: Tax Matters Agreement (Dec. 10, 2015) among Corning, The Dow Chemical Company, Dow Corning Corporation, and HS Upstate Inc.; Share Repurchase Agreement with Samsung Display Co., Ltd. (Apr. 5, 2021); Credit Agreement (June 6, 2022) with a syndicate of major banks.\n  - Governance and compliance materials: Code of Ethics/Code of Conduct for CEO and financial executives; list of subsidiaries as of Dec. 31, 2021; auditor consent (PwC); powers of attorney; Sarbanes-Oxley Section 302 and 906 certifications.\n  - Inline XBRL files (instance, schema, calculation, labels, presentation, definitions) and the cover page data file.\n- Item 16 (Form 10-K Summary): None.\n- Signatures section: Report signed on Feb. 13, 2023, by Wendell P. Weeks (Chairman, CEO, Principal Executive Officer); includes a Power of Attorney appointing Edward A. Schlesinger, Lewis A. Steverson, and Stefan Becker to sign amendments; additional signatures from Edward A. Schlesinger (EVP & CFO, Principal Financial Officer), Stefan Becker (SVP, Finance & Corporate Controller, Principal Accounting Officer), and directors including Donald W. Blair, Leslie A. Brun, Stephanie A. Burns, Richard T. Clark, and Pamela J. Craig."
-        },
-        {
-          "structure": "4.3",
-          "title": "Signatures",
-          "heading": "Signatures",
-          "start_phrase": "Pursuant to the requirements of Section 13 or 15(d) of the Securities and Exchange Act of 1934, the Registrant has duly caused his report to be signed on its behalf by the undersigned, thereunto duly authorized.",
-          "node_id": "0207",
-          "start_index": 53,
-          "end_index": 53,
-          "summary": "- Signature section of Corning Incorporated’s Annual Report on Form 10-K, executed pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934.\n- Report dated February 13, 2023, signed on behalf of the registrant by Wendell P. Weeks, Chairman and Chief Executive Officer (Principal Executive Officer).\n- Power of Attorney authorizing Edward A. Schlesinger, Lewis A. Steverson, and Stefan Becker to act as attorneys-in-fact to sign and file amendments to the Form 10-K with the SEC.\n- Confirmation that, as of February 13, 2023, the report was signed by:\n  - Wendell P. Weeks: Chairman of the Board, CEO, and Director (Principal Executive Officer)\n  - Edward A. Schlesinger: Executive Vice President and Chief Financial Officer (Principal Financial Officer)\n  - Stefan Becker: Senior Vice President, Finance and Corporate Controller (Principal Accounting Officer)\n  - Directors: Donald W. Blair, Leslie A. Brun, Stephanie A. Burns, Richard T. Clark, and Pamela J. Craig.",
-          "nodes": [
-            {
-              "structure": "4.3.1",
-              "title": "Power of Attorney",
-              "heading": "Power of Attorney",
-              "start_phrase": "KNOW ALL PERSONS BY THESE PRESENTS, that each person whose signature appears below constitutes and appoints Edward A. Schlesinger, Lewis A. Steverson and Stefan Becker, jointly and severally, his or her attorneys-in-fact,",
-              "node_id": "0208",
-              "start_index": 53,
-              "end_index": 56,
-              "summary": "- Signature section of Corning Incorporated’s 2022 Form 10-K under the Securities Exchange Act of 1934, executed February 13, 2023, with CEO/Chairman Wendell P. Weeks signing on behalf of the company.\n- Power of Attorney authorizing Edward A. Schlesinger, Lewis A. Steverson, and Stefan Becker (with substitution rights) to sign amendments to the Form 10-K.\n- List of signatories and capacities, including:\n  - Wendell P. Weeks, Chairman/CEO (Principal Executive Officer)\n  - Edward A. Schlesinger, EVP & CFO (Principal Financial Officer)\n  - Stefan Becker, SVP Finance & Corporate Controller (Principal Accounting Officer)\n  - Directors: Donald W. Blair, Leslie A. Brun, Stephanie A. Burns, Richard T. Clark, Pamela J. Craig, Robert F. Cummings, Jr., Roger W. Ferguson Jr., Deborah A. Henretta, Daniel P. Huttenlocher, Kurt M. Landgraf, Kevin J. Martin, Deborah D. Rieman, Hansel E. Tookes II, and Mark S. Wrighton.\n- Index to Financial Statements for the 2022 Annual Report, listing:\n  - Auditor’s report\n  - Consolidated financial statements (income, comprehensive income, balance sheets, cash flows, changes in shareholders’ equity)\n  - Notes 1–19 covering significant accounting policies; restructuring, impairment and other charges; HSG transactions and acquisitions; revenue; inventories; leases; income taxes; property, plant and equipment; goodwill and intangibles; other assets/liabilities; debt; employee retirement plans; commitments/contingencies/guarantees; hedging; fair value; shareholders’ equity; earnings per share; share-based compensation; and reportable segments.\n- Independent Registered Public Accounting Firm’s report providing unqualified opinions:\n  - Financial statements present fairly the company’s results for the three years ended December 31, 2022, in accordance with U.S. GAAP.\n  - Internal control over financial reporting was effective as of December 31, 2022, based on COSO 2013.\n  - Describes auditor responsibilities, independence, PCAOB standards, audit procedures, and the definition/limitations of internal control."
             }
           ]
         }

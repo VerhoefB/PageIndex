@@ -1,0 +1,22 @@
+{
+  "doc_name": "CORNING_2022_10K",
+  "operations": [
+    {
+      "action": "update_indexes",
+      "node_id": "0129",
+      "start_index": 50,
+      "end_index": 55,
+      "reason": "Correct node 0129 index from 50-52 to 50-55."
+    },
+    {
+      "action": "remove",
+      "node_id": "0206",
+      "reason": "Remove node 0206."
+    },
+    {
+      "action": "remove",
+      "node_id": "0207",
+      "reason": "Remove node 0207."
+    }
+  ]
+}

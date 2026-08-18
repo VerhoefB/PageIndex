@@ -1,4 +1,5 @@
 import string
+import time
 
 import nltk
 from nltk.corpus import stopwords
@@ -19,9 +20,10 @@ class BM25Retriever:
     """
 
     def __init__(self, chunks, k1=1.2, b=0.75):
+        build_start = time.perf_counter()
+
         nltk.download("stopwords", quiet=True)
 
-        # Use only canonical retrieval chunks if duplicate flags exist.
         self.chunks = [
             chunk for chunk in chunks
             if not chunk.get("is_duplicate_chunk", False)
@@ -29,16 +31,25 @@ class BM25Retriever:
 
         self.stop_words = set(stopwords.words("english"))
 
+        tokenize_start = time.perf_counter()
+
         self.tokenized_chunks = [
             self._tokenize(self._get_text(chunk))
             for chunk in self.chunks
         ]
+
+        self.tokenization_time_seconds = time.perf_counter() - tokenize_start
+
+        index_start = time.perf_counter()
 
         self.bm25 = BM25Okapi(
             self.tokenized_chunks,
             k1=k1,
             b=b
         )
+
+        self.index_construction_time_seconds = time.perf_counter() - index_start
+        self.preprocessing_time_seconds = time.perf_counter() - build_start
 
     def _get_text(self, chunk):
         return chunk.get("text") or chunk.get("page_content") or ""
@@ -59,10 +70,13 @@ class BM25Retriever:
 
         return tokens
 
-    def retrieve(self, query, top_k=5):
+    def retrieve(self, query, top_k=5, return_metadata=False):
         """
         Retrieve top-k chunks for a query across the full corpus.
         """
+
+        query_start = time.perf_counter()
+
         tokenized_query = self._tokenize(query)
         scores = self.bm25.get_scores(tokenized_query)
 
@@ -72,7 +86,6 @@ class BM25Retriever:
 
         for rank, idx in enumerate(ranked_indices, start=1):
             chunk = self.chunks[idx]
-
             doc_name = chunk.get("doc_name") or chunk.get("bank_name") or ""
 
             results.append({
@@ -87,5 +100,21 @@ class BM25Retriever:
                 "text": self._get_text(chunk),
                 "retriever": "bm25",
             })
+
+        query_time_seconds = time.perf_counter() - query_start
+
+        metadata = {
+            "retriever": "bm25",
+            "top_k": top_k,
+            "num_chunks_indexed": len(self.chunks),
+            "preprocessing_time_seconds": self.preprocessing_time_seconds,
+            "tokenization_time_seconds": self.tokenization_time_seconds,
+            "index_construction_time_seconds": self.index_construction_time_seconds,
+            "query_time_seconds": query_time_seconds,
+            "embedding_time_seconds": 0.0,
+        }
+
+        if return_metadata:
+            return results, metadata
 
         return results

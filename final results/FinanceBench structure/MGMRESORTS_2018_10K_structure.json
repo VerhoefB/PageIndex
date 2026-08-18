@@ -19,7 +19,7 @@
       "start_phrase": "MGM Resorts International is referred to as the “Company,” “MGM Resorts,” or the “Registrant,” and together with its subsidiaries may also be referred to as “we,” “us” or “our.”",
       "node_id": "0001",
       "start_index": 3,
-      "end_index": 2,
+      "end_index": 3,
       "summary": "The partial document consists solely of a directive about response formatting, instructing that only the description be returned without any additional text, with no other substantive content provided."
     },
     {

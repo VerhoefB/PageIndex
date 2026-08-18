@@ -386,12 +386,21 @@ def main(
         )
 
         keep_query = (
-            len(evidence_matches) == 1
-            or (
-                len(evidence_matches) > 1
-                and len(ground_truth_chunk_ids) == 1
-            )
+            len(row.get("evidence", [])) == 1
+            and len(evidence_matches) == 1
+            and len(ground_truth_chunk_ids) == 1
         )
+
+        if keep_query:
+            skip_reason = ""
+        elif len(row.get("evidence", [])) != 1:
+            skip_reason = "Question has multiple evidence entries."
+        elif len(evidence_matches) == 0:
+            skip_reason = "No evidence matched to a chunk."
+        elif len(ground_truth_chunk_ids) != 1:
+            skip_reason = "Evidence matched to zero or multiple chunks."
+        else:
+            skip_reason = "Not kept for retrieval."
 
         query_row = dict(row)
         query_row["query"] = row.get("question", "")
@@ -408,7 +417,7 @@ def main(
             if row.get("evidence") else False
         )
         query_row["kept_for_retrieval"] = keep_query
-        query_row["skip_reason"] = "" if keep_query else "Multiple evidence texts matched to different chunks."
+        query_row["skip_reason"] = skip_reason
 
         if keep_query:
             output.append(query_row)

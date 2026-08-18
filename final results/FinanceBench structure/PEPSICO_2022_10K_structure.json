@@ -2201,20 +2201,9 @@
       "start_phrase": "The following consolidated financial statements of PepsiCo, Inc. and its affiliates are included herein by reference to the pages indicated on the index appearing in “Item 7. Management’ s Discussion and Analysis of Financial Condition and Results of Operations”:",
       "node_id": "0213",
       "start_index": 121,
-      "end_index": 122,
+      "end_index": 121,
       "summary": "- This excerpt is from Part IV of PepsiCo, Inc.’s Form 10-K, covering Item 15 (Exhibits and Financial Statement Schedules) and Item 16.\n- Item 15(a)(1) lists the consolidated financial statements included by reference to Item 7, covering fiscal years 2020–2022: Statements of Income, Comprehensive Income, Cash Flows, Balance Sheet (2022 and 2021), Statement of Equity, Notes to Consolidated Financial Statements, and the Report of the Independent Registered Public Accounting Firm (PCAOB ID: 185).\n- Item 15(a)(2) notes that financial statement schedules are omitted because they are not required or the information is included in the financial statements or notes.\n- Item 15(a)(3) refers to the Index to Exhibits.\n- Item 16 states there is no Form 10-K Summary.\n- The Index to Exhibits lists documents filed or incorporated by reference, including:\n  - Corporate governance documents (Amended and Restated Articles of Incorporation; Amended and Restated By-laws).\n  - An undertaking to furnish instruments defining rights of holders of long-term debt upon SEC request.\n  - An Indenture dated May 21, 2007 with The Bank of New York Mellon as trustee.\n  - Multiple forms of senior notes with various maturities and coupon rates (e.g., 5.50% due 2040; 4.875% due 2040; 3.600% due 2024; 2.625% due 2026; 4.250% due 2044; 2.750% due 2025; 3.500% due 2025; 4.600% due 2045; 4.450% due 2046; 2.850% due 2026), each incorporated by reference to prior SEC filings.\n- The excerpt notes that incorporated documents can be viewed on the SEC’s website.",
-      "nodes": [
-        {
-          "structure": "30.1",
-          "title": "INDEX TO EXHIBITS",
-          "heading": "30.1 INDEX TO EXHIBITS",
-          "start_phrase": "The following is a list of the exhibits filed as part of this Form 10-K.",
-          "node_id": "0214",
-          "start_index": 122,
-          "end_index": 121,
-          "summary": "The partial document solely provides a response-format directive to return only the description and exclude any additional text, with no other substantive content or topics covered."
-        }
-      ]
+      "nodes": []
     },
     {
       "structure": "31",
@@ -5037,16 +5026,6 @@
           ]
         }
       ]
-    },
-    {
-      "structure": "36.13.IPO.3",
-      "title": "Rights of Transferred and Transition Individuals",
-      "heading": "IPO.3 Rights of T ransferred and T ransition Individuals .",
-      "start_phrase": "All Transferred Individuals who participated in the PepsiCo Prior Plan immediately prior to the Ef fective Date shall be Participants in this Plan as of the Ef fective Date.",
-      "node_id": "0488",
-      "start_index": 426,
-      "end_index": 426,
-      "summary": "- Defines “Close of the Distribution Date,” “Transferred Individual,” and “Transition Individual” by reference to an underlying Agreement.\n- Establishes rights of Transferred and Transition Individuals in connection with the spin-off from the PepsiCo Prior Plan to the PepsiCo Pension Equalization Plan – 409A Program.\n- Confirms all Transferred Individuals who participated in the PepsiCo Prior Plan immediately before the Effective Date automatically become Participants in the new Plan as of the Effective Date.\n- States the spin-off will not cause a break in Service or Credited Service for Transferred or Transition Individuals.\n- Provides that all service, compensation, and other benefit-affecting determinations recognized under the PepsiCo Prior Plan through the Close of the Distribution Date will continue to be fully recognized under the new Plan as if incurred under it, except where doing so would duplicate benefits.\n- Specifies that Transition Individuals’ benefits are determined under section 8.02 of the Agreement.\n- Notes Article B (Special Cases) supplements the main Plan and is effective January 28, 2002."
     },
     {
       "structure": "37",
