@@ -1,13 +1,13 @@
 {
-  "latest_query_id": "PEPSICO_2023_8K_dated_2023_05_30_0001_By how much did Pepsico increa",
-  "completed_queries": 108,
+  "latest_query_id": "PEPSICO_2021_10K_0123_What is the FY2021 capital exp",
+  "completed_queries": 111,
   "total_queries": 111,
-  "remaining_queries": 3,
-  "input_tokens_so_far": 16959321,
-  "output_tokens_so_far": 1017478,
-  "cost_so_far_usd": 31.373931,
-  "avg_input_tokens_per_query": 157030.75,
-  "avg_output_tokens_per_query": 9421.09,
-  "projected_total_cost_usd": 32.245429,
-  "updated_at": "2026-08-18 22:26:23"
+  "remaining_queries": 0,
+  "input_tokens_so_far": 17759970,
+  "output_tokens_so_far": 1069923,
+  "cost_so_far_usd": 32.899192,
+  "avg_input_tokens_per_query": 159999.73,
+  "avg_output_tokens_per_query": 9638.95,
+  "projected_total_cost_usd": 32.899192,
+  "updated_at": "2026-08-19 10:42:17"
 }

@@ -1,0 +1,17 @@
+dataset,result_file,method,model,variant,top_m,n_queries,n_latency_observations,mean_latency_seconds,median_latency_seconds,std_latency_seconds,p95_latency_seconds
+ESRS,bm25_query_results.jsonl,BM25,–,standard,,1000,1000,0.012992901999999999,0.012371,0.003816631636855651,0.01983864999999999
+ESRS,dense_harrier_oss_v1_0_6b_query_results.jsonl,Dense,Harrier,standard,,1000,1000,0.0010130000000000004,0.001,0.00011333068359382577,0.001
+ESRS,dense_linq_embed_mistral_query_results.jsonl,Dense,Linq-Embed-Mistral,standard,,1000,1000,0.0032130000000000006,0.003,0.00048771802188238734,0.004
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,10.0,1000,1000,0.000157,0.0,0.00036672262745225513,0.001
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,5.0,1000,1000,4e-05,0.0,0.00019605723255834874,0.0
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,7.0,1000,1000,6.2e-05,0.0,0.00024127621974453722,0.001
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,10.0,1000,1000,0.0006410000000000002,0.001,0.0005122317652990503,0.001
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,5.0,1000,1000,0.000136,0.0,0.0003429600875052687,0.001
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,7.0,1000,1000,0.00020600000000000002,0.0,0.0004046328307586122,0.001
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,node,10.0,1000,1000,7.600000000000002e-05,0.0,0.0002651307117146075,0.001
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,node,5.0,1000,1000,7.4e-05,0.0,0.0002767681350889235,0.001
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,node,7.0,1000,1000,0.000132,0.0,0.00034741430122649914,0.001
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,10.0,1000,1000,0.000184,0.0,0.00038767808075037505,0.001
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,5.0,1000,1000,7.400000000000001e-05,0.0,0.00026190187588597485,0.001
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,7.0,1000,1000,0.000118,0.0,0.0003227695465501356,0.001
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,1000,1000,153.363191,135.8025,73.03120105021796,284.85784999999976

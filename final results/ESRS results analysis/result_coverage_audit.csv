@@ -1,0 +1,17 @@
+dataset,result_file,method,model,variant,top_m,n_result_queries,master_n_queries,coverage_pct
+ESRS,bm25_query_results.jsonl,BM25,–,standard,,1000,1000,100.0
+ESRS,dense_harrier_oss_v1_0_6b_query_results.jsonl,Dense,Harrier,standard,,1000,1000,100.0
+ESRS,dense_linq_embed_mistral_query_results.jsonl,Dense,Linq-Embed-Mistral,standard,,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,10.0,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,5.0,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,7.0,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,10.0,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,5.0,1000,1000,100.0
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,7.0,1000,1000,100.0
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,node,10.0,1000,1000,100.0
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,node,5.0,1000,1000,100.0
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,node,7.0,1000,1000,100.0
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,10.0,1000,1000,100.0
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,5.0,1000,1000,100.0
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,7.0,1000,1000,100.0
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,1000,1000,100.0

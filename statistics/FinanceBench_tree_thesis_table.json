@@ -1,0 +1,23 @@
+{
+  "Full multi-document tree": {
+    "Top-level document nodes": 65,
+    "Total nodes including document nodes": 8543,
+    "Total document-subtree nodes": 8478,
+    "Total leaf chunks": 7433,
+    "Max depth": 9,
+    "Max level width": 2356
+  },
+  "Average over document subtrees": {
+    "Average total nodes per subtree": 130.43,
+    "Median total nodes per subtree": 64,
+    "Average leaf chunks per subtree": 114.35,
+    "Median leaf chunks per subtree": 61,
+    "Average max depth per subtree": 3.34,
+    "Median max depth per subtree": 3,
+    "Average max level width per subtree": 62.89,
+    "Median max level width per subtree": 40,
+    "Average retained share m=5": 0.3262,
+    "Average retained share m=7": 0.4034,
+    "Average retained share m=10": 0.4977
+  }
+}
