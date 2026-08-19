@@ -4,6 +4,9 @@ import os
 import time
 import csv
 from datetime import datetime
+from pathlib import Path
+
+import numpy as np
 
 from baselines.dense_retriever import DenseRetriever
 
@@ -70,12 +73,53 @@ def infer_dataset_from_path(path):
     return ""
 
 
+def load_query_embeddings(query_cache_path, num_queries):
+    """
+    Load precomputed query embeddings from a .npy file.
+
+    The query embedding cache must have been created from the same query file
+    and with the same embedding model as the dense chunk embeddings.
+    """
+    if query_cache_path is None:
+        return None
+
+    query_cache_path = Path(query_cache_path)
+
+    if not query_cache_path.exists():
+        raise FileNotFoundError(
+            f"Query embedding cache not found: {query_cache_path}"
+        )
+
+    print(f"Loading query embeddings from cache: {query_cache_path}")
+
+    query_embeddings = np.load(
+        query_cache_path
+    ).astype("float32")
+
+    if query_embeddings.shape[0] < num_queries:
+        raise ValueError(
+            f"Query embedding cache has {query_embeddings.shape[0]} rows, "
+            f"but there are {num_queries} queries. "
+            "Make sure the cache was created from the same query file."
+        )
+
+    query_embeddings = query_embeddings[:num_queries]
+
+    print(
+        f"Loaded query embeddings with shape: "
+        f"{query_embeddings.shape}"
+    )
+
+    return query_embeddings
+
+
 def evaluate_dense(
     chunks_path,
     queries_path,
     model_name,
     output_path,
     cache_path=None,
+    query_cache_path=None,
     setup_csv_path=None,
     top_k=5,
     batch_size=8,
@@ -87,6 +131,11 @@ def evaluate_dense(
     if max_queries is not None:
         queries = queries[:max_queries]
 
+    query_embeddings = load_query_embeddings(
+        query_cache_path=query_cache_path,
+        num_queries=len(queries),
+    )
+
     # ------------------------------------------------------------
     # 1. Setup phase: load model, create/load embeddings, build index
     # ------------------------------------------------------------
@@ -95,6 +144,10 @@ def evaluate_dense(
     error = ""
 
     cache_loaded = bool(cache_path and os.path.exists(cache_path))
+    query_cache_loaded = bool(
+        query_cache_path
+        and os.path.exists(query_cache_path)
+    )
 
     try:
         retriever_start = time.time()
@@ -127,6 +180,8 @@ def evaluate_dense(
                 "model": model_name,
                 "chunks_path": chunks_path,
                 "cache_path": cache_path or "",
+                "query_cache_path": query_cache_path or "",
+                "query_cache_loaded": query_cache_loaded,
                 "num_chunks": len(chunks),
                 "embedding_dimension": "",
                 "batch_size": batch_size,
@@ -168,6 +223,8 @@ def evaluate_dense(
             "model": model_name,
             "chunks_path": chunks_path,
             "cache_path": cache_path or "",
+            "query_cache_path": query_cache_path or "",
+            "query_cache_loaded": query_cache_loaded,
             "num_chunks": len(chunks),
             "embedding_dimension": embedding_dimension,
             "batch_size": batch_size,
@@ -186,15 +243,21 @@ def evaluate_dense(
     # ------------------------------------------------------------
     result_rows = []
 
-    for query_row in queries:
+    for query_index, query_row in enumerate(queries):
         query = query_row["query"]
         gold_chunk_id = str(query_row["ground_truth_chunk_id"])
+
+        query_embedding = None
+
+        if query_embeddings is not None:
+            query_embedding = query_embeddings[query_index]
 
         start = time.time()
 
         results = retriever.retrieve(
             query=query,
             top_k=top_k,
+            query_embedding=query_embedding,
         )
 
         latency = time.time() - start
@@ -228,6 +291,7 @@ def evaluate_dense(
             "method": "dense",
             "model": model_name,
             "mode": "standard",
+            "query_cache_used": query_embeddings is not None,
 
             "top1_chunk_ids": top1_ids,
             "top5_chunk_ids": top5_ids,
@@ -288,6 +352,10 @@ if __name__ == "__main__":
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--max-queries", type=int, default=None)
     parser.add_argument("--setup-csv", default=None)
+    parser.add_argument(
+    "--query-cache-path",
+    default=None,
+)
 
     args = parser.parse_args()
 
@@ -297,8 +365,9 @@ if __name__ == "__main__":
         model_name=args.model_name,
         output_path=args.output,
         cache_path=args.cache_path,
+        query_cache_path=args.query_cache_path,
         top_k=args.top_k,
         batch_size=args.batch_size,
         max_queries=args.max_queries,
-        setup_csv_path=args.setup_csv
+        setup_csv_path=args.setup_csv,
     )

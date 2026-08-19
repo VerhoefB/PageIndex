@@ -4,8 +4,13 @@ import json
 import os
 import time
 from datetime import datetime
+from pathlib import Path
 
-from hybrid_pageindex.hybrid_pageindex_chunk_rerank_retriever import HybridPageIndexChunkRerankRetriever
+import numpy as np
+
+from hybrid_pageindex.hybrid_pageindex_chunk_rerank_retriever import (
+    HybridPageIndexChunkRerankRetriever,
+)
 
 
 def load_json(path):
@@ -75,6 +80,40 @@ def get_ground_truth_rank(gold_chunk_id, retrieved_ids):
     return None
 
 
+def load_query_embeddings(query_cache_path, num_queries):
+    """
+    Load precomputed query embeddings from a .npy file.
+
+    The query embedding cache must be created from the same query file
+    and with the same embedding model as the node and chunk embeddings.
+    """
+
+    if query_cache_path is None:
+        return None
+
+    query_cache_path = Path(query_cache_path)
+
+    if not query_cache_path.exists():
+        raise FileNotFoundError(f"Query embedding cache not found: {query_cache_path}")
+
+    print(f"Loading query embeddings from cache: {query_cache_path}")
+
+    query_embeddings = np.load(query_cache_path).astype("float32")
+
+    if query_embeddings.shape[0] < num_queries:
+        raise ValueError(
+            f"Query embedding cache has {query_embeddings.shape[0]} rows, "
+            f"but there are {num_queries} queries. "
+            "Make sure the cache was created from the same query file."
+        )
+
+    query_embeddings = query_embeddings[:num_queries]
+
+    print(f"Loaded query embeddings with shape: {query_embeddings.shape}")
+
+    return query_embeddings
+
+
 def evaluate_hybrid_pageindex(
     tree_path,
     chunks_path,
@@ -89,6 +128,7 @@ def evaluate_hybrid_pageindex(
     node_cache_path=None,
     top_node_cache_path=None,
     chunk_cache_path=None,
+    query_cache_path=None,
 ):
     tree_json = load_json(tree_path)
     tree = get_tree_from_file(tree_json)
@@ -99,15 +139,24 @@ def evaluate_hybrid_pageindex(
     if max_queries is not None:
         queries = queries[:max_queries]
 
+    query_embeddings = load_query_embeddings(
+        query_cache_path=query_cache_path,
+        num_queries=len(queries),
+    )
+
     # ------------------------------------------------------------
-    # 1. Setup phase: load model, create/load node embeddings
+    # 1. Setup phase: load model, create/load node, top-node, chunk embeddings
     # ------------------------------------------------------------
     setup_start = time.time()
     status = "success"
     error = ""
 
     node_cache_loaded = bool(node_cache_path and os.path.exists(node_cache_path))
-    top_node_cache_loaded = bool(top_node_cache_path and os.path.exists(top_node_cache_path))
+    top_node_cache_loaded = bool(
+        top_node_cache_path and os.path.exists(top_node_cache_path)
+    )
+    chunk_cache_loaded = bool(chunk_cache_path and os.path.exists(chunk_cache_path))
+    query_cache_loaded = bool(query_cache_path and os.path.exists(query_cache_path))
 
     try:
         retriever_start = time.time()
@@ -131,40 +180,50 @@ def evaluate_hybrid_pageindex(
         total_setup_seconds = time.time() - setup_start
 
         if setup_csv_path is not None:
-            append_csv_row({
-                "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "dataset": infer_dataset_from_path(chunks_path),
-                "method": "hybrid_pageindex",
-                "model": model_name,
-                "tree_path": tree_path,
-                "chunks_path": chunks_path,
-                "node_cache_path": node_cache_path or "",
-                "top_node_cache_path": top_node_cache_path or "",
-                "num_chunks": len(chunks),
-                "num_nodes": "",
-                "num_top_nodes": "",
-                "embedding_dimension": "",
-                "batch_size": batch_size,
-                "top_k": top_k,
-                "top_m": top_m,
-                "node_cache_loaded": node_cache_loaded,
-                "top_node_cache_loaded": top_node_cache_loaded,
-                "node_embedding_seconds": "",
-                "top_node_embedding_seconds": "",
-                "cache_load_seconds": "",
-                "model_and_index_seconds": "",
-                "total_setup_seconds": round(total_setup_seconds, 3),
-                "status": status,
-                "error": error,
-            }, setup_csv_path)
+            append_csv_row(
+                {
+                    "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "dataset": infer_dataset_from_path(chunks_path),
+                    "method": "hybrid_pageindex_chunk_rerank",
+                    "model": model_name,
+                    "tree_path": tree_path,
+                    "chunks_path": chunks_path,
+                    "node_cache_path": node_cache_path or "",
+                    "top_node_cache_path": top_node_cache_path or "",
+                    "chunk_cache_path": chunk_cache_path or "",
+                    "query_cache_path": query_cache_path or "",
+                    "num_chunks": len(chunks),
+                    "num_nodes": "",
+                    "num_top_nodes": "",
+                    "num_chunk_embeddings": "",
+                    "embedding_dimension": "",
+                    "batch_size": batch_size,
+                    "top_k": top_k,
+                    "top_m": top_m,
+                    "node_cache_loaded": node_cache_loaded,
+                    "top_node_cache_loaded": top_node_cache_loaded,
+                    "chunk_cache_loaded": chunk_cache_loaded,
+                    "query_cache_loaded": query_cache_loaded,
+                    "node_embedding_seconds": "",
+                    "top_node_embedding_seconds": "",
+                    "chunk_embedding_seconds": "",
+                    "cache_load_seconds": "",
+                    "model_and_index_seconds": "",
+                    "total_setup_seconds": round(total_setup_seconds, 3),
+                    "status": status,
+                    "error": error,
+                },
+                setup_csv_path,
+            )
 
         raise
 
     # ------------------------------------------------------------
-    # 2. Save one setup row: hybrid embedding/index tracking
+    # 2. Save one setup row
     # ------------------------------------------------------------
     num_nodes = ""
     num_top_nodes = ""
+    num_chunk_embeddings = ""
     embedding_dimension = ""
 
     if hasattr(retriever, "node_embeddings"):
@@ -185,51 +244,84 @@ def evaluate_hybrid_pageindex(
         except Exception:
             num_top_nodes = ""
 
-    if node_cache_loaded and top_node_cache_loaded:
+    if hasattr(retriever, "chunk_embeddings"):
+        try:
+            num_chunk_embeddings = len(retriever.chunk_embeddings)
+        except Exception:
+            num_chunk_embeddings = ""
+
+    if node_cache_loaded and top_node_cache_loaded and chunk_cache_loaded:
         node_embedding_seconds = 0
         top_node_embedding_seconds = 0
+        chunk_embedding_seconds = 0
         cache_load_seconds = model_and_index_seconds
     else:
         node_embedding_seconds = model_and_index_seconds
         top_node_embedding_seconds = ""
+        chunk_embedding_seconds = ""
         cache_load_seconds = 0
 
     if setup_csv_path is not None:
-        append_csv_row({
-            "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "dataset": infer_dataset_from_path(chunks_path),
-            "method": "hybrid_pageindex",
-            "model": model_name,
-            "tree_path": tree_path,
-            "chunks_path": chunks_path,
-            "node_cache_path": node_cache_path or "",
-            "top_node_cache_path": top_node_cache_path or "",
-            "num_chunks": len(chunks),
-            "num_nodes": num_nodes,
-            "num_top_nodes": num_top_nodes,
-            "embedding_dimension": embedding_dimension,
-            "batch_size": batch_size,
-            "top_k": top_k,
-            "top_m": top_m,
-            "node_cache_loaded": node_cache_loaded,
-            "top_node_cache_loaded": top_node_cache_loaded,
-            "node_embedding_seconds": round(node_embedding_seconds, 3) if node_embedding_seconds != "" else "",
-            "top_node_embedding_seconds": round(top_node_embedding_seconds, 3) if top_node_embedding_seconds != "" else "",
-            "cache_load_seconds": round(cache_load_seconds, 3),
-            "model_and_index_seconds": round(model_and_index_seconds, 3),
-            "total_setup_seconds": round(total_setup_seconds, 3),
-            "status": status,
-            "error": error,
-        }, setup_csv_path)
+        append_csv_row(
+            {
+                "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "dataset": infer_dataset_from_path(chunks_path),
+                "method": "hybrid_pageindex_chunk_rerank",
+                "model": model_name,
+                "tree_path": tree_path,
+                "chunks_path": chunks_path,
+                "node_cache_path": node_cache_path or "",
+                "top_node_cache_path": top_node_cache_path or "",
+                "chunk_cache_path": chunk_cache_path or "",
+                "query_cache_path": query_cache_path or "",
+                "num_chunks": len(chunks),
+                "num_nodes": num_nodes,
+                "num_top_nodes": num_top_nodes,
+                "num_chunk_embeddings": num_chunk_embeddings,
+                "embedding_dimension": embedding_dimension,
+                "batch_size": batch_size,
+                "top_k": top_k,
+                "top_m": top_m,
+                "node_cache_loaded": node_cache_loaded,
+                "top_node_cache_loaded": top_node_cache_loaded,
+                "chunk_cache_loaded": chunk_cache_loaded,
+                "query_cache_loaded": query_cache_loaded,
+                "node_embedding_seconds": (
+                    round(node_embedding_seconds, 3)
+                    if node_embedding_seconds != ""
+                    else ""
+                ),
+                "top_node_embedding_seconds": (
+                    round(top_node_embedding_seconds, 3)
+                    if top_node_embedding_seconds != ""
+                    else ""
+                ),
+                "chunk_embedding_seconds": (
+                    round(chunk_embedding_seconds, 3)
+                    if chunk_embedding_seconds != ""
+                    else ""
+                ),
+                "cache_load_seconds": round(cache_load_seconds, 3),
+                "model_and_index_seconds": round(model_and_index_seconds, 3),
+                "total_setup_seconds": round(total_setup_seconds, 3),
+                "status": status,
+                "error": error,
+            },
+            setup_csv_path,
+        )
 
     # ------------------------------------------------------------
     # 3. Query-level retrieval evaluation
     # ------------------------------------------------------------
     result_rows = []
 
-    for query_row in queries:
+    for query_index, query_row in enumerate(queries):
         query = query_row["query"]
         gold_chunk_id = str(query_row["ground_truth_chunk_id"])
+
+        query_embedding = None
+        if query_embeddings is not None:
+            query_embedding = query_embeddings[query_index]
 
         start = time.time()
 
@@ -237,6 +329,7 @@ def evaluate_hybrid_pageindex(
             query=query,
             top_k=top_k,
             top_m=top_m,
+            query_embedding=query_embedding,
         )
 
         latency = time.time() - start
@@ -258,46 +351,42 @@ def evaluate_hybrid_pageindex(
             else 0.0
         )
 
-        result_rows.append({
-            "financebench_id": query_row.get("financebench_id"),
-            "company": query_row.get("company"),
-            "doc_name": query_row.get("doc_name") or query_row.get("bank_name"),
-            "bank_name": query_row.get("bank_name", ""),
-            "query": query,
-            "answer": query_row.get("answer"),
-            "ground_truth_chunk_id": gold_chunk_id,
-
-            "method": "hybrid_pageindex",
-            "model": model_name,
-            "mode": "standard",
-            "top_m": top_m,
-
-            "top1_chunk_ids": top1_ids,
-            "top5_chunk_ids": top5_ids,
-            "top1_chunks": top1_results,
-            "top5_chunks": top5_results,
-
-            "correct_at_1": correct_at_1,
-            "ground_truth_rank_top1": ground_truth_rank_top1,
-            "ground_truth_rank_top5": ground_truth_rank_top5,
-            "reciprocal_rank_at_5": reciprocal_rank_at_5,
-
-            "top1_latency_seconds": round(latency, 3),
-            "top5_latency_seconds": round(latency, 3),
-            "latency_seconds": round(latency, 3),
-
-            "top1_input_tokens": 0,
-            "top1_output_tokens": 0,
-            "top1_total_tokens": 0,
-
-            "top5_input_tokens": 0,
-            "top5_output_tokens": 0,
-            "top5_total_tokens": 0,
-
-            "input_tokens": 0,
-            "output_tokens": 0,
-            "total_tokens": 0,
-        })
+        result_rows.append(
+            {
+                "financebench_id": query_row.get("financebench_id"),
+                "company": query_row.get("company"),
+                "doc_name": query_row.get("doc_name") or query_row.get("bank_name"),
+                "bank_name": query_row.get("bank_name", ""),
+                "query": query,
+                "answer": query_row.get("answer"),
+                "ground_truth_chunk_id": gold_chunk_id,
+                "method": "hybrid_pageindex_chunk_rerank",
+                "model": model_name,
+                "mode": "chunk_rerank",
+                "top_m": top_m,
+                "query_cache_used": query_embeddings is not None,
+                "top1_chunk_ids": top1_ids,
+                "top5_chunk_ids": top5_ids,
+                "top1_chunks": top1_results,
+                "top5_chunks": top5_results,
+                "correct_at_1": correct_at_1,
+                "ground_truth_rank_top1": ground_truth_rank_top1,
+                "ground_truth_rank_top5": ground_truth_rank_top5,
+                "reciprocal_rank_at_5": reciprocal_rank_at_5,
+                "top1_latency_seconds": round(latency, 3),
+                "top5_latency_seconds": round(latency, 3),
+                "latency_seconds": round(latency, 3),
+                "top1_input_tokens": 0,
+                "top1_output_tokens": 0,
+                "top1_total_tokens": 0,
+                "top5_input_tokens": 0,
+                "top5_output_tokens": 0,
+                "top5_total_tokens": 0,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "total_tokens": 0,
+            }
+        )
 
         print("\nQUERY:", query)
         print("GOLD:", gold_chunk_id)
@@ -309,10 +398,11 @@ def evaluate_hybrid_pageindex(
 
     write_jsonl(result_rows, output_path)
 
-    print("\n=== HYBRID PAGEINDEX QUERY-LEVEL EVALUATION SAVED ===")
+    print("\n=== HYBRID PAGEINDEX CHUNK-RERANK QUERY-LEVEL EVALUATION SAVED ===")
     print(f"Model: {model_name}")
     print(f"Queries: {len(result_rows)}")
     print(f"top_m: {top_m}")
+    print(f"Query cache used: {query_embeddings is not None}")
     print(f"Output: {output_path}")
 
     if setup_csv_path is not None:
@@ -342,8 +432,9 @@ if __name__ == "__main__":
     parser.add_argument("--max-queries", type=int, default=None)
     parser.add_argument("--node-cache-path", default=None)
     parser.add_argument("--top-node-cache-path", default=None)
-    parser.add_argument("--setup-csv", default=None)
     parser.add_argument("--chunk-cache-path", default=None)
+    parser.add_argument("--query-cache-path", default=None)
+    parser.add_argument("--setup-csv", default=None)
 
     args = parser.parse_args()
 
@@ -361,4 +452,5 @@ if __name__ == "__main__":
         node_cache_path=args.node_cache_path,
         top_node_cache_path=args.top_node_cache_path,
         chunk_cache_path=args.chunk_cache_path,
+        query_cache_path=args.query_cache_path,
     )

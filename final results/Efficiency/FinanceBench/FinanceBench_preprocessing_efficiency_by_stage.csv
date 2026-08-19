@@ -1,0 +1,4 @@
+dataset,stage,num_documents,num_pages,num_chunks,input_tokens,output_tokens,total_tokens,successful_llm_calls,failed_llm_calls,latency_seconds,tokens_per_page,latency_seconds_per_page,tokens_per_chunk,latency_seconds_per_chunk
+FinanceBench,tree_construction,65,8624,7390.0,54122753.0,22719251.0,76842004.0,30034.0,2.0,93725.152,8910.2509,10.8679,,
+FinanceBench,chunk_construction,65,8624,7390.0,381428.0,355778.0,737206.0,316.0,0.0,4974.575,85.4831,0.5768,99.7572,0.6731
+FinanceBench,combined_preprocessing,65,8624,7390.0,54504181.0,23075029.0,77579210.0,30350.0,2.0,98699.727,8995.734,11.4448,10497.8633,13.3558
