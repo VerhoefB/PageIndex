@@ -1,13 +1,13 @@
 {
-  "latest_query_id": "PFIZER_2021_10K_0036_Were there any potential event",
-  "completed_queries": 92,
+  "latest_query_id": "PEPSICO_2023_8K_dated_2023_05_30_0001_By how much did Pepsico increa",
+  "completed_queries": 108,
   "total_queries": 111,
-  "remaining_queries": 19,
-  "input_tokens_so_far": 14187386,
-  "output_tokens_so_far": 828839,
-  "cost_so_far_usd": 26.022623,
-  "avg_input_tokens_per_query": 154210.72,
-  "avg_output_tokens_per_query": 9009.12,
-  "projected_total_cost_usd": 31.39686,
-  "updated_at": "2026-08-17 22:10:27"
+  "remaining_queries": 3,
+  "input_tokens_so_far": 16959321,
+  "output_tokens_so_far": 1017478,
+  "cost_so_far_usd": 31.373931,
+  "avg_input_tokens_per_query": 157030.75,
+  "avg_output_tokens_per_query": 9421.09,
+  "projected_total_cost_usd": 32.245429,
+  "updated_at": "2026-08-18 22:26:23"
 }

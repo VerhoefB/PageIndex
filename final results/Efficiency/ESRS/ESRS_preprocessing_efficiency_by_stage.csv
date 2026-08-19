@@ -1,0 +1,4 @@
+dataset,stage,num_documents,num_pages,num_chunks,input_tokens,output_tokens,total_tokens,successful_llm_calls,failed_llm_calls,latency_seconds,tokens_per_page,latency_seconds_per_page,tokens_per_chunk,latency_seconds_per_chunk
+ESRS,tree_construction,23,3935,2968,24858814,9354598,34213412,11487,0,29838.29,8694.6409,7.5828,,
+ESRS,chunk_construction,23,3935,2968,457335,213319,670654,188,0,3723.445,170.433,0.9462,225.9616,1.2545
+ESRS,combined_preprocessing,23,3935,2968,25316149,9567917,34884066,11675,0,33561.735,8865.074,8.529,11753.3915,11.3079

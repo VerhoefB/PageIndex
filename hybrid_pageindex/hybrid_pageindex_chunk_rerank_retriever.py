@@ -346,7 +346,7 @@ class HybridPageIndexChunkRerankRetriever:
             or node.get("source_chunk_id")
         )
 
-    def retrieve(self, query, top_k=5, top_m=2):
+    def retrieve(self, query, top_k=5, top_m=2, query_embedding=None):
         """
         Retrieve top-k chunks using hybrid PageIndex traversal with chunk-text reranking.
 
@@ -361,11 +361,17 @@ class HybridPageIndexChunkRerankRetriever:
         8. Rerank candidate chunks using full chunk-text embeddings.
         9. Return the final top_k chunks.
         """
-        query_embedding = self.model.encode(
-            [query],
-            convert_to_numpy=True,
-            normalize_embeddings=True,
-        ).astype("float32")[0]
+        if query_embedding is None:
+            query_embedding = self.model.encode(
+                [query],
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            ).astype("float32")[0]
+        else:
+            query_embedding = np.asarray(query_embedding, dtype="float32")
+
+            if query_embedding.ndim == 2:
+                query_embedding = query_embedding[0]
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
