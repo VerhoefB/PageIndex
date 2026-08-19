@@ -1,0 +1,6 @@
+dataset,result_file,method,model,variant,top_m,diagnostic_category,count,percentage
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,accuracy_only_mrr_lower,5,4.504504504504505
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,both_fail,21,18.91891891891892
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,both_rank1,61,54.95495495495496
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,mrr_lower_only,12,10.81081081081081
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,mrr_rank1_only,12,10.81081081081081

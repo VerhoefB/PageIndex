@@ -1,0 +1,5237 @@
+{
+  "full_multidoc_tree": {
+    "tree_type": "full_multidoc_tree",
+    "description": "Artificial root is not counted. Level 1 contains one document-level node per document. Levels 2+ are the document-subtree levels shifted by +1.",
+    "num_document_nodes_at_top_level": 65,
+    "total_nodes_including_document_nodes": 8543,
+    "total_document_subtree_nodes": 8478,
+    "total_leaf_chunks": 7433,
+    "max_depth": 9,
+    "level_widths": {
+      "1": 65,
+      "2": 1752,
+      "3": 1160,
+      "4": 2356,
+      "5": 2247,
+      "6": 818,
+      "7": 125,
+      "8": 10,
+      "9": 10
+    },
+    "avg_level_width": 949.22,
+    "median_level_width": 818,
+    "min_level_width": 10,
+    "max_level_width": 2356,
+    "level_retention_for_m": {
+      "5": {
+        "1": {
+          "nodes_at_level": 65,
+          "retained_m": 5,
+          "retained_share": 0.0769
+        },
+        "2": {
+          "nodes_at_level": 1752,
+          "retained_m": 5,
+          "retained_share": 0.0029
+        },
+        "3": {
+          "nodes_at_level": 1160,
+          "retained_m": 5,
+          "retained_share": 0.0043
+        },
+        "4": {
+          "nodes_at_level": 2356,
+          "retained_m": 5,
+          "retained_share": 0.0021
+        },
+        "5": {
+          "nodes_at_level": 2247,
+          "retained_m": 5,
+          "retained_share": 0.0022
+        },
+        "6": {
+          "nodes_at_level": 818,
+          "retained_m": 5,
+          "retained_share": 0.0061
+        },
+        "7": {
+          "nodes_at_level": 125,
+          "retained_m": 5,
+          "retained_share": 0.04
+        },
+        "8": {
+          "nodes_at_level": 10,
+          "retained_m": 5,
+          "retained_share": 0.5
+        },
+        "9": {
+          "nodes_at_level": 10,
+          "retained_m": 5,
+          "retained_share": 0.5
+        }
+      },
+      "7": {
+        "1": {
+          "nodes_at_level": 65,
+          "retained_m": 7,
+          "retained_share": 0.1077
+        },
+        "2": {
+          "nodes_at_level": 1752,
+          "retained_m": 7,
+          "retained_share": 0.004
+        },
+        "3": {
+          "nodes_at_level": 1160,
+          "retained_m": 7,
+          "retained_share": 0.006
+        },
+        "4": {
+          "nodes_at_level": 2356,
+          "retained_m": 7,
+          "retained_share": 0.003
+        },
+        "5": {
+          "nodes_at_level": 2247,
+          "retained_m": 7,
+          "retained_share": 0.0031
+        },
+        "6": {
+          "nodes_at_level": 818,
+          "retained_m": 7,
+          "retained_share": 0.0086
+        },
+        "7": {
+          "nodes_at_level": 125,
+          "retained_m": 7,
+          "retained_share": 0.056
+        },
+        "8": {
+          "nodes_at_level": 10,
+          "retained_m": 7,
+          "retained_share": 0.7
+        },
+        "9": {
+          "nodes_at_level": 10,
+          "retained_m": 7,
+          "retained_share": 0.7
+        }
+      },
+      "10": {
+        "1": {
+          "nodes_at_level": 65,
+          "retained_m": 10,
+          "retained_share": 0.1538
+        },
+        "2": {
+          "nodes_at_level": 1752,
+          "retained_m": 10,
+          "retained_share": 0.0057
+        },
+        "3": {
+          "nodes_at_level": 1160,
+          "retained_m": 10,
+          "retained_share": 0.0086
+        },
+        "4": {
+          "nodes_at_level": 2356,
+          "retained_m": 10,
+          "retained_share": 0.0042
+        },
+        "5": {
+          "nodes_at_level": 2247,
+          "retained_m": 10,
+          "retained_share": 0.0045
+        },
+        "6": {
+          "nodes_at_level": 818,
+          "retained_m": 10,
+          "retained_share": 0.0122
+        },
+        "7": {
+          "nodes_at_level": 125,
+          "retained_m": 10,
+          "retained_share": 0.08
+        },
+        "8": {
+          "nodes_at_level": 10,
+          "retained_m": 10,
+          "retained_share": 1.0
+        },
+        "9": {
+          "nodes_at_level": 10,
+          "retained_m": 10,
+          "retained_share": 1.0
+        }
+      }
+    }
+  },
+  "aggregate_document_subtrees": {
+    "num_document_subtrees": 65,
+    "avg_total_nodes_per_document_subtree": 130.43,
+    "median_total_nodes_per_document_subtree": 64,
+    "min_total_nodes_per_document_subtree": 3,
+    "max_total_nodes_per_document_subtree": 807,
+    "avg_leaf_chunks_per_document_subtree": 114.35,
+    "median_leaf_chunks_per_document_subtree": 61,
+    "min_leaf_chunks_per_document_subtree": 3,
+    "max_leaf_chunks_per_document_subtree": 687,
+    "avg_internal_nodes_per_document_subtree": 16.08,
+    "median_internal_nodes_per_document_subtree": 4,
+    "min_internal_nodes_per_document_subtree": 0,
+    "max_internal_nodes_per_document_subtree": 120,
+    "avg_max_depth_per_document_subtree": 3.34,
+    "median_max_depth_per_document_subtree": 3,
+    "min_max_depth_per_document_subtree": 1,
+    "max_max_depth_per_document_subtree": 8,
+    "avg_avg_level_width_per_document_subtree": 34.4,
+    "median_avg_level_width_per_document_subtree": 29,
+    "min_avg_level_width_per_document_subtree": 3,
+    "max_avg_level_width_per_document_subtree": 148,
+    "avg_median_level_width_per_document_subtree": 29.08,
+    "median_median_level_width_per_document_subtree": 28,
+    "avg_max_level_width_per_document_subtree": 62.89,
+    "median_max_level_width_per_document_subtree": 40,
+    "min_max_level_width_per_document_subtree": 3,
+    "max_max_level_width_per_document_subtree": 365,
+    "avg_retained_share_across_subtrees_m_5": 0.3262,
+    "median_retained_share_across_subtrees_m_5": 0.2819,
+    "avg_retained_share_across_subtrees_m_7": 0.4034,
+    "median_retained_share_across_subtrees_m_7": 0.3523,
+    "avg_retained_share_across_subtrees_m_10": 0.4977,
+    "median_retained_share_across_subtrees_m_10": 0.4175
+  },
+  "average_level_widths_across_document_subtrees": {
+    "1": {
+      "num_documents_with_this_level": 65,
+      "avg_width": 26.95,
+      "median_width": 28,
+      "min_width": 1,
+      "max_width": 80,
+      "avg_retained_share_m_5": 0.3156,
+      "median_retained_share_m_5": 0.1786,
+      "avg_retained_share_m_7": 0.3874,
+      "median_retained_share_m_7": 0.25,
+      "avg_retained_share_m_10": 0.4771,
+      "median_retained_share_m_10": 0.3571
+    },
+    "2": {
+      "num_documents_with_this_level": 45,
+      "avg_width": 25.78,
+      "median_width": 16,
+      "min_width": 1,
+      "max_width": 129,
+      "avg_retained_share_m_5": 0.4403,
+      "median_retained_share_m_5": 0.3125,
+      "avg_retained_share_m_7": 0.5291,
+      "median_retained_share_m_7": 0.4375,
+      "avg_retained_share_m_10": 0.6406,
+      "median_retained_share_m_10": 0.625
+    },
+    "3": {
+      "num_documents_with_this_level": 36,
+      "avg_width": 65.44,
+      "median_width": 31.0,
+      "min_width": 8,
+      "max_width": 332,
+      "avg_retained_share_m_5": 0.1921,
+      "median_retained_share_m_5": 0.1613,
+      "avg_retained_share_m_7": 0.269,
+      "median_retained_share_m_7": 0.2258,
+      "avg_retained_share_m_10": 0.3703,
+      "median_retained_share_m_10": 0.3226
+    },
+    "4": {
+      "num_documents_with_this_level": 30,
+      "avg_width": 74.9,
+      "median_width": 65.0,
+      "min_width": 6,
+      "max_width": 365,
+      "avg_retained_share_m_5": 0.1216,
+      "median_retained_share_m_5": 0.0769,
+      "avg_retained_share_m_7": 0.1647,
+      "median_retained_share_m_7": 0.1077,
+      "avg_retained_share_m_10": 0.221,
+      "median_retained_share_m_10": 0.1538
+    },
+    "5": {
+      "num_documents_with_this_level": 25,
+      "avg_width": 32.72,
+      "median_width": 26,
+      "min_width": 2,
+      "max_width": 210,
+      "avg_retained_share_m_5": 0.3413,
+      "median_retained_share_m_5": 0.1923,
+      "avg_retained_share_m_7": 0.4231,
+      "median_retained_share_m_7": 0.2692,
+      "avg_retained_share_m_10": 0.5143,
+      "median_retained_share_m_10": 0.3846
+    },
+    "6": {
+      "num_documents_with_this_level": 13,
+      "avg_width": 9.62,
+      "median_width": 6,
+      "min_width": 3,
+      "max_width": 39,
+      "avg_retained_share_m_5": 0.7122,
+      "median_retained_share_m_5": 0.8333,
+      "avg_retained_share_m_7": 0.8355,
+      "median_retained_share_m_7": 1.0,
+      "avg_retained_share_m_10": 0.8883,
+      "median_retained_share_m_10": 1.0
+    },
+    "7": {
+      "num_documents_with_this_level": 2,
+      "avg_width": 5,
+      "median_width": 5.0,
+      "min_width": 2,
+      "max_width": 8,
+      "avg_retained_share_m_5": 0.8125,
+      "median_retained_share_m_5": 0.8125,
+      "avg_retained_share_m_7": 0.9375,
+      "median_retained_share_m_7": 0.9375,
+      "avg_retained_share_m_10": 1.0,
+      "median_retained_share_m_10": 1.0
+    },
+    "8": {
+      "num_documents_with_this_level": 1,
+      "avg_width": 10,
+      "median_width": 10,
+      "min_width": 10,
+      "max_width": 10,
+      "avg_retained_share_m_5": 0.5,
+      "median_retained_share_m_5": 0.5,
+      "avg_retained_share_m_7": 0.7,
+      "median_retained_share_m_7": 0.7,
+      "avg_retained_share_m_10": 1.0,
+      "median_retained_share_m_10": 1.0
+    }
+  },
+  "per_document_subtrees": [
+    {
+      "doc_name": "3M_2018_10K",
+      "file": "final results\\FinanceBench structure\\3M_2018_10K_structure_new.json",
+      "total_nodes": 66,
+      "leaf_nodes": 66,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 66
+      },
+      "avg_level_width": 66,
+      "median_level_width": 66,
+      "min_level_width": 66,
+      "max_level_width": 66,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 66,
+            "retained_m": 5,
+            "retained_share": 0.0758
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 66,
+            "retained_m": 7,
+            "retained_share": 0.1061
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 66,
+            "retained_m": 10,
+            "retained_share": 0.1515
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "3M_2022_10K",
+      "file": "final results\\FinanceBench structure\\3M_2022_10K_structure_new.json",
+      "total_nodes": 218,
+      "leaf_nodes": 214,
+      "internal_nodes": 4,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 63,
+        "2": 128,
+        "3": 27
+      },
+      "avg_level_width": 72.67,
+      "median_level_width": 63,
+      "min_level_width": 27,
+      "max_level_width": 128,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 63,
+            "retained_m": 5,
+            "retained_share": 0.0794
+          },
+          "2": {
+            "nodes_at_level": 128,
+            "retained_m": 5,
+            "retained_share": 0.0391
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 63,
+            "retained_m": 7,
+            "retained_share": 0.1111
+          },
+          "2": {
+            "nodes_at_level": 128,
+            "retained_m": 7,
+            "retained_share": 0.0547
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 63,
+            "retained_m": 10,
+            "retained_share": 0.1587
+          },
+          "2": {
+            "nodes_at_level": 128,
+            "retained_m": 10,
+            "retained_share": 0.0781
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "3M_2023Q2_10Q",
+      "file": "final results\\FinanceBench structure\\3M_2023Q2_10Q_structure_new.json",
+      "total_nodes": 36,
+      "leaf_nodes": 36,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 36
+      },
+      "avg_level_width": 36,
+      "median_level_width": 36,
+      "min_level_width": 36,
+      "max_level_width": 36,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "ADOBE_2016_10K",
+      "file": "final results\\FinanceBench structure\\ADOBE_2016_10K_structure_new.json",
+      "total_nodes": 58,
+      "leaf_nodes": 54,
+      "internal_nodes": 4,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 28,
+        "2": 2,
+        "3": 10,
+        "4": 18
+      },
+      "avg_level_width": 14.5,
+      "median_level_width": 14.0,
+      "min_level_width": 2,
+      "max_level_width": 28,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 5,
+            "retained_share": 0.2778
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 7,
+            "retained_share": 0.3889
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 10,
+            "retained_share": 0.5556
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "ADOBE_2022_10K",
+      "file": "final results\\FinanceBench structure\\ADOBE_2022_10K_structure_new.json",
+      "total_nodes": 29,
+      "leaf_nodes": 29,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 29
+      },
+      "avg_level_width": 29,
+      "median_level_width": 29,
+      "min_level_width": 29,
+      "max_level_width": 29,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AES_2022_10K",
+      "file": "final results\\FinanceBench structure\\AES_2022_10K_structure_new.json",
+      "total_nodes": 228,
+      "leaf_nodes": 195,
+      "internal_nodes": 33,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 68,
+        "2": 16,
+        "3": 46,
+        "4": 98
+      },
+      "avg_level_width": 57,
+      "median_level_width": 57.0,
+      "min_level_width": 16,
+      "max_level_width": 98,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 68,
+            "retained_m": 5,
+            "retained_share": 0.0735
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "3": {
+            "nodes_at_level": 46,
+            "retained_m": 5,
+            "retained_share": 0.1087
+          },
+          "4": {
+            "nodes_at_level": 98,
+            "retained_m": 5,
+            "retained_share": 0.051
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 68,
+            "retained_m": 7,
+            "retained_share": 0.1029
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "3": {
+            "nodes_at_level": 46,
+            "retained_m": 7,
+            "retained_share": 0.1522
+          },
+          "4": {
+            "nodes_at_level": 98,
+            "retained_m": 7,
+            "retained_share": 0.0714
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 68,
+            "retained_m": 10,
+            "retained_share": 0.1471
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "3": {
+            "nodes_at_level": 46,
+            "retained_m": 10,
+            "retained_share": 0.2174
+          },
+          "4": {
+            "nodes_at_level": 98,
+            "retained_m": 10,
+            "retained_share": 0.102
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMAZON_2017_10K",
+      "file": "final results\\FinanceBench structure\\AMAZON_2017_10K_structure_new.json",
+      "total_nodes": 27,
+      "leaf_nodes": 27,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 27
+      },
+      "avg_level_width": 27,
+      "median_level_width": 27,
+      "min_level_width": 27,
+      "max_level_width": 27,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMAZON_2019_10K",
+      "file": "final results\\FinanceBench structure\\AMAZON_2019_10K_structure_new.json",
+      "total_nodes": 30,
+      "leaf_nodes": 30,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 30
+      },
+      "avg_level_width": 30,
+      "median_level_width": 30,
+      "min_level_width": 30,
+      "max_level_width": 30,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMCOR_2020_10K",
+      "file": "final results\\FinanceBench structure\\AMCOR_2020_10K_structure_new.json",
+      "total_nodes": 255,
+      "leaf_nodes": 226,
+      "internal_nodes": 29,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 35,
+        "2": 35,
+        "3": 83,
+        "4": 76,
+        "5": 26
+      },
+      "avg_level_width": 51,
+      "median_level_width": 35,
+      "min_level_width": 26,
+      "max_level_width": 83,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 5,
+            "retained_share": 0.1429
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 5,
+            "retained_share": 0.1429
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 5,
+            "retained_share": 0.0602
+          },
+          "4": {
+            "nodes_at_level": 76,
+            "retained_m": 5,
+            "retained_share": 0.0658
+          },
+          "5": {
+            "nodes_at_level": 26,
+            "retained_m": 5,
+            "retained_share": 0.1923
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 7,
+            "retained_share": 0.2
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 7,
+            "retained_share": 0.2
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 7,
+            "retained_share": 0.0843
+          },
+          "4": {
+            "nodes_at_level": 76,
+            "retained_m": 7,
+            "retained_share": 0.0921
+          },
+          "5": {
+            "nodes_at_level": 26,
+            "retained_m": 7,
+            "retained_share": 0.2692
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 10,
+            "retained_share": 0.2857
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 10,
+            "retained_share": 0.2857
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 10,
+            "retained_share": 0.1205
+          },
+          "4": {
+            "nodes_at_level": 76,
+            "retained_m": 10,
+            "retained_share": 0.1316
+          },
+          "5": {
+            "nodes_at_level": 26,
+            "retained_m": 10,
+            "retained_share": 0.3846
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMCOR_2022_8K_dated-2022-07-01",
+      "file": "final results\\FinanceBench structure\\AMCOR_2022_8K_dated-2022-07-01_structure_new.json",
+      "total_nodes": 28,
+      "leaf_nodes": 20,
+      "internal_nodes": 8,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 6,
+        "2": 8,
+        "3": 8,
+        "4": 6
+      },
+      "avg_level_width": 7,
+      "median_level_width": 7.0,
+      "min_level_width": 6,
+      "max_level_width": 8,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "2": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          },
+          "4": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          },
+          "4": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMCOR_2023_10K",
+      "file": "final results\\FinanceBench structure\\AMCOR_2023_10K_structure_new.json",
+      "total_nodes": 35,
+      "leaf_nodes": 35,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 35
+      },
+      "avg_level_width": 35,
+      "median_level_width": 35,
+      "min_level_width": 35,
+      "max_level_width": 35,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 5,
+            "retained_share": 0.1429
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 7,
+            "retained_share": 0.2
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 35,
+            "retained_m": 10,
+            "retained_share": 0.2857
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMCOR_2023Q2_10Q",
+      "file": "final results\\FinanceBench structure\\AMCOR_2023Q2_10Q_structure_new.json",
+      "total_nodes": 29,
+      "leaf_nodes": 29,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 29
+      },
+      "avg_level_width": 29,
+      "median_level_width": 29,
+      "min_level_width": 29,
+      "max_level_width": 29,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "file": "final results\\FinanceBench structure\\AMCOR_2023Q4_EARNINGS_structure_new.json",
+      "total_nodes": 21,
+      "leaf_nodes": 20,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 18,
+        "2": 3
+      },
+      "avg_level_width": 10.5,
+      "median_level_width": 10.5,
+      "min_level_width": 3,
+      "max_level_width": 18,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 5,
+            "retained_share": 0.2778
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 7,
+            "retained_share": 0.3889
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 10,
+            "retained_share": 0.5556
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMD_2022_10K",
+      "file": "final results\\FinanceBench structure\\AMD_2022_10K_structure_new.json",
+      "total_nodes": 29,
+      "leaf_nodes": 29,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 29
+      },
+      "avg_level_width": 29,
+      "median_level_width": 29,
+      "min_level_width": 29,
+      "max_level_width": 29,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "file": "final results\\FinanceBench structure\\AMERICANEXPRESS_2022_10K_structure_new.json",
+      "total_nodes": 217,
+      "leaf_nodes": 185,
+      "internal_nodes": 32,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 44,
+        "2": 41,
+        "3": 111,
+        "4": 19,
+        "5": 2
+      },
+      "avg_level_width": 43.4,
+      "median_level_width": 41,
+      "min_level_width": 2,
+      "max_level_width": 111,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 44,
+            "retained_m": 5,
+            "retained_share": 0.1136
+          },
+          "2": {
+            "nodes_at_level": 41,
+            "retained_m": 5,
+            "retained_share": 0.122
+          },
+          "3": {
+            "nodes_at_level": 111,
+            "retained_m": 5,
+            "retained_share": 0.045
+          },
+          "4": {
+            "nodes_at_level": 19,
+            "retained_m": 5,
+            "retained_share": 0.2632
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 44,
+            "retained_m": 7,
+            "retained_share": 0.1591
+          },
+          "2": {
+            "nodes_at_level": 41,
+            "retained_m": 7,
+            "retained_share": 0.1707
+          },
+          "3": {
+            "nodes_at_level": 111,
+            "retained_m": 7,
+            "retained_share": 0.0631
+          },
+          "4": {
+            "nodes_at_level": 19,
+            "retained_m": 7,
+            "retained_share": 0.3684
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 44,
+            "retained_m": 10,
+            "retained_share": 0.2273
+          },
+          "2": {
+            "nodes_at_level": 41,
+            "retained_m": 10,
+            "retained_share": 0.2439
+          },
+          "3": {
+            "nodes_at_level": 111,
+            "retained_m": 10,
+            "retained_share": 0.0901
+          },
+          "4": {
+            "nodes_at_level": 19,
+            "retained_m": 10,
+            "retained_share": 0.5263
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "file": "final results\\FinanceBench structure\\AMERICANWATERWORKS_2020_10K_structure_new.json",
+      "total_nodes": 138,
+      "leaf_nodes": 117,
+      "internal_nodes": 21,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 27,
+        "2": 9,
+        "3": 31,
+        "4": 59,
+        "5": 12
+      },
+      "avg_level_width": 27.6,
+      "median_level_width": 27,
+      "min_level_width": 9,
+      "max_level_width": 59,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 5,
+            "retained_share": 0.0847
+          },
+          "5": {
+            "nodes_at_level": 12,
+            "retained_m": 5,
+            "retained_share": 0.4167
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 7,
+            "retained_share": 0.1186
+          },
+          "5": {
+            "nodes_at_level": 12,
+            "retained_m": 7,
+            "retained_share": 0.5833
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 10,
+            "retained_share": 0.1695
+          },
+          "5": {
+            "nodes_at_level": 12,
+            "retained_m": 10,
+            "retained_share": 0.8333
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BESTBUY_2017_10K",
+      "file": "final results\\FinanceBench structure\\BESTBUY_2017_10K_structure_new.json",
+      "total_nodes": 187,
+      "leaf_nodes": 158,
+      "internal_nodes": 29,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 29,
+        "2": 39,
+        "3": 68,
+        "4": 29,
+        "5": 16,
+        "6": 6
+      },
+      "avg_level_width": 31.17,
+      "median_level_width": 29.0,
+      "min_level_width": 6,
+      "max_level_width": 68,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 39,
+            "retained_m": 5,
+            "retained_share": 0.1282
+          },
+          "3": {
+            "nodes_at_level": 68,
+            "retained_m": 5,
+            "retained_share": 0.0735
+          },
+          "4": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "2": {
+            "nodes_at_level": 39,
+            "retained_m": 7,
+            "retained_share": 0.1795
+          },
+          "3": {
+            "nodes_at_level": 68,
+            "retained_m": 7,
+            "retained_share": 0.1029
+          },
+          "4": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "2": {
+            "nodes_at_level": 39,
+            "retained_m": 10,
+            "retained_share": 0.2564
+          },
+          "3": {
+            "nodes_at_level": 68,
+            "retained_m": 10,
+            "retained_share": 0.1471
+          },
+          "4": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BESTBUY_2019_10K",
+      "file": "final results\\FinanceBench structure\\BESTBUY_2019_10K_structure_new.json",
+      "total_nodes": 193,
+      "leaf_nodes": 163,
+      "internal_nodes": 30,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 29,
+        "2": 16,
+        "3": 29,
+        "4": 80,
+        "5": 33,
+        "6": 6
+      },
+      "avg_level_width": 32.17,
+      "median_level_width": 29.0,
+      "min_level_width": 6,
+      "max_level_width": 80,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "3": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "4": {
+            "nodes_at_level": 80,
+            "retained_m": 5,
+            "retained_share": 0.0625
+          },
+          "5": {
+            "nodes_at_level": 33,
+            "retained_m": 5,
+            "retained_share": 0.1515
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "3": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "4": {
+            "nodes_at_level": 80,
+            "retained_m": 7,
+            "retained_share": 0.0875
+          },
+          "5": {
+            "nodes_at_level": 33,
+            "retained_m": 7,
+            "retained_share": 0.2121
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "3": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "4": {
+            "nodes_at_level": 80,
+            "retained_m": 10,
+            "retained_share": 0.125
+          },
+          "5": {
+            "nodes_at_level": 33,
+            "retained_m": 10,
+            "retained_share": 0.303
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BESTBUY_2023_10K",
+      "file": "final results\\FinanceBench structure\\BESTBUY_2023_10K_structure_new.json",
+      "total_nodes": 29,
+      "leaf_nodes": 29,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 29
+      },
+      "avg_level_width": 29,
+      "median_level_width": 29,
+      "min_level_width": 29,
+      "max_level_width": 29,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BESTBUY_2024Q2_10Q",
+      "file": "final results\\FinanceBench structure\\BESTBUY_2024Q2_10Q_structure_new.json",
+      "total_nodes": 10,
+      "leaf_nodes": 10,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 10
+      },
+      "avg_level_width": 10,
+      "median_level_width": 10,
+      "min_level_width": 10,
+      "max_level_width": 10,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BLOCK_2016_10K",
+      "file": "final results\\FinanceBench structure\\BLOCK_2016_10K_structure_new.json",
+      "total_nodes": 161,
+      "leaf_nodes": 146,
+      "internal_nodes": 15,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 26,
+        "2": 12,
+        "3": 64,
+        "4": 52,
+        "5": 7
+      },
+      "avg_level_width": 32.2,
+      "median_level_width": 26,
+      "min_level_width": 7,
+      "max_level_width": 64,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 26,
+            "retained_m": 5,
+            "retained_share": 0.1923
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 5,
+            "retained_share": 0.4167
+          },
+          "3": {
+            "nodes_at_level": 64,
+            "retained_m": 5,
+            "retained_share": 0.0781
+          },
+          "4": {
+            "nodes_at_level": 52,
+            "retained_m": 5,
+            "retained_share": 0.0962
+          },
+          "5": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 26,
+            "retained_m": 7,
+            "retained_share": 0.2692
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 7,
+            "retained_share": 0.5833
+          },
+          "3": {
+            "nodes_at_level": 64,
+            "retained_m": 7,
+            "retained_share": 0.1094
+          },
+          "4": {
+            "nodes_at_level": 52,
+            "retained_m": 7,
+            "retained_share": 0.1346
+          },
+          "5": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 26,
+            "retained_m": 10,
+            "retained_share": 0.3846
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 10,
+            "retained_share": 0.8333
+          },
+          "3": {
+            "nodes_at_level": 64,
+            "retained_m": 10,
+            "retained_share": 0.1562
+          },
+          "4": {
+            "nodes_at_level": 52,
+            "retained_m": 10,
+            "retained_share": 0.1923
+          },
+          "5": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BLOCK_2020_10K",
+      "file": "final results\\FinanceBench structure\\BLOCK_2020_10K_structure_new.json",
+      "total_nodes": 185,
+      "leaf_nodes": 163,
+      "internal_nodes": 22,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 27,
+        "2": 5,
+        "3": 17,
+        "4": 65,
+        "5": 55,
+        "6": 16
+      },
+      "avg_level_width": 30.83,
+      "median_level_width": 22.0,
+      "min_level_width": 5,
+      "max_level_width": 65,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 5,
+            "retained_share": 0.0769
+          },
+          "5": {
+            "nodes_at_level": 55,
+            "retained_m": 5,
+            "retained_share": 0.0909
+          },
+          "6": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 7,
+            "retained_share": 0.1077
+          },
+          "5": {
+            "nodes_at_level": 55,
+            "retained_m": 7,
+            "retained_share": 0.1273
+          },
+          "6": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 10,
+            "retained_share": 0.1538
+          },
+          "5": {
+            "nodes_at_level": 55,
+            "retained_m": 10,
+            "retained_share": 0.1818
+          },
+          "6": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BOEING_2018_10K",
+      "file": "final results\\FinanceBench structure\\BOEING_2018_10K_structure_new.json",
+      "total_nodes": 64,
+      "leaf_nodes": 61,
+      "internal_nodes": 3,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 27,
+        "2": 10,
+        "3": 27
+      },
+      "avg_level_width": 21.33,
+      "median_level_width": 27,
+      "min_level_width": 10,
+      "max_level_width": 27,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BOEING_2022_10K",
+      "file": "final results\\FinanceBench structure\\BOEING_2022_10K_structure_new.json",
+      "total_nodes": 67,
+      "leaf_nodes": 66,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 32,
+        "2": 35
+      },
+      "avg_level_width": 33.5,
+      "median_level_width": 33.5,
+      "min_level_width": 32,
+      "max_level_width": 35,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 32,
+            "retained_m": 5,
+            "retained_share": 0.1562
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 5,
+            "retained_share": 0.1429
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 32,
+            "retained_m": 7,
+            "retained_share": 0.2188
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 7,
+            "retained_share": 0.2
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 32,
+            "retained_m": 10,
+            "retained_share": 0.3125
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 10,
+            "retained_share": 0.2857
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "COCACOLA_2021_10K",
+      "file": "final results\\FinanceBench structure\\COCACOLA_2021_10K_structure_new.json",
+      "total_nodes": 165,
+      "leaf_nodes": 141,
+      "internal_nodes": 24,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 30,
+        "2": 10,
+        "3": 31,
+        "4": 64,
+        "5": 30
+      },
+      "avg_level_width": 33,
+      "median_level_width": 30,
+      "min_level_width": 10,
+      "max_level_width": 64,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "4": {
+            "nodes_at_level": 64,
+            "retained_m": 5,
+            "retained_share": 0.0781
+          },
+          "5": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "4": {
+            "nodes_at_level": 64,
+            "retained_m": 7,
+            "retained_share": 0.1094
+          },
+          "5": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "4": {
+            "nodes_at_level": 64,
+            "retained_m": 10,
+            "retained_share": 0.1562
+          },
+          "5": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "CORNING_2021_10K",
+      "file": "final results\\FinanceBench structure\\CORNING_2021_10K_structure_new.json",
+      "total_nodes": 258,
+      "leaf_nodes": 219,
+      "internal_nodes": 39,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 25,
+        "2": 67,
+        "3": 70,
+        "4": 23,
+        "5": 64,
+        "6": 9
+      },
+      "avg_level_width": 43,
+      "median_level_width": 44.5,
+      "min_level_width": 9,
+      "max_level_width": 70,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 5,
+            "retained_share": 0.2
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 5,
+            "retained_share": 0.0746
+          },
+          "3": {
+            "nodes_at_level": 70,
+            "retained_m": 5,
+            "retained_share": 0.0714
+          },
+          "4": {
+            "nodes_at_level": 23,
+            "retained_m": 5,
+            "retained_share": 0.2174
+          },
+          "5": {
+            "nodes_at_level": 64,
+            "retained_m": 5,
+            "retained_share": 0.0781
+          },
+          "6": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 7,
+            "retained_share": 0.28
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 7,
+            "retained_share": 0.1045
+          },
+          "3": {
+            "nodes_at_level": 70,
+            "retained_m": 7,
+            "retained_share": 0.1
+          },
+          "4": {
+            "nodes_at_level": 23,
+            "retained_m": 7,
+            "retained_share": 0.3043
+          },
+          "5": {
+            "nodes_at_level": 64,
+            "retained_m": 7,
+            "retained_share": 0.1094
+          },
+          "6": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 10,
+            "retained_share": 0.4
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 10,
+            "retained_share": 0.1493
+          },
+          "3": {
+            "nodes_at_level": 70,
+            "retained_m": 10,
+            "retained_share": 0.1429
+          },
+          "4": {
+            "nodes_at_level": 23,
+            "retained_m": 10,
+            "retained_share": 0.4348
+          },
+          "5": {
+            "nodes_at_level": 64,
+            "retained_m": 10,
+            "retained_share": 0.1562
+          },
+          "6": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "CORNING_2022_10K",
+      "file": "final results\\FinanceBench structure\\CORNING_2022_10K_structure_new.json",
+      "total_nodes": 228,
+      "leaf_nodes": 200,
+      "internal_nodes": 28,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 5,
+        "2": 22,
+        "3": 67,
+        "4": 128,
+        "5": 6
+      },
+      "avg_level_width": 45.6,
+      "median_level_width": 22,
+      "min_level_width": 5,
+      "max_level_width": 128,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 5,
+            "retained_share": 0.2273
+          },
+          "3": {
+            "nodes_at_level": 67,
+            "retained_m": 5,
+            "retained_share": 0.0746
+          },
+          "4": {
+            "nodes_at_level": 128,
+            "retained_m": 5,
+            "retained_share": 0.0391
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 7,
+            "retained_share": 0.3182
+          },
+          "3": {
+            "nodes_at_level": 67,
+            "retained_m": 7,
+            "retained_share": 0.1045
+          },
+          "4": {
+            "nodes_at_level": 128,
+            "retained_m": 7,
+            "retained_share": 0.0547
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 10,
+            "retained_share": 0.4545
+          },
+          "3": {
+            "nodes_at_level": 67,
+            "retained_m": 10,
+            "retained_share": 0.1493
+          },
+          "4": {
+            "nodes_at_level": 128,
+            "retained_m": 10,
+            "retained_share": 0.0781
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "COSTCO_2021_10K",
+      "file": "final results\\FinanceBench structure\\COSTCO_2021_10K_structure_new.json",
+      "total_nodes": 27,
+      "leaf_nodes": 27,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 27
+      },
+      "avg_level_width": 27,
+      "median_level_width": 27,
+      "min_level_width": 27,
+      "max_level_width": 27,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "CVSHEALTH_2022_10K",
+      "file": "final results\\FinanceBench structure\\CVSHEALTH_2022_10K_structure_new.json",
+      "total_nodes": 297,
+      "leaf_nodes": 266,
+      "internal_nodes": 31,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 29,
+        "2": 30,
+        "3": 161,
+        "4": 72,
+        "5": 5
+      },
+      "avg_level_width": 59.4,
+      "median_level_width": 30,
+      "min_level_width": 5,
+      "max_level_width": 161,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "3": {
+            "nodes_at_level": 161,
+            "retained_m": 5,
+            "retained_share": 0.0311
+          },
+          "4": {
+            "nodes_at_level": 72,
+            "retained_m": 5,
+            "retained_share": 0.0694
+          },
+          "5": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "3": {
+            "nodes_at_level": 161,
+            "retained_m": 7,
+            "retained_share": 0.0435
+          },
+          "4": {
+            "nodes_at_level": 72,
+            "retained_m": 7,
+            "retained_share": 0.0972
+          },
+          "5": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "3": {
+            "nodes_at_level": 161,
+            "retained_m": 10,
+            "retained_share": 0.0621
+          },
+          "4": {
+            "nodes_at_level": 72,
+            "retained_m": 10,
+            "retained_share": 0.1389
+          },
+          "5": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "file": "final results\\FinanceBench structure\\FOOTLOCKER_2022_8K_dated-2022-05-20_structure_new.json",
+      "total_nodes": 6,
+      "leaf_nodes": 5,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 5,
+        "2": 1
+      },
+      "avg_level_width": 3,
+      "median_level_width": 3.0,
+      "min_level_width": 1,
+      "max_level_width": 5,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "FOOTLOCKER_2022_8K_dated_2022-08-19",
+      "file": "final results\\FinanceBench structure\\FOOTLOCKER_2022_8K_dated_2022-08-19_structure_new.json",
+      "total_nodes": 48,
+      "leaf_nodes": 42,
+      "internal_nodes": 6,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 7,
+        "2": 33,
+        "3": 8
+      },
+      "avg_level_width": 16,
+      "median_level_width": 8,
+      "min_level_width": 7,
+      "max_level_width": 33,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "2": {
+            "nodes_at_level": 33,
+            "retained_m": 5,
+            "retained_share": 0.1515
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 33,
+            "retained_m": 7,
+            "retained_share": 0.2121
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 33,
+            "retained_m": 10,
+            "retained_share": 0.303
+          },
+          "3": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "GENERALMILLS_2020_10K",
+      "file": "final results\\FinanceBench structure\\GENERALMILLS_2020_10K_structure_new.json",
+      "total_nodes": 109,
+      "leaf_nodes": 96,
+      "internal_nodes": 13,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 27,
+        "2": 11,
+        "3": 19,
+        "4": 40,
+        "5": 9,
+        "6": 3
+      },
+      "avg_level_width": 18.17,
+      "median_level_width": 15.0,
+      "min_level_width": 3,
+      "max_level_width": 40,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 5,
+            "retained_share": 0.4545
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 5,
+            "retained_share": 0.2632
+          },
+          "4": {
+            "nodes_at_level": 40,
+            "retained_m": 5,
+            "retained_share": 0.125
+          },
+          "5": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 7,
+            "retained_share": 0.6364
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 7,
+            "retained_share": 0.3684
+          },
+          "4": {
+            "nodes_at_level": 40,
+            "retained_m": 7,
+            "retained_share": 0.175
+          },
+          "5": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 10,
+            "retained_share": 0.9091
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 10,
+            "retained_share": 0.5263
+          },
+          "4": {
+            "nodes_at_level": 40,
+            "retained_m": 10,
+            "retained_share": 0.25
+          },
+          "5": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2022_10K",
+      "file": "final results\\FinanceBench structure\\JOHNSON_JOHNSON_2022_10K_structure_new.json",
+      "total_nodes": 127,
+      "leaf_nodes": 116,
+      "internal_nodes": 11,
+      "max_depth": 8,
+      "level_widths": {
+        "1": 42,
+        "2": 4,
+        "3": 11,
+        "4": 20,
+        "5": 31,
+        "6": 7,
+        "7": 2,
+        "8": 10
+      },
+      "avg_level_width": 15.88,
+      "median_level_width": 10.5,
+      "min_level_width": 2,
+      "max_level_width": 42,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 42,
+            "retained_m": 5,
+            "retained_share": 0.119
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 11,
+            "retained_m": 5,
+            "retained_share": 0.4545
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 5,
+            "retained_share": 0.25
+          },
+          "5": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "7": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "8": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 42,
+            "retained_m": 7,
+            "retained_share": 0.1667
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 11,
+            "retained_m": 7,
+            "retained_share": 0.6364
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 7,
+            "retained_share": 0.35
+          },
+          "5": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "7": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "8": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 42,
+            "retained_m": 10,
+            "retained_share": 0.2381
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 11,
+            "retained_m": 10,
+            "retained_share": 0.9091
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 10,
+            "retained_share": 0.5
+          },
+          "5": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "7": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "8": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2022Q4_EARNINGS",
+      "file": "final results\\FinanceBench structure\\JOHNSON_JOHNSON_2022Q4_EARNINGS_structure_new.json",
+      "total_nodes": 28,
+      "leaf_nodes": 27,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 24,
+        "2": 4
+      },
+      "avg_level_width": 14,
+      "median_level_width": 14.0,
+      "min_level_width": 4,
+      "max_level_width": 24,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 24,
+            "retained_m": 5,
+            "retained_share": 0.2083
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 24,
+            "retained_m": 7,
+            "retained_share": 0.2917
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 24,
+            "retained_m": 10,
+            "retained_share": 0.4167
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "file": "final results\\FinanceBench structure\\JOHNSON_JOHNSON_2023_8K_dated-2023-08-30_structure_new.json",
+      "total_nodes": 23,
+      "leaf_nodes": 21,
+      "internal_nodes": 2,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 6,
+        "2": 17
+      },
+      "avg_level_width": 11.5,
+      "median_level_width": 11.5,
+      "min_level_width": 6,
+      "max_level_width": 17,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "2": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2023Q2_EARNINGS",
+      "file": "final results\\FinanceBench structure\\JOHNSON_JOHNSON_2023Q2_EARNINGS_structure_new.json",
+      "total_nodes": 20,
+      "leaf_nodes": 19,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 16,
+        "2": 4
+      },
+      "avg_level_width": 10,
+      "median_level_width": 10.0,
+      "min_level_width": 4,
+      "max_level_width": 16,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "2": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JPMORGAN_2021Q1_10Q",
+      "file": "final results\\FinanceBench structure\\JPMORGAN_2021Q1_10Q_structure_new.json",
+      "total_nodes": 331,
+      "leaf_nodes": 273,
+      "internal_nodes": 58,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 21,
+        "2": 43,
+        "3": 134,
+        "4": 90,
+        "5": 28,
+        "6": 15
+      },
+      "avg_level_width": 55.17,
+      "median_level_width": 35.5,
+      "min_level_width": 15,
+      "max_level_width": 134,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "2": {
+            "nodes_at_level": 43,
+            "retained_m": 5,
+            "retained_share": 0.1163
+          },
+          "3": {
+            "nodes_at_level": 134,
+            "retained_m": 5,
+            "retained_share": 0.0373
+          },
+          "4": {
+            "nodes_at_level": 90,
+            "retained_m": 5,
+            "retained_share": 0.0556
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "6": {
+            "nodes_at_level": 15,
+            "retained_m": 5,
+            "retained_share": 0.3333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 43,
+            "retained_m": 7,
+            "retained_share": 0.1628
+          },
+          "3": {
+            "nodes_at_level": 134,
+            "retained_m": 7,
+            "retained_share": 0.0522
+          },
+          "4": {
+            "nodes_at_level": 90,
+            "retained_m": 7,
+            "retained_share": 0.0778
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "6": {
+            "nodes_at_level": 15,
+            "retained_m": 7,
+            "retained_share": 0.4667
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "2": {
+            "nodes_at_level": 43,
+            "retained_m": 10,
+            "retained_share": 0.2326
+          },
+          "3": {
+            "nodes_at_level": 134,
+            "retained_m": 10,
+            "retained_share": 0.0746
+          },
+          "4": {
+            "nodes_at_level": 90,
+            "retained_m": 10,
+            "retained_share": 0.1111
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "6": {
+            "nodes_at_level": 15,
+            "retained_m": 10,
+            "retained_share": 0.6667
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JPMORGAN_2022_10K",
+      "file": "final results\\FinanceBench structure\\JPMORGAN_2022_10K_structure_new.json",
+      "total_nodes": 807,
+      "leaf_nodes": 687,
+      "internal_nodes": 120,
+      "max_depth": 7,
+      "level_widths": {
+        "1": 1,
+        "2": 19,
+        "3": 165,
+        "4": 365,
+        "5": 210,
+        "6": 39,
+        "7": 8
+      },
+      "avg_level_width": 115.29,
+      "median_level_width": 39,
+      "min_level_width": 1,
+      "max_level_width": 365,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 19,
+            "retained_m": 5,
+            "retained_share": 0.2632
+          },
+          "3": {
+            "nodes_at_level": 165,
+            "retained_m": 5,
+            "retained_share": 0.0303
+          },
+          "4": {
+            "nodes_at_level": 365,
+            "retained_m": 5,
+            "retained_share": 0.0137
+          },
+          "5": {
+            "nodes_at_level": 210,
+            "retained_m": 5,
+            "retained_share": 0.0238
+          },
+          "6": {
+            "nodes_at_level": 39,
+            "retained_m": 5,
+            "retained_share": 0.1282
+          },
+          "7": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 19,
+            "retained_m": 7,
+            "retained_share": 0.3684
+          },
+          "3": {
+            "nodes_at_level": 165,
+            "retained_m": 7,
+            "retained_share": 0.0424
+          },
+          "4": {
+            "nodes_at_level": 365,
+            "retained_m": 7,
+            "retained_share": 0.0192
+          },
+          "5": {
+            "nodes_at_level": 210,
+            "retained_m": 7,
+            "retained_share": 0.0333
+          },
+          "6": {
+            "nodes_at_level": 39,
+            "retained_m": 7,
+            "retained_share": 0.1795
+          },
+          "7": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 19,
+            "retained_m": 10,
+            "retained_share": 0.5263
+          },
+          "3": {
+            "nodes_at_level": 165,
+            "retained_m": 10,
+            "retained_share": 0.0606
+          },
+          "4": {
+            "nodes_at_level": 365,
+            "retained_m": 10,
+            "retained_share": 0.0274
+          },
+          "5": {
+            "nodes_at_level": 210,
+            "retained_m": 10,
+            "retained_share": 0.0476
+          },
+          "6": {
+            "nodes_at_level": 39,
+            "retained_m": 10,
+            "retained_share": 0.2564
+          },
+          "7": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JPMORGAN_2022Q2_10Q",
+      "file": "final results\\FinanceBench structure\\JPMORGAN_2022Q2_10Q_structure_new.json",
+      "total_nodes": 331,
+      "leaf_nodes": 280,
+      "internal_nodes": 51,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 21,
+        "2": 38,
+        "3": 145,
+        "4": 102,
+        "5": 21,
+        "6": 4
+      },
+      "avg_level_width": 55.17,
+      "median_level_width": 29.5,
+      "min_level_width": 4,
+      "max_level_width": 145,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "2": {
+            "nodes_at_level": 38,
+            "retained_m": 5,
+            "retained_share": 0.1316
+          },
+          "3": {
+            "nodes_at_level": 145,
+            "retained_m": 5,
+            "retained_share": 0.0345
+          },
+          "4": {
+            "nodes_at_level": 102,
+            "retained_m": 5,
+            "retained_share": 0.049
+          },
+          "5": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 38,
+            "retained_m": 7,
+            "retained_share": 0.1842
+          },
+          "3": {
+            "nodes_at_level": 145,
+            "retained_m": 7,
+            "retained_share": 0.0483
+          },
+          "4": {
+            "nodes_at_level": 102,
+            "retained_m": 7,
+            "retained_share": 0.0686
+          },
+          "5": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "2": {
+            "nodes_at_level": 38,
+            "retained_m": 10,
+            "retained_share": 0.2632
+          },
+          "3": {
+            "nodes_at_level": 145,
+            "retained_m": 10,
+            "retained_share": 0.069
+          },
+          "4": {
+            "nodes_at_level": 102,
+            "retained_m": 10,
+            "retained_share": 0.098
+          },
+          "5": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "file": "final results\\FinanceBench structure\\JPMORGAN_2023Q2_10Q_structure_new.json",
+      "total_nodes": 362,
+      "leaf_nodes": 299,
+      "internal_nodes": 63,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 16,
+        "2": 51,
+        "3": 144,
+        "4": 124,
+        "5": 23,
+        "6": 4
+      },
+      "avg_level_width": 60.33,
+      "median_level_width": 37.0,
+      "min_level_width": 4,
+      "max_level_width": 144,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "2": {
+            "nodes_at_level": 51,
+            "retained_m": 5,
+            "retained_share": 0.098
+          },
+          "3": {
+            "nodes_at_level": 144,
+            "retained_m": 5,
+            "retained_share": 0.0347
+          },
+          "4": {
+            "nodes_at_level": 124,
+            "retained_m": 5,
+            "retained_share": 0.0403
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 5,
+            "retained_share": 0.2174
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "2": {
+            "nodes_at_level": 51,
+            "retained_m": 7,
+            "retained_share": 0.1373
+          },
+          "3": {
+            "nodes_at_level": 144,
+            "retained_m": 7,
+            "retained_share": 0.0486
+          },
+          "4": {
+            "nodes_at_level": 124,
+            "retained_m": 7,
+            "retained_share": 0.0565
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 7,
+            "retained_share": 0.3043
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "2": {
+            "nodes_at_level": 51,
+            "retained_m": 10,
+            "retained_share": 0.1961
+          },
+          "3": {
+            "nodes_at_level": 144,
+            "retained_m": 10,
+            "retained_share": 0.0694
+          },
+          "4": {
+            "nodes_at_level": 124,
+            "retained_m": 10,
+            "retained_share": 0.0806
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 10,
+            "retained_share": 0.4348
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "LOCKHEEDMARTIN_2021_10K",
+      "file": "final results\\FinanceBench structure\\LOCKHEEDMARTIN_2021_10K_structure_new.json",
+      "total_nodes": 131,
+      "leaf_nodes": 113,
+      "internal_nodes": 18,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 29,
+        "2": 9,
+        "3": 22,
+        "4": 57,
+        "5": 14
+      },
+      "avg_level_width": 26.2,
+      "median_level_width": 22,
+      "min_level_width": 9,
+      "max_level_width": 57,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "3": {
+            "nodes_at_level": 22,
+            "retained_m": 5,
+            "retained_share": 0.2273
+          },
+          "4": {
+            "nodes_at_level": 57,
+            "retained_m": 5,
+            "retained_share": 0.0877
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 5,
+            "retained_share": 0.3571
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "3": {
+            "nodes_at_level": 22,
+            "retained_m": 7,
+            "retained_share": 0.3182
+          },
+          "4": {
+            "nodes_at_level": 57,
+            "retained_m": 7,
+            "retained_share": 0.1228
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 7,
+            "retained_share": 0.5
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 22,
+            "retained_m": 10,
+            "retained_share": 0.4545
+          },
+          "4": {
+            "nodes_at_level": 57,
+            "retained_m": 10,
+            "retained_share": 0.1754
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 10,
+            "retained_share": 0.7143
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "LOCKHEEDMARTIN_2022_10K",
+      "file": "final results\\FinanceBench structure\\LOCKHEEDMARTIN_2022_10K_structure_new.json",
+      "total_nodes": 114,
+      "leaf_nodes": 101,
+      "internal_nodes": 13,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 29,
+        "2": 2,
+        "3": 19,
+        "4": 62,
+        "5": 2
+      },
+      "avg_level_width": 22.8,
+      "median_level_width": 19,
+      "min_level_width": 2,
+      "max_level_width": 62,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 5,
+            "retained_share": 0.2632
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 5,
+            "retained_share": 0.0806
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 7,
+            "retained_share": 0.3684
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 7,
+            "retained_share": 0.1129
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 10,
+            "retained_share": 0.5263
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 10,
+            "retained_share": 0.1613
+          },
+          "5": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MGMRESORTS_2018_10K",
+      "file": "final results\\FinanceBench structure\\MGMRESORTS_2018_10K_structure_new.json",
+      "total_nodes": 259,
+      "leaf_nodes": 220,
+      "internal_nodes": 39,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 30,
+        "2": 31,
+        "3": 119,
+        "4": 54,
+        "5": 25
+      },
+      "avg_level_width": 51.8,
+      "median_level_width": 31,
+      "min_level_width": 25,
+      "max_level_width": 119,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "3": {
+            "nodes_at_level": 119,
+            "retained_m": 5,
+            "retained_share": 0.042
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 5,
+            "retained_share": 0.0926
+          },
+          "5": {
+            "nodes_at_level": 25,
+            "retained_m": 5,
+            "retained_share": 0.2
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "3": {
+            "nodes_at_level": 119,
+            "retained_m": 7,
+            "retained_share": 0.0588
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 7,
+            "retained_share": 0.1296
+          },
+          "5": {
+            "nodes_at_level": 25,
+            "retained_m": 7,
+            "retained_share": 0.28
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "3": {
+            "nodes_at_level": 119,
+            "retained_m": 10,
+            "retained_share": 0.084
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 10,
+            "retained_share": 0.1852
+          },
+          "5": {
+            "nodes_at_level": 25,
+            "retained_m": 10,
+            "retained_share": 0.4
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MGMRESORTS_2022_10K",
+      "file": "final results\\FinanceBench structure\\MGMRESORTS_2022_10K_structure_new.json",
+      "total_nodes": 291,
+      "leaf_nodes": 252,
+      "internal_nodes": 39,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 30,
+        "2": 36,
+        "3": 124,
+        "4": 101
+      },
+      "avg_level_width": 72.75,
+      "median_level_width": 68.5,
+      "min_level_width": 30,
+      "max_level_width": 124,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "2": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          },
+          "3": {
+            "nodes_at_level": 124,
+            "retained_m": 5,
+            "retained_share": 0.0403
+          },
+          "4": {
+            "nodes_at_level": 101,
+            "retained_m": 5,
+            "retained_share": 0.0495
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "2": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          },
+          "3": {
+            "nodes_at_level": 124,
+            "retained_m": 7,
+            "retained_share": 0.0565
+          },
+          "4": {
+            "nodes_at_level": 101,
+            "retained_m": 7,
+            "retained_share": 0.0693
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          },
+          "3": {
+            "nodes_at_level": 124,
+            "retained_m": 10,
+            "retained_share": 0.0806
+          },
+          "4": {
+            "nodes_at_level": 101,
+            "retained_m": 10,
+            "retained_share": 0.099
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+      "file": "final results\\FinanceBench structure\\MGMRESORTS_2022Q4_EARNINGS_structure_new.json",
+      "total_nodes": 21,
+      "leaf_nodes": 18,
+      "internal_nodes": 3,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 1,
+        "2": 10,
+        "3": 10
+      },
+      "avg_level_width": 7,
+      "median_level_width": 10,
+      "min_level_width": 1,
+      "max_level_width": 10,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MGMRESORTS_2023Q2_10Q",
+      "file": "final results\\FinanceBench structure\\MGMRESORTS_2023Q2_10Q_structure_new.json",
+      "total_nodes": 18,
+      "leaf_nodes": 18,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 18
+      },
+      "avg_level_width": 18,
+      "median_level_width": 18,
+      "min_level_width": 18,
+      "max_level_width": 18,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 5,
+            "retained_share": 0.2778
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 7,
+            "retained_share": 0.3889
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 18,
+            "retained_m": 10,
+            "retained_share": 0.5556
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MICROSOFT_2016_10K",
+      "file": "final results\\FinanceBench structure\\MICROSOFT_2016_10K_structure_new.json",
+      "total_nodes": 57,
+      "leaf_nodes": 50,
+      "internal_nodes": 7,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 5,
+        "2": 21,
+        "3": 31
+      },
+      "avg_level_width": 19,
+      "median_level_width": 21,
+      "min_level_width": 5,
+      "max_level_width": 31,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "3": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "MICROSOFT_2023_10K",
+      "file": "final results\\FinanceBench structure\\MICROSOFT_2023_10K_structure_new.json",
+      "total_nodes": 31,
+      "leaf_nodes": 31,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 31
+      },
+      "avg_level_width": 31,
+      "median_level_width": 31,
+      "min_level_width": 31,
+      "max_level_width": 31,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "NETFLIX_2017_10K",
+      "file": "final results\\FinanceBench structure\\NETFLIX_2017_10K_structure_new.json",
+      "total_nodes": 25,
+      "leaf_nodes": 25,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 25
+      },
+      "avg_level_width": 25,
+      "median_level_width": 25,
+      "min_level_width": 25,
+      "max_level_width": 25,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 5,
+            "retained_share": 0.2
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 7,
+            "retained_share": 0.28
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 25,
+            "retained_m": 10,
+            "retained_share": 0.4
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "NIKE_2018_10K",
+      "file": "final results\\FinanceBench structure\\NIKE_2018_10K_structure_new.json",
+      "total_nodes": 40,
+      "leaf_nodes": 40,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 40
+      },
+      "avg_level_width": 40,
+      "median_level_width": 40,
+      "min_level_width": 40,
+      "max_level_width": 40,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 40,
+            "retained_m": 5,
+            "retained_share": 0.125
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 40,
+            "retained_m": 7,
+            "retained_share": 0.175
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 40,
+            "retained_m": 10,
+            "retained_share": 0.25
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "NIKE_2019_10K",
+      "file": "final results\\FinanceBench structure\\NIKE_2019_10K_structure_new.json",
+      "total_nodes": 40,
+      "leaf_nodes": 35,
+      "internal_nodes": 5,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 5,
+        "2": 22,
+        "3": 13
+      },
+      "avg_level_width": 13.33,
+      "median_level_width": 13,
+      "min_level_width": 5,
+      "max_level_width": 22,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 5,
+            "retained_share": 0.2273
+          },
+          "3": {
+            "nodes_at_level": 13,
+            "retained_m": 5,
+            "retained_share": 0.3846
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 7,
+            "retained_share": 0.3182
+          },
+          "3": {
+            "nodes_at_level": 13,
+            "retained_m": 7,
+            "retained_share": 0.5385
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 22,
+            "retained_m": 10,
+            "retained_share": 0.4545
+          },
+          "3": {
+            "nodes_at_level": 13,
+            "retained_m": 10,
+            "retained_share": 0.7692
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "NIKE_2023_10K",
+      "file": "final results\\FinanceBench structure\\NIKE_2023_10K_structure_new.json",
+      "total_nodes": 41,
+      "leaf_nodes": 41,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 41
+      },
+      "avg_level_width": 41,
+      "median_level_width": 41,
+      "min_level_width": 41,
+      "max_level_width": 41,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 41,
+            "retained_m": 5,
+            "retained_share": 0.122
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 41,
+            "retained_m": 7,
+            "retained_share": 0.1707
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 41,
+            "retained_m": 10,
+            "retained_share": 0.2439
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PAYPAL_2022_10K",
+      "file": "final results\\FinanceBench structure\\PAYPAL_2022_10K_structure_new.json",
+      "total_nodes": 158,
+      "leaf_nodes": 135,
+      "internal_nodes": 23,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 27,
+        "2": 2,
+        "3": 27,
+        "4": 56,
+        "5": 46
+      },
+      "avg_level_width": 31.6,
+      "median_level_width": 27,
+      "min_level_width": 2,
+      "max_level_width": 56,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 5,
+            "retained_share": 0.1852
+          },
+          "4": {
+            "nodes_at_level": 56,
+            "retained_m": 5,
+            "retained_share": 0.0893
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 5,
+            "retained_share": 0.1087
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 7,
+            "retained_share": 0.2593
+          },
+          "4": {
+            "nodes_at_level": 56,
+            "retained_m": 7,
+            "retained_share": 0.125
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 7,
+            "retained_share": 0.1522
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 27,
+            "retained_m": 10,
+            "retained_share": 0.3704
+          },
+          "4": {
+            "nodes_at_level": 56,
+            "retained_m": 10,
+            "retained_share": 0.1786
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 10,
+            "retained_share": 0.2174
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PEPSICO_2021_10K",
+      "file": "final results\\FinanceBench structure\\PEPSICO_2021_10K_structure_new.json",
+      "total_nodes": 378,
+      "leaf_nodes": 327,
+      "internal_nodes": 51,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 50,
+        "2": 69,
+        "3": 122,
+        "4": 86,
+        "5": 48,
+        "6": 3
+      },
+      "avg_level_width": 63,
+      "median_level_width": 59.5,
+      "min_level_width": 3,
+      "max_level_width": 122,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 50,
+            "retained_m": 5,
+            "retained_share": 0.1
+          },
+          "2": {
+            "nodes_at_level": 69,
+            "retained_m": 5,
+            "retained_share": 0.0725
+          },
+          "3": {
+            "nodes_at_level": 122,
+            "retained_m": 5,
+            "retained_share": 0.041
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 5,
+            "retained_share": 0.0581
+          },
+          "5": {
+            "nodes_at_level": 48,
+            "retained_m": 5,
+            "retained_share": 0.1042
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 50,
+            "retained_m": 7,
+            "retained_share": 0.14
+          },
+          "2": {
+            "nodes_at_level": 69,
+            "retained_m": 7,
+            "retained_share": 0.1014
+          },
+          "3": {
+            "nodes_at_level": 122,
+            "retained_m": 7,
+            "retained_share": 0.0574
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 7,
+            "retained_share": 0.0814
+          },
+          "5": {
+            "nodes_at_level": 48,
+            "retained_m": 7,
+            "retained_share": 0.1458
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 50,
+            "retained_m": 10,
+            "retained_share": 0.2
+          },
+          "2": {
+            "nodes_at_level": 69,
+            "retained_m": 10,
+            "retained_share": 0.1449
+          },
+          "3": {
+            "nodes_at_level": 122,
+            "retained_m": 10,
+            "retained_share": 0.082
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 10,
+            "retained_share": 0.1163
+          },
+          "5": {
+            "nodes_at_level": 48,
+            "retained_m": 10,
+            "retained_share": 0.2083
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PEPSICO_2022_10K",
+      "file": "final results\\FinanceBench structure\\PEPSICO_2022_10K_structure_new.json",
+      "total_nodes": 592,
+      "leaf_nodes": 506,
+      "internal_nodes": 86,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 45,
+        "2": 129,
+        "3": 332,
+        "4": 86
+      },
+      "avg_level_width": 148,
+      "median_level_width": 107.5,
+      "min_level_width": 45,
+      "max_level_width": 332,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 45,
+            "retained_m": 5,
+            "retained_share": 0.1111
+          },
+          "2": {
+            "nodes_at_level": 129,
+            "retained_m": 5,
+            "retained_share": 0.0388
+          },
+          "3": {
+            "nodes_at_level": 332,
+            "retained_m": 5,
+            "retained_share": 0.0151
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 5,
+            "retained_share": 0.0581
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 45,
+            "retained_m": 7,
+            "retained_share": 0.1556
+          },
+          "2": {
+            "nodes_at_level": 129,
+            "retained_m": 7,
+            "retained_share": 0.0543
+          },
+          "3": {
+            "nodes_at_level": 332,
+            "retained_m": 7,
+            "retained_share": 0.0211
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 7,
+            "retained_share": 0.0814
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 45,
+            "retained_m": 10,
+            "retained_share": 0.2222
+          },
+          "2": {
+            "nodes_at_level": 129,
+            "retained_m": 10,
+            "retained_share": 0.0775
+          },
+          "3": {
+            "nodes_at_level": 332,
+            "retained_m": 10,
+            "retained_share": 0.0301
+          },
+          "4": {
+            "nodes_at_level": 86,
+            "retained_m": 10,
+            "retained_share": 0.1163
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PEPSICO_2023_8K_dated-2023-05-05",
+      "file": "final results\\FinanceBench structure\\PEPSICO_2023_8K_dated-2023-05-05_structure_new.json",
+      "total_nodes": 3,
+      "leaf_nodes": 3,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 3
+      },
+      "avg_level_width": 3,
+      "median_level_width": 3,
+      "min_level_width": 3,
+      "max_level_width": 3,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PEPSICO_2023_8K_dated-2023-05-30",
+      "file": "final results\\FinanceBench structure\\PEPSICO_2023_8K_dated-2023-05-30_structure_new.json",
+      "total_nodes": 151,
+      "leaf_nodes": 150,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 80,
+        "2": 71
+      },
+      "avg_level_width": 75.5,
+      "median_level_width": 75.5,
+      "min_level_width": 71,
+      "max_level_width": 80,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 80,
+            "retained_m": 5,
+            "retained_share": 0.0625
+          },
+          "2": {
+            "nodes_at_level": 71,
+            "retained_m": 5,
+            "retained_share": 0.0704
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 80,
+            "retained_m": 7,
+            "retained_share": 0.0875
+          },
+          "2": {
+            "nodes_at_level": 71,
+            "retained_m": 7,
+            "retained_share": 0.0986
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 80,
+            "retained_m": 10,
+            "retained_share": 0.125
+          },
+          "2": {
+            "nodes_at_level": 71,
+            "retained_m": 10,
+            "retained_share": 0.1408
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PEPSICO_2023Q1_EARNINGS",
+      "file": "final results\\FinanceBench structure\\PEPSICO_2023Q1_EARNINGS_structure_new.json",
+      "total_nodes": 14,
+      "leaf_nodes": 12,
+      "internal_nodes": 2,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 8,
+        "2": 6
+      },
+      "avg_level_width": 7,
+      "median_level_width": 7.0,
+      "min_level_width": 6,
+      "max_level_width": 8,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PFIZER_2021_10K",
+      "file": "final results\\FinanceBench structure\\PFIZER_2021_10K_structure_new.json",
+      "total_nodes": 179,
+      "leaf_nodes": 153,
+      "internal_nodes": 26,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 43,
+        "2": 10,
+        "3": 24,
+        "4": 65,
+        "5": 37
+      },
+      "avg_level_width": 35.8,
+      "median_level_width": 37,
+      "min_level_width": 10,
+      "max_level_width": 65,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 43,
+            "retained_m": 5,
+            "retained_share": 0.1163
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 5,
+            "retained_share": 0.2083
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 5,
+            "retained_share": 0.0769
+          },
+          "5": {
+            "nodes_at_level": 37,
+            "retained_m": 5,
+            "retained_share": 0.1351
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 43,
+            "retained_m": 7,
+            "retained_share": 0.1628
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 7,
+            "retained_share": 0.2917
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 7,
+            "retained_share": 0.1077
+          },
+          "5": {
+            "nodes_at_level": 37,
+            "retained_m": 7,
+            "retained_share": 0.1892
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 43,
+            "retained_m": 10,
+            "retained_share": 0.2326
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 10,
+            "retained_share": 0.4167
+          },
+          "4": {
+            "nodes_at_level": 65,
+            "retained_m": 10,
+            "retained_share": 0.1538
+          },
+          "5": {
+            "nodes_at_level": 37,
+            "retained_m": 10,
+            "retained_share": 0.2703
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PFIZER_2023Q2_10Q",
+      "file": "final results\\FinanceBench structure\\PFIZER_2023Q2_10Q_structure_new.json",
+      "total_nodes": 16,
+      "leaf_nodes": 16,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 16
+      },
+      "avg_level_width": 16,
+      "median_level_width": 16,
+      "min_level_width": 16,
+      "max_level_width": 16,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "ULTABEAUTY_2023_10K",
+      "file": "final results\\FinanceBench structure\\ULTABEAUTY_2023_10K_structure_new.json",
+      "total_nodes": 30,
+      "leaf_nodes": 30,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 30
+      },
+      "avg_level_width": 30,
+      "median_level_width": 30,
+      "min_level_width": 30,
+      "max_level_width": 30,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+      "file": "final results\\FinanceBench structure\\ULTABEAUTY_2023Q4_EARNINGS_structure_new.json",
+      "total_nodes": 12,
+      "leaf_nodes": 11,
+      "internal_nodes": 1,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 1,
+        "2": 11
+      },
+      "avg_level_width": 6,
+      "median_level_width": 6.0,
+      "min_level_width": 1,
+      "max_level_width": 11,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 5,
+            "retained_share": 0.4545
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 7,
+            "retained_share": 0.6364
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 11,
+            "retained_m": 10,
+            "retained_share": 0.9091
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "VERIZON_2021_10K",
+      "file": "final results\\FinanceBench structure\\VERIZON_2021_10K_structure_new.json",
+      "total_nodes": 174,
+      "leaf_nodes": 148,
+      "internal_nodes": 26,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 28,
+        "2": 6,
+        "3": 18,
+        "4": 79,
+        "5": 36,
+        "6": 7
+      },
+      "avg_level_width": 29,
+      "median_level_width": 23.0,
+      "min_level_width": 6,
+      "max_level_width": 79,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "3": {
+            "nodes_at_level": 18,
+            "retained_m": 5,
+            "retained_share": 0.2778
+          },
+          "4": {
+            "nodes_at_level": 79,
+            "retained_m": 5,
+            "retained_share": 0.0633
+          },
+          "5": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 18,
+            "retained_m": 7,
+            "retained_share": 0.3889
+          },
+          "4": {
+            "nodes_at_level": 79,
+            "retained_m": 7,
+            "retained_share": 0.0886
+          },
+          "5": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 18,
+            "retained_m": 10,
+            "retained_share": 0.5556
+          },
+          "4": {
+            "nodes_at_level": 79,
+            "retained_m": 10,
+            "retained_share": 0.1266
+          },
+          "5": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          },
+          "6": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "VERIZON_2022_10K",
+      "file": "final results\\FinanceBench structure\\VERIZON_2022_10K_structure_new.json",
+      "total_nodes": 168,
+      "leaf_nodes": 144,
+      "internal_nodes": 24,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 28,
+        "2": 12,
+        "3": 19,
+        "4": 71,
+        "5": 32,
+        "6": 6
+      },
+      "avg_level_width": 28,
+      "median_level_width": 23.5,
+      "min_level_width": 6,
+      "max_level_width": 71,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 5,
+            "retained_share": 0.4167
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 5,
+            "retained_share": 0.2632
+          },
+          "4": {
+            "nodes_at_level": 71,
+            "retained_m": 5,
+            "retained_share": 0.0704
+          },
+          "5": {
+            "nodes_at_level": 32,
+            "retained_m": 5,
+            "retained_share": 0.1562
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 7,
+            "retained_share": 0.5833
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 7,
+            "retained_share": 0.3684
+          },
+          "4": {
+            "nodes_at_level": 71,
+            "retained_m": 7,
+            "retained_share": 0.0986
+          },
+          "5": {
+            "nodes_at_level": 32,
+            "retained_m": 7,
+            "retained_share": 0.2188
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "2": {
+            "nodes_at_level": 12,
+            "retained_m": 10,
+            "retained_share": 0.8333
+          },
+          "3": {
+            "nodes_at_level": 19,
+            "retained_m": 10,
+            "retained_share": 0.5263
+          },
+          "4": {
+            "nodes_at_level": 71,
+            "retained_m": 10,
+            "retained_share": 0.1408
+          },
+          "5": {
+            "nodes_at_level": 32,
+            "retained_m": 10,
+            "retained_share": 0.3125
+          },
+          "6": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "WALMART_2019_10K",
+      "file": "final results\\FinanceBench structure\\WALMART_2019_10K_structure_new.json",
+      "total_nodes": 28,
+      "leaf_nodes": 28,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 28
+      },
+      "avg_level_width": 28,
+      "median_level_width": 28,
+      "min_level_width": 28,
+      "max_level_width": 28,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          }
+        }
+      }
+    }
+  ],
+  "thesis_table": {
+    "Full multi-document tree": {
+      "Top-level document nodes": 65,
+      "Total nodes including document nodes": 8543,
+      "Total document-subtree nodes": 8478,
+      "Total leaf chunks": 7433,
+      "Max depth": 9,
+      "Max level width": 2356
+    },
+    "Average over document subtrees": {
+      "Average total nodes per subtree": 130.43,
+      "Median total nodes per subtree": 64,
+      "Average leaf chunks per subtree": 114.35,
+      "Median leaf chunks per subtree": 61,
+      "Average max depth per subtree": 3.34,
+      "Median max depth per subtree": 3,
+      "Average max level width per subtree": 62.89,
+      "Median max level width per subtree": 40,
+      "Average retained share m=5": 0.3262,
+      "Average retained share m=7": 0.4034,
+      "Average retained share m=10": 0.4977
+    }
+  }
+}

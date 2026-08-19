@@ -1,0 +1,7 @@
+dataset,result_file,method,model,variant,top_m,diagnostic_category,count,percentage
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,accuracy_only_mrr_lower,9,0.8999999999999999
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,accuracy_only_mrr_missing,13,1.3
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,both_fail,227,22.7
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,both_rank1,531,53.1
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,mrr_lower_only,30,3.0
+ESRS,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,mrr_rank1_only,190,19.0

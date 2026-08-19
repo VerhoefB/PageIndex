@@ -1,0 +1,17 @@
+dataset,result_file,method,model,variant,top_m,n_queries,n_latency_observations,mean_latency_seconds,median_latency_seconds,std_latency_seconds,p95_latency_seconds
+FinanceBench,bm25_query_results.jsonl,BM25,–,standard,,111,111,0.028379360360360362,0.02599,0.013805860721113266,0.053123500000000004
+FinanceBench,dense_harrier_oss_v1_0_6b_query_results.jsonl,Dense,Harrier,standard,,111,111,0.002018018018018019,0.002,0.00013361967614920284,0.002
+FinanceBench,dense_linq_embed_mistral_query_results.jsonl,Dense,Linq-Embed-Mistral,standard,,111,111,0.007243243243243246,0.007,0.0006062735088782682,0.008
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,10.0,111,111,0.00024324324324324323,0.0,0.000430986526180791,0.001
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,5.0,111,111,0.00016216216216216218,0.0,0.00037027116698540964,0.001
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,7.0,111,111,0.00013513513513513514,0.0,0.0003434182842192855,0.001
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,10.0,111,111,0.00044144144144144144,0.0,0.0004988110351750939,0.001
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,5.0,111,111,0.00024324324324324323,0.0,0.000430986526180791,0.001
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,7.0,111,111,0.00043243243243243243,0.0,0.0004976603738151628,0.001
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,node,10.0,111,111,0.00011711711711711712,0.0,0.0003230181176663382,0.001
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,node,5.0,111,111,9.909909909909912e-05,0.0,0.00030015011259383216,0.001
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,node,7.0,111,111,0.00010810810810810811,0.0,0.00031192514694602176,0.001
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,10.0,111,111,0.00030630630630630633,0.0,0.00046304904104685764,0.001
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,5.0,111,111,0.00017117117117117117,0.0,0.0003783666781857822,0.001
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,7.0,111,111,0.00023423423423423424,0.0,0.00042543998519083864,0.001
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,111,111,157.79744144144144,122.82,102.71386422039225,335.6935

@@ -1,0 +1,2729 @@
+{
+  "full_multidoc_tree": {
+    "tree_type": "full_multidoc_tree",
+    "description": "Artificial root is not counted. Level 1 contains one document-level node per document. Levels 2+ are the document-subtree levels shifted by +1.",
+    "num_document_nodes_at_top_level": 23,
+    "total_nodes_including_document_nodes": 3614,
+    "total_document_subtree_nodes": 3591,
+    "total_leaf_chunks": 2968,
+    "max_depth": 9,
+    "level_widths": {
+      "1": 23,
+      "2": 431,
+      "3": 608,
+      "4": 950,
+      "5": 675,
+      "6": 590,
+      "7": 209,
+      "8": 114,
+      "9": 14
+    },
+    "avg_level_width": 401.56,
+    "median_level_width": 431,
+    "min_level_width": 14,
+    "max_level_width": 950,
+    "level_retention_for_m": {
+      "5": {
+        "1": {
+          "nodes_at_level": 23,
+          "retained_m": 5,
+          "retained_share": 0.2174
+        },
+        "2": {
+          "nodes_at_level": 431,
+          "retained_m": 5,
+          "retained_share": 0.0116
+        },
+        "3": {
+          "nodes_at_level": 608,
+          "retained_m": 5,
+          "retained_share": 0.0082
+        },
+        "4": {
+          "nodes_at_level": 950,
+          "retained_m": 5,
+          "retained_share": 0.0053
+        },
+        "5": {
+          "nodes_at_level": 675,
+          "retained_m": 5,
+          "retained_share": 0.0074
+        },
+        "6": {
+          "nodes_at_level": 590,
+          "retained_m": 5,
+          "retained_share": 0.0085
+        },
+        "7": {
+          "nodes_at_level": 209,
+          "retained_m": 5,
+          "retained_share": 0.0239
+        },
+        "8": {
+          "nodes_at_level": 114,
+          "retained_m": 5,
+          "retained_share": 0.0439
+        },
+        "9": {
+          "nodes_at_level": 14,
+          "retained_m": 5,
+          "retained_share": 0.3571
+        }
+      },
+      "7": {
+        "1": {
+          "nodes_at_level": 23,
+          "retained_m": 7,
+          "retained_share": 0.3043
+        },
+        "2": {
+          "nodes_at_level": 431,
+          "retained_m": 7,
+          "retained_share": 0.0162
+        },
+        "3": {
+          "nodes_at_level": 608,
+          "retained_m": 7,
+          "retained_share": 0.0115
+        },
+        "4": {
+          "nodes_at_level": 950,
+          "retained_m": 7,
+          "retained_share": 0.0074
+        },
+        "5": {
+          "nodes_at_level": 675,
+          "retained_m": 7,
+          "retained_share": 0.0104
+        },
+        "6": {
+          "nodes_at_level": 590,
+          "retained_m": 7,
+          "retained_share": 0.0119
+        },
+        "7": {
+          "nodes_at_level": 209,
+          "retained_m": 7,
+          "retained_share": 0.0335
+        },
+        "8": {
+          "nodes_at_level": 114,
+          "retained_m": 7,
+          "retained_share": 0.0614
+        },
+        "9": {
+          "nodes_at_level": 14,
+          "retained_m": 7,
+          "retained_share": 0.5
+        }
+      },
+      "10": {
+        "1": {
+          "nodes_at_level": 23,
+          "retained_m": 10,
+          "retained_share": 0.4348
+        },
+        "2": {
+          "nodes_at_level": 431,
+          "retained_m": 10,
+          "retained_share": 0.0232
+        },
+        "3": {
+          "nodes_at_level": 608,
+          "retained_m": 10,
+          "retained_share": 0.0164
+        },
+        "4": {
+          "nodes_at_level": 950,
+          "retained_m": 10,
+          "retained_share": 0.0105
+        },
+        "5": {
+          "nodes_at_level": 675,
+          "retained_m": 10,
+          "retained_share": 0.0148
+        },
+        "6": {
+          "nodes_at_level": 590,
+          "retained_m": 10,
+          "retained_share": 0.0169
+        },
+        "7": {
+          "nodes_at_level": 209,
+          "retained_m": 10,
+          "retained_share": 0.0478
+        },
+        "8": {
+          "nodes_at_level": 114,
+          "retained_m": 10,
+          "retained_share": 0.0877
+        },
+        "9": {
+          "nodes_at_level": 14,
+          "retained_m": 10,
+          "retained_share": 0.7143
+        }
+      }
+    }
+  },
+  "aggregate_document_subtrees": {
+    "num_document_subtrees": 23,
+    "avg_total_nodes_per_document_subtree": 156.13,
+    "median_total_nodes_per_document_subtree": 150,
+    "min_total_nodes_per_document_subtree": 13,
+    "max_total_nodes_per_document_subtree": 374,
+    "avg_leaf_chunks_per_document_subtree": 129.04,
+    "median_leaf_chunks_per_document_subtree": 125,
+    "min_leaf_chunks_per_document_subtree": 13,
+    "max_leaf_chunks_per_document_subtree": 338,
+    "avg_internal_nodes_per_document_subtree": 27.09,
+    "median_internal_nodes_per_document_subtree": 25,
+    "min_internal_nodes_per_document_subtree": 0,
+    "max_internal_nodes_per_document_subtree": 68,
+    "avg_max_depth_per_document_subtree": 5.13,
+    "median_max_depth_per_document_subtree": 6,
+    "min_max_depth_per_document_subtree": 1,
+    "max_max_depth_per_document_subtree": 8,
+    "avg_avg_level_width_per_document_subtree": 30.66,
+    "median_avg_level_width_per_document_subtree": 28,
+    "min_avg_level_width_per_document_subtree": 6.17,
+    "max_avg_level_width_per_document_subtree": 74.8,
+    "avg_median_level_width_per_document_subtree": 26.85,
+    "median_median_level_width_per_document_subtree": 22,
+    "avg_max_level_width_per_document_subtree": 64.61,
+    "median_max_level_width_per_document_subtree": 57,
+    "min_max_level_width_per_document_subtree": 13,
+    "max_max_level_width_per_document_subtree": 146,
+    "avg_retained_share_across_subtrees_m_5": 0.3754,
+    "median_retained_share_across_subtrees_m_5": 0.3678,
+    "avg_retained_share_across_subtrees_m_7": 0.4606,
+    "median_retained_share_across_subtrees_m_7": 0.4262,
+    "avg_retained_share_across_subtrees_m_10": 0.5608,
+    "median_retained_share_across_subtrees_m_10": 0.5374
+  },
+  "average_level_widths_across_document_subtrees": {
+    "1": {
+      "num_documents_with_this_level": 23,
+      "avg_width": 18.74,
+      "median_width": 10,
+      "min_width": 1,
+      "max_width": 74,
+      "avg_retained_share_m_5": 0.5298,
+      "median_retained_share_m_5": 0.5,
+      "avg_retained_share_m_7": 0.6301,
+      "median_retained_share_m_7": 0.7,
+      "avg_retained_share_m_10": 0.7276,
+      "median_retained_share_m_10": 1.0
+    },
+    "2": {
+      "num_documents_with_this_level": 21,
+      "avg_width": 28.95,
+      "median_width": 21,
+      "min_width": 2,
+      "max_width": 138,
+      "avg_retained_share_m_5": 0.3844,
+      "median_retained_share_m_5": 0.2381,
+      "avg_retained_share_m_7": 0.473,
+      "median_retained_share_m_7": 0.3333,
+      "avg_retained_share_m_10": 0.5684,
+      "median_retained_share_m_10": 0.4762
+    },
+    "3": {
+      "num_documents_with_this_level": 20,
+      "avg_width": 47.5,
+      "median_width": 36.5,
+      "min_width": 2,
+      "max_width": 146,
+      "avg_retained_share_m_5": 0.3099,
+      "median_retained_share_m_5": 0.137,
+      "avg_retained_share_m_7": 0.3739,
+      "median_retained_share_m_7": 0.1918,
+      "avg_retained_share_m_10": 0.4429,
+      "median_retained_share_m_10": 0.274
+    },
+    "4": {
+      "num_documents_with_this_level": 18,
+      "avg_width": 37.5,
+      "median_width": 32.5,
+      "min_width": 4,
+      "max_width": 134,
+      "avg_retained_share_m_5": 0.2849,
+      "median_retained_share_m_5": 0.1539,
+      "avg_retained_share_m_7": 0.3545,
+      "median_retained_share_m_7": 0.2154,
+      "avg_retained_share_m_10": 0.4349,
+      "median_retained_share_m_10": 0.3078
+    },
+    "5": {
+      "num_documents_with_this_level": 16,
+      "avg_width": 36.88,
+      "median_width": 22.5,
+      "min_width": 6,
+      "max_width": 127,
+      "avg_retained_share_m_5": 0.2828,
+      "median_retained_share_m_5": 0.2223,
+      "avg_retained_share_m_7": 0.3751,
+      "median_retained_share_m_7": 0.3113,
+      "avg_retained_share_m_10": 0.4822,
+      "median_retained_share_m_10": 0.4447
+    },
+    "6": {
+      "num_documents_with_this_level": 12,
+      "avg_width": 17.42,
+      "median_width": 10.0,
+      "min_width": 2,
+      "max_width": 51,
+      "avg_retained_share_m_5": 0.5042,
+      "median_retained_share_m_5": 0.5,
+      "avg_retained_share_m_7": 0.6059,
+      "median_retained_share_m_7": 0.7,
+      "avg_retained_share_m_10": 0.7376,
+      "median_retained_share_m_10": 1.0
+    },
+    "7": {
+      "num_documents_with_this_level": 5,
+      "avg_width": 22.8,
+      "median_width": 17,
+      "min_width": 3,
+      "max_width": 50,
+      "avg_retained_share_m_5": 0.377,
+      "median_retained_share_m_5": 0.2941,
+      "avg_retained_share_m_7": 0.4479,
+      "median_retained_share_m_7": 0.4118,
+      "avg_retained_share_m_10": 0.5541,
+      "median_retained_share_m_10": 0.5882
+    },
+    "8": {
+      "num_documents_with_this_level": 3,
+      "avg_width": 4.67,
+      "median_width": 5,
+      "min_width": 2,
+      "max_width": 7,
+      "avg_retained_share_m_5": 0.9048,
+      "median_retained_share_m_5": 1.0,
+      "avg_retained_share_m_7": 1.0,
+      "median_retained_share_m_7": 1.0,
+      "avg_retained_share_m_10": 1.0,
+      "median_retained_share_m_10": 1.0
+    }
+  },
+  "per_document_subtrees": [
+    {
+      "doc_name": "ABN Amro",
+      "file": "final results\\ESRS structure\\ABN Amro_structure_new.json",
+      "total_nodes": 164,
+      "leaf_nodes": 139,
+      "internal_nodes": 25,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 1,
+        "2": 16,
+        "3": 80,
+        "4": 45,
+        "5": 22
+      },
+      "avg_level_width": 32.8,
+      "median_level_width": 22,
+      "min_level_width": 1,
+      "max_level_width": 80,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "3": {
+            "nodes_at_level": 80,
+            "retained_m": 5,
+            "retained_share": 0.0625
+          },
+          "4": {
+            "nodes_at_level": 45,
+            "retained_m": 5,
+            "retained_share": 0.1111
+          },
+          "5": {
+            "nodes_at_level": 22,
+            "retained_m": 5,
+            "retained_share": 0.2273
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "3": {
+            "nodes_at_level": 80,
+            "retained_m": 7,
+            "retained_share": 0.0875
+          },
+          "4": {
+            "nodes_at_level": 45,
+            "retained_m": 7,
+            "retained_share": 0.1556
+          },
+          "5": {
+            "nodes_at_level": 22,
+            "retained_m": 7,
+            "retained_share": 0.3182
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "3": {
+            "nodes_at_level": 80,
+            "retained_m": 10,
+            "retained_share": 0.125
+          },
+          "4": {
+            "nodes_at_level": 45,
+            "retained_m": 10,
+            "retained_share": 0.2222
+          },
+          "5": {
+            "nodes_at_level": 22,
+            "retained_m": 10,
+            "retained_share": 0.4545
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Banca Monte dei Paschi di Siena",
+      "file": "final results\\ESRS structure\\Banca Monte dei Paschi di Siena_structure_new.json",
+      "total_nodes": 268,
+      "leaf_nodes": 216,
+      "internal_nodes": 52,
+      "max_depth": 7,
+      "level_widths": {
+        "1": 5,
+        "2": 44,
+        "3": 57,
+        "4": 59,
+        "5": 77,
+        "6": 10,
+        "7": 16
+      },
+      "avg_level_width": 38.29,
+      "median_level_width": 44,
+      "min_level_width": 5,
+      "max_level_width": 77,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 44,
+            "retained_m": 5,
+            "retained_share": 0.1136
+          },
+          "3": {
+            "nodes_at_level": 57,
+            "retained_m": 5,
+            "retained_share": 0.0877
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 5,
+            "retained_share": 0.0847
+          },
+          "5": {
+            "nodes_at_level": 77,
+            "retained_m": 5,
+            "retained_share": 0.0649
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "7": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 44,
+            "retained_m": 7,
+            "retained_share": 0.1591
+          },
+          "3": {
+            "nodes_at_level": 57,
+            "retained_m": 7,
+            "retained_share": 0.1228
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 7,
+            "retained_share": 0.1186
+          },
+          "5": {
+            "nodes_at_level": 77,
+            "retained_m": 7,
+            "retained_share": 0.0909
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "7": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 44,
+            "retained_m": 10,
+            "retained_share": 0.2273
+          },
+          "3": {
+            "nodes_at_level": 57,
+            "retained_m": 10,
+            "retained_share": 0.1754
+          },
+          "4": {
+            "nodes_at_level": 59,
+            "retained_m": 10,
+            "retained_share": 0.1695
+          },
+          "5": {
+            "nodes_at_level": 77,
+            "retained_m": 10,
+            "retained_share": 0.1299
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "7": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Banque Postale",
+      "file": "final results\\ESRS structure\\Banque Postale_structure_new.json",
+      "total_nodes": 255,
+      "leaf_nodes": 226,
+      "internal_nodes": 29,
+      "max_depth": 7,
+      "level_widths": {
+        "1": 9,
+        "2": 138,
+        "3": 59,
+        "4": 20,
+        "5": 16,
+        "6": 10,
+        "7": 3
+      },
+      "avg_level_width": 36.43,
+      "median_level_width": 16,
+      "min_level_width": 3,
+      "max_level_width": 138,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "2": {
+            "nodes_at_level": 138,
+            "retained_m": 5,
+            "retained_share": 0.0362
+          },
+          "3": {
+            "nodes_at_level": 59,
+            "retained_m": 5,
+            "retained_share": 0.0847
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 5,
+            "retained_share": 0.25
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "7": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "2": {
+            "nodes_at_level": 138,
+            "retained_m": 7,
+            "retained_share": 0.0507
+          },
+          "3": {
+            "nodes_at_level": 59,
+            "retained_m": 7,
+            "retained_share": 0.1186
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 7,
+            "retained_share": 0.35
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "7": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 138,
+            "retained_m": 10,
+            "retained_share": 0.0725
+          },
+          "3": {
+            "nodes_at_level": 59,
+            "retained_m": 10,
+            "retained_share": 0.1695
+          },
+          "4": {
+            "nodes_at_level": 20,
+            "retained_m": 10,
+            "retained_share": 0.5
+          },
+          "5": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "7": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BBVA",
+      "file": "final results\\ESRS structure\\BBVA_structure_new.json",
+      "total_nodes": 13,
+      "leaf_nodes": 13,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 13
+      },
+      "avg_level_width": 13,
+      "median_level_width": 13,
+      "min_level_width": 13,
+      "max_level_width": 13,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 5,
+            "retained_share": 0.3846
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 7,
+            "retained_share": 0.5385
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 10,
+            "retained_share": 0.7692
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Belfius",
+      "file": "final results\\ESRS structure\\Belfius_structure_new.json",
+      "total_nodes": 183,
+      "leaf_nodes": 137,
+      "internal_nodes": 46,
+      "max_depth": 8,
+      "level_widths": {
+        "1": 7,
+        "2": 3,
+        "3": 9,
+        "4": 21,
+        "5": 57,
+        "6": 51,
+        "7": 28,
+        "8": 7
+      },
+      "avg_level_width": 22.88,
+      "median_level_width": 15.0,
+      "min_level_width": 3,
+      "max_level_width": 57,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "4": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "5": {
+            "nodes_at_level": 57,
+            "retained_m": 5,
+            "retained_share": 0.0877
+          },
+          "6": {
+            "nodes_at_level": 51,
+            "retained_m": 5,
+            "retained_share": 0.098
+          },
+          "7": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "8": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "4": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "5": {
+            "nodes_at_level": 57,
+            "retained_m": 7,
+            "retained_share": 0.1228
+          },
+          "6": {
+            "nodes_at_level": 51,
+            "retained_m": 7,
+            "retained_share": 0.1373
+          },
+          "7": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "8": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "5": {
+            "nodes_at_level": 57,
+            "retained_m": 10,
+            "retained_share": 0.1754
+          },
+          "6": {
+            "nodes_at_level": 51,
+            "retained_m": 10,
+            "retained_share": 0.1961
+          },
+          "7": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "8": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "BNP Paribas",
+      "file": "final results\\ESRS structure\\BNP Paribas_structure_new.json",
+      "total_nodes": 62,
+      "leaf_nodes": 52,
+      "internal_nodes": 10,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 10,
+        "2": 31,
+        "3": 4,
+        "4": 17
+      },
+      "avg_level_width": 15.5,
+      "median_level_width": 13.5,
+      "min_level_width": 4,
+      "max_level_width": 31,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "3": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "3": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "3": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Caixa Geral de Depósitos",
+      "file": "final results\\ESRS structure\\Caixa Geral de Depósitos_structure_new.json",
+      "total_nodes": 37,
+      "leaf_nodes": 31,
+      "internal_nodes": 6,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 6,
+        "2": 9,
+        "3": 2,
+        "4": 4,
+        "5": 14,
+        "6": 2
+      },
+      "avg_level_width": 6.17,
+      "median_level_width": 5.0,
+      "min_level_width": 2,
+      "max_level_width": 14,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 5,
+            "retained_share": 0.5556
+          },
+          "3": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 5,
+            "retained_share": 0.3571
+          },
+          "6": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 7,
+            "retained_share": 0.7778
+          },
+          "3": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 7,
+            "retained_share": 0.5
+          },
+          "6": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 9,
+            "retained_m": 9,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          },
+          "5": {
+            "nodes_at_level": 14,
+            "retained_m": 10,
+            "retained_share": 0.7143
+          },
+          "6": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "CaixaBank",
+      "file": "final results\\ESRS structure\\CaixaBank_structure_new.json",
+      "total_nodes": 158,
+      "leaf_nodes": 125,
+      "internal_nodes": 33,
+      "max_depth": 8,
+      "level_widths": {
+        "1": 30,
+        "2": 2,
+        "3": 7,
+        "4": 18,
+        "5": 17,
+        "6": 29,
+        "7": 50,
+        "8": 5
+      },
+      "avg_level_width": 19.75,
+      "median_level_width": 17.5,
+      "min_level_width": 2,
+      "max_level_width": 50,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 5,
+            "retained_share": 0.2778
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          },
+          "6": {
+            "nodes_at_level": 29,
+            "retained_m": 5,
+            "retained_share": 0.1724
+          },
+          "7": {
+            "nodes_at_level": 50,
+            "retained_m": 5,
+            "retained_share": 0.1
+          },
+          "8": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 7,
+            "retained_share": 0.3889
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          },
+          "6": {
+            "nodes_at_level": 29,
+            "retained_m": 7,
+            "retained_share": 0.2414
+          },
+          "7": {
+            "nodes_at_level": 50,
+            "retained_m": 7,
+            "retained_share": 0.14
+          },
+          "8": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "2": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 18,
+            "retained_m": 10,
+            "retained_share": 0.5556
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          },
+          "6": {
+            "nodes_at_level": 29,
+            "retained_m": 10,
+            "retained_share": 0.3448
+          },
+          "7": {
+            "nodes_at_level": 50,
+            "retained_m": 10,
+            "retained_share": 0.2
+          },
+          "8": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Deutsche Bank",
+      "file": "final results\\ESRS structure\\Deutsche Bank_structure_new.json",
+      "total_nodes": 28,
+      "leaf_nodes": 28,
+      "internal_nodes": 0,
+      "max_depth": 1,
+      "level_widths": {
+        "1": 28
+      },
+      "avg_level_width": 28,
+      "median_level_width": 28,
+      "min_level_width": 28,
+      "max_level_width": 28,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "DNB",
+      "file": "final results\\ESRS structure\\DNB_structure_new.json",
+      "total_nodes": 233,
+      "leaf_nodes": 165,
+      "internal_nodes": 68,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 58,
+        "2": 28,
+        "3": 37,
+        "4": 62,
+        "5": 44,
+        "6": 4
+      },
+      "avg_level_width": 38.83,
+      "median_level_width": 40.5,
+      "min_level_width": 4,
+      "max_level_width": 62,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 58,
+            "retained_m": 5,
+            "retained_share": 0.0862
+          },
+          "2": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "3": {
+            "nodes_at_level": 37,
+            "retained_m": 5,
+            "retained_share": 0.1351
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 5,
+            "retained_share": 0.0806
+          },
+          "5": {
+            "nodes_at_level": 44,
+            "retained_m": 5,
+            "retained_share": 0.1136
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 58,
+            "retained_m": 7,
+            "retained_share": 0.1207
+          },
+          "2": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "3": {
+            "nodes_at_level": 37,
+            "retained_m": 7,
+            "retained_share": 0.1892
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 7,
+            "retained_share": 0.1129
+          },
+          "5": {
+            "nodes_at_level": 44,
+            "retained_m": 7,
+            "retained_share": 0.1591
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 58,
+            "retained_m": 10,
+            "retained_share": 0.1724
+          },
+          "2": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "3": {
+            "nodes_at_level": 37,
+            "retained_m": 10,
+            "retained_share": 0.2703
+          },
+          "4": {
+            "nodes_at_level": 62,
+            "retained_m": 10,
+            "retained_share": 0.1613
+          },
+          "5": {
+            "nodes_at_level": 44,
+            "retained_m": 10,
+            "retained_share": 0.2273
+          },
+          "6": {
+            "nodes_at_level": 4,
+            "retained_m": 4,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "ING",
+      "file": "final results\\ESRS structure\\ING_structure_new.json",
+      "total_nodes": 150,
+      "leaf_nodes": 118,
+      "internal_nodes": 32,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 7,
+        "2": 30,
+        "3": 36,
+        "4": 39,
+        "5": 28,
+        "6": 10
+      },
+      "avg_level_width": 25,
+      "median_level_width": 29.0,
+      "min_level_width": 7,
+      "max_level_width": 39,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 5,
+            "retained_share": 0.1667
+          },
+          "3": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 5,
+            "retained_share": 0.1282
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 7,
+            "retained_share": 0.2333
+          },
+          "3": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 7,
+            "retained_share": 0.1795
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 30,
+            "retained_m": 10,
+            "retained_share": 0.3333
+          },
+          "3": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 10,
+            "retained_share": 0.2564
+          },
+          "5": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "6": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Intesa Sanpaolo",
+      "file": "final results\\ESRS structure\\Intesa Sanpaolo_structure_new.json",
+      "total_nodes": 374,
+      "leaf_nodes": 307,
+      "internal_nodes": 67,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 74,
+        "2": 20,
+        "3": 83,
+        "4": 134,
+        "5": 46,
+        "6": 17
+      },
+      "avg_level_width": 62.33,
+      "median_level_width": 60.0,
+      "min_level_width": 17,
+      "max_level_width": 134,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 74,
+            "retained_m": 5,
+            "retained_share": 0.0676
+          },
+          "2": {
+            "nodes_at_level": 20,
+            "retained_m": 5,
+            "retained_share": 0.25
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 5,
+            "retained_share": 0.0602
+          },
+          "4": {
+            "nodes_at_level": 134,
+            "retained_m": 5,
+            "retained_share": 0.0373
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 5,
+            "retained_share": 0.1087
+          },
+          "6": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 74,
+            "retained_m": 7,
+            "retained_share": 0.0946
+          },
+          "2": {
+            "nodes_at_level": 20,
+            "retained_m": 7,
+            "retained_share": 0.35
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 7,
+            "retained_share": 0.0843
+          },
+          "4": {
+            "nodes_at_level": 134,
+            "retained_m": 7,
+            "retained_share": 0.0522
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 7,
+            "retained_share": 0.1522
+          },
+          "6": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 74,
+            "retained_m": 10,
+            "retained_share": 0.1351
+          },
+          "2": {
+            "nodes_at_level": 20,
+            "retained_m": 10,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 83,
+            "retained_m": 10,
+            "retained_share": 0.1205
+          },
+          "4": {
+            "nodes_at_level": 134,
+            "retained_m": 10,
+            "retained_share": 0.0746
+          },
+          "5": {
+            "nodes_at_level": 46,
+            "retained_m": 10,
+            "retained_share": 0.2174
+          },
+          "6": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "KBC Group",
+      "file": "final results\\ESRS structure\\KBC Group_structure_new.json",
+      "total_nodes": 72,
+      "leaf_nodes": 60,
+      "internal_nodes": 12,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 36,
+        "2": 14,
+        "3": 5,
+        "4": 7,
+        "5": 10
+      },
+      "avg_level_width": 14.4,
+      "median_level_width": 10,
+      "min_level_width": 5,
+      "max_level_width": 36,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          },
+          "2": {
+            "nodes_at_level": 14,
+            "retained_m": 5,
+            "retained_share": 0.3571
+          },
+          "3": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "5": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          },
+          "2": {
+            "nodes_at_level": 14,
+            "retained_m": 7,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "5": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          },
+          "2": {
+            "nodes_at_level": 14,
+            "retained_m": 10,
+            "retained_share": 0.7143
+          },
+          "3": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "4": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "5": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "KfW",
+      "file": "final results\\ESRS structure\\KfW_structure_new.json",
+      "total_nodes": 90,
+      "leaf_nodes": 72,
+      "internal_nodes": 18,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 10,
+        "2": 35,
+        "3": 45
+      },
+      "avg_level_width": 30,
+      "median_level_width": 35,
+      "min_level_width": 10,
+      "max_level_width": 45,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 5,
+            "retained_share": 0.1429
+          },
+          "3": {
+            "nodes_at_level": 45,
+            "retained_m": 5,
+            "retained_share": 0.1111
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 7,
+            "retained_share": 0.2
+          },
+          "3": {
+            "nodes_at_level": 45,
+            "retained_m": 7,
+            "retained_share": 0.1556
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 35,
+            "retained_m": 10,
+            "retained_share": 0.2857
+          },
+          "3": {
+            "nodes_at_level": 45,
+            "retained_m": 10,
+            "retained_share": 0.2222
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Nordea Bank",
+      "file": "final results\\ESRS structure\\Nordea Bank_structure_new.json",
+      "total_nodes": 84,
+      "leaf_nodes": 61,
+      "internal_nodes": 23,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 2,
+        "2": 7,
+        "3": 16,
+        "4": 16,
+        "5": 23,
+        "6": 20
+      },
+      "avg_level_width": 14,
+      "median_level_width": 16.0,
+      "min_level_width": 2,
+      "max_level_width": 23,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 7,
+            "retained_m": 5,
+            "retained_share": 0.7143
+          },
+          "3": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "4": {
+            "nodes_at_level": 16,
+            "retained_m": 5,
+            "retained_share": 0.3125
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 5,
+            "retained_share": 0.2174
+          },
+          "6": {
+            "nodes_at_level": 20,
+            "retained_m": 5,
+            "retained_share": 0.25
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "4": {
+            "nodes_at_level": 16,
+            "retained_m": 7,
+            "retained_share": 0.4375
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 7,
+            "retained_share": 0.3043
+          },
+          "6": {
+            "nodes_at_level": 20,
+            "retained_m": 7,
+            "retained_share": 0.35
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 7,
+            "retained_m": 7,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "4": {
+            "nodes_at_level": 16,
+            "retained_m": 10,
+            "retained_share": 0.625
+          },
+          "5": {
+            "nodes_at_level": 23,
+            "retained_m": 10,
+            "retained_share": 0.4348
+          },
+          "6": {
+            "nodes_at_level": 20,
+            "retained_m": 10,
+            "retained_share": 0.5
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "OTP Bank",
+      "file": "final results\\ESRS structure\\OTP Bank_structure_new.json",
+      "total_nodes": 232,
+      "leaf_nodes": 197,
+      "internal_nodes": 35,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 13,
+        "2": 31,
+        "3": 128,
+        "4": 54,
+        "5": 6
+      },
+      "avg_level_width": 46.4,
+      "median_level_width": 31,
+      "min_level_width": 6,
+      "max_level_width": 128,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 5,
+            "retained_share": 0.3846
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 5,
+            "retained_share": 0.1613
+          },
+          "3": {
+            "nodes_at_level": 128,
+            "retained_m": 5,
+            "retained_share": 0.0391
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 5,
+            "retained_share": 0.0926
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 7,
+            "retained_share": 0.5385
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 7,
+            "retained_share": 0.2258
+          },
+          "3": {
+            "nodes_at_level": 128,
+            "retained_m": 7,
+            "retained_share": 0.0547
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 7,
+            "retained_share": 0.1296
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 13,
+            "retained_m": 10,
+            "retained_share": 0.7692
+          },
+          "2": {
+            "nodes_at_level": 31,
+            "retained_m": 10,
+            "retained_share": 0.3226
+          },
+          "3": {
+            "nodes_at_level": 128,
+            "retained_m": 10,
+            "retained_share": 0.0781
+          },
+          "4": {
+            "nodes_at_level": 54,
+            "retained_m": 10,
+            "retained_share": 0.1852
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Pekao",
+      "file": "final results\\ESRS structure\\Pekao_structure_new.json",
+      "total_nodes": 114,
+      "leaf_nodes": 111,
+      "internal_nodes": 3,
+      "max_depth": 2,
+      "level_widths": {
+        "1": 48,
+        "2": 66
+      },
+      "avg_level_width": 57,
+      "median_level_width": 57.0,
+      "min_level_width": 48,
+      "max_level_width": 66,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 48,
+            "retained_m": 5,
+            "retained_share": 0.1042
+          },
+          "2": {
+            "nodes_at_level": 66,
+            "retained_m": 5,
+            "retained_share": 0.0758
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 48,
+            "retained_m": 7,
+            "retained_share": 0.1458
+          },
+          "2": {
+            "nodes_at_level": 66,
+            "retained_m": 7,
+            "retained_share": 0.1061
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 48,
+            "retained_m": 10,
+            "retained_share": 0.2083
+          },
+          "2": {
+            "nodes_at_level": 66,
+            "retained_m": 10,
+            "retained_share": 0.1515
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "PKO Bank Polski",
+      "file": "final results\\ESRS structure\\PKO Bank Polski_structure_new.json",
+      "total_nodes": 157,
+      "leaf_nodes": 136,
+      "internal_nodes": 21,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 2,
+        "2": 5,
+        "3": 28,
+        "4": 39,
+        "5": 80,
+        "6": 3
+      },
+      "avg_level_width": 26.17,
+      "median_level_width": 16.5,
+      "min_level_width": 2,
+      "max_level_width": 80,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 28,
+            "retained_m": 5,
+            "retained_share": 0.1786
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 5,
+            "retained_share": 0.1282
+          },
+          "5": {
+            "nodes_at_level": 80,
+            "retained_m": 5,
+            "retained_share": 0.0625
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 28,
+            "retained_m": 7,
+            "retained_share": 0.25
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 7,
+            "retained_share": 0.1795
+          },
+          "5": {
+            "nodes_at_level": 80,
+            "retained_m": 7,
+            "retained_share": 0.0875
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 28,
+            "retained_m": 10,
+            "retained_share": 0.3571
+          },
+          "4": {
+            "nodes_at_level": 39,
+            "retained_m": 10,
+            "retained_share": 0.2564
+          },
+          "5": {
+            "nodes_at_level": 80,
+            "retained_m": 10,
+            "retained_share": 0.125
+          },
+          "6": {
+            "nodes_at_level": 3,
+            "retained_m": 3,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Raiffeisen Bank International",
+      "file": "final results\\ESRS structure\\Raiffeisen Bank International_structure_new.json",
+      "total_nodes": 374,
+      "leaf_nodes": 338,
+      "internal_nodes": 36,
+      "max_depth": 5,
+      "level_widths": {
+        "1": 10,
+        "2": 21,
+        "3": 146,
+        "4": 70,
+        "5": 127
+      },
+      "avg_level_width": 74.8,
+      "median_level_width": 70,
+      "min_level_width": 10,
+      "max_level_width": 146,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 5,
+            "retained_share": 0.2381
+          },
+          "3": {
+            "nodes_at_level": 146,
+            "retained_m": 5,
+            "retained_share": 0.0342
+          },
+          "4": {
+            "nodes_at_level": 70,
+            "retained_m": 5,
+            "retained_share": 0.0714
+          },
+          "5": {
+            "nodes_at_level": 127,
+            "retained_m": 5,
+            "retained_share": 0.0394
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 7,
+            "retained_share": 0.3333
+          },
+          "3": {
+            "nodes_at_level": 146,
+            "retained_m": 7,
+            "retained_share": 0.0479
+          },
+          "4": {
+            "nodes_at_level": 70,
+            "retained_m": 7,
+            "retained_share": 0.1
+          },
+          "5": {
+            "nodes_at_level": 127,
+            "retained_m": 7,
+            "retained_share": 0.0551
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 21,
+            "retained_m": 10,
+            "retained_share": 0.4762
+          },
+          "3": {
+            "nodes_at_level": 146,
+            "retained_m": 10,
+            "retained_share": 0.0685
+          },
+          "4": {
+            "nodes_at_level": 70,
+            "retained_m": 10,
+            "retained_share": 0.1429
+          },
+          "5": {
+            "nodes_at_level": 127,
+            "retained_m": 10,
+            "retained_share": 0.0787
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Santander",
+      "file": "final results\\ESRS structure\\Santander_structure_new.json",
+      "total_nodes": 146,
+      "leaf_nodes": 128,
+      "internal_nodes": 18,
+      "max_depth": 4,
+      "level_widths": {
+        "1": 23,
+        "2": 25,
+        "3": 93,
+        "4": 5
+      },
+      "avg_level_width": 36.5,
+      "median_level_width": 24.0,
+      "min_level_width": 5,
+      "max_level_width": 93,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 23,
+            "retained_m": 5,
+            "retained_share": 0.2174
+          },
+          "2": {
+            "nodes_at_level": 25,
+            "retained_m": 5,
+            "retained_share": 0.2
+          },
+          "3": {
+            "nodes_at_level": 93,
+            "retained_m": 5,
+            "retained_share": 0.0538
+          },
+          "4": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 23,
+            "retained_m": 7,
+            "retained_share": 0.3043
+          },
+          "2": {
+            "nodes_at_level": 25,
+            "retained_m": 7,
+            "retained_share": 0.28
+          },
+          "3": {
+            "nodes_at_level": 93,
+            "retained_m": 7,
+            "retained_share": 0.0753
+          },
+          "4": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 23,
+            "retained_m": 10,
+            "retained_share": 0.4348
+          },
+          "2": {
+            "nodes_at_level": 25,
+            "retained_m": 10,
+            "retained_share": 0.4
+          },
+          "3": {
+            "nodes_at_level": 93,
+            "retained_m": 10,
+            "retained_share": 0.1075
+          },
+          "4": {
+            "nodes_at_level": 5,
+            "retained_m": 5,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Societe Generale",
+      "file": "final results\\ESRS structure\\Societe Generale_structure_new.json",
+      "total_nodes": 35,
+      "leaf_nodes": 28,
+      "internal_nodes": 7,
+      "max_depth": 3,
+      "level_widths": {
+        "1": 1,
+        "2": 10,
+        "3": 24
+      },
+      "avg_level_width": 11.67,
+      "median_level_width": 10,
+      "min_level_width": 1,
+      "max_level_width": 24,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 5,
+            "retained_share": 0.5
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 5,
+            "retained_share": 0.2083
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 7,
+            "retained_share": 0.7
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 7,
+            "retained_share": 0.2917
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 1,
+            "retained_m": 1,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 10,
+            "retained_m": 10,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 24,
+            "retained_m": 10,
+            "retained_share": 0.4167
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "Swedbank",
+      "file": "final results\\ESRS structure\\Swedbank_structure_new.json",
+      "total_nodes": 238,
+      "leaf_nodes": 186,
+      "internal_nodes": 52,
+      "max_depth": 6,
+      "level_widths": {
+        "1": 36,
+        "2": 67,
+        "3": 77,
+        "4": 33,
+        "5": 17,
+        "6": 8
+      },
+      "avg_level_width": 39.67,
+      "median_level_width": 34.5,
+      "min_level_width": 8,
+      "max_level_width": 77,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 5,
+            "retained_share": 0.1389
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 5,
+            "retained_share": 0.0746
+          },
+          "3": {
+            "nodes_at_level": 77,
+            "retained_m": 5,
+            "retained_share": 0.0649
+          },
+          "4": {
+            "nodes_at_level": 33,
+            "retained_m": 5,
+            "retained_share": 0.1515
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          },
+          "6": {
+            "nodes_at_level": 8,
+            "retained_m": 5,
+            "retained_share": 0.625
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 7,
+            "retained_share": 0.1944
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 7,
+            "retained_share": 0.1045
+          },
+          "3": {
+            "nodes_at_level": 77,
+            "retained_m": 7,
+            "retained_share": 0.0909
+          },
+          "4": {
+            "nodes_at_level": 33,
+            "retained_m": 7,
+            "retained_share": 0.2121
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          },
+          "6": {
+            "nodes_at_level": 8,
+            "retained_m": 7,
+            "retained_share": 0.875
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 36,
+            "retained_m": 10,
+            "retained_share": 0.2778
+          },
+          "2": {
+            "nodes_at_level": 67,
+            "retained_m": 10,
+            "retained_share": 0.1493
+          },
+          "3": {
+            "nodes_at_level": 77,
+            "retained_m": 10,
+            "retained_share": 0.1299
+          },
+          "4": {
+            "nodes_at_level": 33,
+            "retained_m": 10,
+            "retained_share": 0.303
+          },
+          "5": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          },
+          "6": {
+            "nodes_at_level": 8,
+            "retained_m": 8,
+            "retained_share": 1.0
+          }
+        }
+      }
+    },
+    {
+      "doc_name": "UniCredit",
+      "file": "final results\\ESRS structure\\UniCredit_structure_new.json",
+      "total_nodes": 124,
+      "leaf_nodes": 94,
+      "internal_nodes": 30,
+      "max_depth": 8,
+      "level_widths": {
+        "1": 2,
+        "2": 6,
+        "3": 14,
+        "4": 32,
+        "5": 6,
+        "6": 45,
+        "7": 17,
+        "8": 2
+      },
+      "avg_level_width": 15.5,
+      "median_level_width": 10.0,
+      "min_level_width": 2,
+      "max_level_width": 45,
+      "level_retention_for_m": {
+        "5": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "3": {
+            "nodes_at_level": 14,
+            "retained_m": 5,
+            "retained_share": 0.3571
+          },
+          "4": {
+            "nodes_at_level": 32,
+            "retained_m": 5,
+            "retained_share": 0.1562
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 5,
+            "retained_share": 0.8333
+          },
+          "6": {
+            "nodes_at_level": 45,
+            "retained_m": 5,
+            "retained_share": 0.1111
+          },
+          "7": {
+            "nodes_at_level": 17,
+            "retained_m": 5,
+            "retained_share": 0.2941
+          },
+          "8": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "7": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 14,
+            "retained_m": 7,
+            "retained_share": 0.5
+          },
+          "4": {
+            "nodes_at_level": 32,
+            "retained_m": 7,
+            "retained_share": 0.2188
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "6": {
+            "nodes_at_level": 45,
+            "retained_m": 7,
+            "retained_share": 0.1556
+          },
+          "7": {
+            "nodes_at_level": 17,
+            "retained_m": 7,
+            "retained_share": 0.4118
+          },
+          "8": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        },
+        "10": {
+          "1": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          },
+          "2": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "3": {
+            "nodes_at_level": 14,
+            "retained_m": 10,
+            "retained_share": 0.7143
+          },
+          "4": {
+            "nodes_at_level": 32,
+            "retained_m": 10,
+            "retained_share": 0.3125
+          },
+          "5": {
+            "nodes_at_level": 6,
+            "retained_m": 6,
+            "retained_share": 1.0
+          },
+          "6": {
+            "nodes_at_level": 45,
+            "retained_m": 10,
+            "retained_share": 0.2222
+          },
+          "7": {
+            "nodes_at_level": 17,
+            "retained_m": 10,
+            "retained_share": 0.5882
+          },
+          "8": {
+            "nodes_at_level": 2,
+            "retained_m": 2,
+            "retained_share": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "thesis_table": {
+    "Full multi-document tree": {
+      "Top-level document nodes": 23,
+      "Total nodes including document nodes": 3614,
+      "Total document-subtree nodes": 3591,
+      "Total leaf chunks": 2968,
+      "Max depth": 9,
+      "Max level width": 950
+    },
+    "Average over document subtrees": {
+      "Average total nodes per subtree": 156.13,
+      "Median total nodes per subtree": 150,
+      "Average leaf chunks per subtree": 129.04,
+      "Median leaf chunks per subtree": 125,
+      "Average max depth per subtree": 5.13,
+      "Median max depth per subtree": 6,
+      "Average max level width per subtree": 64.61,
+      "Median max level width per subtree": 57,
+      "Average retained share m=5": 0.3754,
+      "Average retained share m=7": 0.4606,
+      "Average retained share m=10": 0.5608
+    }
+  }
+}

@@ -226,5 +226,31 @@
       "duplicate": 1,
       "appendix_like": 8
     }
+  },
+  "eligible_query_chunks": 1924,
+  "eligible_queries_per_pdf": {
+    "ABN Amro": 102,
+    "BBVA": 10,
+    "BNP Paribas": 29,
+    "Banca Monte dei Paschi di Siena": 152,
+    "Banque Postale": 181,
+    "Belfius": 81,
+    "Caixa Geral de Depósitos": 9,
+    "CaixaBank": 73,
+    "DNB": 96,
+    "Deutsche Bank": 21,
+    "ING": 85,
+    "Intesa Sanpaolo": 204,
+    "KBC Group": 53,
+    "KfW": 55,
+    "Nordea Bank": 47,
+    "OTP Bank": 136,
+    "PKO Bank Polski": 71,
+    "Pekao": 49,
+    "Raiffeisen Bank International": 165,
+    "Santander": 68,
+    "Societe Generale": 25,
+    "Swedbank": 139,
+    "UniCredit": 73
   }
 }

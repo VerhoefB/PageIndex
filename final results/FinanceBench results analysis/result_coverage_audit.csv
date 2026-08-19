@@ -1,0 +1,17 @@
+dataset,result_file,method,model,variant,top_m,n_result_queries,master_n_queries,coverage_pct
+FinanceBench,bm25_query_results.jsonl,BM25,–,standard,,111,111,100.0
+FinanceBench,dense_harrier_oss_v1_0_6b_query_results.jsonl,Dense,Harrier,standard,,111,111,100.0
+FinanceBench,dense_linq_embed_mistral_query_results.jsonl,Dense,Linq-Embed-Mistral,standard,,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,10.0,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,5.0,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,chunk_rerank,7.0,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,10.0,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,5.0,111,111,100.0
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,chunk_rerank,7.0,111,111,100.0
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl,Hybrid PageIndex,Harrier,node,10.0,111,111,100.0
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_5_query_results.jsonl,Hybrid PageIndex,Harrier,node,5.0,111,111,100.0
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_7_query_results.jsonl,Hybrid PageIndex,Harrier,node,7.0,111,111,100.0
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_10_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,10.0,111,111,100.0
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_5_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,5.0,111,111,100.0
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_7_query_results.jsonl,Hybrid PageIndex,Linq-Embed-Mistral,node,7.0,111,111,100.0
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,111,111,100.0
