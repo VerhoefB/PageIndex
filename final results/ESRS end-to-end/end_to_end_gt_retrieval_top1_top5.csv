@@ -1,0 +1,9 @@
+dataset,configuration_id,method,retrieval_model,variant,top_m,n_top1,gt_retrieved_top1_count,gt_retrieved_top1_pct,n_top5,gt_retrieved_top5_count,gt_retrieved_top5_pct
+ESRS,bm25,bm25,,standard,,1000,429,42.9,1000,691,69.1
+ESRS,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,1000,480,48.0,1000,775,77.5
+ESRS,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,1000,517,51.7,1000,760,76.0
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,1000,377,37.7,1000,589,58.9
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,1000,434,43.4,1000,621,62.1
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,1000,223,22.3,1000,470,47.0
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,1000,312,31.2,1000,575,57.5
+ESRS,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,1000,553,55.3,1000,760,76.0

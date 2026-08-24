@@ -206,7 +206,10 @@ def latest_successful_generated_answers(paths: Iterable[Path]) -> Dict[str, Dict
             answer_id = row.get("answer_id")
             if not answer_id:
                 continue
-            if row.get("generation_success"):
+            if (
+                row.get("generation_success")
+                and str(row.get("generated_answer", "")).strip()
+            ):
                 latest[str(answer_id)] = row
     return latest
 

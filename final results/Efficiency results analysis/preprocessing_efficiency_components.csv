@@ -1,0 +1,17 @@
+dataset,method,model,component,latency_seconds,input_tokens,output_tokens,total_tokens,notes
+ESRS,BM25,–,Tokenization + BM25 index construction,1.472225,0,0,0,Tokenization=0.995s; index construction=0.358s
+ESRS,Dense,Harrier,Model load + chunk embedding / FAISS setup,703.008,0,0,0,Model load=5.232s; embedding/index stage=697.776s
+ESRS,Dense,Linq-Embed-Mistral,Model load + chunk embedding / FAISS setup,2389.525,0,0,0,Model load=79.010s; embedding/index stage=2310.516s
+ESRS,PageIndex,GPT-5,Hierarchical tree construction,29838.290000000005,24858814,9354598,34213412,"23 documents; 3,935 pages. The same PageIndex tree is reused by Hybrid PageIndex."
+ESRS,Hybrid PageIndex,Harrier,Node + top-document embedding setup,98.548,0,0,0,Embeds hierarchy nodes; PageIndex tree construction reported separately.
+ESRS,Hybrid PageIndex,Linq-Embed-Mistral,Node + top-document embedding setup,485.968,0,0,0,Embeds hierarchy nodes; PageIndex tree construction reported separately.
+ESRS,Hybrid PageIndex,Harrier,Full-chunk reranker embedding setup,714.384,0,0,0,Observed first chunk-cache creation run. Includes small model/cache loading overhead; chunk representation is title + heading + text.
+ESRS,Hybrid PageIndex,Linq-Embed-Mistral,Full-chunk reranker embedding setup,2324.847,0,0,0,Observed first chunk-cache creation run. Includes small model/cache loading overhead; chunk representation is title + heading + text.
+FinanceBench,BM25,–,Tokenization + BM25 index construction,2.987301,0,0,0,Tokenization=2.035s; index construction=0.768s
+FinanceBench,Dense,Harrier,Model load + chunk embedding / FAISS setup,327.922,0,0,0,Model load=7.777s; embedding/index stage=320.144s
+FinanceBench,Dense,Linq-Embed-Mistral,Model load + chunk embedding / FAISS setup,1180.172,0,0,0,Model load=14.513s; embedding/index stage=1165.659s
+FinanceBench,PageIndex,GPT-5,Hierarchical tree construction,93725.152,54122753,22719251,76842004,"65 documents; 8,624 pages. The same PageIndex tree is reused by Hybrid PageIndex."
+FinanceBench,Hybrid PageIndex,Harrier,Node + top-document embedding setup,57.587,0,0,0,Embeds hierarchy nodes; PageIndex tree construction reported separately.
+FinanceBench,Hybrid PageIndex,Linq-Embed-Mistral,Node + top-document embedding setup,353.301,0,0,0,Embeds hierarchy nodes; PageIndex tree construction reported separately.
+FinanceBench,Hybrid PageIndex,Harrier,Full-chunk reranker embedding setup,324.827,0,0,0,Observed first chunk-cache creation run. Includes small model/cache loading overhead; chunk representation is title + heading + text.
+FinanceBench,Hybrid PageIndex,Linq-Embed-Mistral,Full-chunk reranker embedding setup,1199.152,0,0,0,Observed first chunk-cache creation run. Includes small model/cache loading overhead; chunk representation is title + heading + text.

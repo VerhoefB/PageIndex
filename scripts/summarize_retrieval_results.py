@@ -56,15 +56,49 @@ def get_query_key(row, dataset):
         f"{query_text(row)}"
     )
 
+def normalize_doc_key(value):
+    if value is None or (isinstance(value, float) and np.isnan(value)):
+        return ""
+
+    value = str(value).strip()
+
+    # Remove path if present
+    value = Path(value).name
+
+    # Remove .pdf extension if present
+    if value.lower().endswith(".pdf"):
+        value = value[:-4]
+
+    # Normalize common naming differences
+    value = value.upper()
+    value = value.replace("&", "_")
+    value = value.replace(" ", "_")
+    value = value.replace("-", "_")
+
+    # Collapse repeated underscores
+    while "__" in value:
+        value = value.replace("__", "_")
+
+    return value.strip("_")
 
 def normalize_yes_no(value):
     if value is None or (isinstance(value, float) and np.isnan(value)):
         return ""
+
     value = str(value).strip().lower()
-    if value in {"yes", "y", "true", "1", "present"}:
-        return "Present"
-    if value in {"no", "n", "false", "0", "absent"}:
+
+    # No TOC
+    if value in {"no", "n", "false", "0", "absent", "no toc"}:
         return "No TOC"
+
+    # Any form of TOC presence counts as TOC,
+    # regardless of whether page indices are provided
+    if (
+        value in {"yes", "y", "true", "1", "present", "toc"}
+        or "toc" in value
+    ):
+        return "Present"
+
     return str(value)
 
 
@@ -236,6 +270,14 @@ def compute_retrieval_metrics(row):
         "reciprocal_rank_at_5": reciprocal_rank_at_5,
         "top1_chunk_id": top1_ids[0] if top1_ids else "",
         "top5_chunk_ids": "|".join(top5_ids),
+
+        # Retrieval-return diagnostics
+        "n_top1_returned": len(top1_ids),
+        "n_top5_returned": len(top5_ids),
+        "no_top1_returned": int(len(top1_ids) == 0),
+        "no_top5_returned": int(len(top5_ids) == 0),
+        "fewer_than_5_returned": int(len(top5_ids) < 5),
+        "no_result_at_all": int(len(top1_ids) == 0 and len(top5_ids) == 0),
     }
 
 
@@ -589,6 +631,44 @@ def make_pageindex_diagnostics(df):
     return summary, detail
 
 
+def make_pageindex_return_diagnostics(df):
+    page = df[df["method"] == "PageIndex"].copy()
+
+    if page.empty:
+        return pd.DataFrame()
+
+    summary = (
+        page.groupby(CONFIG_COLS, dropna=False)
+        .agg(
+            n_queries=("query_id", "nunique"),
+            no_top1_count=("no_top1_returned", "sum"),
+            no_top5_count=("no_top5_returned", "sum"),
+            fewer_than_5_count=("fewer_than_5_returned", "sum"),
+            no_result_at_all_count=("no_result_at_all", "sum"),
+            mean_top5_results=("n_top5_returned", "mean"),
+        )
+        .reset_index()
+    )
+
+    summary["no_top1_pct"] = (
+        summary["no_top1_count"] / summary["n_queries"] * 100
+    )
+
+    summary["no_top5_pct"] = (
+        summary["no_top5_count"] / summary["n_queries"] * 100
+    )
+
+    summary["fewer_than_5_pct"] = (
+        summary["fewer_than_5_count"] / summary["n_queries"] * 100
+    )
+
+    summary["no_result_at_all_pct"] = (
+        summary["no_result_at_all_count"] / summary["n_queries"] * 100
+    )
+
+    return summary
+
+
 # ---------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------
@@ -682,16 +762,28 @@ def main():
         ]
         detail = detail.drop(columns=[c for c in drop_cols if c in detail.columns])
 
-    # Join structure metadata by target document.
+    # Join structure metadata by normalized target document name
     structure_meta = load_structure_metadata(structure_path)
+
     if not structure_meta.empty:
+
+        detail["doc_merge_key"] = detail["doc_name"].map(normalize_doc_key)
+
+        structure_meta["doc_merge_key"] = (
+            structure_meta["structure_doc_name"]
+            .map(normalize_doc_key)
+        )
+
         detail = detail.merge(
             structure_meta,
-            left_on="doc_name",
-            right_on="structure_doc_name",
+            on="doc_merge_key",
             how="left",
         )
-        detail = detail.drop(columns=["structure_doc_name"], errors="ignore")
+
+        detail = detail.drop(
+            columns=["structure_doc_name", "doc_merge_key"],
+            errors="ignore"
+        )
 
     # FinanceBench-specific metadata.
     if dataset == "FinanceBench":
@@ -735,19 +827,43 @@ def main():
 
     latency = latency_statistics(detail)
 
-    # Dataset-specific outputs.
+    # ---------------------------------------------------------
+    # Retrieval by TOC availability - both datasets
+    # ---------------------------------------------------------
+
+    if "toc" in detail.columns:
+        by_toc = aggregate(detail, ["toc"])
+        by_toc.to_csv(output_dir / "retrieval_by_toc.csv", index=False)
+
+
+    # ---------------------------------------------------------
+    # Dataset-specific outputs
+    # ---------------------------------------------------------
+
     if dataset == "ESRS":
-        if "toc" in detail.columns:
-            by_toc = aggregate(detail, ["toc"])
-            by_toc.to_csv(output_dir / "retrieval_by_toc.csv", index=False)
 
         by_bank = aggregate(detail, ["doc_name"])
         by_bank = by_bank.rename(columns={"doc_name": "bank"})
         by_bank.to_csv(output_dir / "retrieval_by_bank.csv", index=False)
 
     else:
+
         by_filing = aggregate(detail, ["filing_type"])
         by_filing.to_csv(output_dir / "retrieval_by_filing_type.csv", index=False)
+
+        if "question_type" in detail.columns:
+            by_qtype = aggregate(detail, ["question_type"])
+            by_qtype.to_csv(output_dir / "retrieval_by_question_type.csv", index=False)
+
+        if "question_reasoning" in detail.columns:
+            by_reasoning = aggregate(detail, ["question_reasoning"])
+            by_reasoning.to_csv(
+                output_dir / "retrieval_by_question_reasoning.csv",
+                index=False,
+            )
+
+        by_doc = aggregate(detail, ["doc_name"])
+        by_doc.to_csv(output_dir / "retrieval_by_document.csv", index=False)
 
         if "question_type" in detail.columns:
             by_qtype = aggregate(detail, ["question_type"])
@@ -772,6 +888,12 @@ def main():
 
     # PageIndex disagreement analysis.
     diag_summary, diag_detail = make_pageindex_diagnostics(detail)
+    return_diag = make_pageindex_return_diagnostics(detail)
+
+    return_diag.to_csv(
+        output_dir / "pageindex_return_diagnostics.csv",
+        index=False,
+    )
     diag_summary.to_csv(
         output_dir / "pageindex_accuracy_mrr_diagnostics.csv",
         index=False,

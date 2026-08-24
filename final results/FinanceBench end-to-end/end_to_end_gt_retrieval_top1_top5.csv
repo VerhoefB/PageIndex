@@ -1,0 +1,9 @@
+dataset,configuration_id,method,retrieval_model,variant,top_m,n_top1,gt_retrieved_top1_count,gt_retrieved_top1_pct,n_top5,gt_retrieved_top5_count,gt_retrieved_top5_pct
+FinanceBench,bm25,bm25,,standard,,111,15,13.514,111,27,24.324
+FinanceBench,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,111,24,21.622,111,56,50.45
+FinanceBench,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,111,20,18.018,111,46,41.441
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,111,26,23.423,111,59,53.153
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,111,23,20.721,111,54,48.649
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,111,25,22.523,111,51,45.946
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,111,20,18.018,111,51,45.946
+FinanceBench,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,111,66,59.459,111,90,81.081
