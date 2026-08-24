@@ -305,7 +305,11 @@ def load_successful_answer_ids(output_path: Path) -> Set[str]:
         return set()
     successful: Set[str] = set()
     for row in read_jsonl(output_path):
-        if row.get("generation_success") and row.get("answer_id"):
+        if (
+            row.get("generation_success")
+            and row.get("answer_id")
+            and str(row.get("generated_answer", "")).strip()
+        ):
             successful.add(str(row["answer_id"]))
     return successful
 

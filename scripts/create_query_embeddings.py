@@ -80,6 +80,17 @@ def main():
     print(f"Loading model: {args.model_name}")
 
     model = SentenceTransformer(args.model_name)
+    # Warm-up so first-query timing does not include GPU initialization
+    _ = model.encode(
+        [queries[0]],
+        batch_size=1,
+        normalize_embeddings=args.normalize,
+        show_progress_bar=False,
+        convert_to_numpy=True,
+    )
+
+    if torch.cuda.is_available():
+        torch.cuda.synchronize()
 
     print("Creating query embeddings and measuring query times...")
 

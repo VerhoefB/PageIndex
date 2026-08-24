@@ -1,0 +1,17 @@
+dataset,configuration_id,method,retrieval_model,variant,top_m,retrieval_setting,n_judged,correct_count,correct_pct,partially_correct_count,partially_correct_pct,incorrect_count,incorrect_pct,no_answer_count,no_answer_pct
+FinanceBench,bm25,bm25,,standard,,top_1,111,26,23.423,1,0.901,3,2.703,81,72.973
+FinanceBench,bm25,bm25,,standard,,top_5,111,41,36.937,3,2.703,4,3.604,63,56.757
+FinanceBench,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,top_1,111,37,33.333,4,3.604,6,5.405,64,57.658
+FinanceBench,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,top_5,111,66,59.459,8,7.207,7,6.306,30,27.027
+FinanceBench,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,top_1,111,29,26.126,4,3.604,5,4.505,73,65.766
+FinanceBench,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,top_5,111,58,52.252,5,4.505,7,6.306,41,36.937
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,top_1,111,42,37.838,6,5.405,9,8.108,54,48.649
+FinanceBench,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,top_5,111,63,56.757,9,8.108,11,9.91,28,25.225
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,top_1,111,38,34.234,4,3.604,5,4.505,64,57.658
+FinanceBench,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,top_5,111,64,57.658,7,6.306,13,11.712,27,24.324
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,top_1,111,37,33.333,2,1.802,4,3.604,68,61.261
+FinanceBench,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,top_5,111,61,54.955,7,6.306,9,8.108,34,30.631
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,top_1,111,36,32.432,5,4.505,6,5.405,64,57.658
+FinanceBench,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,top_5,111,58,52.252,9,8.108,8,7.207,36,32.432
+FinanceBench,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,top_1,111,76,68.468,6,5.405,8,7.207,21,18.919
+FinanceBench,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,top_5,111,85,76.577,8,7.207,9,8.108,9,8.108

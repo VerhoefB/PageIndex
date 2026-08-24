@@ -1,0 +1,17 @@
+dataset,configuration_id,method,retrieval_model,variant,top_m,retrieval_setting,n_judged,correct_count,correct_pct,partially_correct_count,partially_correct_pct,incorrect_count,incorrect_pct,no_answer_count,no_answer_pct
+ESRS,bm25,bm25,,standard,,top_1,1000,495,49.5,18,1.8,45,4.5,442,44.2
+ESRS,bm25,bm25,,standard,,top_5,1000,730,73.0,29,2.9,37,3.7,204,20.4
+ESRS,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,top_1,1000,544,54.4,33,3.3,64,6.4,359,35.9
+ESRS,dense_harrier_oss_v1_0_6b,dense,microsoft/harrier-oss-v1-0.6b,standard,,top_5,1000,789,78.9,45,4.5,52,5.2,114,11.4
+ESRS,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,top_1,1000,583,58.3,26,2.6,39,3.9,352,35.2
+ESRS,dense_linq_embed_mistral,dense,Linq-AI-Research/Linq-Embed-Mistral,standard,,top_5,1000,790,79.0,39,3.9,49,4.9,122,12.2
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,top_1,1000,452,45.2,20,2.0,49,4.9,479,47.9
+ESRS,hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex_chunk_rerank,microsoft/harrier-oss-v1-0.6b,chunk_rerank,10,top_5,1000,633,63.3,29,2.9,49,4.9,289,28.9
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,top_1,1000,504,50.4,26,2.6,38,3.8,432,43.2
+ESRS,hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10,hybrid_pageindex_chunk_rerank,Linq-AI-Research/Linq-Embed-Mistral,chunk_rerank,10,top_5,1000,666,66.6,41,4.1,43,4.3,250,25.0
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,top_1,1000,280,28.0,19,1.9,39,3.9,662,66.2
+ESRS,hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10,hybrid_pageindex,microsoft/harrier-oss-v1-0.6b,node,10,top_5,1000,524,52.4,25,2.5,57,5.7,394,39.4
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,top_1,1000,376,37.6,22,2.2,48,4.8,554,55.4
+ESRS,hybrid_pageindex_linq_embed_mistral_top_m_10,hybrid_pageindex,Linq-AI-Research/Linq-Embed-Mistral,node,10,top_5,1000,627,62.7,34,3.4,51,5.1,288,28.8
+ESRS,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,top_1,1000,646,64.6,25,2.5,49,4.9,280,28.0
+ESRS,pageindex_combined_query_results_clean,pageindex_llm,gpt-5,standard,,top_5,1000,809,80.9,31,3.1,50,5.0,110,11.0

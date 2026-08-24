@@ -1,0 +1,2 @@
+dataset,result_file,method,model,variant,top_m,n_queries,no_top1_count,no_top5_count,fewer_than_5_count,no_result_at_all_count,mean_top5_results,no_top1_pct,no_top5_pct,fewer_than_5_pct,no_result_at_all_pct
+FinanceBench,pageindex_combined_query_results_clean.jsonl,PageIndex,GPT-5,standard,,111,0,0,49,0,4.027027027027027,0.0,0.0,44.14414414414414,0.0
