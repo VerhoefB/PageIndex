@@ -93,3 +93,330 @@ Additional analyses examine:
 Efficiency is evaluated using preprocessing latency, query-time latency, and LLM token usage.
 
 An end-to-end evaluation is also performed in which GPT-5 generates answers using either the Top-1 or Top-5 retrieved context. The generated answers are evaluated using an LLM-as-a-judge framework.
+
+## Running the Experiments
+
+The pipeline consists of four main stages: document preprocessing, evaluation-set construction, retrieval, and evaluation. The examples below show the ESRS configuration where possible. The same scripts are used for FinanceBench by changing the dataset-specific paths and arguments.
+
+### 1. Build the PageIndex structures
+
+Each PDF is first converted into a hierarchical PageIndex tree. The tree contains the document structure, node titles and summaries, and the page indices required for subsequent chunk extraction and retrieval.
+
+```powershell
+python -m scripts.run_pageindex `
+  --pdf_path "data/ESRS/ABN Amro.pdf" `
+  --dataset ESRS `
+  --model gpt-5 `
+  --max-tokens-per-node 32768 `
+  --if-add-node-id yes `
+  --if-add-node-summary yes `
+  --if-add-doc-description no `
+  --if-add-node-text no
+```
+
+For FinanceBench, use the corresponding PDF and change:
+
+```powershell
+--dataset FinanceBench
+--if-add-doc-description yes
+```
+
+The document description is included for FinanceBench because the original document filenames are not always informative.
+
+### 2. Validate and correct the structures
+
+The generated trees are checked for inconsistencies between the hierarchical nodes and their corresponding document indices.
+
+```powershell
+python -m scripts.validate_structure_indexes `
+  --structure-dir ".\final results\ESRS structure" `
+  --output ".\final results\ESRS reports\ESRS_structure_index_issues.csv"
+```
+
+Where necessary, manually specified corrections can be applied:
+
+```powershell
+python -m scripts.apply_manual_structure_corrections `
+  --structure "<original_structure.json>" `
+  --corrections "<corrections.json>" `
+  --output "<corrected_structure.json>"
+```
+
+### 3. Extract retrieval chunks
+
+The validated PageIndex structures are converted into the leaf-level chunks used by all retrieval methods. This step also creates introductory nodes where required and handles chunks exceeding the maximum context length.
+
+```powershell
+python -m scripts.run_chunks_from_structure `
+  --pdf_path "data/ESRS/ABN Amro.pdf" `
+  --structure_path "final results/ESRS structure/ABN Amro_structure.json" `
+  --output "final results/ESRS chunks/ABN Amro_chunks.jsonl" `
+  --model gpt-5 `
+  --updated_structure_output "final results/ESRS structure/ABN Amro_structure_new.json" `
+  --max-tokens-per-node 32768 `
+  --dataset ESRS `
+  --results-root "final results"
+```
+
+Change the PDF, structure path, output path, and `--dataset` argument to process FinanceBench documents.
+
+### 4. Combine the document corpora
+
+After each document has been processed separately, the individual trees and chunks are combined into one corpus for each dataset.
+
+```powershell
+python -m scripts.combine_multidoc `
+  --structure_dir ".\final results\ESRS structure" `
+  --chunks_dir ".\final results\ESRS chunks" `
+  --output_structure ".\final results\ESRS structure\ESRS_combined_structure.json" `
+  --output_chunks ".\final results\ESRS chunks\ESRS_combined_chunks.jsonl" `
+  --collection_name "ESRS documents"
+```
+
+For FinanceBench, replace the ESRS paths and collection name with the corresponding FinanceBench values.
+
+### 5. Construct the evaluation sets
+
+#### ESRS
+
+The ESRS dataset does not contain questions. Eligible chunks are therefore selected first, after which GPT-5 generates one question-answer pair for each selected chunk.
+
+```powershell
+python -m scripts.add_query_plan_to_chunks `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks.jsonl" `
+  --output ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --summary-output ".\final results\ESRS reports\ESRS_query_plan_summary.json" `
+  --target-queries 1000 `
+  --seed 42
+```
+
+```powershell
+python -m scripts.generate_queries `
+  --input ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --output ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --workdir ".\final results\ESRS queries\batch_work" `
+  --model gpt-5
+```
+
+`--target-queries` controls the number of generated questions, while `--seed` makes the chunk selection reproducible.
+
+#### FinanceBench
+
+FinanceBench already provides questions, answers, and evidence passages. The evidence passages are matched to the retrieval chunks to obtain the ground-truth chunk IDs.
+
+```powershell
+python -m scripts.match_evidence_to_chunks `
+  --financebench ".\data\financebench_open_source.jsonl" `
+  --chunks ".\final results\FinanceBench chunks\FinanceBench_combined_chunks.jsonl" `
+  --chunks_dir ".\final results\FinanceBench chunks" `
+  --output_dir ".\final results\FinanceBench queries" `
+  --report_dir ".\final results\FinanceBench reports" `
+  --combined_output ".\final results\FinanceBench queries\FinanceBench_queries.jsonl"
+```
+
+## Retrieval
+
+### 6. BM25
+
+BM25 provides the lexical retrieval baseline and retrieves directly from the complete chunk corpus.
+
+```powershell
+python -m scripts.evaluate_BM25 `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --queries ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --output ".\final results\ESRS retrieval\bm25_query_results.jsonl" `
+  --top-k 5
+```
+
+For FinanceBench, use the corresponding FinanceBench chunk, query, and output paths.
+
+### 7. Dense retrieval
+
+Dense retrieval embeds all chunks and queries and performs similarity search over the complete corpus. Two embedding models are evaluated in the thesis.
+
+Example using Harrier:
+
+```powershell
+python -m scripts.evaluate_dense `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --queries ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --model-name "microsoft/harrier-oss-v1-0.6b" `
+  --cache-path ".\final results\embeddings\ESRS_harrier_oss_v1_0_6b.npy" `
+  --query-cache-path ".\final results\embeddings\ESRS_queries_harrier_oss_v1_0_6b.npy" `
+  --output ".\final results\ESRS retrieval\dense_harrier_oss_v1_0_6b_query_results.jsonl" `
+  --setup-csv ".\final results\ESRS retrieval\dense_setup_runs.csv" `
+  --top-k 5
+```
+
+To run Linq-Embed-Mistral, change the embedding model:
+
+```powershell
+--model-name "Linq-AI-Research/Linq-Embed-Mistral"
+```
+
+and use corresponding cache and output filenames.
+
+### 8. PageIndex retrieval
+
+Original PageIndex uses GPT-5 to navigate the hierarchy and inspect candidate chunks. The `combined` mode produces both the sufficiency-based Top-1 result and the Top-5 candidate set within the same traversal.
+
+```powershell
+python -m scripts.evaluate_pageindex `
+  --tree ".\final results\ESRS structure\ESRS_combined_structure.json" `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --queries ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --model gpt-5 `
+  --mode combined `
+  --output ".\final results\ESRS retrieval\pageindex_combined_query_results.jsonl" `
+  --progress-path ".\final results\ESRS retrieval\pageindex_combined_progress.json"
+```
+
+The same script is used for FinanceBench with the corresponding combined structure, chunks, and query file.
+
+### 9. Hybrid PageIndex
+
+Hybrid PageIndex preserves the PageIndex hierarchy but replaces LLM-guided navigation with embedding similarity. The main parameters varied in the experiments are the embedding model and beam width `m`.
+
+#### Node-only retrieval
+
+```powershell
+python -m scripts.evaluate_hybrid_pageindex `
+  --tree ".\final results\ESRS structure\ESRS_combined_structure.json" `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks.jsonl" `
+  --queries ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --model-name "microsoft/harrier-oss-v1-0.6b" `
+  --output ".\final results\ESRS retrieval\hybrid_pageindex_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl" `
+  --setup-csv ".\final results\ESRS retrieval\hybrid_pageindex_setup_runs.csv" `
+  --node-cache-path ".\final results\embeddings\ESRS_hybrid_nodes_harrier_oss_v1_0_6b.npy" `
+  --top-node-cache-path ".\final results\embeddings\ESRS_hybrid_top_nodes_harrier_oss_v1_0_6b.npy" `
+  --top-k 5 `
+  --top-m 10
+```
+
+The beam width can be changed to reproduce the sensitivity analysis:
+
+```powershell
+--top-m 5
+--top-m 7
+--top-m 10
+```
+
+The embedding model can be changed between:
+
+```powershell
+--model-name "microsoft/harrier-oss-v1-0.6b"
+```
+
+and:
+
+```powershell
+--model-name "Linq-AI-Research/Linq-Embed-Mistral"
+```
+
+#### Chunk reranking
+
+The reranking variant uses the same hierarchical candidate retrieval but reranks the resulting leaf chunks using chunk embeddings.
+
+```powershell
+python -m scripts.evaluate_hybrid_pageindex_chunk_rerank `
+  --tree ".\final results\ESRS structure\ESRS_combined_structure.json" `
+  --chunks ".\final results\ESRS chunks\ESRS_combined_chunks.jsonl" `
+  --queries ".\final results\ESRS queries\ESRS_queries.jsonl" `
+  --model-name "microsoft/harrier-oss-v1-0.6b" `
+  --output ".\final results\ESRS retrieval\hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl" `
+  --setup-csv ".\final results\ESRS retrieval\hybrid_pageindex_setup_runs.csv" `
+  --node-cache-path ".\final results\embeddings\ESRS_hybrid_nodes_harrier_oss_v1_0_6b.npy" `
+  --top-node-cache-path ".\final results\embeddings\ESRS_hybrid_top_nodes_harrier_oss_v1_0_6b.npy" `
+  --chunk-cache-path ".\final results\embeddings\ESRS_hybrid_chunks_harrier_oss_v1_0_6b.npy" `
+  --top-k 5 `
+  --top-m 10
+```
+
+Again, `--top-m` can be set to `5`, `7`, or `10`, and either Harrier or Linq-Embed-Mistral can be used.
+
+## Evaluation
+
+### 10. Retrieval evaluation
+
+PageIndex output is cleaned before being included in the final analyses:
+
+```powershell
+python -m scripts.clean_pageindex_results `
+  --input ".\final results\ESRS retrieval\pageindex_combined_query_results.jsonl" `
+  --output ".\final results\ESRS retrieval\pageindex_combined_query_results_clean.jsonl"
+```
+
+The retrieval outputs are then summarized to produce the main retrieval metrics and diagnostic analyses:
+
+```powershell
+python -m scripts.summarize_retrieval_results `
+  --dataset ESRS `
+  --results-dir ".\final results\ESRS retrieval" `
+  --output-dir ".\final results\ESRS results analysis"
+```
+
+For FinanceBench:
+
+```powershell
+python -m scripts.summarize_retrieval_results `
+  --dataset FinanceBench `
+  --results-dir ".\final results\FinanceBench retrieval" `
+  --output-dir ".\final results\FinanceBench results analysis"
+```
+
+### 11. Efficiency evaluation
+
+Preprocessing and retrieval logs are summarized separately to evaluate the computational trade-off between the retrieval methods.
+
+```powershell
+python -m scripts.summarize_preprocessing_efficiency `
+  --dataset ESRS `
+  --structure-runs ".\final results\ESRS_pageindex_structure_runs.csv" `
+  --chunk-runs ".\final results\ESRS_chunk_runs.csv" `
+  --output-dir ".\final results\efficiency"
+```
+
+Change the dataset and corresponding input files to evaluate FinanceBench.
+
+### 12. End-to-end evaluation
+
+The final retrieval configurations are also evaluated at the answer-generation level. GPT-5 generates answers using either the Top-1 or Top-5 retrieved context.
+
+```powershell
+python -m scripts.generate_end_to_end_answers `
+  --dataset ESRS `
+  --inputs `
+    ".\final results\ESRS retrieval\bm25_query_results.jsonl" `
+    ".\final results\ESRS retrieval\dense_harrier_oss_v1_0_6b_query_results.jsonl" `
+    ".\final results\ESRS retrieval\dense_linq_embed_mistral_query_results.jsonl" `
+    ".\final results\ESRS retrieval\hybrid_pageindex_chunk_rerank_harrier_oss_v1_0_6b_top_m_10_query_results.jsonl" `
+    ".\final results\ESRS retrieval\hybrid_pageindex_chunk_rerank_linq_embed_mistral_top_m_10_query_results.jsonl" `
+    ".\final results\ESRS retrieval\pageindex_combined_query_results_clean.jsonl" `
+  --output ".\final results\ESRS end-to-end\generated_answers.jsonl" `
+  --model gpt-5 `
+  --top-k-settings 1 5 `
+  --max-output-tokens 1000
+```
+
+The generated answers are then classified using GPT-5 as an LLM-as-a-judge:
+
+```powershell
+python -m scripts.judge_end_to_end_answers `
+  --inputs ".\final results\ESRS end-to-end\generated_answers.jsonl" `
+  --output ".\final results\ESRS end-to-end\judgements.jsonl" `
+  --summary-csv ".\final results\ESRS end-to-end\judgement_summary.csv" `
+  --model gpt-5 `
+  --max-output-tokens 4000
+```
+
+Finally, answer quality can be related back to whether the annotated ground-truth chunk was retrieved:
+
+```powershell
+python -m scripts.analyze_end_to_end_retrieval_success `
+  --generated ".\final results\ESRS end-to-end\generated_answers.jsonl" `
+  --judgements ".\final results\ESRS end-to-end\judgements.jsonl" `
+  --output-dir ".\final results\ESRS end-to-end" `
+  --include-combined
+```
+
+The same end-to-end pipeline is used for FinanceBench by replacing the ESRS retrieval inputs and output paths with their FinanceBench equivalents.
