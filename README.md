@@ -420,3 +420,75 @@ python -m scripts.analyze_end_to_end_retrieval_success `
 ```
 
 The same end-to-end pipeline is used for FinanceBench by replacing the ESRS retrieval inputs and output paths with their FinanceBench equivalents.
+
+## Dataset and Structure Statistics
+
+The following scripts reproduce descriptive statistics reported in the thesis. These steps are not required to run the retrieval experiments.
+
+### PDF page counts
+
+```powershell
+python .\statistics\count_pdf_pages.py `
+  --folder ".\data\ESRS" `
+  --output ".\statistics\ESRS_pdf_page_counts.csv"
+```
+
+For FinanceBench:
+
+```powershell
+python .\statistics\count_pdf_pages.py `
+  --folder ".\data\FinanceBench" `
+  --output ".\statistics\FinanceBench_pdf_page_counts.csv"
+```
+
+### FinanceBench question statistics
+
+This script summarizes the number of FinanceBench questions retained after constructing the final evaluation set.
+
+```powershell
+python .\statistics\count_financebench_questions.py `
+  --pdf-folder ".\data\FinanceBench" `
+  --financebench-jsonl ".\data\financebench_open_source.jsonl" `
+  --queries-jsonl ".\final results\FinanceBench queries\FinanceBench_queries.jsonl" `
+  --output ".\statistics\financebench_question_summary.json"
+```
+
+### ESRS queries per report
+
+```powershell
+python .\statistics\count_esrs_queries_per_pdf.py `
+  --chunks-with-query-plan ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --output ".\statistics\esrs_queries_per_pdf_summary.json"
+```
+
+### Chunk statistics
+
+This reproduces descriptive statistics on retrieval chunk lengths for both datasets.
+
+```powershell
+python .\statistics\summarize_chunk_statistics.py `
+  --esrs-chunks ".\final results\ESRS chunks\ESRS_combined_chunks_with_query_plan.jsonl" `
+  --financebench-chunks ".\final results\FinanceBench chunks\FinanceBench_combined_chunks.jsonl" `
+  --output-json ".\statistics\chunk_length_statistics.json" `
+  --output-csv ".\statistics\chunk_length_statistics.csv"
+```
+
+### PageIndex tree statistics
+
+Tree statistics can be generated separately for each dataset.
+
+```powershell
+python .\statistics\summarize_tree_statistics.py `
+  --structure-dir ".\final results\ESRS structure" `
+  --output ".\statistics\ESRS_tree_structure_summary.json" `
+  --thesis-table-output ".\statistics\ESRS_tree_thesis_table.json"
+```
+
+For FinanceBench:
+
+```powershell
+python .\statistics\summarize_tree_statistics.py `
+  --structure-dir ".\final results\FinanceBench structure" `
+  --output ".\statistics\FinanceBench_tree_structure_summary.json" `
+  --thesis-table-output ".\statistics\FinanceBench_tree_thesis_table.json"
+```
