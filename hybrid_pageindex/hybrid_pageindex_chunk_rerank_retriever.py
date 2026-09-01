@@ -7,19 +7,7 @@ from sentence_transformers import SentenceTransformer
 
 class HybridPageIndexChunkRerankRetriever:
     """
-    Hybrid PageIndex retriever with chunk-text reranking.
-
-    Stage 1:
-    - Use the PageIndex tree as a hierarchical candidate generator.
-    - Embed the query.
-    - Compare the query with child node title+summary embeddings.
-    - At each hierarchy level, pool all children of the retained nodes and select the global top_m nodes.
-    - Store reached leaf nodes as candidate chunks.
-
-    Stage 2:
-    - Embed the full candidate chunk texts.
-    - Rerank the collected candidates using query-to-chunk-text similarity.
-    - Return the final top_k chunks.
+    Hybrid PageIndex retrieval with chunk-text reranking.
     """
 
     def __init__(
@@ -89,20 +77,14 @@ class HybridPageIndexChunkRerankRetriever:
         return str(node.get("node_id") or node.get("id") or fallback)
 
     def _node_text(self, node):
-        """
-        Normal PageIndex node embeddings use title + summary.
-        This is used for hierarchy traversal.
-        """
+        """Create text for node embeddings."""
         title = str(node.get("title", "") or "").strip()
         summary = str(node.get("summary", "") or "").strip()
 
         return f"{title}\n{summary}".strip()
 
     def _top_node_text(self, node):
-        """
-        Top-level document embeddings use title + summary + doc_description.
-        This is used for first-layer document selection.
-        """
+        """Create text for document selection."""
         title = str(node.get("title", "") or "").strip()
         summary = str(node.get("summary", "") or "").strip()
         doc_description = str(node.get("doc_description", "") or "").strip()
@@ -116,9 +98,7 @@ class HybridPageIndexChunkRerankRetriever:
         return "\n".join(part for part in parts if part)
 
     def _chunk_text(self, chunk):
-        """
-        Full chunk-text representation used for second-stage reranking.
-        """
+        """Create chunk text for reranking."""
         title = str(chunk.get("title", "") or "").strip()
         heading = str(chunk.get("heading", "") or "").strip()
         text = str(chunk.get("text") or chunk.get("page_content") or "").strip()
@@ -159,7 +139,7 @@ class HybridPageIndexChunkRerankRetriever:
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
-        # Regular embeddings for all nodes: title + summary.
+        # Node embeddings
         for node_id, node in self._iter_nodes(self.tree):
             node["_hybrid_node_id"] = node_id
             self.nodes_by_id[node_id] = node
@@ -178,8 +158,7 @@ class HybridPageIndexChunkRerankRetriever:
             else:
                 document_roots.append(root)
 
-        # Special embeddings for first-layer document selection:
-        # title + summary + doc_description.
+        # Document embeddings
         for root_index, document_root in enumerate(document_roots):
             if not isinstance(document_root, dict):
                 continue
@@ -200,7 +179,7 @@ class HybridPageIndexChunkRerankRetriever:
         if top_node_cache_path is not None:
             top_node_cache_path = Path(top_node_cache_path)
 
-        # Load or compute normal node embeddings.
+        # Load node embeddings
         if node_cache_path is not None and node_cache_path.exists():
             print(f"Loading hybrid node embeddings from cache: {node_cache_path}")
             embeddings = np.load(node_cache_path)
@@ -230,7 +209,7 @@ class HybridPageIndexChunkRerankRetriever:
         for node_id, embedding in zip(node_ids, embeddings):
             self.node_embeddings[node_id] = embedding
 
-        # Load or compute top-level document embeddings.
+        # Load document embeddings
         if top_node_texts:
             if top_node_cache_path is not None and top_node_cache_path.exists():
                 print(f"Loading hybrid top-node embeddings from cache: {top_node_cache_path}")
@@ -348,18 +327,8 @@ class HybridPageIndexChunkRerankRetriever:
 
     def retrieve(self, query, top_k=5, top_m=2, query_embedding=None):
         """
-        Retrieve top-k chunks using hybrid PageIndex traversal with chunk-text reranking.
-
-        Algorithm:
-        1. Embed the query.
-        2. Select the most relevant document node.
-        3. Traverse the selected document tree using node title+summary embeddings.
-        4. At each hierarchy level, pool all children of the retained nodes and select the global top_m nodes.
-        5. Store reached leaf nodes as candidate chunks.
-        6. Continue until no selected non-leaf nodes remain.
-        7. Deduplicate candidates by chunk ID.
-        8. Rerank candidate chunks using full chunk-text embeddings.
-        9. Return the final top_k chunks.
+        Traverse the tree using node embeddings and rerank the
+        candidate chunks using full chunk-text embeddings.
         """
         if query_embedding is None:
             query_embedding = self.model.encode(
@@ -375,9 +344,7 @@ class HybridPageIndexChunkRerankRetriever:
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
-        # If the combined tree has a collection root, first-layer document
-        # selection should happen over its document children, not over the
-        # collection root itself.
+       # Get document roots
         document_roots = []
 
         for root in roots:
@@ -389,7 +356,7 @@ class HybridPageIndexChunkRerankRetriever:
             else:
                 document_roots.append(root)
 
-        # First layer: select exactly one document node.
+        # Select one document
         scored_document_roots = []
 
         for document_root in document_roots:
@@ -407,7 +374,7 @@ class HybridPageIndexChunkRerankRetriever:
             for node in frontier:
                 children = self._get_children(node)
 
-                # If a retained node is already a leaf, store it.
+                # Store leaf candidates
                 if not children:
                     chunk_id = self._get_node_chunk_id(node)
 
@@ -429,7 +396,7 @@ class HybridPageIndexChunkRerankRetriever:
             if not pooled_children:
                 break
 
-            # Global top-m selection across all children of all retained nodes.
+            # Keep the global top_m nodes
             pooled_children.sort(key=lambda x: x[0], reverse=True)
             selected_nodes = pooled_children[:top_m]
 
@@ -454,7 +421,7 @@ class HybridPageIndexChunkRerankRetriever:
 
             frontier = next_frontier
 
-        # Deduplicate candidate leaves by chunk ID.
+        # Deduplicate candidates by chunk ID.
         best_by_chunk_id = {}
 
         for candidate in final_candidates:
@@ -466,7 +433,7 @@ class HybridPageIndexChunkRerankRetriever:
             ):
                 best_by_chunk_id[chunk_id] = candidate
 
-        # Second-stage reranking using full chunk-text embeddings.
+        # Rerank using chunk embeddings
         reranked_candidates = []
 
         for chunk_id, candidate in best_by_chunk_id.items():
