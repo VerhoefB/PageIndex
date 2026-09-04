@@ -40,8 +40,7 @@ def load_csv(path: Path) -> pd.DataFrame:
 
 def keep_latest_run_per_document(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Keeps the latest run for each dataset/pdf_name combination.
-    This avoids double-counting if a document was processed multiple times.
+    Keep the latest recorded run for each document.
     """
 
     if "run_timestamp" not in df.columns:

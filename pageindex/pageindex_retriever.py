@@ -1,7 +1,6 @@
 import json
 import os
 import time
-from tracemalloc import start
 import tiktoken
 from typing import Any, Dict, List, Optional, Set
 
@@ -20,16 +19,7 @@ client = OpenAI(api_key=api_key, timeout=120.0, max_retries=3)
 
 
 class PageIndexLLMRetriever:
-    """
-    LLM-based PageIndex retriever adapted for chunk-level evaluation.
-
-    Recommended mode: retrieve_combined()
-    - Uses one continuous traversal state.
-    - Does not restart from root for every retrieved chunk.
-    - Collects up to 5 unique chunks for MRR@5.
-    - Records the first sufficient chunk as top1.
-    - Does not stop before collecting the top-5 candidate set.
-    """
+    """LLM-based PageIndex retriever for chunk-level evaluation."""
 
     def __init__(
         self,
@@ -59,10 +49,8 @@ class PageIndexLLMRetriever:
 
         self._index_tree()
 
-    # ------------------------------------------------------------------
-    # Basic helpers
-    # ------------------------------------------------------------------
 
+    # Helpers
     def _get_children(self, node: Dict[str, Any]) -> List[Dict[str, Any]]:
         return (
             node.get("nodes")
@@ -90,15 +78,6 @@ class PageIndexLLMRetriever:
             or node.get("id")
             or ""
         )
-
-    def _get_node_by_id(self, node_id: str) -> Optional[Dict[str, Any]]:
-        return self.nodes_by_id.get(str(node_id))
-
-    def _get_parent_node(self, node_id: str) -> Optional[Dict[str, Any]]:
-        parent_id = self.parent_by_id.get(str(node_id))
-        if parent_id is None:
-            return None
-        return self.nodes_by_id.get(str(parent_id))
 
     def _is_leaf(self, node: Dict[str, Any]) -> bool:
         return len(self._get_children(node)) == 0
@@ -142,9 +121,7 @@ class PageIndexLLMRetriever:
         print(f"Indexed PageIndex nodes: {len(self.nodes_by_id)}")
         print(f"Indexed chunks: {len(self.chunk_lookup)}")
 
-    # ------------------------------------------------------------------
-    # PageIndex-style tools / retrieval representations
-    # ------------------------------------------------------------------
+    # PageIndex retrieval helpers
 
     def get_document(self) -> Dict[str, Any]:
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
@@ -202,11 +179,8 @@ class PageIndexLLMRetriever:
 
     def _is_valid_retrieval_chunk_id(self, chunk_id: Optional[str]) -> bool:
         """
-        Return whether a chunk is valid as a retrieval result.
-
-        Intro chunks are intentionally kept as valid retrieval targets because
-        they are useful noise / distractor chunks for evaluation.
-        Only duplicate chunks are filtered out.
+        Check whether a retrieval chunk can be returned.
+        Intro chunks are kept and duplicate entries are skipped.
         """
         if not chunk_id:
             return False
@@ -235,10 +209,7 @@ class PageIndexLLMRetriever:
         ]
 
     def _node_brief(self, node: Dict[str, Any], avoid_chunk_ids: Optional[Set[str]] = None) -> Dict[str, Any]:
-        """
-        Compact node representation shown to the LLM.
-        Keeps full summary, but removes unnecessary fields and nested children.
-        """
+        """Create the node representation shown to the LLM."""
         avoid_chunk_ids = avoid_chunk_ids or set()
         node_id = self._get_node_id_from_node(node)
         is_leaf = self._is_leaf(node)
@@ -260,9 +231,8 @@ class PageIndexLLMRetriever:
             "num_unseen_descendant_chunks": len(unseen_descendants),
         }
 
-    # ------------------------------------------------------------------
+
     # LLM calls
-    # ------------------------------------------------------------------
 
     def _call_json_llm(self, messages: List[Dict[str, str]]) -> Dict[str, Any]:
         estimated_prompt_tokens = sum(
@@ -310,79 +280,6 @@ class PageIndexLLMRetriever:
 
         return {}
 
-    def _select_next_unseen_child_with_llm(
-        self,
-        query: str,
-        current_node: Dict[str, Any],
-        children: List[Dict[str, Any]],
-        inspected_chunk_ids: Set[str],
-    ) -> Optional[Dict[str, Any]]:
-        available_children = [
-            child
-            for child in children
-            if self._branch_has_unseen_chunk(child, inspected_chunk_ids)
-        ]
-
-        if not available_children:
-            return None
-
-        child_options = [
-            self._node_brief(child, avoid_chunk_ids=inspected_chunk_ids)
-            for child in available_children
-        ]
-
-        system_prompt = """
-You are a PageIndex retrieval assistant.
-
-You navigate a hierarchical document tree to find chunks relevant to a query.
-
-At each step:
-- You receive the current node.
-- You receive only its direct child nodes that still contain unseen chunks.
-- You must select exactly one child node to explore next.
-
-Use only node title and summary.
-Do not answer the query.
-Return only valid JSON.
-
-Your entire response must be a single JSON object with exactly these fields:
-{
-  "selected_node_id": "string",
-  "reason": "string"
-}
-""".strip()
-
-        user_payload = {
-            "query": query,
-            "current_node": self._node_brief(current_node, avoid_chunk_ids=inspected_chunk_ids),
-            "already_inspected_chunk_ids": sorted(list(inspected_chunk_ids)),
-            "child_nodes": child_options,
-            "instruction": (
-                "Select the child node most likely to contain another relevant unseen chunk. "
-                "Return only one selected_node_id. Keep reason under 20 words."
-            ),
-            "output_format": {
-                "selected_node_id": "",
-                "reason": "",
-            },
-        }
-
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
-        ]
-
-        result = self._call_json_llm(messages)
-        selected_node_id = str(result.get("selected_node_id", "")).strip()
-
-        for child in available_children:
-            child_id = self._get_node_id_from_node(child)
-            if child_id == selected_node_id:
-                return child
-
-        return available_children[0]
-
-
     def _choose_navigation_action_with_llm(
         self,
         query: str,
@@ -391,13 +288,7 @@ Your entire response must be a single JSON object with exactly these fields:
         inspected_chunk_ids: Set[str],
         path: List[str],
     ) -> Dict[str, Any]:
-        """
-        Let the LLM decide whether to:
-        - descend into one child
-        - backtrack to the parent
-
-        Reading happens automatically when the traversal reaches a leaf.
-        """
+        """Choose whether to descend or backtrack."""
         available_children = [
             child
             for child in children
@@ -618,9 +509,7 @@ Your entire response must be a single JSON object with exactly this field:
 
         return ranked_candidates
 
-    # ------------------------------------------------------------------
-    # Stateful traversal
-    # ------------------------------------------------------------------
+    # Traversal
 
     def inspect_next_chunk_stateful(
         self,
@@ -663,7 +552,7 @@ Your entire response must be a single JSON object with exactly this field:
             current_node_id = self._get_node_id_from_node(current_node)
             children = self._get_children(current_node)
 
-            # Leaf: return valid unseen chunk, then pop it so next call backtracks.
+            # Return unseen leaf chunk
             if not children:
                 chunk_id = self._get_chunk_id_from_item(current_node)
                 stack.pop()
@@ -685,7 +574,7 @@ Your entire response must be a single JSON object with exactly this field:
                     "text": chunk.get("text", ""),
                 }
 
-            # If current branch is exhausted, backtrack.
+            # Backtrack if branch is exhausted
             if not self._branch_has_unseen_chunk(current_node, inspected_chunk_ids):
                 stack.pop()
                 continue
@@ -704,7 +593,7 @@ Your entire response must be a single JSON object with exactly this field:
             ]
 
             if not unseen_children:
-                # This node has no remaining children that are both unseen and not rejected.
+                # No children left to explore
                 if len(stack) > 1:
                     popped = stack.pop()
                     popped_id = self._get_node_id_from_node(popped)
@@ -755,8 +644,7 @@ Your entire response must be a single JSON object with exactly this field:
                     parent_node = stack[-1]
                     parent_id = self._get_node_id_from_node(parent_node)
 
-                    # Important: remember that this child branch was rejected
-                    # under this specific parent.
+                    # Remember rejected branch for this parent
                     traversal_state["rejected_child_ids_by_parent"].setdefault(
                         parent_id,
                         set(),
@@ -809,9 +697,8 @@ Your entire response must be a single JSON object with exactly this field:
             max_steps=max_steps,
         )
 
-    # ------------------------------------------------------------------
-    # Retrieval modes
-    # ------------------------------------------------------------------
+
+    # Retrieval
 
     def retrieve_combined(
         self,
@@ -820,17 +707,9 @@ Your entire response must be a single JSON object with exactly this field:
         safety_max_chunk_reads: int = 10,
     ) -> Dict[str, Any]:
         """
-        Combined PageIndex retrieval.
-
-        Logic:
-        - Inspect chunks one by one using one continuous PageIndex traversal.
-        - Stop only when:
-            1. a sufficient chunk has been found for top1, AND
-            2. at least max_top5_reads chunks have been inspected for top5.
-        - If a sufficient chunk is found before 5 chunks, continue until 5 chunks.
-        - If 5 chunks are read without a sufficient chunk, rank those 5 for top5,
-        but continue reading until a sufficient chunk is found.
-        - safety_max_chunk_reads prevents infinite/too expensive retrieval.
+        Run one continuous traversal for top1 and top5 retrieval.
+        Continue until a sufficient top1 and five top5 candidates are available,
+        or until the safety limit is reached.
         """
         inspected_candidates = []
         inspected_chunk_ids = set()
@@ -908,9 +787,7 @@ Your entire response must be a single JSON object with exactly this field:
                 candidate["sufficiency_judgment"] = None
                 print("Sufficiency already found; skipping sufficiency judge.")
 
-        # ------------------------------------------------------------
-        # Rank first 5 inspected chunks for top5.
-        # ------------------------------------------------------------
+        # Rank top5 candidates
         first_five_candidates = inspected_candidates[:max_top5_reads]
 
         if first_five_candidates:
@@ -926,11 +803,7 @@ Your entire response must be a single JSON object with exactly this field:
             usage_at_top5_ready = self._usage_snapshot()
             time_at_top5_ready = time.time()
 
-        # ------------------------------------------------------------
-        # Fallback if no sufficient chunk was found.
-        # This should only happen if safety_max_chunk_reads is reached
-        # or traversal runs out of candidates.
-        # ------------------------------------------------------------
+        # Fallback if no sufficient chunk was found
         if first_sufficient_candidate is None and top5_ranked:
             print(
                 "No sufficient candidate found before stopping. "

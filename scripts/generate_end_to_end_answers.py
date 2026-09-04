@@ -63,8 +63,7 @@ def stable_query_id(row: Dict[str, Any]) -> str:
 
     query_id = row.get("query_id")
     if query_id not in (None, ""):
-        # PageIndex has its own generated query_id. For ESRS, ground-truth chunk
-        # is more consistent across retrieval methods, so prefer that below if present.
+        # For ESRS, prefer the ground-truth chunk ID across retrieval methods.
         gt = row.get("ground_truth_chunk_id")
         if gt not in (None, ""):
             return str(gt)
@@ -102,10 +101,7 @@ def infer_variant(row: Dict[str, Any], input_path: Path) -> str:
 
 
 def extract_chunk_text(chunk: Any) -> str:
-    """
-    Extract only text that is allowed to be shown to the answer generator.
-    Evaluation metadata, ranks, correctness labels and scores are never included.
-    """
+    """Extract only the chunk text used for answer generation."""
     if isinstance(chunk, str):
         return chunk.strip()
     if isinstance(chunk, dict):
@@ -118,10 +114,10 @@ def extract_chunk_text(chunk: Any) -> str:
 
 def extract_chunks_for_setting(row: Dict[str, Any], top_k: int) -> List[Any]:
     """
-    Use the actual stored top-1 or top-5 retrieval output.
+    Use the stored top-1 or top-5 retrieval output.
 
-    This is essential for PageIndex because its top-1 and top-5 procedures are
-    independent. We must NOT implement top-1 as top5_chunks[:1].
+    For PageIndex, top-1 and top-5 are separate outputs from the same
+    traversal, so top-1 must not be taken as top5_chunks[:1].
     """
     if top_k == 1:
         candidates = row.get("top1_chunks")

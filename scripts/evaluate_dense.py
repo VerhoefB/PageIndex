@@ -52,15 +52,6 @@ def get_ground_truth_rank(gold_chunk_id, retrieved_ids):
     return None
 
 
-def safe_model_label(model_name):
-    return (
-        model_name
-        .replace("/", "__")
-        .replace("-", "_")
-        .replace(".", "_")
-    )
-
-
 def infer_dataset_from_path(path):
     normalized = path.replace("\\", "/").lower()
 
@@ -74,12 +65,7 @@ def infer_dataset_from_path(path):
 
 
 def load_query_embeddings(query_cache_path, num_queries):
-    """
-    Load precomputed query embeddings from a .npy file.
-
-    The query embedding cache must have been created from the same query file
-    and with the same embedding model as the dense chunk embeddings.
-    """
+    """Load precomputed query embeddings."""
     if query_cache_path is None:
         return None
 
@@ -136,9 +122,7 @@ def evaluate_dense(
         num_queries=len(queries),
     )
 
-    # ------------------------------------------------------------
-    # 1. Setup phase: load model, create/load embeddings, build index
-    # ------------------------------------------------------------
+    # Setup
     setup_start = time.time()
     status = "success"
     error = ""
@@ -197,9 +181,7 @@ def evaluate_dense(
 
         raise
 
-    # ------------------------------------------------------------
-    # 2. Save one setup row: embedding/index construction tracking
-    # ------------------------------------------------------------
+    # Save setup information
     embedding_dimension = ""
 
     if hasattr(retriever, "embeddings"):
@@ -238,9 +220,7 @@ def evaluate_dense(
             "error": error,
         }, setup_csv_path)
 
-    # ------------------------------------------------------------
-    # 3. Query-level retrieval evaluation
-    # ------------------------------------------------------------
+    # Query evaluation
     result_rows = []
 
     for query_index, query_row in enumerate(queries):

@@ -7,19 +7,10 @@ from sentence_transformers import SentenceTransformer
 
 
 class DenseRetriever:
-    """
-    Dense embedding-based retriever.
-
-    This retriever:
-    - embeds all canonical chunks
-    - normalizes embeddings
-    - indexes them with FAISS IndexFlatIP
-    - embeds the query
-    - retrieves top-k chunks using inner product similarity
-    """
+    """Dense retriever using normalized embeddings and FAISS."""
 
     def __init__(self, chunks, model_name, batch_size=8, device=None):
-        # Use only canonical retrieval chunks if duplicate flags exist.
+        # Exclude duplicate chunks
         self.chunks = [
             chunk for chunk in chunks
             if not chunk.get("is_duplicate_chunk", False)
@@ -41,9 +32,6 @@ class DenseRetriever:
         self.index = None
         self.embeddings = None
 
-    def _safe_model_name(self):
-        return self.model_name.replace("/", "__").replace("-", "_")
-
     def _get_text(self, chunk):
         return chunk.get("text") or chunk.get("page_content") or ""
 
@@ -55,12 +43,7 @@ class DenseRetriever:
         )
 
     def build_index(self, cache_path=None):
-        """
-        Encode all chunks and build FAISS index.
-
-        If cache_path is provided and exists, embeddings are loaded from cache.
-        Otherwise, embeddings are computed and saved to cache_path.
-        """
+        """Build the FAISS index, using cached embeddings when available."""
         if cache_path is not None:
             cache_path = Path(cache_path)
 
@@ -99,12 +82,7 @@ class DenseRetriever:
         print(f"Embedding dimension: {dimension}")
 
     def retrieve(self, query, top_k=5, query_embedding=None):
-        """
-        Retrieve top-k chunks for a query across the full corpus.
-
-        If query_embedding is supplied, use the precomputed embedding.
-        Otherwise, encode the query at retrieval time.
-        """
+        """Retrieve the top-k chunks for a query."""
         if self.index is None:
             raise ValueError(
                 "Index has not been built yet. Call build_index() first."
@@ -132,8 +110,7 @@ class DenseRetriever:
                     "or (1, dimension)."
                 )
 
-            # Defensive normalization so cached embeddings behave exactly
-            # like normalize_embeddings=True.
+            # Normalize cached query embedding
             norm = np.linalg.norm(
                 query_embedding,
                 axis=1,

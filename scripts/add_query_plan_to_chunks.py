@@ -177,6 +177,8 @@ def assign_query_plan(rows, target_queries, seed, min_tokens, min_chars):
 
     random.shuffle(eligible_indices)
 
+    # Distribute the target number of queries as evenly as possible
+    # across eligible chunks.
     base_queries = target_queries // len(eligible_indices)
     remainder = target_queries % len(eligible_indices)
 

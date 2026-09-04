@@ -79,12 +79,7 @@ def get_ground_truth_rank(gold_chunk_id, retrieved_ids):
 
 
 def load_query_embeddings(query_cache_path, num_queries):
-    """
-    Load precomputed query embeddings from a .npy file.
-
-    The query embedding cache must have been created from the same query file
-    and with the same embedding model as the hybrid node embeddings.
-    """
+    """Load precomputed query embeddings."""
 
     if query_cache_path is None:
         return None
@@ -141,9 +136,7 @@ def evaluate_hybrid_pageindex(
         num_queries=len(queries),
     )
 
-    # ------------------------------------------------------------
-    # 1. Setup phase: load model, create/load node embeddings
-    # ------------------------------------------------------------
+    # Setup
     setup_start = time.time()
     status = "success"
     error = ""
@@ -209,9 +202,7 @@ def evaluate_hybrid_pageindex(
 
         raise
 
-    # ------------------------------------------------------------
-    # 2. Save one setup row: hybrid embedding/index tracking
-    # ------------------------------------------------------------
+    # Save setup information
     num_nodes = ""
     num_top_nodes = ""
     embedding_dimension = ""
@@ -284,9 +275,7 @@ def evaluate_hybrid_pageindex(
             setup_csv_path,
         )
 
-    # ------------------------------------------------------------
-    # 3. Query-level retrieval evaluation
-    # ------------------------------------------------------------
+    # Query evaluation
     result_rows = []
 
     for query_index, query_row in enumerate(queries):

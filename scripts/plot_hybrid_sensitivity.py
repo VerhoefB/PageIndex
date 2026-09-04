@@ -2,9 +2,7 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# ---------------------------------------------------------
 # Paths
-# ---------------------------------------------------------
 
 esrs_csv = Path(r"final results\ESRS results analysis\overall_retrieval_summary.csv")
 financebench_csv = Path(r"final results\FinanceBench results analysis\overall_retrieval_summary.csv")
@@ -12,9 +10,7 @@ financebench_csv = Path(r"final results\FinanceBench results analysis\overall_re
 output_dir = Path(r"results figures")
 output_dir.mkdir(parents=True, exist_ok=True)
 
-# ---------------------------------------------------------
 # Load and combine datasets
-# ---------------------------------------------------------
 
 esrs = pd.read_csv(esrs_csv)
 financebench = pd.read_csv(financebench_csv)
@@ -41,9 +37,7 @@ hybrid["configuration"] = (
 hybrid["top_m"] = pd.to_numeric(hybrid["top_m"])
 
 
-# ---------------------------------------------------------
 # Plotting function
-# ---------------------------------------------------------
 
 def make_plot(dataset, metric, ylabel, filename):
 
@@ -99,9 +93,7 @@ def make_plot(dataset, metric, ylabel, filename):
     plt.close(fig)
 
 
-# ---------------------------------------------------------
 # Accuracy@1
-# ---------------------------------------------------------
 
 make_plot(
     "ESRS",
@@ -118,9 +110,7 @@ make_plot(
 )
 
 
-# ---------------------------------------------------------
 # MRR@5
-# ---------------------------------------------------------
 
 make_plot(
     "ESRS",

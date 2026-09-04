@@ -107,8 +107,7 @@ def insert_node(nodes, node, target_parent_node_id, position, reference_node_id=
                 f"reference_node_id={reference_node_id} not found under target parent."
             )
 
-        # If no target parent is given, find the reference node anywhere
-        # and insert the moved node into the same siblings list.
+        # Without a target parent, insert beside the reference node.
         reference_result = find_node_with_parent(nodes, reference_node_id)
         if reference_result is None:
             raise ValueError(

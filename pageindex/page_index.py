@@ -6,11 +6,9 @@ from pydoc import doc
 import random
 import re
 
-from pageindex import leaf_text_store_pageaware
-from pageindex import leaf_text_store_pageaware
+
 from .leaf_text_store_pageaware import build_leaf_text_rows, save_leaf_text_jsonl
 from .utils import *
-import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
@@ -514,19 +512,7 @@ def add_dynamic_page_offset_to_toc_json(
     max_chars=4000,
     logger=None,
 ):
-    """
-    Dynamic replacement for add_page_offset_to_toc_json.
-
-    Same contract:
-    - For items with integer page numbers, assign physical_index.
-    - Delete page after assigning physical_index.
-    - Leave items with page=None unchanged, just like the original function.
-
-    Difference:
-    - First tries page + current_offset.
-    - Only searches nearby pages if expected page does not match.
-    - Updates current_offset only when a nearby strong match is found.
-    """
+    """Assign physical indices using the TOC offset and nearby-page matching."""
     if offset is None:
         print("WARNING: offset is None, using offset = 0")
         offset = 0
@@ -971,8 +957,7 @@ def add_start_phrases_to_toc_items(toc_items, page_list, model=None, start_index
             item["start_phrase"] = None
             continue
 
-        # Use current page plus maybe the next page.
-        # This helps when heading is at the bottom of page N and body starts on page N+1.
+        # Include the next page in case the body starts there.
         parts = []
 
         for extra in range(max_extra_pages + 1):
@@ -1508,13 +1493,13 @@ def build_chunks_from_existing_structure(pdf_path, structure_path, output_path, 
         max_tokens=opt.max_token_num_each_node
     )
 
-    # Add document/bank name to every chunk row
+    # Add document name to chunk metadata
     for row in leaf_text_rows:
-        row["bank_name"] = doc_name  # optional, useful for ESRS dataset
+        row["bank_name"] = doc_name
 
     save_leaf_text_jsonl(leaf_text_rows, output_path)
 
-    # important: save cleaned/mutated structure after intro nodes / split chunks
+    # Save the updated structure after chunking.
     if updated_structure_path:
         structure_data["structure"] = remove_internal_keys(structure)
 
