@@ -100,12 +100,10 @@ class HybridPageIndexChunkRerankRetriever:
     def _chunk_text(self, chunk):
         """Create chunk text for reranking."""
         title = str(chunk.get("title", "") or "").strip()
-        heading = str(chunk.get("heading", "") or "").strip()
         text = str(chunk.get("text") or chunk.get("page_content") or "").strip()
 
         parts = [
             title,
-            heading,
             text,
         ]
 

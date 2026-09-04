@@ -34,11 +34,7 @@ def read_jsonl(path):
 
 
 def latest_successful_generations(path):
-    """
-    Keep the latest successful, non-empty generation for each answer_id.
-
-    This is important because resume runs may append multiple attempts.
-    """
+    """Keep the latest successful generation for each answer_id."""
     latest = {}
 
     for row in read_jsonl(path):
@@ -204,14 +200,7 @@ def summarize_retrieval_success(rows):
 
 
 def summarize_top1_top5_retrieval(rows):
-    """
-    Create one wide row per retrieval configuration with the exact number
-    and percentage of queries for which the ground-truth chunk is retrieved
-    at Top-1 and anywhere within Top-5.
-
-    This uses the query-level `correct_chunk_retrieved` flag already derived
-    from membership of `ground_truth_chunk_id` in `retrieved_chunk_ids`.
-    """
+    """Summarize ground-truth retrieval at Top-1 and Top-5."""
     grouped = defaultdict(lambda: {"top_1": [], "top_5": []})
 
     for row in rows:
@@ -277,12 +266,8 @@ def summarize_top1_top5_retrieval(rows):
 
 def add_combined_rows(rows):
     """
-    Add a descriptive pooled version of top_1 + top_5.
-
-    IMPORTANT:
-    'combined' is not a separate retrieval experiment.
-    It pools the two end-to-end settings and therefore contains
-    two observations per underlying query/configuration.
+    Pool top-1 and top-5 for descriptive analysis only.
+    Combined is not a separate retrieval setting.
     """
 
     combined = []
@@ -403,19 +388,14 @@ def main():
 
     output_dir = Path(args.output_dir)
 
-    # ---------------------------------------------------------
-    # 1. Detailed query-level joined file
-    # ---------------------------------------------------------
+    # Query-level results
 
     write_csv(
         output_dir / "end_to_end_retrieval_joined.csv",
         joined,
     )
 
-    # ---------------------------------------------------------
-    # 2. Conditional answer-quality summary:
-    #    GT retrieved YES versus NO
-    # ---------------------------------------------------------
+    # Conditional answer quality by retrieval success
 
     analysis_rows = joined
 
@@ -429,9 +409,7 @@ def main():
         conditional_summary,
     )
 
-    # ---------------------------------------------------------
-    # 3. Retrieval-success rates themselves
-    # ---------------------------------------------------------
+    # Retrieval success rates
 
     retrieval_summary = summarize_retrieval_success(
         analysis_rows
@@ -442,10 +420,7 @@ def main():
         retrieval_summary,
     )
 
-    # ---------------------------------------------------------
-    # 4. Wide Top-1 / Top-5 GT-retrieval summary
-    #    (exact counts and percentages; no pooled rows)
-    # ---------------------------------------------------------
+    # Top-1 and Top-5 retrieval summary
 
     top1_top5_summary = summarize_top1_top5_retrieval(joined)
 

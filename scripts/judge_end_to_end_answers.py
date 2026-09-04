@@ -195,11 +195,7 @@ def call_judge(
 
 
 def latest_successful_generated_answers(paths: Iterable[Path]) -> Dict[str, Dict[str, Any]]:
-    """
-    Return one successful generation row per answer_id.
-
-    This safely ignores earlier failed attempts when a later resume succeeded.
-    """
+    """Keep the latest successful generation for each answer_id."""
     latest: Dict[str, Dict[str, Any]] = {}
     for path in paths:
         for row in read_jsonl(path):

@@ -7,9 +7,7 @@ import numpy as np
 import pandas as pd
 
 
-# ============================================================
 # Paths
-# ============================================================
 
 FINAL_RESULTS = Path("final results")
 
@@ -26,9 +24,7 @@ STRUCTURE_PATHS = {
 OUTPUT_DIR = Path("Efficiency results analysis")
 
 
-# ============================================================
 # General helpers
-# ============================================================
 
 def clean_string(value):
     if value is None:
@@ -68,13 +64,7 @@ def pretty_model(model):
 
 def make_query_key(row, dataset):
     """
-    Same principle as summarize_retrieval_results.py:
-
-    FinanceBench:
-        financebench_id
-
-    ESRS:
-        doc_name + ground_truth_chunk_id + query
+    Create a query key that is consistent across retrieval methods.
     """
 
     financebench_id = clean_string(row.get("financebench_id", ""))
@@ -112,17 +102,12 @@ def read_jsonl(path):
     return rows
 
 
-# ============================================================
 # Robust setup-CSV reader
-# ============================================================
 
 def read_valid_csv_rows(path):
     """
-    Some of the later setup CSV rows contain more columns than
-    the original header because extra cache fields were added.
-
-    For the original preprocessing measurements we only need
-    rows that match the original header exactly.
+    Read only setup rows that match the original CSV header.
+    Later runs contain additional cache fields.
     """
 
     with open(path, "r", encoding="utf-8-sig", newline="") as f:
@@ -146,9 +131,7 @@ def read_valid_csv_rows(path):
     return output
 
 
-# ============================================================
 # Find setup CSVs automatically
-# ============================================================
 
 def find_setup_rows():
     dense_rows = []
@@ -193,9 +176,7 @@ def find_setup_rows():
     return pd.DataFrame(dense_rows), pd.DataFrame(hybrid_rows)
 
 
-# ============================================================
 # PageIndex tree preprocessing
-# ============================================================
 
 def load_structure_preprocessing(dataset):
     path = STRUCTURE_PATHS[dataset]
@@ -244,9 +225,7 @@ def load_structure_preprocessing(dataset):
     }
 
 
-# ============================================================
 # BM25 preprocessing
-# ============================================================
 
 def find_bm25_result(dataset):
     candidates = list(
@@ -265,7 +244,7 @@ def find_bm25_result(dataset):
             f"Could not find BM25 result file for {dataset}"
         )
 
-    # Prefer shortest / most direct path if copies exist
+    # Prefer the most direct path if copies exist
     candidates = sorted(
         candidates,
         key=lambda p: len(str(p))
@@ -299,9 +278,7 @@ def load_bm25_preprocessing(dataset):
     }
 
 
-# ============================================================
 # Dense preprocessing
-# ============================================================
 
 def select_dense_uncached_rows(dense_setup, dataset):
     if dense_setup.empty:
@@ -342,9 +319,7 @@ def select_dense_uncached_rows(dense_setup, dataset):
     return df
 
 
-# ============================================================
 # Hybrid preprocessing
-# ============================================================
 
 def select_hybrid_setup_rows(hybrid_setup, dataset):
     if hybrid_setup.empty:
@@ -373,9 +348,7 @@ def select_hybrid_setup_rows(hybrid_setup, dataset):
         errors="coerce",
     )
 
-    # -------------------------------------------
     # Original uncached node embedding runs
-    # -------------------------------------------
 
     node_runs = df[
         (~df["node_cache_bool"])
@@ -387,15 +360,12 @@ def select_hybrid_setup_rows(hybrid_setup, dataset):
         .drop_duplicates("model_pretty", keep="first")
     )
 
-    # -------------------------------------------
     # Original chunk-reranking embedding runs
     #
-    # Due to the old logger, these were labelled as
-    # cache-load time because node caches already existed.
-    #
-    # They are easily identifiable as the very large setup
-    # run with node caches already loaded.
-    # -------------------------------------------
+    # The node caches already existed when the chunk embeddings
+    # were first created, so the old setup logs do not identify
+    # these runs separately. They are identified by their much
+    # larger setup time.
 
     cached_runs = df[
         df["node_cache_bool"]
@@ -428,18 +398,14 @@ def select_hybrid_setup_rows(hybrid_setup, dataset):
     return node_runs, chunk_runs
 
 
-# ============================================================
 # Preprocessing output
-# ============================================================
 
 def build_preprocessing_table(dense_setup, hybrid_setup):
     output = []
 
     for dataset in ["ESRS", "FinanceBench"]:
 
-        # ---------------------------------------
         # BM25
-        # ---------------------------------------
 
         bm25 = load_bm25_preprocessing(dataset)
 
@@ -458,9 +424,7 @@ def build_preprocessing_table(dense_setup, hybrid_setup):
             ),
         })
 
-        # ---------------------------------------
         # Dense
-        # ---------------------------------------
 
         dense = select_dense_uncached_rows(
             dense_setup,
@@ -484,9 +448,7 @@ def build_preprocessing_table(dense_setup, hybrid_setup):
                 ),
             })
 
-        # ---------------------------------------
         # PageIndex tree construction
-        # ---------------------------------------
 
         structure = load_structure_preprocessing(dataset)
 
@@ -506,9 +468,7 @@ def build_preprocessing_table(dense_setup, hybrid_setup):
             ),
         })
 
-        # ---------------------------------------
         # Hybrid
-        # ---------------------------------------
 
         node_runs, chunk_runs = select_hybrid_setup_rows(
             hybrid_setup,
@@ -553,9 +513,7 @@ def build_preprocessing_table(dense_setup, hybrid_setup):
     return pd.DataFrame(output)
 
 
-# ============================================================
 # Query embedding timing files
-# ============================================================
 
 def discover_query_embedding_timings():
     files = list(
@@ -633,9 +591,7 @@ def discover_query_embedding_timings():
     return timings
 
 
-# ============================================================
 # Query-time efficiency
-# ============================================================
 
 def load_query_results():
     frames = []
@@ -730,9 +686,7 @@ def add_full_query_latency(detail, timings):
     return detail
 
 
-# ============================================================
 # Main configurations only
-# ============================================================
 
 def select_main_configs(df):
     top_m = pd.to_numeric(
@@ -760,9 +714,7 @@ def select_main_configs(df):
     ].copy()
 
 
-# ============================================================
 # Aggregate query efficiency + effectiveness
-# ============================================================
 
 def summarize_query_efficiency(df):
     group_cols = [
@@ -846,9 +798,7 @@ def summarize_query_efficiency(df):
     return pd.DataFrame(rows)
 
 
-# ============================================================
 # Separate PageIndex top-1 / top-5 token analysis
-# ============================================================
 
 def summarize_pageindex_tokens(df):
     page = df[
@@ -891,9 +841,7 @@ def summarize_pageindex_tokens(df):
     return pd.DataFrame(rows)
 
 
-# ============================================================
 # Effectiveness-efficiency plots
-# ============================================================
 
 def method_label(row):
     method = row["method"]
@@ -940,7 +888,7 @@ def make_tradeoff_plot(summary, dataset, output_path):
             fontsize=9,
         )
 
-    # Essential because PageIndex is orders of magnitude slower
+    # Use log scale because of the large latency differences
     ax.set_xscale("log")
 
     ax.set_xlabel(
@@ -968,9 +916,7 @@ def make_tradeoff_plot(summary, dataset, output_path):
     plt.close(fig)
 
 
-# ============================================================
 # Main
-# ============================================================
 
 def main():
     OUTPUT_DIR.mkdir(
@@ -990,9 +936,7 @@ def main():
         f"Hybrid valid setup rows: {len(hybrid_setup)}"
     )
 
-    # --------------------------------------------------------
-    # 1. Preprocessing efficiency
-    # --------------------------------------------------------
+    # Preprocessing efficiency
 
     preprocessing = build_preprocessing_table(
         dense_setup,
@@ -1009,9 +953,7 @@ def main():
         preprocessing.to_string(index=False)
     )
 
-    # --------------------------------------------------------
-    # 2. Query-time latency
-    # --------------------------------------------------------
+    # Query-time efficiency
 
     print("\n=== LOADING QUERY EMBEDDING TIMES ===")
 
@@ -1077,9 +1019,7 @@ def main():
         ].to_string(index=False)
     )
 
-    # --------------------------------------------------------
-    # 3. PageIndex token usage
-    # --------------------------------------------------------
+    # PageIndex token usage
 
     pageindex_tokens = summarize_pageindex_tokens(
         main_detail
@@ -1096,9 +1036,7 @@ def main():
         pageindex_tokens.to_string(index=False)
     )
 
-    # --------------------------------------------------------
-    # 4. Effectiveness-efficiency table
-    # --------------------------------------------------------
+    # Effectiveness-efficiency table
 
     tradeoff_cols = [
         "dataset",
@@ -1125,9 +1063,7 @@ def main():
         index=False,
     )
 
-    # --------------------------------------------------------
-    # 5. Plots
-    # --------------------------------------------------------
+    # Plots
 
     for dataset in ["ESRS", "FinanceBench"]:
 

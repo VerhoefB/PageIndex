@@ -8,15 +8,8 @@ from rank_bm25 import BM25Okapi
 
 class BM25Retriever:
     """
-    BM25 lexical retriever.
-
-    Preprocessing:
-    - lowercase text
-    - remove punctuation
-    - remove stopwords
-    - whitespace tokenization
-    - no stemming
-    - no lemmatization
+    BM25 retriever using lowercase text, punctuation removal
+    and English stopword removal. No stemming or lemmatization.
     """
 
     def __init__(self, chunks, k1=1.2, b=0.75):
@@ -71,9 +64,7 @@ class BM25Retriever:
         return tokens
 
     def retrieve(self, query, top_k=5, return_metadata=False):
-        """
-        Retrieve top-k chunks for a query across the full corpus.
-        """
+        """Retrieve the top-k BM25 results."""
 
         query_start = time.perf_counter()
 

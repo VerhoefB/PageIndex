@@ -43,12 +43,6 @@ def get_chunk_text(ch):
 def extract_numbers(text):
     """
     Extract financial/table-like numbers.
-
-    Examples:
-    - $55,893 -> 55893
-    - (5,022) -> (5022)
-    - -14.76% -> -14.76%
-    - 0.62% -> 0.62%
     """
     text = text or ""
 
@@ -376,7 +370,6 @@ def main(
                     "lcs_ratio": best.get("lcs_ratio"),
                 })
 
-        # PUT YOUR BLOCK HERE, after all evidence items for this row are processed.
         ground_truth_chunk_ids = unique_keep_order(
             m["matched_chunk_id"] for m in evidence_matches
         )

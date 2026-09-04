@@ -5,7 +5,7 @@ import re
 
 from .utils import llm_completion, extract_json, count_tokens, get_text_of_pdf_pages
 
-DEBUG_PROGRESS = True
+DEBUG_PROGRESS = False
 
 def progress(message):
     if DEBUG_PROGRESS:
@@ -102,10 +102,6 @@ def generate_node_summary(title, text, model=None, summary_token_threshold=200):
     )
 
     if token_count <= summary_token_threshold:
-        return text
-
-    # PageIndex-like behavior: if text is already short, use it directly.
-    if count_tokens(text, model=model) <= summary_token_threshold:
         return text
 
     prompt = f"""
@@ -413,30 +409,6 @@ def find_title_strict_heading(text, title):
 
     return -1
 
-def estimate_title_end_pos(text, title, start_pos):
-    """
-    Estimate where a matched title ends in the original text.
-
-    This is used so the next node can start searching after the previous
-    title, not after an arbitrary offset like +5 or +50.
-    """
-    if start_pos == -1 or not title:
-        return start_pos
-
-    search_window = text[start_pos:start_pos + max(len(title) * 4, 300)]
-
-    words = re.findall(r"[A-Za-z0-9]+", title or "")
-    if not words:
-        return start_pos
-
-    pattern = r"\s*[-–—.]?\s*".join(re.escape(w) for w in words)
-    match = re.search(pattern, search_window, flags=re.IGNORECASE)
-
-    if match:
-        return start_pos + match.end()
-
-    # fallback
-    return start_pos + len(title)
 
 def find_normalized_occurrences(text, needle):
     text_key, mapping = normalize_with_map(text)
@@ -2477,7 +2449,6 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
 
     Important:
     - The end search is based on next_node.start_index.
-    - It does not use a fixed +4 physical-page window.
     """
     start_page = current_node.get("start_index")
     end_page = current_node.get("end_index")
@@ -2488,9 +2459,7 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
     if next_node and next_node.get("start_index") is not None:
         end_page = max(end_page, next_node.get("start_index"))
 
-    # ------------------------------------------------------------
     # 1. Find intro start.
-    # ------------------------------------------------------------
     found_start_logical_page = None
     found_start_page_index = None
     found_start_pos = -1
@@ -2519,9 +2488,7 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
     if found_start_page_index is None:
         return "", -1
 
-    # ------------------------------------------------------------
     # 2. Build candidate physical pages for child start.
-    # ------------------------------------------------------------
     if isinstance(pdf_pages, list):
         max_page_index = len(pdf_pages) - 1
     else:
@@ -2578,11 +2545,9 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
         f"candidate_pages={candidate_end_page_indexes}"
     )
 
-    # ------------------------------------------------------------
     # 3. Find child start on candidate physical pages.
     #    Search expected/correct child page first.
     #    If not found there, collect candidates from nearby pages.
-    # ------------------------------------------------------------
     found_end_page_index = None
     found_end_pos = -1
 
@@ -2671,9 +2636,7 @@ def extract_intro_text_page_aware(current_node, next_node, pdf_pages):
         f"end_pos={found_end_pos}"
     )
         
-    # ------------------------------------------------------------
     # 4. Slice from intro start to child start.
-    # ------------------------------------------------------------
     text = slice_physical_pages_text(
         pdf_pages=pdf_pages,
         start_index=found_start_page_index,
@@ -2730,10 +2693,7 @@ def extract_section_text(current_node, next_node, pdf_pages, min_start_pos=0):
     end_pos = len(full_text)
     boundary_found = False
 
-    # ------------------------------------------------------------
-    # Intro node handling:
-    # start is found normally, but end must be the first real child.
-    # ------------------------------------------------------------
+    # Intro node handling: start is found normally, but end must be the first real child.
     if current_node.get("is_intro_node") and next_node:
         intro_end_pos = find_node_start(
             text=full_text,
@@ -2746,9 +2706,7 @@ def extract_section_text(current_node, next_node, pdf_pages, min_start_pos=0):
 
         return full_text[start_pos:intro_end_pos].strip(), start_pos
     
-    # ------------------------------------------------------------
     # Normal node handling: find next boundary
-    # ------------------------------------------------------------
     if next_node:
         next_start_page = next_node.get("start_index")
 
@@ -3662,10 +3620,6 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
         verbose=True,
     )
 
-    print("\nROOT STRUCTURES AFTER POSTPROCESS:")
-    for n in structure:
-        print(n.get("node_id"), n.get("structure"), repr(n.get("title")), "children:", len(n.get("nodes") or []))
-
     structure = add_intro_leaf_nodes(structure)
     leaf_nodes = get_leaf_nodes_in_order(structure)
 
@@ -3697,10 +3651,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
             min_start_pos=min_start_pos,
         )
         
-        # ------------------------------------------------------------
-        # Intro nodes are only kept if they contain actual content.
-        # If not, mark them and remove them from the structure later.
-        # ------------------------------------------------------------
+        # Keep intro nodes only when they contain actual content.
         if node.get("is_intro_node"):
             parent_node = node.get("_parent_node")
             first_child_node = node.get("_first_child_node")
@@ -3736,11 +3687,9 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                 node["_skip_intro_node"] = True
             continue
 
-        # ------------------------------------------------------------
         # Update same-page min_start_pos only for real non-intro nodes.
         # This prevents later chunks on the same page from starting before
         # a heading that was already consumed.
-        # ------------------------------------------------------------
         if (
             found_start_pos != -1
             and not node.get("is_intro_node")
@@ -3776,9 +3725,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
             model=model,
         )
 
-        # ------------------------------------------------------------
         # Normal one-chunk node
-        # ------------------------------------------------------------
         if len(chunks) == 1:
             chunk = chunks[0]
             token_count = count_tokens(chunk["text"], model=model)
@@ -3818,9 +3765,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
             node["summary"] = summary
             node.pop("text", None)
 
-        # ------------------------------------------------------------
         # Node too large: split into child chunks
-        # ------------------------------------------------------------
         else:
             node["nodes"] = []
             node["text_token_count"] = original_token_count
@@ -3847,7 +3792,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                     "title": child_title,
                     "heading": node.get("heading", ""),
                     "start_phrase": node.get("start_phrase", ""),
-                    "summary": summary,
+                    "summary": child_summary,
                     "start_index": node.get("start_index"),
                     "end_index": node.get("end_index"),
                     "token_count": child_token_count,
@@ -3867,7 +3812,7 @@ def build_leaf_text_rows(structure, pdf_pages, model=None, max_tokens=32768):
                     "title": child_title,
                     "heading": node.get("heading", ""),
                     "start_phrase": node.get("start_phrase", ""),
-                    "summary": summary,
+                    "summary": child_summary,
                     "start_index": node.get("start_index"),
                     "end_index": node.get("end_index"),
                     "token_count": child_token_count,

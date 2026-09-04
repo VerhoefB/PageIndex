@@ -6,16 +6,7 @@ from sentence_transformers import SentenceTransformer
 
 
 class HybridPageIndexRetriever:
-    """
-    Hybrid PageIndex retriever.
-
-    At each tree level:
-    - embed query
-    - compare query with child node title+summary embeddings
-    - select top_m children
-    - store selected leaf nodes
-    - continue exploring selected non-leaf nodes
-    """
+    """Hybrid PageIndex retrieval using node embeddings."""
 
     def __init__(
         self,
@@ -77,27 +68,13 @@ class HybridPageIndexRetriever:
         return str(node.get("node_id") or node.get("id") or fallback)
 
     def _node_text(self, node):
-        """
-        Only use title + summary for hybrid PageIndex node embeddings.
-        """
         title = str(node.get("title", "") or "").strip()
         summary = str(node.get("summary", "") or "").strip()
 
         return f"{title}\n{summary}".strip()
     
     def _top_node_text(self, node):
-        """
-        Use top-level document text for first-layer document selection.
-
-        FinanceBench root nodes can include:
-        - cleaned document title
-        - summary
-        - doc_description
-
-        ESRS root nodes usually only include:
-        - cleaned document title
-        - summary
-        """
+        """Create document-level text for the first retrieval step."""
         title = str(node.get("title", "") or "").strip()
         summary = str(node.get("summary", "") or "").strip()
         doc_description = str(node.get("doc_description", "") or "").strip()
@@ -138,7 +115,7 @@ class HybridPageIndexRetriever:
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
-        # Regular embeddings for all nodes: title + summary.
+        # Embed all nodes
         for node_id, node in self._iter_nodes(self.tree):
             node["_hybrid_node_id"] = node_id
             self.nodes_by_id[node_id] = node
@@ -157,8 +134,7 @@ class HybridPageIndexRetriever:
             else:
                 document_roots.append(root)
 
-        # Special embeddings for first-layer document selection:
-        # title + summary + doc_description.
+        # Separate embeddings for document selection
         for root_index, document_root in enumerate(document_roots):
             if not isinstance(document_root, dict):
                 continue
@@ -178,7 +154,7 @@ class HybridPageIndexRetriever:
         if top_node_cache_path is not None:
             top_node_cache_path = Path(top_node_cache_path)
 
-        # Load or compute normal node embeddings.
+        # Node embeddings.
         if node_cache_path is not None and node_cache_path.exists():
             print(f"Loading hybrid node embeddings from cache: {node_cache_path}")
             embeddings = np.load(node_cache_path)
@@ -208,7 +184,7 @@ class HybridPageIndexRetriever:
         for node_id, embedding in zip(node_ids, embeddings):
             self.node_embeddings[node_id] = embedding
 
-        # Load or compute top-level document embeddings.
+        # Document embeddings.
         if top_node_texts:
             if top_node_cache_path is not None and top_node_cache_path.exists():
                 print(f"Loading hybrid top-node embeddings from cache: {top_node_cache_path}")
@@ -274,16 +250,8 @@ class HybridPageIndexRetriever:
 
     def retrieve(self, query, top_k=5, top_m=2, query_embedding=None):
         """
-        Retrieve top-k chunks using hybrid PageIndex traversal.
-
-        Algorithm:
-        1. Embed the query.
-        2. Select exactly one document node from the collection root.
-        3. At each hierarchy level, pool all children of the currently retained nodes.
-        4. Select the global top_m nodes from this pooled set.
-        5. Store selected leaf nodes as candidate chunks.
-        6. Continue with selected non-leaf nodes until no branches remain.
-        7. Deduplicate candidate chunks and rank them by node similarity.
+        Hybrid traversal that selects one document first and then keeps
+        the global top_m nodes at each level.
         """
         if query_embedding is None:
             query_embedding = self.model.encode(
@@ -299,8 +267,7 @@ class HybridPageIndexRetriever:
 
         roots = self.tree if isinstance(self.tree, list) else [self.tree]
 
-        # If the combined tree has a collection root, first-layer document
-        # selection happens over its document children, not over the collection root.
+        # Get document roots
         document_roots = []
 
         for root in roots:
@@ -309,7 +276,7 @@ class HybridPageIndexRetriever:
             else:
                 document_roots.append(root)
 
-        # First layer: select exactly one document node.
+        # Select one document
         scored_document_roots = []
 
         for document_root in document_roots:
@@ -321,16 +288,14 @@ class HybridPageIndexRetriever:
         frontier = [scored_document_roots[0][1]] if scored_document_roots else []
         final_candidates = []
 
-        # Global beam-style traversal:
-        # at each level, all children of all retained nodes are pooled,
-        # then only the global top_m nodes are retained.
+        # Keep the global top_m nodes at each level
         while frontier:
             pooled_children = []
 
             for node in frontier:
                 children = self._get_children(node)
 
-                # If a retained node is already a leaf, store it.
+                # Store leaf candidates
                 if not children:
                     chunk_id = self._get_node_chunk_id(node)
 

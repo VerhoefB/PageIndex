@@ -138,7 +138,7 @@ def main():
 
     embeddings = np.vstack(embeddings).astype("float32")
 
-    # Save embeddings exactly as before
+    # Save embeddings
     output_path.parent.mkdir(parents=True, exist_ok=True)
     np.save(output_path, embeddings)
 

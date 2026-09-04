@@ -142,7 +142,7 @@ def summarize_document_subtree(path: Path) -> dict:
 
 def summarize_full_multidoc_tree(per_document: list[dict]) -> dict:
     """
-    Matches your hybrid's first step:
+    Matches hybrid's first step:
     - one artificial full tree;
     - top level contains one node per document;
     - then each document contains its own PageIndex subtree.
@@ -218,11 +218,6 @@ def summarize_full_multidoc_tree(per_document: list[dict]) -> dict:
 def aggregate_subtree_stats(per_document: list[dict]) -> dict:
     """
     Averages document-subtree statistics across all document subtrees.
-
-    Example:
-    If one subtree has max_depth=5 and another has max_depth=7,
-    avg_max_depth_per_document_subtree = 6.
-
     This means each document subtree contributes equally.
     """
 

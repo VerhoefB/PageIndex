@@ -7,7 +7,6 @@ from pathlib import Path
 def is_selected_for_query(row: dict) -> bool:
     """
     Returns True if the chunk was selected for query generation.
-    Supports both possible field names.
     """
     if row.get("generate_query") is True:
         return True
@@ -24,7 +23,6 @@ def is_selected_for_query(row: dict) -> bool:
 
 def is_eligible_for_query_generation(row: dict) -> bool:
     """
-    Matches the logic from assign_query_plan().
     Eligible chunks either received queries, or were skipped only because
     they were not selected after random sampling/allocation.
     """
@@ -48,7 +46,7 @@ def is_eligible_for_query_generation(row: dict) -> bool:
         or ""
     )
 
-    # In your query-plan script:
+    # In query-plan script:
     # eligible + selected     -> skip_query_reason = ""
     # eligible + not selected -> skip_query_reason = "not_selected"
     if reason in ["", "not_selected"]:

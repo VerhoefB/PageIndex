@@ -7,9 +7,7 @@ import numpy as np
 import pandas as pd
 
 
-# ---------------------------------------------------------------------
-# I/O helpers
-# ---------------------------------------------------------------------
+# Helpers
 
 def load_jsonl(path):
     rows = []
@@ -102,9 +100,7 @@ def normalize_yes_no(value):
     return str(value)
 
 
-# ---------------------------------------------------------------------
 # Result-file discovery
-# ---------------------------------------------------------------------
 
 def discover_result_files(results_dir):
     """
@@ -180,9 +176,7 @@ def discover_result_files(results_dir):
     return out
 
 
-# ---------------------------------------------------------------------
 # Configuration parsing
-# ---------------------------------------------------------------------
 
 def pretty_model_name(model):
     model = str(model or "")
@@ -242,9 +236,7 @@ def infer_top_m(row, filename):
     return np.nan
 
 
-# ---------------------------------------------------------------------
 # Retrieval metrics and document diagnostics
-# ---------------------------------------------------------------------
 
 def compute_retrieval_metrics(row):
     gt = str(row.get("ground_truth_chunk_id", ""))
@@ -306,9 +298,7 @@ def infer_doc_from_chunk_id(chunk_id, known_docs):
     return ""
 
 
-# ---------------------------------------------------------------------
 # Metadata
-# ---------------------------------------------------------------------
 
 def load_query_metadata(path, dataset):
     if path is None or not Path(path).exists():
@@ -386,9 +376,7 @@ def infer_filing_type(doc_name):
     return "Other"
 
 
-# ---------------------------------------------------------------------
 # Convert each result file to query-level rows
-# ---------------------------------------------------------------------
 
 def rows_to_metrics(path, dataset):
     raw_rows = load_jsonl(path)
@@ -478,9 +466,7 @@ def rows_to_metrics(path, dataset):
     return pd.DataFrame(output)
 
 
-# ---------------------------------------------------------------------
 # Aggregation
-# ---------------------------------------------------------------------
 
 CONFIG_COLS = ["dataset", "result_file", "method", "model", "variant", "top_m"]
 
@@ -562,9 +548,7 @@ def latency_statistics(df):
     return pd.DataFrame(rows)
 
 
-# ---------------------------------------------------------------------
 # PageIndex disagreement diagnostics
-# ---------------------------------------------------------------------
 
 def pageindex_diagnostic_category(row):
     acc = int(row["correct_at_1"]) == 1
@@ -669,9 +653,7 @@ def make_pageindex_return_diagnostics(df):
     return summary
 
 
-# ---------------------------------------------------------------------
 # Main
-# ---------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(
@@ -827,18 +809,14 @@ def main():
 
     latency = latency_statistics(detail)
 
-    # ---------------------------------------------------------
     # Retrieval by TOC availability - both datasets
-    # ---------------------------------------------------------
 
     if "toc" in detail.columns:
         by_toc = aggregate(detail, ["toc"])
         by_toc.to_csv(output_dir / "retrieval_by_toc.csv", index=False)
 
 
-    # ---------------------------------------------------------
     # Dataset-specific outputs
-    # ---------------------------------------------------------
 
     if dataset == "ESRS":
 
@@ -850,20 +828,6 @@ def main():
 
         by_filing = aggregate(detail, ["filing_type"])
         by_filing.to_csv(output_dir / "retrieval_by_filing_type.csv", index=False)
-
-        if "question_type" in detail.columns:
-            by_qtype = aggregate(detail, ["question_type"])
-            by_qtype.to_csv(output_dir / "retrieval_by_question_type.csv", index=False)
-
-        if "question_reasoning" in detail.columns:
-            by_reasoning = aggregate(detail, ["question_reasoning"])
-            by_reasoning.to_csv(
-                output_dir / "retrieval_by_question_reasoning.csv",
-                index=False,
-            )
-
-        by_doc = aggregate(detail, ["doc_name"])
-        by_doc.to_csv(output_dir / "retrieval_by_document.csv", index=False)
 
         if "question_type" in detail.columns:
             by_qtype = aggregate(detail, ["question_type"])
