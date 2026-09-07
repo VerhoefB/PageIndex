@@ -249,7 +249,7 @@ class PageIndexLLMRetriever:
                     model=self.model,
                     response_format={"type": "json_object"},
                     messages=messages,
-                    max_completion_tokens=2000,
+                    max_completion_tokens=8000,
                 )
 
                 usage = getattr(response, "usage", None)
